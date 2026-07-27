@@ -19,13 +19,26 @@ const coreServices = [
     icon: <Snowflake size={24} strokeWidth={2} />,
     color: 'brand-blue',
     image: 'https://images.unsplash.com/photo-1581092921461-eab62e97a780?q=80&w=1000',
-    description: 'We provide efficient HVAC systems for optimal comfort, air quality, and energy performance across all types of facilities.',
-    features: [
-      'HVAC Design', 'Chilled Water Systems',
-      'Installation & Commissioning', 'Heat Recovery Systems',
-      'Ventilation Solutions', 'Clean Room Solutions',
-      'Air Conditioning Systems', 'Building Automation',
-      'Ducting & Piping', 'Annual Maintenance'
+    description: 'End-to-end mechanical engineering covering advanced HVAC systems and comprehensive fire protection infrastructure for all facility types.',
+    groups: [
+      {
+        label: 'HVAC',
+        features: [
+          'HVAC Design', 'Chilled Water Systems',
+          'Air Handling Units (AHU)', 'VRF / VRV Systems',
+          'Ventilation Solutions', 'Clean Room HVAC',
+          'Ducting & Piping', 'Energy Optimization'
+        ]
+      },
+      {
+        label: 'Fire Fighting',
+        features: [
+          'Fire Alarm Systems', 'Fire Hydrant Systems',
+          'Auto Sprinkler Systems', 'Gas Suppression',
+          'Clean Agent Systems', 'Deluge & Foam Systems',
+          'Fire Extinguishers', 'Testing & Commissioning'
+        ]
+      }
     ]
   },
   {
@@ -175,15 +188,35 @@ export default function Services() {
                     {service.description}
                   </p>
 
-                  {/* Grid of features */}
-                  <div className="grid grid-cols-2 gap-x-2 gap-y-3 mb-8 grow">
-                    {service.features.map((feature, i) => (
-                      <div key={i} className="flex items-start gap-2">
-                        <Check size={14} className="text-gray-900 shrink-0 mt-1" strokeWidth={3} />
-                        <span className="text-[11px] font-medium text-gray-700 leading-tight">{feature}</span>
-                      </div>
-                    ))}
-                  </div>
+                  {/* Grouped features (Mechanical) or flat features */}
+                  {service.groups ? (
+                    <div className="flex flex-col gap-4 mb-8 grow">
+                      {service.groups.map((group, gi) => (
+                        <div key={gi}>
+                          <div className={`text-[10px] font-bold uppercase tracking-widest text-${service.color.replace('text-', '')} mb-2 border-b border-gray-100 pb-1`}>
+                            {group.label}
+                          </div>
+                          <div className="grid grid-cols-2 gap-x-2 gap-y-2">
+                            {group.features.map((feature, i) => (
+                              <div key={i} className="flex items-start gap-2">
+                                <Check size={13} className="text-gray-900 shrink-0 mt-0.5" strokeWidth={3} />
+                                <span className="text-[11px] font-medium text-gray-700 leading-tight">{feature}</span>
+                              </div>
+                            ))}
+                          </div>
+                        </div>
+                      ))}
+                    </div>
+                  ) : (
+                    <div className="grid grid-cols-2 gap-x-2 gap-y-2 mb-8">
+                      {service.features.map((feature, i) => (
+                        <div key={i} className="flex items-start gap-2">
+                          <Check size={14} className="text-gray-900 shrink-0 mt-1" strokeWidth={3} />
+                          <span className="text-[11px] font-medium text-gray-700 leading-tight">{feature}</span>
+                        </div>
+                      ))}
+                    </div>
+                  )}
 
                   {/* Learn More Link */}
                   <div className="mt-auto">

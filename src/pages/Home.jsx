@@ -6,7 +6,6 @@ import Services from '../components/home/Services';
 import WhyChooseUs from '../components/home/WhyChooseUs';
 import Industries from '../components/home/Industries';
 import Workflow from '../components/home/Workflow';
-import Stats from '../components/home/Stats';
 import BottomSection from '../components/home/BottomSection';
 import CTA from '../components/home/CTA';
 
@@ -20,7 +19,6 @@ export default function Home() {
       <WhyChooseUs />
       <Industries />
       <Workflow />
-      <Stats />
       <BottomSection />
       <CTA />
     </div>

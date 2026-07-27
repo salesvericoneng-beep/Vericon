@@ -95,14 +95,6 @@ const whyChoose = [
   { icon: <Smile size={32} strokeWidth={1.5} />, label: 'Customer\nSatisfaction' },
 ];
 
-const stats = [
-  { icon: <Building2 size={40} strokeWidth={1.5} className="text-brand-blue" />, num: '250+', label: 'Projects\nCompleted' },
-  { icon: <Users size={40} strokeWidth={1.5} className="text-brand-blue" />, num: '150+', label: 'Happy\nClients' },
-  { icon: <HardHat size={40} strokeWidth={1.5} className="text-brand-blue" />, num: '50+', label: 'Expert\nEngineers' },
-  { icon: <Calendar size={40} strokeWidth={1.5} className="text-brand-red" />, num: '15+', label: 'Years of\nExperience' },
-  { icon: <ShieldCheck size={40} strokeWidth={1.5} className="text-brand-blue" />, num: '98%', label: 'Client\nSatisfaction' },
-];
-
 export default function Services() {
   return (
     <div className="pt-20 min-h-screen bg-gray-50/30 overflow-hidden">
@@ -294,29 +286,6 @@ export default function Services() {
               ))}
             </div>
 
-          </div>
-        </div>
-      </section>
-
-      {/* 5. STATS ROW */}
-      <section className="py-12 bg-white">
-        <div className="container mx-auto px-4 md:px-8 lg:px-12">
-          <div className="bg-white rounded-3xl p-8 shadow-xl border border-gray-100">
-            <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-8">
-              {stats.map((stat, idx) => (
-                <div key={idx} className="flex flex-col sm:flex-row items-center sm:items-start text-center sm:text-left gap-4">
-                  <div className="shrink-0 bg-gray-50 p-3 rounded-full border border-gray-100">
-                    {stat.icon}
-                  </div>
-                  <div className="flex flex-col">
-                    <span className="text-2xl md:text-3xl font-extrabold text-brand-blue leading-tight mb-1">{stat.num}</span>
-                    <span className="text-xs font-semibold text-gray-700 uppercase whitespace-pre-line leading-tight">
-                      {stat.label}
-                    </span>
-                  </div>
-                </div>
-              ))}
-            </div>
           </div>
         </div>
       </section>

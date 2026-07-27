@@ -227,70 +227,7 @@ export default function About() {
         </div>
       </section>
 
-      {/* 5. Our Achievements Section */}
-      <section className="py-20 bg-gray-50/50">
-        <div className="container mx-auto px-6 md:px-12 lg:px-20">
-          
-          {/* Header */}
-          <div className="text-center mb-16 flex flex-col items-center">
-            <h2 className="text-2xl font-bold text-brand-blue tracking-wide uppercase">OUR ACHIEVEMENTS</h2>
-            <div className="flex mt-3">
-              <div className="w-8 h-1 bg-brand-blue"></div>
-              <div className="w-8 h-1 bg-brand-red"></div>
-            </div>
-          </div>
 
-          {/* Cards */}
-          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-6">
-            
-            {/* Stat 1 */}
-            <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: 0.1 }} className="bg-white rounded-2xl p-8 shadow-[0_8px_30px_rgb(0,0,0,0.08)] flex flex-col items-center text-center border border-gray-100 hover:-translate-y-2 transition-transform">
-              <div className="w-20 h-20 rounded-full bg-brand-blue text-white flex items-center justify-center mb-6 shadow-lg shadow-blue-900/20">
-                <Building2 size={32} />
-              </div>
-              <div className="text-4xl font-extrabold text-brand-blue mb-2">250+</div>
-              <div className="text-gray-900 font-medium">Projects<br/>Completed</div>
-            </motion.div>
-
-            {/* Stat 2 */}
-            <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: 0.2 }} className="bg-white rounded-2xl p-8 shadow-[0_8px_30px_rgb(0,0,0,0.08)] flex flex-col items-center text-center border border-gray-100 hover:-translate-y-2 transition-transform">
-              <div className="w-20 h-20 rounded-full bg-brand-red text-white flex items-center justify-center mb-6 shadow-lg shadow-red-900/20">
-                <Users size={32} />
-              </div>
-              <div className="text-4xl font-extrabold text-brand-blue mb-2">150+</div>
-              <div className="text-gray-900 font-medium">Happy<br/>Clients</div>
-            </motion.div>
-
-            {/* Stat 3 */}
-            <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: 0.3 }} className="bg-white rounded-2xl p-8 shadow-[0_8px_30px_rgb(0,0,0,0.08)] flex flex-col items-center text-center border border-gray-100 hover:-translate-y-2 transition-transform">
-              <div className="w-20 h-20 rounded-full bg-brand-blue text-white flex items-center justify-center mb-6 shadow-lg shadow-blue-900/20">
-                <HardHat size={32} />
-              </div>
-              <div className="text-4xl font-extrabold text-brand-blue mb-2">50+</div>
-              <div className="text-gray-900 font-medium">Expert<br/>Engineers</div>
-            </motion.div>
-
-            {/* Stat 4 */}
-            <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: 0.4 }} className="bg-white rounded-2xl p-8 shadow-[0_8px_30px_rgb(0,0,0,0.08)] flex flex-col items-center text-center border border-gray-100 hover:-translate-y-2 transition-transform">
-              <div className="w-20 h-20 rounded-full bg-brand-red text-white flex items-center justify-center mb-6 shadow-lg shadow-red-900/20">
-                <Calendar size={32} />
-              </div>
-              <div className="text-4xl font-extrabold text-brand-red mb-2">15+</div>
-              <div className="text-gray-900 font-medium">Years of<br/>Experience</div>
-            </motion.div>
-
-            {/* Stat 5 */}
-            <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: 0.5 }} className="bg-white rounded-2xl p-8 shadow-[0_8px_30px_rgb(0,0,0,0.08)] flex flex-col items-center text-center border border-gray-100 hover:-translate-y-2 transition-transform lg:col-span-1 md:col-span-1 col-span-2">
-              <div className="w-20 h-20 rounded-full bg-brand-blue text-white flex items-center justify-center mb-6 shadow-lg shadow-blue-900/20">
-                <ThumbsUp size={32} />
-              </div>
-              <div className="text-4xl font-extrabold text-brand-blue mb-2">98%</div>
-              <div className="text-gray-900 font-medium">Client<br/>Satisfaction</div>
-            </motion.div>
-
-          </div>
-        </div>
-      </section>
 
       {/* CTA Section */}
       <CTA />

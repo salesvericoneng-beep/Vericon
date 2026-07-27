@@ -23,13 +23,7 @@ const whyChooseUs = [
   { icon: <Headset size={36} strokeWidth={1.5} />, title: 'AFTER SALES SUPPORT', desc: 'Reliable support and maintenance services even after project completion.', color: 'text-brand-red' }
 ];
 
-const stats = [
-  { icon: <Building2 size={40} strokeWidth={1.5} />, count: '250+', label: 'Projects\nCompleted', color: 'text-brand-blue' },
-  { icon: <Users size={40} strokeWidth={1.5} />, count: '150+', label: 'Happy\nClients', color: 'text-brand-red' },
-  { icon: <HardHat size={40} strokeWidth={1.5} />, count: '50+', label: 'Expert\nEngineers', color: 'text-brand-blue' },
-  { icon: <CalendarDays size={40} strokeWidth={1.5} />, count: '15+', label: 'Years of\nExperience', color: 'text-brand-red' },
-  { icon: <ThumbsUp size={40} strokeWidth={1.5} />, count: '98%', label: 'Client\nSatisfaction', color: 'text-brand-blue' }
-];
+
 
 const differentiators = [
   'Proven track record across diverse industries',
@@ -167,40 +161,7 @@ export default function WhyVericon() {
         </div>
       </section>
 
-      {/* 4. Our Strength in Numbers */}
-      <section className="py-20 bg-white">
-        <div className="container mx-auto px-6 md:px-12 lg:px-20">
-          
-          <div className="text-center mb-16 flex flex-col items-center">
-            <h2 className="text-xl font-bold text-brand-blue tracking-wide uppercase">OUR STRENGTH IN NUMBERS</h2>
-            <div className="w-10 h-0.5 bg-brand-red mt-3"></div>
-          </div>
 
-          <div className="flex flex-wrap justify-center items-center gap-x-12 gap-y-12">
-            {stats.map((stat, idx) => (
-              <motion.div 
-                key={idx}
-                initial={{ opacity: 0, scale: 0.9 }}
-                whileInView={{ opacity: 1, scale: 1 }}
-                viewport={{ once: true }}
-                transition={{ delay: idx * 0.1 }}
-                className={`flex items-center gap-4 ${idx !== stats.length - 1 ? 'lg:border-r border-gray-100 lg:pr-12' : ''}`}
-              >
-                <div className={`${stat.color}`}>
-                  {stat.icon}
-                </div>
-                <div className="flex flex-col">
-                  <span className="text-3xl font-extrabold text-brand-dark leading-none mb-1">{stat.count}</span>
-                  <span className="text-sm font-semibold text-gray-600 whitespace-pre-line leading-tight">
-                    {stat.label}
-                  </span>
-                </div>
-              </motion.div>
-            ))}
-          </div>
-
-        </div>
-      </section>
 
       {/* 5. What Sets Us Apart */}
       <section className="py-20 bg-gray-50/50">

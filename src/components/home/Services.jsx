@@ -1,5 +1,5 @@
 import React from 'react';
-import { Snowflake, Zap, Flame, Check, ArrowRight } from 'lucide-react';
+import { Snowflake, Zap, Droplet, Check, ArrowRight } from 'lucide-react';
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
 
@@ -9,7 +9,7 @@ const services = [
     percentage: '50%',
     color: 'bg-brand-blue',
     icon: Snowflake,
-    title: 'HVAC SOLUTIONS',
+    title: 'MECHANICAL SOLUTIONS',
     description: 'We provide advanced HVAC solutions for commercial, industrial and institutional projects with a focus on energy efficiency and performance.',
     features: [
       'Design & Engineering',
@@ -21,7 +21,10 @@ const services = [
       'Heat Recovery Systems',
       'Building Automation'
     ],
-    linkText: 'View HVAC Services'
+    links: [
+      { text: 'HVAC Solutions', path: '/services/hvac' },
+      { text: 'Fire Fighting Solutions', path: '/services/fire' }
+    ]
   },
   {
     id: 'electrical',
@@ -39,25 +42,27 @@ const services = [
       'Testing & Commissioning',
       'Maintenance & AMC'
     ],
+    link: '/services/electrical',
     linkText: 'View Electrical Services'
   },
   {
-    id: 'fire',
+    id: 'phe',
     percentage: '25%',
     color: 'bg-brand-blue',
-    icon: Flame,
-    title: 'FIRE FIGHTING SOLUTIONS',
-    description: 'End-to-end fire fighting systems that ensure safety, compliance and protection.',
+    icon: Droplet,
+    title: 'PUBLIC HEALTH ENGINEERING',
+    description: 'Comprehensive PHE solutions ensuring safe, efficient management of water supply and drainage.',
     features: [
-      'Fire Alarm Systems',
-      'Hydrant & Sprinkler Systems',
-      'Fire Pumps & Tanks',
-      'Smoke & Heat Detection',
-      'Emergency Systems',
-      'Fire Safety Compliance',
-      'Maintenance & AMC'
+      'Water Supply Systems',
+      'Drainage Systems',
+      'Water Treatment & Recycling',
+      'Rainwater Harvesting',
+      'Leak Detection',
+      'Pumping Stations',
+      'Plumbing Design'
     ],
-    linkText: 'View Fire Fighting Services'
+    link: '/services/phe',
+    linkText: 'View PHE Services'
   }
 ];
 
@@ -117,12 +122,14 @@ export default function Services() {
                 ))}
               </ul>
 
-              <Link 
-                to={`/services#${service.id}`}
-                className="inline-flex items-center gap-2 font-semibold text-sm hover:translate-x-2 transition-transform w-fit mt-auto"
-              >
-                {service.linkText} <ArrowRight size={16} />
-              </Link>
+              <div className="mt-auto">
+                <Link 
+                  to={service.id === 'hvac' ? '/services/mechanical' : service.link}
+                  className="inline-flex items-center gap-2 font-semibold text-sm hover:translate-x-2 transition-transform w-fit text-white"
+                >
+                  {service.linkText || 'Learn More'} <ArrowRight size={16} />
+                </Link>
+              </div>
             </motion.div>
           ))}
         </div>

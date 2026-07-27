@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
-import { Menu, X, ChevronDown, PhoneCall } from 'lucide-react';
+import { Menu, X, ChevronDown, ChevronRight, PhoneCall } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
 
 const navLinks = [
@@ -10,9 +10,16 @@ const navLinks = [
     name: 'Solutions', 
     path: '/services',
     dropdown: [
-      { name: 'HVAC Solutions', path: '/services/hvac' },
+      { 
+        name: 'Mechanical Solutions',
+        path: '/services/mechanical',
+        subDropdown: [
+          { name: 'HVAC Solutions', path: '/services/hvac' },
+          { name: 'Fire Fighting Solutions', path: '/services/fire' }
+        ]
+      },
       { name: 'Electrical Solutions', path: '/services/electrical' },
-      { name: 'Fire Fighting Solutions', path: '/services/fire' }
+      { name: 'PHE Solutions', path: '/services/phe' }
     ]
   },
   { name: 'Why Vericon', path: '/why-vericon' },
@@ -80,8 +87,39 @@ export default function Navbar() {
               {/* Dropdown */}
               {link.dropdown && (
                 <div className="absolute top-full left-0 pt-4 opacity-0 pointer-events-none group-hover:opacity-100 group-hover:pointer-events-auto transition-all duration-300">
-                  <div className="bg-white shadow-xl rounded-xl overflow-hidden min-w-[200px] border border-brand-border">
+                  <div className="bg-white shadow-xl rounded-xl overflow-visible min-w-[220px] border border-brand-border py-2">
                     {link.dropdown.map((drop) => {
+                      if (drop.subDropdown) {
+                        return (
+                          <div key={drop.name} className="relative group/sub">
+                            <div className="flex items-center justify-between px-5 py-3 text-sm text-brand-dark hover:bg-brand-light hover:text-brand-blue cursor-default transition-colors">
+                              {drop.name}
+                              <ChevronRight size={14} />
+                            </div>
+                            <div className="absolute top-0 left-full pl-1 opacity-0 pointer-events-none group-hover/sub:opacity-100 group-hover/sub:pointer-events-auto transition-all duration-300 w-[220px]">
+                              <div className="bg-white shadow-xl rounded-xl overflow-hidden border border-brand-border py-2">
+                                {drop.subDropdown.map((sub) => {
+                                  const isSubActive = location.pathname === sub.path;
+                                  return (
+                                    <Link 
+                                      key={sub.name} 
+                                      to={sub.path}
+                                      className={`block px-5 py-3 text-sm transition-colors ${
+                                        isSubActive 
+                                          ? 'bg-red-50 text-brand-red font-medium' 
+                                          : 'text-brand-dark hover:bg-brand-light hover:text-brand-blue'
+                                      }`}
+                                    >
+                                      {sub.name}
+                                    </Link>
+                                  );
+                                })}
+                              </div>
+                            </div>
+                          </div>
+                        );
+                      }
+
                       const isDropActive = location.pathname === drop.path;
                       return (
                         <Link 
@@ -157,12 +195,41 @@ export default function Navbar() {
                     {link.dropdown && (
                       <div className="pl-8 pb-2 flex flex-col gap-1">
                         {link.dropdown.map((drop) => {
+                          if (drop.subDropdown) {
+                            return (
+                              <div key={drop.name} className="flex flex-col gap-1 mt-1">
+                                <div className="py-2 text-sm font-semibold text-brand-dark">
+                                  {drop.name}
+                                </div>
+                                <div className="pl-4 flex flex-col gap-1 border-l-2 border-brand-light ml-2">
+                                  {drop.subDropdown.map((sub) => {
+                                    const isSubActive = location.pathname === sub.path;
+                                    return (
+                                      <Link 
+                                        key={sub.name} 
+                                        to={sub.path}
+                                        className={`py-2 text-sm transition-colors ${
+                                          isSubActive 
+                                            ? 'text-brand-red font-medium' 
+                                            : 'text-gray-600 hover:text-brand-blue'
+                                        }`}
+                                        onClick={() => setIsOpen(false)}
+                                      >
+                                        {sub.name}
+                                      </Link>
+                                    );
+                                  })}
+                                </div>
+                              </div>
+                            );
+                          }
+
                           const isDropActive = location.pathname === drop.path;
                           return (
                             <Link 
                               key={drop.name} 
                               to={drop.path}
-                              className={`py-2 text-sm transition-colors ${
+                              className={`py-2 text-sm transition-colors mt-1 ${
                                 isDropActive 
                                   ? 'text-brand-red font-medium' 
                                   : 'text-gray-600 hover:text-brand-blue'

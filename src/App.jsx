@@ -6,9 +6,11 @@ import Footer from './components/Footer';
 import Home from './pages/Home';
 import About from './pages/About';
 import Services from './pages/Services';
+import MechanicalSolutions from './pages/MechanicalSolutions';
 import HvacSolutions from './pages/HvacSolutions';
-import ElectricalSolutions from './pages/ElectricalSolutions';
 import FireFightingSolutions from './pages/FireFightingSolutions';
+import ElectricalSolutions from './pages/ElectricalSolutions';
+import PheSolutions from './pages/PheSolutions';
 import WhyVericon from './pages/WhyVericon';
 import Projects from './pages/Projects';
 import Contact from './pages/Contact';
@@ -24,9 +26,11 @@ function App() {
             <Route path="/" element={<Home />} />
             <Route path="/about" element={<About />} />
             <Route path="/services" element={<Services />} />
+            <Route path="/services/mechanical" element={<MechanicalSolutions />} />
             <Route path="/services/hvac" element={<HvacSolutions />} />
-            <Route path="/services/electrical" element={<ElectricalSolutions />} />
             <Route path="/services/fire" element={<FireFightingSolutions />} />
+            <Route path="/services/electrical" element={<ElectricalSolutions />} />
+            <Route path="/services/phe" element={<PheSolutions />} />
             <Route path="/why-vericon" element={<WhyVericon />} />
             <Route path="/projects" element={<Projects />} />
             <Route path="/contact" element={<Contact />} />

@@ -1,7 +1,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { 
-  Snowflake, Zap, Flame, Check, 
+import {
+  Snowflake, Zap, Droplet, Check,
   Building2, FileText, Settings, Wrench, ClipboardCheck, Headset,
   Users, Cpu, Diamond, ShieldCheck, Clock, HeartPulse, DollarSign, Smile,
   HardHat, Calendar, ArrowRight
@@ -11,8 +11,11 @@ import { Link } from 'react-router-dom';
 const coreServices = [
   {
     id: 'hvac',
-    link: '/services/hvac',
-    title: 'HVAC SOLUTIONS',
+    links: [
+      { text: 'HVAC Solutions', path: '/services/hvac' },
+      { text: 'Fire Fighting Solutions', path: '/services/fire' }
+    ],
+    title: 'MECHANICAL SOLUTIONS',
     icon: <Snowflake size={24} strokeWidth={2} />,
     color: 'brand-blue',
     image: 'https://images.unsplash.com/photo-1581092921461-eab62e97a780?q=80&w=1000',
@@ -42,19 +45,19 @@ const coreServices = [
     ]
   },
   {
-    id: 'fire',
-    link: '/services/fire',
-    title: 'FIRE FIGHTING SOLUTIONS',
-    icon: <Flame size={24} strokeWidth={2} />,
+    id: 'phe',
+    link: '/services/phe',
+    title: 'PUBLIC HEALTH ENGINEERING (PHE)',
+    icon: <Droplet size={24} strokeWidth={2} />,
     color: 'brand-blue',
-    image: 'https://images.unsplash.com/photo-1506584067332-9c3fdfa82c9e?q=80&w=1000',
-    description: 'Advanced fire protection systems that ensure safety, compliance, and peace of mind.',
+    image: 'https://images.unsplash.com/photo-1541888086425-d81bb19240f5?q=80&w=1000',
+    description: 'Comprehensive Public Health Engineering solutions for safe, efficient, and sustainable water management.',
     features: [
-      'Fire Alarm Systems', 'Gas Suppression Systems',
-      'Sprinkler Systems', 'Fire Extinguishers',
-      'Hydrant Systems', 'Emergency Lighting',
-      'Fire Pump Systems', 'Fire Safety Audit',
-      'Smoke Detection', 'Annual Maintenance'
+      'Water Supply & Distribution', 'Sewage & Drainage Systems',
+      'Water Treatment (WTP/STP)', 'Rainwater Harvesting',
+      'Leak Detection Tech', 'Pumping & Storage',
+      'Plumbing Design', 'Operation & AMC',
+      'Water Conservation', 'Grey Water Recycling'
     ]
   }
 ];
@@ -90,23 +93,23 @@ const stats = [
 export default function Services() {
   return (
     <div className="pt-20 min-h-screen bg-gray-50/30 overflow-hidden">
-      
+
       {/* 1. Hero Section */}
       <section className="relative w-full h-[500px] md:h-[600px] bg-[#001838]">
         <div className="absolute inset-0">
-          <img 
-            src="/Services-Hero.png" 
-            alt="Services Hero" 
+          <img
+            src="/Services-Hero.png"
+            alt="Services Hero"
             className="w-full h-full object-cover opacity-70"
             onError={(e) => {
-              e.target.onerror = null; 
-              e.target.src="https://images.unsplash.com/photo-1503387762-592deb58ef4e?q=80&w=2000"
+              e.target.onerror = null;
+              e.target.src = "https://images.unsplash.com/photo-1503387762-592deb58ef4e?q=80&w=2000"
             }}
           />
           {/* White Gradient Overlay for Text */}
           <div className="absolute inset-0 bg-gradient-to-r from-white via-white/90 to-transparent w-full md:w-[70%] lg:w-[50%]"></div>
         </div>
-        
+
         {/* Curved Swoosh Bottom */}
         <div className="absolute bottom-0 left-0 w-full overflow-hidden leading-none z-20 translate-y-[1px]">
           <svg className="relative block w-full h-[40px] md:h-[80px]" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
@@ -116,7 +119,7 @@ export default function Services() {
         </div>
 
         <div className="container mx-auto px-6 md:px-12 lg:px-20 h-full relative z-10 flex flex-col justify-center pb-20">
-          <motion.div 
+          <motion.div
             initial={{ opacity: 0, x: -30 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.6 }}
@@ -127,7 +130,7 @@ export default function Services() {
               <span className="text-brand-red">SERVICES</span>
             </h1>
             <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-6">
-              End-to-End Engineering<br/>Solutions You Can Rely On
+              End-to-End Engineering<br />Solutions You Can Rely On
             </h2>
             <p className="text-gray-700 text-lg leading-relaxed">
               VERICON Engineering Services offers a comprehensive range of MEP, HVAC, Electrical, and Fire Fighting solutions designed to meet global standards with precision, quality, and commitment.
@@ -139,7 +142,7 @@ export default function Services() {
       {/* 2. OUR CORE SERVICES */}
       <section className="py-20 bg-white">
         <div className="container mx-auto px-4 md:px-8 lg:px-12">
-          
+
           <div className="text-center mb-16 flex flex-col items-center">
             <h2 className="text-2xl font-bold text-brand-blue tracking-wide uppercase">OUR CORE SERVICES</h2>
             <div className="w-12 h-1 bg-brand-red mt-3"></div>
@@ -147,7 +150,7 @@ export default function Services() {
 
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
             {coreServices.map((service, idx) => (
-              <motion.div 
+              <motion.div
                 key={service.id}
                 initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
@@ -158,7 +161,7 @@ export default function Services() {
                 {/* Card Image */}
                 <div className="h-64 relative">
                   <img src={service.image} alt={service.title} className="w-full h-full object-cover" />
-                  
+
                   {/* Floating Icon */}
                   <div className={`absolute -bottom-8 left-8 w-16 h-16 rounded-full bg-${service.color.replace('text-', '')} text-white flex items-center justify-center border-4 border-white shadow-lg`}>
                     {service.icon}
@@ -171,7 +174,7 @@ export default function Services() {
                   <p className="text-gray-600 text-sm leading-relaxed mb-6">
                     {service.description}
                   </p>
-                  
+
                   {/* Grid of features */}
                   <div className="grid grid-cols-2 gap-x-2 gap-y-3 mb-8 grow">
                     {service.features.map((feature, i) => (
@@ -183,9 +186,14 @@ export default function Services() {
                   </div>
 
                   {/* Learn More Link */}
-                  <Link to={service.link} className={`text-${service.color.replace('text-', '')} font-bold text-sm flex items-center gap-1 hover:opacity-80 transition-opacity`}>
-                    Learn More <ArrowRight size={16} />
-                  </Link>
+                  <div className="mt-auto">
+                    <Link 
+                      to={service.id === 'hvac' ? '/services/mechanical' : service.link} 
+                      className={`text-${service.color.replace('text-', '')} font-bold text-sm flex items-center gap-1 hover:opacity-80 transition-opacity`}
+                    >
+                      Learn More <ArrowRight size={16} />
+                    </Link>
+                  </div>
                 </div>
               </motion.div>
             ))}
@@ -196,7 +204,7 @@ export default function Services() {
       {/* 3. ADDITIONAL SERVICES */}
       <section className="py-16 bg-gray-50/50">
         <div className="container mx-auto px-4 md:px-8 lg:px-12">
-          
+
           <div className="text-center mb-12 flex flex-col items-center">
             <h2 className="text-2xl font-bold text-brand-blue tracking-wide uppercase">ADDITIONAL SERVICES</h2>
             <div className="w-12 h-1 bg-brand-red mt-3"></div>
@@ -204,7 +212,7 @@ export default function Services() {
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {additionalServices.map((service, idx) => (
-              <motion.div 
+              <motion.div
                 key={idx}
                 initial={{ opacity: 0, scale: 0.95 }}
                 whileInView={{ opacity: 1, scale: 1 }}
@@ -234,7 +242,7 @@ export default function Services() {
       <section className="py-12 bg-white">
         <div className="container mx-auto px-4 md:px-8 lg:px-12">
           <div className="bg-[#0B1528] rounded-[2rem] p-8 md:p-12 shadow-2xl">
-            
+
             <div className="text-center mb-12 flex flex-col items-center">
               <h2 className="text-xl font-bold text-white tracking-wide uppercase">WHY CHOOSE VERICON SERVICES?</h2>
               <div className="w-10 h-0.5 bg-brand-red mt-3"></div>
@@ -282,12 +290,12 @@ export default function Services() {
 
       {/* 6. CTA Section */}
       <section className="relative w-full bg-brand-dark min-h-[300px] flex items-center">
-        
+
         {/* Background Image */}
         <div className="absolute inset-0">
-          <img 
-            src="/cta-bg-engineering.png" 
-            alt="Construction Site" 
+          <img
+            src="/cta-bg-engineering.png"
+            alt="Construction Site"
             className="w-full h-full object-cover"
           />
           <div className="absolute inset-0 bg-gradient-to-r from-[#001838] via-[#001838]/90 to-[#001838]/40 md:to-transparent w-full"></div>
@@ -302,7 +310,7 @@ export default function Services() {
             <p className="text-base text-blue-100/90 mb-8 leading-relaxed pr-4">
               Partner with VERICON Engineering Services for reliable, innovative, and end-to-end engineering solutions tailored to your needs.
             </p>
-            
+
             <div className="flex flex-wrap gap-4">
               <Link to="/contact" className="bg-brand-red hover:bg-red-700 text-white px-6 py-3 rounded-lg font-bold transition-colors flex items-center gap-2 text-sm">
                 Get a Quote <ArrowRight size={16} />

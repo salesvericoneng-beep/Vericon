@@ -208,8 +208,26 @@ export default function Contact() {
         </div>
       </section>
 
+      {/* Map Section */}
+      <section className="pb-16">
+        <div className="container mx-auto px-6 md:px-12 lg:px-20">
+          <div className="w-full h-[450px] rounded-[2rem] overflow-hidden shadow-sm border border-gray-100 bg-gray-50/50">
+            <iframe
+              src="https://maps.google.com/maps?q=Awfis%20Ohris%20Tech%20Park,%20Madhapur,%20Hyderabad,%20Telangana&t=&z=15&ie=UTF8&iwloc=&output=embed"
+              width="100%"
+              height="100%"
+              style={{ border: 0 }}
+              allowFullScreen=""
+              loading="lazy"
+              referrerPolicy="no-referrer-when-downgrade"
+              title="Vericon Engineering Office Location"
+            ></iframe>
+          </div>
+        </div>
+      </section>
+
       {/* 3. Bottom Features */}
-      <section className="py-16 pb-24">
+      <section className="pb-24">
         <div className="container mx-auto px-6 md:px-12 lg:px-20">
           <div className="bg-gray-50/50 rounded-3xl p-10 md:p-14 border border-gray-100 text-center">
             

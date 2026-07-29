@@ -69,15 +69,6 @@ export default function Hero() {
                 <div className="w-8 h-[2px] bg-brand-blue"></div>
               </div>
             </motion.div>
-            {/* Card 2 */}
-            <motion.div initial={{ opacity: 0, x: 50 }} animate={{ opacity: 1, x: 0 }} transition={{ duration: 0.5, delay: 0.3 }} className="bg-white/95 backdrop-blur-md rounded-xl p-5 shadow-xl border border-white/50 flex items-center gap-5 w-64 hover:-translate-x-2 transition-transform">
-              <div className="text-brand-red shrink-0"><Settings size={40} strokeWidth={1.5} /></div>
-              <div className="flex flex-col">
-                <span className="font-bold text-brand-red text-[17px] leading-tight">AMC</span>
-                <span className="font-bold text-gray-800 text-[17px] leading-tight mb-2">Support</span>
-                <div className="w-8 h-[2px] bg-brand-red"></div>
-              </div>
-            </motion.div>
             {/* Card 3 */}
             <motion.div initial={{ opacity: 0, x: 50 }} animate={{ opacity: 1, x: 0 }} transition={{ duration: 0.5, delay: 0.4 }} className="bg-white/95 backdrop-blur-md rounded-xl p-5 shadow-xl border border-white/50 flex items-center gap-5 w-64 hover:-translate-x-2 transition-transform">
               <div className="text-brand-blue shrink-0"><ShieldCheck size={40} strokeWidth={1.5} /></div>

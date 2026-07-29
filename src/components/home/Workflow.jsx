@@ -5,10 +5,9 @@ import { motion } from 'framer-motion';
 const steps = [
   { icon: Users, label: 'Consultation' },
   { icon: Search, label: 'Survey &\nAssessment' },
-  { icon: PenTool, label: 'Planning &\nDesign' },
+  { icon: PenTool, label: 'Design &\nPlanning' },
   { icon: Settings, label: 'Execution' },
-  { icon: ClipboardCheck, label: 'Testing &\nVerification' },
-  { icon: ShieldCheck, label: 'Commissioning' },
+  { icon: ClipboardCheck, label: 'Testing &\nCommissioning' },
   { icon: Handshake, label: 'Handover' },
   { icon: Headset, label: 'AMC &\nSupport' }
 ];

@@ -39,7 +39,7 @@ export default function Hero() {
               transition={{ duration: 0.8, delay: 0.1 }}
               className="text-gray-700 max-w-xl mb-[4%] lg:mb-8 font-medium text-[clamp(8px,1.5vw,18px)] leading-[1.3]"
             >
-              Delivering MEP, HVAC, Electrical and Fire Fighting Engineering Solutions with Global Standards.
+              Delivering MEP solutions with global standards.
             </motion.p>
             
             <motion.div 

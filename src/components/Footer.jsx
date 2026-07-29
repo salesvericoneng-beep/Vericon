@@ -36,7 +36,7 @@ export default function Footer() {
               {[
                 { name: 'Home', path: '/' },
                 { name: 'About Us', path: '/about' },
-                { name: 'Services', path: '/services' },
+                { name: 'Solutions', path: '/services' },
                 { name: 'Why Vericon', path: '/why-vericon' },
                 { name: 'Contact Us', path: '/contact' }
               ].map((link) => (
@@ -69,7 +69,7 @@ export default function Footer() {
 
           {/* Column 4: Industries */}
           <div className="col-span-1 lg:px-8 lg:border-r border-gray-700/50">
-            <h4 className="font-bold text-white mb-6 uppercase tracking-wider text-xs">INDUSTRIES</h4>
+            <h4 className="font-bold text-white mb-6 uppercase tracking-wider text-xs">Segments</h4>
             <ul className="space-y-3">
               {[
                 'Commercial',

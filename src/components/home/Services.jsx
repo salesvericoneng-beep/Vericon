@@ -7,7 +7,7 @@ const services = [
   {
     id: 'hvac',
     image: 'https://images.unsplash.com/photo-1621259599507-6a7f0e34ed6a?q=80&w=600',
-    color: 'bg-brand-blue',
+    hoverBg: 'hover:bg-brand-blue',
     icon: Snowflake,
     title: 'MECHANICAL SOLUTIONS',
     description: 'We provide advanced HVAC solutions for commercial, industrial and institutional projects with a focus on energy efficiency and performance.',
@@ -29,7 +29,7 @@ const services = [
   {
     id: 'electrical',
     image: 'https://images.unsplash.com/photo-1544724569-5f546fd6f2b6?q=80&w=600',
-    color: 'bg-brand-red',
+    hoverBg: 'hover:bg-brand-red',
     icon: Zap,
     title: 'ELECTRICAL SOLUTIONS',
     description: 'Reliable electrical systems designed and delivered to power your projects safely and efficiently.',
@@ -48,7 +48,7 @@ const services = [
   {
     id: 'phe',
     image: 'https://images.unsplash.com/photo-1541888086425-d81bb19240f5?q=80&w=600',
-    color: 'bg-brand-blue',
+    hoverBg: 'hover:bg-brand-blue',
     icon: Droplet,
     title: 'PUBLIC HEALTH ENGINEERING',
     description: 'Comprehensive PHE solutions ensuring safe, efficient management of water supply and drainage.',
@@ -93,35 +93,35 @@ export default function Services() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: index * 0.1 }}
-              className={`${service.color} rounded-xl overflow-hidden text-white shadow-xl flex flex-col h-full`}
+              className={`bg-white ${service.hoverBg} group rounded-xl overflow-hidden shadow-xl flex flex-col h-full transition-colors duration-500`}
             >
               {/* Image at the top */}
               <div className="relative h-48 w-full overflow-hidden">
                 <img
                   src={service.image}
                   alt={service.title}
-                  className="w-full h-full object-cover opacity-80 hover:scale-105 transition-transform duration-700"
+                  className="w-full h-full object-cover opacity-80 group-hover:scale-105 transition-transform duration-700"
                 />
                 {/* Icon badge over image */}
                 <div className="absolute bottom-3 right-3 w-12 h-12 rounded-full border border-white/40 bg-black/30 backdrop-blur-sm flex items-center justify-center">
-                  <service.icon size={22} />
+                  <service.icon size={22} className="text-white" />
                 </div>
               </div>
 
               {/* Card Content */}
               <div className="p-8 flex flex-col flex-grow">
-                <h4 className="text-xl font-bold font-poppins mb-4 tracking-wide">{service.title}</h4>
-                <p className="text-white/90 text-sm leading-relaxed mb-6">
+                <h4 className="text-xl font-bold font-poppins mb-4 tracking-wide text-gray-900 group-hover:text-white transition-colors duration-500">{service.title}</h4>
+                <p className="text-gray-600 group-hover:text-white/90 text-sm leading-relaxed mb-6 transition-colors duration-500">
                   {service.description}
                 </p>
 
                 {/* Red line divider inside the card */}
-                <div className="w-12 h-0.5 bg-white/40 mb-6"></div>
+                <div className="w-12 h-0.5 bg-gray-300 group-hover:bg-white/40 mb-6 transition-colors duration-500"></div>
 
                 <ul className="space-y-2.5 mb-10 flex-grow">
                   {service.features.map((feature, i) => (
-                    <li key={i} className="flex items-start gap-3 text-sm text-white/90">
-                      <Check size={15} className="mt-0.5 shrink-0" />
+                    <li key={i} className="flex items-start gap-3 text-sm text-gray-700 group-hover:text-white/90 transition-colors duration-500">
+                      <Check size={15} className={`mt-0.5 shrink-0 ${service.id === 'electrical' ? 'text-brand-red' : 'text-brand-blue'} group-hover:text-white transition-colors duration-500`} />
                       <span>{feature}</span>
                     </li>
                   ))}
@@ -130,7 +130,7 @@ export default function Services() {
                 <div className="mt-auto">
                   <Link 
                     to={service.id === 'hvac' ? '/services/mechanical' : service.link}
-                    className="inline-flex items-center gap-2 font-semibold text-sm hover:translate-x-2 transition-transform w-fit text-white"
+                    className={`inline-flex items-center gap-2 font-semibold text-sm hover:translate-x-2 transition-all duration-300 w-fit ${service.id === 'electrical' ? 'text-brand-red' : 'text-brand-blue'} group-hover:text-white`}
                   >
                     {service.linkText || 'Learn More'} <ArrowRight size={16} />
                   </Link>

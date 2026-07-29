@@ -11,7 +11,7 @@ const contactInfo = [
     icon: <MapPin size={24} className="text-brand-red" strokeWidth={1.5} />, 
     title: 'ADDRESS', 
     details: [
-      'Ground, 1st and 2nd floor, Plot no 13, Survey 64/2,', 
+      'Ground floor, Plot no 13, Survey 64/2,', 
       '(New) Software Units Layout, Awfis Ohris Tech Park,', 
       'Madhapur, HITEC City, Hyderabad, Telangana 500081'
     ]

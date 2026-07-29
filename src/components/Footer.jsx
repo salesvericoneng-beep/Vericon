@@ -94,7 +94,7 @@ export default function Footer() {
               <li className="flex items-start gap-3">
                 <MapPin size={16} className="text-gray-400 shrink-0 mt-0.5" />
                 <span className="text-gray-400 text-xs font-medium leading-relaxed">
-                  Ground, 1st and 2nd floor, Plot no 13, Survey 64/2,<br/>
+                  Ground floor, Plot no 13, Survey 64/2,<br/>
                   (New) Software Units Layout, Awfis Ohris Tech Park,<br/>
                   Madhapur, HITEC City, Hyderabad, Telangana 500081
                 </span>

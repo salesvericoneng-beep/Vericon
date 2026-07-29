@@ -73,7 +73,7 @@ export default function About() {
                 </div>
                 <h4 className="font-bold text-gray-900 mb-2">Our Values</h4>
                 <p className="text-sm text-gray-600 leading-relaxed">
-                  Integrity, Quality, Safety, Innovation and Customer Satisfaction.
+                  Integrity, Quality, Safety, Innovation and long term relationship.
                 </p>
               </div>
             </div>

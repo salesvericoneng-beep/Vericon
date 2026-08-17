@@ -11,9 +11,9 @@ const contactInfo = [
     icon: <MapPin size={24} className="text-brand-red" strokeWidth={1.5} />, 
     title: 'ADDRESS', 
     details: [
-      'Ground floor, Plot no 13, Survey 64/2,', 
-      '(New) Software Units Layout, Awfis Ohris Tech Park,', 
-      'Madhapur, HITEC City, Hyderabad, Telangana 500081'
+      'Plot no 13, Ground floor, Survey 64/2,',
+      '(New) Software Units Layout, Awfis Ohris Tech Park,',
+      'Madhapur, HITEC City, Hyderabad, Telangana 500081.'
     ]
   },
   { 
@@ -31,11 +31,6 @@ const contactInfo = [
     title: 'WEBSITE', 
     details: ['www.vericon.in']
   },
-  { 
-    icon: <Clock size={24} className="text-brand-red" strokeWidth={1.5} />, 
-    title: 'WORKING HOURS', 
-    details: ['Mon - Sat: 9:00 AM - 6:00 PM', 'Sunday: Closed']
-  }
 ];
 
 const features = [
@@ -50,31 +45,31 @@ export default function Contact() {
     <div className="pt-20 min-h-screen bg-white">
       
       {/* 1. Hero Section */}
-      <section className="relative w-full h-[400px] flex flex-col justify-center bg-gray-100">
-        <div className="absolute inset-0">
+      <section className="relative w-full overflow-hidden bg-white">
+        <div className="relative w-full h-auto lg:h-[75vh]">
           <img 
-            src="https://images.unsplash.com/photo-1581092160562-40aa08e78837?q=80&w=2000" 
-            alt="Industrial Refinery at Sunset" 
-            className="w-full h-full object-cover"
+            src="/Contact_hero.jpg" 
+            alt="Contact Us" 
+            className="w-full h-full lg:object-cover lg:object-center object-contain block"
           />
-          <div className="absolute inset-0 bg-gradient-to-r from-white via-white/90 to-transparent w-full md:w-[60%]"></div>
-        </div>
+          <div className="absolute inset-0 bg-gradient-to-r from-white/95 via-white/80 to-transparent w-[90%] md:w-[70%] lg:w-[50%]"></div>
 
-        <div className="container mx-auto px-6 md:px-12 lg:px-20 relative z-10">
-          <motion.div 
-            initial={{ opacity: 0, x: -20 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.5 }}
-            className="max-w-xl"
-          >
-            <h1 className="text-5xl md:text-6xl font-extrabold text-brand-dark mb-4">CONTACT US</h1>
-            <h2 className="text-2xl md:text-3xl font-bold text-brand-dark mb-6 leading-tight">
-              We're Here to Help You Build Safer, Smarter & Stronger Solutions.
-            </h2>
-            <p className="text-gray-700 font-medium leading-relaxed">
-              Have a project in mind or need more information about our services? Reach out to our team and we'll get back to you as soon as possible.
-            </p>
-          </motion.div>
+          <div className="absolute inset-0 z-10 container mx-auto px-4 sm:px-8 lg:px-20 xl:px-24 flex flex-col justify-center">
+            <motion.div 
+              initial={{ opacity: 0, x: -20 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.5 }}
+              className="max-w-xl"
+            >
+              <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold text-brand-dark mb-2 lg:mb-4">CONTACT US</h1>
+              <h2 className="text-lg sm:text-xl md:text-2xl lg:text-3xl font-bold text-brand-dark mb-3 lg:mb-6 leading-tight">
+                We're Here to Help You Build Safer, Smarter & Stronger Solutions.
+              </h2>
+              <p className="text-gray-700 text-xs sm:text-sm md:text-base font-medium leading-relaxed">
+                Have a project in mind or need more information about our services? Reach out to our team and we'll get back to you as soon as possible.
+              </p>
+            </motion.div>
+          </div>
         </div>
       </section>
 
@@ -213,7 +208,7 @@ export default function Contact() {
         <div className="container mx-auto px-6 md:px-12 lg:px-20">
           <div className="w-full h-[450px] rounded-[2rem] overflow-hidden shadow-sm border border-gray-100 bg-gray-50/50">
             <iframe
-              src="https://maps.google.com/maps?q=Awfis%20Ohris%20Tech%20Park,%20Madhapur,%20Hyderabad,%20Telangana&t=&z=15&ie=UTF8&iwloc=&output=embed"
+              src="https://maps.google.com/maps?ll=17.437462,78.384661&z=15&t=m&hl=en&output=embed"
               width="100%"
               height="100%"
               style={{ border: 0 }}

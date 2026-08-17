@@ -1,6 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { Target, Eye, Users, ShieldCheck, Award, Lightbulb, Handshake, Building2, HardHat, Calendar, ThumbsUp } from 'lucide-react';
+import { Target, Eye, Users, ShieldCheck, Award, Lightbulb, Handshake, Building2, HardHat, Calendar, ThumbsUp, TrendingUp } from 'lucide-react';
 import CTA from '../components/home/CTA';
 
 export default function About() {
@@ -47,7 +47,6 @@ export default function About() {
                 transition={{ duration: 0.8, delay: 0.1 }}
                 className="text-gray-700 max-w-xl font-medium text-[clamp(8px,1.5vw,18px)] leading-[1.3]"
               >
-                Vericon Engineering Services is a trusted provider of MEP, HVAC, Electrical and Fire Fighting engineering solutions. We deliver end-to-end services with a commitment to quality, safety and timely delivery.
               </motion.p>
             </div>
           </div>
@@ -76,7 +75,7 @@ export default function About() {
             >
               <div className="rounded-3xl overflow-hidden shadow-2xl relative">
                 <img 
-                  src="/Picture1.jpg" 
+                  src="/Picture2.jpg" 
                   alt="Engineer" 
                   className="w-full h-[300px] sm:h-[400px] md:h-[500px] object-cover"
                 />
@@ -103,7 +102,8 @@ export default function About() {
               
               <div className="mt-2 bg-blue-50 border-l-4 border-brand-blue p-6 lg:p-8 rounded-r-2xl shadow-sm">
                 <p className="text-gray-900 text-lg lg:text-xl font-medium leading-relaxed">
-                  <strong className="text-brand-blue font-bold">VERICON Engineering Private Limited</strong> is a leading provider of HVAC, Electrical, Fire Fighting and MEP solutions. We deliver end-to-end engineering services with a commitment to quality, safety and timely delivery.
+                  <strong className="text-brand-blue font-bold">VERICON Engineering Private Limited</strong> is a leading provider of HVAC, Electrical, Fire Fighting and MEP solutions.
+                  <p>We deliver end-to-end engineering services with a commitment to quality, safety and timely delivery.</p>
                 </p>
               </div>
             </motion.div>
@@ -221,6 +221,107 @@ export default function About() {
             </div>
 
           </motion.div>
+        </div>
+      </section>
+
+      {/* Vision and Mission Split Section */}
+      <section className="py-24 bg-white relative overflow-hidden">
+        <div className="container mx-auto px-4 md:px-8 lg:px-16 max-w-[1400px]">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-24 relative z-10">
+            
+            {/* Left Column: VISION */}
+            <div className="flex flex-col">
+              <h3 className="text-brand-red font-bold uppercase tracking-widest text-sm mb-3">OUR VISION</h3>
+              <div className="flex w-12 h-[3px] mb-8">
+                <div className="w-1/2 h-full bg-brand-red"></div>
+                <div className="w-1/2 h-full bg-brand-blue"></div>
+              </div>
+              <h2 className="text-4xl md:text-5xl font-bold font-poppins leading-tight tracking-tight mb-8">
+                <span className="text-brand-blue block mb-2">Shaping the Future.</span>
+                <span className="text-brand-red block">Engineering Lasting Value.</span>
+              </h2>
+              <div className="flex w-12 h-[3px] mb-8">
+                <div className="w-1/2 h-full bg-brand-red"></div>
+                <div className="w-1/2 h-full bg-brand-blue"></div>
+              </div>
+              <p className="text-gray-700 text-lg leading-relaxed mb-12 max-w-md font-medium">
+                We envision a future where engineering creates smarter, safer and more sustainable environments that empower communities and enrich generations to come.
+              </p>
+              <div className="w-full relative rounded-tr-3xl overflow-hidden shadow-2xl flex-grow min-h-[400px] mt-auto">
+                <img src="/building.jpg" alt="Modern Building" className="absolute inset-0 w-full h-full object-cover" />
+              </div>
+            </div>
+
+            {/* Right Column: MISSION & VALUES */}
+            <div className="flex flex-col">
+              <h3 className="text-brand-red font-bold uppercase tracking-widest text-sm mb-3">OUR MISSION</h3>
+              <div className="flex w-12 h-[3px] mb-8">
+                <div className="w-1/2 h-full bg-brand-blue"></div>
+                <div className="w-1/2 h-full bg-brand-red"></div>
+              </div>
+              <h2 className="text-4xl md:text-5xl font-bold font-poppins leading-tight tracking-tight mb-6">
+                <span className="text-brand-blue block mb-2">Engineering with Integrity.</span>
+                <span className="text-brand-red block">Delivering with Impact.</span>
+              </h2>
+              <p className="text-gray-700 text-lg leading-relaxed mb-12 font-medium">
+                We are committed to engineering excellence through integrity, innovation and collaboration to deliver measurable impact for our clients, our people and the world around us.
+              </p>
+
+              {/* Values List */}
+              <div className="flex flex-col space-y-8">
+                {/* 1 */}
+                <div className="flex items-start gap-6 border-b border-gray-100 pb-8">
+                  <div className="w-16 h-16 shrink-0 rounded-full bg-white shadow-md border border-gray-100 flex items-center justify-center text-brand-blue">
+                    <Target size={32} strokeWidth={1.5} />
+                  </div>
+                  <div>
+                    <h4 className="text-brand-dark font-bold text-lg mb-2 uppercase tracking-wide">ENGINEERING EXCELLENCE</h4>
+                    <p className="text-gray-600 font-medium leading-relaxed">Technical expertise, precision and dependable execution in everything we do.</p>
+                  </div>
+                </div>
+                {/* 2 */}
+                <div className="flex items-start gap-6 border-b border-gray-100 pb-8">
+                  <div className="w-16 h-16 shrink-0 rounded-full bg-white shadow-md border border-gray-100 flex items-center justify-center text-brand-red">
+                    <TrendingUp size={32} strokeWidth={1.5} />
+                  </div>
+                  <div>
+                    <h4 className="text-brand-dark font-bold text-lg mb-2 uppercase tracking-wide">LASTING VALUE</h4>
+                    <p className="text-gray-600 font-medium leading-relaxed">Delivering efficient, reliable and future-ready solutions that create long-term value.</p>
+                  </div>
+                </div>
+                {/* 3 */}
+                <div className="flex items-start gap-6 border-b border-gray-100 pb-8">
+                  <div className="w-16 h-16 shrink-0 rounded-full bg-white shadow-md border border-gray-100 flex items-center justify-center text-brand-blue">
+                    <ShieldCheck size={32} strokeWidth={1.5} />
+                  </div>
+                  <div>
+                    <h4 className="text-brand-dark font-bold text-lg mb-2 uppercase tracking-wide">QUALITY & SAFETY</h4>
+                    <p className="text-gray-600 font-medium leading-relaxed">Upholding uncompromising standards of quality, safety and integrity.</p>
+                  </div>
+                </div>
+                {/* 4 */}
+                <div className="flex items-start gap-6 border-b border-gray-100 pb-8">
+                  <div className="w-16 h-16 shrink-0 rounded-full bg-white shadow-md border border-gray-100 flex items-center justify-center text-green-600">
+                    <Lightbulb size={32} strokeWidth={1.5} />
+                  </div>
+                  <div>
+                    <h4 className="text-brand-dark font-bold text-lg mb-2 uppercase tracking-wide">INNOVATION & SUSTAINABILITY</h4>
+                    <p className="text-gray-600 font-medium leading-relaxed">Embracing innovation and sustainable practices to build a better, smarter tomorrow.</p>
+                  </div>
+                </div>
+                {/* 5 */}
+                <div className="flex items-start gap-6">
+                  <div className="w-16 h-16 shrink-0 rounded-full bg-white shadow-md border border-gray-100 flex items-center justify-center text-brand-blue">
+                    <Handshake size={32} strokeWidth={1.5} />
+                  </div>
+                  <div>
+                    <h4 className="text-brand-dark font-bold text-lg mb-2 uppercase tracking-wide">TRUSTED PARTNERSHIPS</h4>
+                    <p className="text-gray-600 font-medium leading-relaxed">Building long-term relationships through transparency, trust and collaboration.</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
       </section>
 

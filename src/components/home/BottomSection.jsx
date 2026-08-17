@@ -4,27 +4,22 @@ import { motion } from 'framer-motion';
 const directors = [
   {
     name: 'Director 1',
-    role: 'Managing Director',
-    image: 'https://images.unsplash.com/photo-1560250097-0b93528c311a?q=80&w=400',
-    description: 'Visionary leader with over 20 years of experience in engineering and project management.'
+    role: 'VIVEK REDDY',
+    image: '/1.jpeg',
   },
   {
     name: 'Director 2',
-    role: 'Technical Director',
-    image: 'https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?q=80&w=400',
-    description: 'Expert in technical operations, ensuring the highest standards of quality and safety in every project.'
+    role: 'EHTESHAM AHMAD',
+    image: '/2.jpeg',
   },
   {
     name: 'Director 3',
-    role: 'Operations Director',
-    image: 'https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?q=80&w=400',
-    description: 'Streamlines operational workflows to deliver complex solutions on time and within budget.'
-  },
+    role: 'SHAIK ABDUL MUJEEB',
+    image: '/3.jpeg',  },
   {
     name: 'Director 4',
-    role: 'Finance Director',
-    image: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=400',
-    description: 'Strategic financial planner driving sustainable growth, investments and robust business practices.'
+    role: 'MOHD MOIZUDDIN',
+    image: '/4.jpeg',
   }
 ];
 

@@ -6,7 +6,7 @@ import { Link } from 'react-router-dom';
 const services = [
   {
     id: 'mechanical',
-    image: 'https://images.unsplash.com/photo-1621259599507-6a7f0e34ed6a?q=80&w=600',
+    image: '/mechanical.jpg',
     icon: Settings,
     color: 'text-[#003B8F]',
     borderColor: 'border-[#003B8F]',
@@ -18,7 +18,7 @@ const services = [
   },
   {
     id: 'electrical',
-    image: 'https://images.unsplash.com/photo-1544724569-5f546fd6f2b6?q=80&w=600',
+    image: '/electrical.jpg',
     icon: Zap,
     color: 'text-[#CE1126]',
     borderColor: 'border-[#CE1126]',
@@ -30,7 +30,7 @@ const services = [
   },
   {
     id: 'fire',
-    image: 'https://images.unsplash.com/photo-1582298538104-fe2e74cb07f2?q=80&w=600',
+    image: '/fire.jpg',
     icon: Flame,
     color: 'text-[#1E3A5F]',
     borderColor: 'border-[#1E3A5F]',
@@ -42,7 +42,7 @@ const services = [
   },
   {
     id: 'phe',
-    image: 'https://images.unsplash.com/photo-1541888086425-d81bb19240f5?q=80&w=600',
+    image: '/phe.jpg',
     icon: Droplet,
     color: 'text-[#1B7042]',
     borderColor: 'border-[#1B7042]',
@@ -61,14 +61,14 @@ export default function Services() {
         
         {/* Header */}
         <div className="text-center mb-16 max-w-4xl mx-auto">
-          <h3 className="text-[#003B8F] font-bold uppercase tracking-wider text-sm mb-4">OUR ENGINEERING SERVICES</h3>
-          <h2 className="text-4xl md:text-5xl font-bold font-poppins text-gray-900 mb-6">
-            Integrated Engineering. <span className="text-[#CE1126]">Built for Performance.</span>
+          <h3 className="text-brand-blue font-bold uppercase tracking-wider text-sm mb-4">OUR ENGINEERING SERVICES</h3>
+          <h2 className="text-4xl md:text-5xl font-bold font-poppins text-brand-dark mb-6">
+            Integrated Engineering. <br className="md:hidden" /><span className="text-brand-red">Built for Performance.</span>
           </h2>
           {/* Small Divider */}
           <div className="w-12 h-1 mx-auto flex mb-8">
-            <div className="w-1/2 h-full bg-[#CE1126]"></div>
-            <div className="w-1/2 h-full bg-[#003B8F]"></div>
+            <div className="w-1/2 h-full bg-brand-red"></div>
+            <div className="w-1/2 h-full bg-brand-blue"></div>
           </div>
           <p className="text-gray-600 text-lg">
             VERICON delivers end-to-end MEP and public health engineering solutions that combine expertise, innovation and reliability to create sustainable spaces and stronger communities.
@@ -93,7 +93,7 @@ export default function Services() {
               ></div>
 
               {/* Image */}
-              <div className={`relative h-48 w-full border-b-4 ${service.borderColor}`}>
+              <div className={`relative h-64 w-full border-b-4 ${service.borderColor}`}>
                 <img
                   src={service.image}
                   alt={service.titleLine1}

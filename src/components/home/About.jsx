@@ -36,27 +36,31 @@ export default function About() {
               Engineering Solutions<br/>That Build a Better Tomorrow
             </h2>
             
-            <p className="text-gray-600 text-lg mb-10 leading-relaxed font-medium">
-              VERICON Engineering Private Limited is a leading provider of HVAC, Electrical, Fire Fighting and MEP solutions. We deliver end-to-end engineering services with a commitment to quality, safety and timely delivery.
-            </p>
+            <ul className="text-gray-600 text-lg mb-10 leading-relaxed font-medium list-disc pl-5 marker:text-brand-red space-y-3">
+              <li><strong>VERICON Engineering Private Limited</strong> is a trusted engineering partner delivering integrated MEP solutions across diverse projects and industries.</li>
+              <li>We combine technical expertise, quality-driven execution and a strong commitment to safety, reliability and timely delivery to create lasting value for our clients.</li>
+            </ul>
 
-            {/* Vision, Mission, Values Grid */}
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-4 xl:gap-6 mb-10 items-stretch">
+            {/* Vision, Mission Grid */}
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-10">
               {/* Vision */}
               <motion.div 
                 initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.5, delay: 0.1 }}
-                className="flex flex-col items-start text-left bg-white p-5 xl:p-6 rounded-2xl border border-gray-100 shadow-sm hover:shadow-[0_15px_40px_-10px_rgba(0,87,184,0.15)] hover:border-brand-blue/30 hover:-translate-y-2 transition-all duration-300 h-full"
+                className="flex flex-col items-start text-left"
               >
-                <div className="text-brand-blue mb-3 bg-blue-50 p-2.5 rounded-xl">
-                  <Eye size={28} strokeWidth={1.5} />
+                <h4 className="text-brand-red font-bold uppercase text-xs tracking-widest mb-2">OUR VISION</h4>
+                <div className="flex w-10 h-[3px] mb-4">
+                  <div className="w-1/2 h-full bg-brand-red"></div>
+                  <div className="w-1/2 h-full bg-brand-blue"></div>
                 </div>
-                <h4 className="font-bold text-gray-900 mb-2 text-base">Our Vision</h4>
-                <p className="text-xs xl:text-sm text-gray-600 leading-relaxed">
-                  To be a trusted engineering partner, recognized for excellence, innovation and reliability in delivering high-performance MEP solutions.
-                </p>
+                <h3 className="text-xl lg:text-2xl font-bold font-poppins leading-tight mb-3 tracking-tight">
+                  <span className="text-brand-blue block">Shaping the Future.</span>
+                  <span className="text-brand-red block">Engineering Lasting Value.</span>
+                </h3>
+                
               </motion.div>
 
               {/* Mission */}
@@ -65,15 +69,17 @@ export default function About() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.5, delay: 0.2 }}
-                className="flex flex-col items-start text-left bg-white p-5 xl:p-6 rounded-2xl border border-gray-100 shadow-sm hover:shadow-[0_15px_40px_-10px_rgba(206,17,38,0.15)] hover:border-brand-red/30 hover:-translate-y-2 transition-all duration-300 h-full"
+                className="flex flex-col items-start text-left"
               >
-                <div className="text-brand-red mb-3 bg-red-50 p-2.5 rounded-xl">
-                  <Target size={28} strokeWidth={1.5} />
+                <h4 className="text-brand-red font-bold uppercase text-xs tracking-widest mb-2">OUR MISSION</h4>
+                <div className="flex w-10 h-[3px] mb-4">
+                  <div className="w-1/2 h-full bg-brand-blue"></div>
+                  <div className="w-1/2 h-full bg-brand-red"></div>
                 </div>
-                <h4 className="font-bold text-gray-900 mb-2 text-base">Our Mission</h4>
-                <p className="text-xs xl:text-sm text-gray-600 leading-relaxed">
-                  To deliver engineering excellence through innovative solutions, dependable execution and an unwavering commitment to quality, safety and customer satisfaction.
-                </p>
+                <h3 className="text-xl lg:text-2xl font-bold font-poppins leading-tight mb-3 tracking-tight">
+                  <span className="text-brand-blue block">Engineering with Integrity.</span>
+                  <span className="text-brand-red block">Delivering with Impact.</span>
+                </h3>
               </motion.div>
 
               {/* Values */}
@@ -82,15 +88,16 @@ export default function About() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.5, delay: 0.3 }}
-                className="flex flex-col items-start text-left bg-white p-5 xl:p-6 rounded-2xl border border-gray-100 shadow-sm hover:shadow-[0_15px_40px_-10px_rgba(0,87,184,0.15)] hover:border-brand-blue/30 hover:-translate-y-2 transition-all duration-300 h-full"
+                className="flex flex-col items-start text-left md:col-span-2 pt-2"
               >
-                <div className="text-brand-blue mb-3 bg-blue-50 p-2.5 rounded-xl">
-                  <Diamond size={28} strokeWidth={1.5} />
+                <h4 className="text-brand-red font-bold uppercase text-xs tracking-widest mb-2">OUR VALUES</h4>
+                <div className="flex w-10 h-[3px] mb-4">
+                  <div className="w-1/2 h-full bg-brand-red"></div>
+                  <div className="w-1/2 h-full bg-brand-blue"></div>
                 </div>
-                <h4 className="font-bold text-gray-900 mb-2 text-base">Our Values</h4>
-                <p className="text-xs xl:text-sm text-gray-600 leading-relaxed font-medium leading-[1.6]">
-                  Trust • Integrity • Excellence • Safety • Innovation • Commitment • Partnership
-                </p>
+                <h3 className="text-lg lg:text-xl font-bold font-poppins leading-relaxed tracking-tight text-brand-blue">
+                  Trust <span className="text-brand-red mx-2">•</span> Integrity <span className="text-brand-red mx-2">•</span> Excellence <span className="text-brand-red mx-2">•</span> Safety <span className="text-brand-red mx-2">•</span> Innovation <span className="text-brand-red mx-2">•</span> Accountability <span className="text-brand-red mx-2">•</span> Partnership
+                </h3>
               </motion.div>
             </div>
 

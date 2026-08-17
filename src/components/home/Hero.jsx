@@ -49,7 +49,7 @@ export default function Hero() {
               className="flex flex-col sm:flex-row items-start sm:items-center gap-[clamp(4px,1vw,16px)] mb-[5%] lg:mb-16"
             >
               <Link to="/services" className="bg-brand-blue text-white rounded font-semibold flex items-center justify-center transition-colors px-[clamp(8px,2vw,32px)] py-[clamp(4px,1vw,12px)] text-[clamp(7px,1.2vw,16px)] gap-[clamp(2px,0.5vw,8px)] shadow-md hover:bg-blue-700">
-                Explore Services <ArrowRight className="w-[clamp(8px,1.5vw,18px)] h-[clamp(8px,1.5vw,18px)]" />
+                Explore our Solutions <ArrowRight className="w-[clamp(8px,1.5vw,18px)] h-[clamp(8px,1.5vw,18px)]" />
               </Link>
               <Link to="/contact" className="bg-white text-gray-800 border border-gray-300 rounded font-semibold flex items-center justify-center transition-colors px-[clamp(8px,2vw,32px)] py-[clamp(4px,1vw,12px)] text-[clamp(7px,1.2vw,16px)] gap-[clamp(2px,0.5vw,8px)] shadow-sm hover:bg-gray-50">
                 Contact Us <ArrowRight className="w-[clamp(8px,1.5vw,18px)] h-[clamp(8px,1.5vw,18px)]" />

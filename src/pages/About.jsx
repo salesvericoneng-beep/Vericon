@@ -22,7 +22,7 @@ export default function About() {
           <div className="absolute inset-0 bg-gradient-to-r from-white/95 via-white/80 to-transparent w-[90%] md:w-[70%] lg:w-[50%]"></div>
 
           {/* Absolute Overlay Container */}
-          <div className="absolute inset-0 z-10 container mx-auto px-4 sm:px-8 lg:px-20 xl:px-24 pt-4 lg:pt-[80px]">
+          <div className="absolute inset-0 z-10 container mx-auto px-4 sm:px-8 lg:px-20 xl:px-24 pt-4 lg:pt-[140px]">
             
             {/* Left Column - Content (Scaled dynamically) */}
             <div className="w-[65%] sm:w-[55%] lg:w-1/2 h-full flex flex-col justify-center pb-[5%] lg:pb-[15%]">
@@ -76,7 +76,7 @@ export default function About() {
             >
               <div className="rounded-3xl overflow-hidden shadow-2xl relative">
                 <img 
-                  src="https://images.unsplash.com/photo-1581094288338-2314dddb7ece?q=80&w=1000" 
+                  src="/Picture1.jpg" 
                   alt="Engineer" 
                   className="w-full h-[300px] sm:h-[400px] md:h-[500px] object-cover"
                 />
@@ -197,7 +197,7 @@ export default function About() {
                 <Target size={40} strokeWidth={1.5} />
               </div>
               <p className="text-blue-100/90 leading-relaxed">
-                To deliver engineering excellence through innovative solutions, superior quality and unmatched service.
+                To deliver engineering excellence through innovative solutions, dependable execution and an unwavering commitment to quality, safety and customer satisfaction.
               </p>
             </div>
 
@@ -208,7 +208,7 @@ export default function About() {
                 <Eye size={40} strokeWidth={1.5} />
               </div>
               <p className="text-blue-100/90 leading-relaxed">
-                To be a globally trusted engineering partner known for innovation, quality and reliability.
+                To be a trusted engineering partner, recognized for excellence, innovation and reliability in delivering high-performance MEP solutions.
               </p>
             </div>
 

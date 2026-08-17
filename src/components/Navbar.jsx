@@ -53,7 +53,7 @@ export default function Navbar() {
     >
       <div className="container mx-auto px-4 md:px-6 flex items-center justify-between">
         {/* Logo */}
-        <Link to="/" className="flex items-center h-10 md:h-12 ml-4 md:ml-8">
+        <Link to="/" className="flex items-center h-12 md:h-20 ml-4 md:ml-8">
           <img src="/LOGO.png" alt="Vericon Engineering Services" className="h-full object-contain" />
         </Link>
 

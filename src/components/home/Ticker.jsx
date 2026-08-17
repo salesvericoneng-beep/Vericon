@@ -2,22 +2,28 @@ import React from 'react';
 import { motion } from 'framer-motion';
 
 const tickerItems = [
+  "Trusted HVAC Services",
+  "Innovative Electrical Services",
+  "Fire Fighting Services",
   "Delivering Excellence in MEP Projects",
-  "Trusted HVAC Solutions",
-  "24/7 AMC Support Available",
-  "Global Standards in Fire Fighting Systems",
-  "Innovative Electrical Engineering",
-  "Comprehensive Industrial Solutions",
-  "Expert Project Management"
+  "24/7 AMC Support",
+  "Energy Optimization Services",
+  "Expert Project Management",
+  "Quality Assurance & Testing",
+  "Sustainable & Green Building Solutions",
+  "Comprehensive AMC & Retrofit Services",
+  "Quality - Safety - Reliability",
+  "Building Long-Term Partnerships"
 ];
 
 export default function Ticker() {
   return (
     <div className="bg-[#0B121F] border-y border-gray-800 text-white py-3 overflow-hidden flex whitespace-nowrap">
       <motion.div
+        key="ticker-animation-v3"
         className="flex gap-12 items-center w-max"
         animate={{ x: ["0%", "-50%"] }}
-        transition={{ repeat: Infinity, ease: "linear", duration: 30 }}
+        transition={{ repeat: Infinity, ease: "linear", duration: 250 }}
       >
         {/* Duplicate items for seamless looping */}
         {[...tickerItems, ...tickerItems, ...tickerItems, ...tickerItems].map((item, index) => (

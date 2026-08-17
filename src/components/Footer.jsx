@@ -13,7 +13,7 @@ export default function Footer() {
           <div className="col-span-2 lg:col-span-1 pr-6 lg:border-r border-gray-700/50">
             <Link 
               to="/" 
-              className="inline-flex items-center h-12 mb-6 hover:opacity-90 transition-opacity bg-white px-2 py-1 rounded"
+              className="inline-flex items-center h-12 md:h-20 mb-6 hover:opacity-90 transition-opacity bg-white px-2 py-1 rounded"
             >
               <img src="/LOGO.png" alt="Vericon Engineering Services" className="h-full object-contain" />
             </Link>

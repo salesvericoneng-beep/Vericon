@@ -101,12 +101,9 @@ export default function About() {
                 <span className="text-brand-red block">Delivering Trust.</span>
               </h2>
               
-              <div className="space-y-6 text-gray-700 text-lg">
-                <p>
-                  Vericon Engineering Services is a leading engineering company specialising in Mechanical, Electrical, and Plumbing (MEP) solutions for commercial, industrial, residential, healthcare, hospitality and infrastructure projects.
-                </p>
-                <p>
-                  We deliver end-to-end services including design, installation, testing & commissioning and annual maintenance with a focus on safety, quality, reliability and customer satisfaction.
+              <div className="mt-2 bg-blue-50 border-l-4 border-brand-blue p-6 lg:p-8 rounded-r-2xl shadow-sm">
+                <p className="text-gray-900 text-lg lg:text-xl font-medium leading-relaxed">
+                  <strong className="text-brand-blue font-bold">VERICON Engineering Private Limited</strong> is a leading provider of HVAC, Electrical, Fire Fighting and MEP solutions. We deliver end-to-end engineering services with a commitment to quality, safety and timely delivery.
                 </p>
               </div>
             </motion.div>

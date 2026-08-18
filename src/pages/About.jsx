@@ -1,6 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { Target, Eye, Users, ShieldCheck, Award, Lightbulb, Handshake, Building2, HardHat, Calendar, ThumbsUp, TrendingUp } from 'lucide-react';
+import { Target, Eye, Users, ShieldCheck, Award, Lightbulb, Handshake, UserCheck, TrendingUp } from 'lucide-react';
 import CTA from '../components/home/CTA';
 
 export default function About() {
@@ -111,116 +111,144 @@ export default function About() {
           </div>
         </div>
       </section>
-
       {/* 3. Our Core Values Section */}
-      <section className="py-20 bg-white border-t border-gray-100">
-        <div className="container mx-auto px-6 md:px-12 lg:px-20">
+      <section className="py-20 lg:py-24 bg-white border-t border-gray-100">
+        <div className="container mx-auto px-6 md:px-12 lg:px-20 max-w-7xl">
           
           {/* Header */}
-          <div className="text-center mb-16 flex flex-col items-center">
-            <h2 className="text-2xl font-bold text-brand-blue tracking-wide uppercase">OUR CORE VALUES</h2>
-            <div className="flex mt-3">
-              <div className="w-8 h-1 bg-brand-blue"></div>
-              <div className="w-8 h-1 bg-brand-red"></div>
+          <div className="text-center mb-14 flex flex-col items-center">
+            <motion.h2 
+              initial={{ opacity: 0, y: -20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6 }}
+              className="text-3xl md:text-5xl font-extrabold tracking-tight uppercase"
+            >
+              <span className="text-brand-blue mr-3">OUR</span>
+              <span className="text-brand-red">CORE VALUES</span>
+            </motion.h2>
+            
+            {/* Split Accent Line */}
+            <div className="flex w-16 h-1 mt-4 mb-4 rounded-full overflow-hidden">
+              <div className="w-1/2 h-full bg-brand-blue"></div>
+              <div className="w-1/2 h-full bg-brand-red"></div>
             </div>
+
+            {/* Subtitle */}
+            <p className="text-gray-700 text-base md:text-lg max-w-2xl font-normal mt-1">
+              Values that <strong className="font-bold text-gray-900">guide our actions</strong>. Principles that <strong className="font-bold text-gray-900">build our legacy</strong>.
+            </p>
           </div>
 
-          {/* 5 Icons Row */}
-          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-8 lg:gap-4">
+          {/* 5 Cards Row */}
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-6">
             
-            {/* Value 1 */}
-            <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: 0.1 }} className="flex flex-col items-center text-center">
-              <div className="w-24 h-24 rounded-full border-4 border-brand-blue/20 flex items-center justify-center mb-6 text-brand-blue bg-white shadow-lg">
-                <ShieldCheck size={40} strokeWidth={1.5} />
+            {/* Card 1: TRUST */}
+            <motion.div 
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: 0.1, duration: 0.5 }}
+              className="bg-white rounded-2xl p-6 md:p-7 flex flex-col items-center text-center shadow-md hover:shadow-xl transition-all duration-300 border border-gray-100 relative overflow-hidden group"
+            >
+              <div className="w-16 h-16 md:w-20 md:h-20 rounded-2xl flex items-center justify-center mb-6 text-white shadow-md bg-brand-red group-hover:scale-105 transition-transform duration-300">
+                <ShieldCheck size={36} strokeWidth={1.8} />
               </div>
-              <h3 className="text-lg font-bold text-gray-900 mb-3 uppercase tracking-wide">INTEGRITY</h3>
-              <p className="text-sm text-gray-600 font-medium leading-relaxed px-2">We operate with honesty and transparency in everything we do.</p>
+              <h3 className="font-extrabold text-base md:text-lg uppercase tracking-wider mb-2 text-brand-red">
+                TRUST
+              </h3>
+              <div className="w-8 h-0.5 mb-4 bg-brand-red"></div>
+              <p className="text-gray-600 text-xs md:text-sm font-normal leading-relaxed">
+                Building confidence through transparency and reliable delivery.
+              </p>
+              <div className="absolute bottom-0 left-0 right-0 h-1.5 bg-brand-red"></div>
             </motion.div>
 
-            {/* Value 2 */}
-            <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: 0.2 }} className="flex flex-col items-center text-center">
-              <div className="w-24 h-24 rounded-full border-4 border-brand-red/20 flex items-center justify-center mb-6 text-brand-red bg-white shadow-lg">
-                <Award size={40} strokeWidth={1.5} />
+            {/* Card 2: QUALITY */}
+            <motion.div 
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: 0.2, duration: 0.5 }}
+              className="bg-white rounded-2xl p-6 md:p-7 flex flex-col items-center text-center shadow-md hover:shadow-xl transition-all duration-300 border border-gray-100 relative overflow-hidden group"
+            >
+              <div className="w-16 h-16 md:w-20 md:h-20 rounded-2xl flex items-center justify-center mb-6 text-white shadow-md bg-brand-blue group-hover:scale-105 transition-transform duration-300">
+                <Award size={36} strokeWidth={1.8} />
               </div>
-              <h3 className="text-lg font-bold text-gray-900 mb-3 uppercase tracking-wide">QUALITY</h3>
-              <p className="text-sm text-gray-600 font-medium leading-relaxed px-2">We are committed to delivering the highest standards of quality.</p>
+              <h3 className="font-extrabold text-base md:text-lg uppercase tracking-wider mb-2 text-brand-blue">
+                QUALITY
+              </h3>
+              <div className="w-8 h-0.5 mb-4 bg-brand-blue"></div>
+              <p className="text-gray-600 text-xs md:text-sm font-normal leading-relaxed">
+                We are committed to delivering the highest standards of quality in everything we do.
+              </p>
+              <div className="absolute bottom-0 left-0 right-0 h-1.5 bg-brand-blue"></div>
             </motion.div>
 
-            {/* Value 3 */}
-            <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: 0.3 }} className="flex flex-col items-center text-center">
-              <div className="w-24 h-24 rounded-full border-4 border-brand-blue/20 flex items-center justify-center mb-6 text-brand-blue bg-white shadow-lg">
-                <Users size={40} strokeWidth={1.5} />
+            {/* Card 3: INNOVATION */}
+            <motion.div 
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: 0.3, duration: 0.5 }}
+              className="bg-white rounded-2xl p-6 md:p-7 flex flex-col items-center text-center shadow-md hover:shadow-xl transition-all duration-300 border border-gray-100 relative overflow-hidden group"
+            >
+              <div className="w-16 h-16 md:w-20 md:h-20 rounded-2xl flex items-center justify-center mb-6 text-white shadow-md bg-brand-red group-hover:scale-105 transition-transform duration-300">
+                <Lightbulb size={36} strokeWidth={1.8} />
               </div>
-              <h3 className="text-lg font-bold text-gray-900 mb-3 uppercase tracking-wide">SAFETY</h3>
-              <p className="text-sm text-gray-600 font-medium leading-relaxed px-2">We prioritize the safety of our people, clients and communities.</p>
+              <h3 className="font-extrabold text-base md:text-lg uppercase tracking-wider mb-2 text-brand-red">
+                INNOVATION
+              </h3>
+              <div className="w-8 h-0.5 mb-4 bg-brand-red"></div>
+              <p className="text-gray-600 text-xs md:text-sm font-normal leading-relaxed">
+                Embracing new ideas and technologies to create better solutions.
+              </p>
+              <div className="absolute bottom-0 left-0 right-0 h-1.5 bg-brand-red"></div>
             </motion.div>
 
-            {/* Value 4 */}
-            <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: 0.4 }} className="flex flex-col items-center text-center">
-              <div className="w-24 h-24 rounded-full border-4 border-brand-red/20 flex items-center justify-center mb-6 text-brand-red bg-white shadow-lg">
-                <Lightbulb size={40} strokeWidth={1.5} />
+            {/* Card 4: ACCOUNTABILITY */}
+            <motion.div 
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: 0.4, duration: 0.5 }}
+              className="bg-white rounded-2xl p-6 md:p-7 flex flex-col items-center text-center shadow-md hover:shadow-xl transition-all duration-300 border border-gray-100 relative overflow-hidden group"
+            >
+              <div className="w-16 h-16 md:w-20 md:h-20 rounded-2xl flex items-center justify-center mb-6 text-white shadow-md bg-brand-blue group-hover:scale-105 transition-transform duration-300">
+                <UserCheck size={36} strokeWidth={1.8} />
               </div>
-              <h3 className="text-lg font-bold text-gray-900 mb-3 uppercase tracking-wide">INNOVATION</h3>
-              <p className="text-sm text-gray-600 font-medium leading-relaxed px-2">We embrace new technologies to deliver smart solutions.</p>
+              <h3 className="font-extrabold text-base md:text-lg uppercase tracking-wider mb-2 text-brand-blue">
+                ACCOUNTABILITY
+              </h3>
+              <div className="w-8 h-0.5 mb-4 bg-brand-blue"></div>
+              <p className="text-gray-600 text-xs md:text-sm font-normal leading-relaxed">
+                Taking ownership and delivering on our commitments.
+              </p>
+              <div className="absolute bottom-0 left-0 right-0 h-1.5 bg-brand-blue"></div>
             </motion.div>
 
-            {/* Value 5 */}
-            <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: 0.5 }} className="flex flex-col items-center text-center">
-              <div className="w-24 h-24 rounded-full border-4 border-brand-blue/20 flex items-center justify-center mb-6 text-brand-blue bg-white shadow-lg">
-                <Handshake size={40} strokeWidth={1.5} />
+            {/* Card 5: PARTNERSHIP */}
+            <motion.div 
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: 0.5, duration: 0.5 }}
+              className="bg-white rounded-2xl p-6 md:p-7 flex flex-col items-center text-center shadow-md hover:shadow-xl transition-all duration-300 border border-gray-100 relative overflow-hidden group"
+            >
+              <div className="w-16 h-16 md:w-20 md:h-20 rounded-2xl flex items-center justify-center mb-6 text-white shadow-md bg-brand-red group-hover:scale-105 transition-transform duration-300">
+                <Handshake size={36} strokeWidth={1.8} />
               </div>
-              <h3 className="text-lg font-bold text-gray-900 mb-3 uppercase tracking-wide">COMMITMENT</h3>
-              <p className="text-sm text-gray-600 font-medium leading-relaxed px-2">We are dedicated to our clients and deliver on our promises.</p>
+              <h3 className="font-extrabold text-base md:text-lg uppercase tracking-wider mb-2 text-brand-red">
+                PARTNERSHIP
+              </h3>
+              <div className="w-8 h-0.5 mb-4 bg-brand-red"></div>
+              <p className="text-gray-600 text-xs md:text-sm font-normal leading-relaxed">
+                Building lasting relationships through collaboration and mutual success.
+              </p>
+              <div className="absolute bottom-0 left-0 right-0 h-1.5 bg-brand-red"></div>
             </motion.div>
 
           </div>
-        </div>
-      </section>
-
-      {/* 4. Mission, Vision, Experience Section */}
-      <section className="py-12 bg-white">
-        <div className="container mx-auto px-6 md:px-12 lg:px-20">
-          <motion.div 
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            className="bg-[#0B1528] rounded-3xl p-10 md:p-16 grid grid-cols-1 md:grid-cols-3 gap-16 md:gap-8 lg:gap-12 shadow-2xl"
-          >
-            
-            {/* Mission */}
-            <div className="flex flex-col items-center text-center">
-              <h3 className="text-white font-bold tracking-wider uppercase mb-6 text-sm">OUR MISSION</h3>
-              <div className="text-brand-red mb-6 bg-brand-red/10 p-5 rounded-2xl">
-                <Target size={40} strokeWidth={1.5} />
-              </div>
-              <p className="text-blue-100/90 leading-relaxed">
-                To deliver engineering excellence through innovative solutions, dependable execution and an unwavering commitment to quality, safety and customer satisfaction.
-              </p>
-            </div>
-
-            {/* Vision */}
-            <div className="flex flex-col items-center text-center">
-              <h3 className="text-white font-bold tracking-wider uppercase mb-6 text-sm">OUR VISION</h3>
-              <div className="text-brand-blue mb-6 bg-brand-blue/10 p-5 rounded-2xl">
-                <Eye size={40} strokeWidth={1.5} />
-              </div>
-              <p className="text-blue-100/90 leading-relaxed">
-                To be a trusted engineering partner, recognized for excellence, innovation and reliability in delivering high-performance MEP solutions.
-              </p>
-            </div>
-
-            {/* Experience */}
-            <div className="flex flex-col items-center text-center">
-              <h3 className="text-white font-bold tracking-wider uppercase mb-6 text-sm">OUR EXPERIENCE</h3>
-              <div className="text-brand-blue mb-6 bg-brand-blue/10 p-5 rounded-2xl">
-                <Users size={40} strokeWidth={1.5} />
-              </div>
-              <p className="text-blue-100/90 leading-relaxed">
-                With years of expertise and a team of skilled professionals, we have successfully delivered projects of every scale.
-              </p>
-            </div>
-
-          </motion.div>
         </div>
       </section>
 

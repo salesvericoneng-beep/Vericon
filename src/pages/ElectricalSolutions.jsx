@@ -97,7 +97,7 @@ export default function ElectricalSolutions() {
               </h2>
               <div className="text-gray-700 text-base leading-relaxed space-y-6">
                 <p>
-                  VERICON Engineering Services offers complete electrical engineering solutions from design to commissioning. Our systems are built to ensure safety, reliability, efficiency and long-term performance.
+                  VERICON Engineering offers complete electrical engineering solutions from design to commissioning. Our systems are built to ensure safety, reliability, efficiency and long-term performance.
                 </p>
                 <p>
                   We use advanced technology, quality components and industry best practices to deliver solutions that meet global standards and client requirements.

@@ -17,8 +17,11 @@ import {
   Gauge,
   Sliders,
   Flame,
-  SearchCheck,
-  Cpu
+  Wind,
+  SunMedium,
+  ShieldAlert,
+  Cpu,
+  SlidersHorizontal
 } from 'lucide-react';
 
 const specializedServices = [
@@ -98,6 +101,70 @@ const specializedServices = [
 
 const diagnosticServices = [
   {
+    id: 'tab',
+    title: 'Testing, Adjusting & Balancing (TAB)',
+    badge: 'NEBB / AABC STANDARDS',
+    accentColor: '#123EB7',
+    icon: SlidersHorizontal,
+    image: 'https://images.unsplash.com/photo-1581092335397-9583fe92d232?q=80&w=1000',
+  },
+  {
+    id: 'hvac-energy-audit',
+    title: 'HVAC Energy Audit & Optimization',
+    badge: 'ENERGY EFFICIENCY',
+    accentColor: '#059669',
+    icon: Zap,
+    image: 'https://images.unsplash.com/photo-1497435334941-8c899ee9e8e9?q=80&w=1000',
+  },
+  {
+    id: 'duct-leakage',
+    title: 'Duct Leakage Audit & Rectification',
+    badge: 'SMACNA COMPLIANCE',
+    accentColor: '#D80C20',
+    icon: Wind,
+    image: 'https://images.unsplash.com/photo-1621905251189-08b45d6a269e?q=80&w=1000',
+  },
+  {
+    id: 'duct-cleaning',
+    title: 'Duct Cleaning',
+    badge: 'HYGIENE & DISINFECTION',
+    accentColor: '#0284C7',
+    icon: Sparkles,
+    image: 'https://images.unsplash.com/photo-1584622650111-993a426fbf0a?q=80&w=1000',
+  },
+  {
+    id: 'uvgi-solutions',
+    title: 'UVGI Solutions',
+    badge: 'GERMICIDAL PURIFICATION',
+    accentColor: '#7C3AED',
+    icon: SunMedium,
+    image: 'https://images.unsplash.com/photo-1516549655169-df83a0774514?q=80&w=1000',
+  },
+  {
+    id: 'iaq-assessment',
+    title: 'Indoor Air Quality Assessment',
+    badge: 'ASHRAE 62.1 STANDARDS',
+    accentColor: '#059669',
+    icon: ShieldAlert,
+    image: 'https://images.unsplash.com/photo-1507668077129-56e32842fceb?q=80&w=1000',
+  },
+  {
+    id: 'automatic-tube-cleaning',
+    title: 'Automatic Tube Cleaning System',
+    badge: 'CHILLER OPTIMIZATION',
+    accentColor: '#D97706',
+    icon: RefreshCw,
+    image: 'https://images.unsplash.com/photo-1581092162384-8987c1d64718?q=80&w=1000',
+  },
+  {
+    id: 'vfd-pump-fan-optimization',
+    title: 'VFD & Pump/Fan Optimization',
+    badge: 'DRIVE CALIBRATION',
+    accentColor: '#2563EB',
+    icon: Cpu,
+    image: 'https://images.unsplash.com/photo-1581092580497-e0d23cbdf1dc?q=80&w=1000',
+  },
+  {
     id: 'vibration-analysis',
     title: 'Vibration Analysis',
     badge: 'PREDICTIVE DIAGNOSTICS',
@@ -106,17 +173,9 @@ const diagnosticServices = [
     image: 'https://images.unsplash.com/photo-1581092160607-ee22621dd758?q=80&w=1000',
   },
   {
-    id: 'equipment-performance-test',
-    title: 'Equipment Performance Test',
-    badge: 'BENCHMARKING',
-    accentColor: '#4F46E5',
-    icon: Gauge,
-    image: 'https://images.unsplash.com/photo-1581092335397-9583fe92d232?q=80&w=1000',
-  },
-  {
     id: 'auto-sequence-asp-panel',
     title: 'Auto Sequence Solution (ASP Panel)',
-    badge: 'AUTOMATION',
+    badge: 'SMART AUTOMATION',
     accentColor: '#D97706',
     icon: Sliders,
     image: 'https://images.unsplash.com/photo-1558494949-ef010cbdcc31?q=80&w=1000',

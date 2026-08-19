@@ -107,12 +107,18 @@ export default function Footer() {
 
         {/* Top row: logo + tagline + socials */}
         <div className="flex flex-col md:flex-row md:items-end justify-between gap-8 mb-14 pb-10 border-b border-white/10">
-          <div>
-            <Link to="/" className="inline-block mb-5">
-              <div className="bg-white px-4 py-2.5 rounded-xl inline-block shadow-xl hover:shadow-2xl transition-all duration-300">
-                <img src="/LOGO.png" alt="Vericon Engineering Services" className="h-14 md:h-16 object-contain" />
+          <div className="flex flex-col items-start gap-3">
+            <Link to="/" className="inline-block group">
+              <div className="bg-white px-5 py-3 rounded-2xl shadow-xl hover:shadow-2xl transition-all duration-300">
+                <img src="/LOGO.png" alt="Vericon Engineering Services" className="h-12 md:h-14 object-contain" />
               </div>
             </Link>
+            <div className="flex items-center gap-2.5">
+              <div className="w-1.5 h-4 bg-brand-red rounded-full shrink-0" />
+              <p className="text-white text-sm md:text-base font-bold tracking-wide font-poppins">
+                VERICON Engineering Private Limited
+              </p>
+            </div>
           </div>
           {/* Social icons */}
           <div className="flex items-center gap-3.5">

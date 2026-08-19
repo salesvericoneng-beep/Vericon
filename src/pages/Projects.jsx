@@ -244,9 +244,9 @@ export default function Projects() {
               initial={{ opacity: 0, y: 24 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.1 }}
-              className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-extrabold tracking-tight text-white mb-6 font-poppins leading-[1.1]"
+              className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-extrabold tracking-tight mb-6 font-poppins leading-[1.1]"
             >
-              SPECIALIZED <span className="text-brand-red">SERVICES</span>
+              <span className="text-brand-blue">SPECIALIZED</span> <span className="text-brand-red">SERVICES</span>
             </motion.h1>
 
             <motion.h2

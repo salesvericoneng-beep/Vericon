@@ -258,20 +258,11 @@ export default function Projects() {
               Sustaining Efficiency, Enhancing Life Cycles &amp; Maximizing Performance.
             </motion.h2>
 
-            <motion.p
-              initial={{ opacity: 0, y: 24 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.3 }}
-              className="text-gray-300 text-base md:text-lg leading-relaxed max-w-2xl mb-10 font-normal"
-            >
-              From proactive 24/7 annual maintenance to turnkey modernization retrofits and cutting-edge energy audits, VERICON delivers end-to-end technical mastery engineered for long-term reliability.
-            </motion.p>
-
             <motion.div
               initial={{ opacity: 0, y: 24 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.4 }}
-              className="flex flex-wrap gap-4"
+              transition={{ duration: 0.6, delay: 0.3 }}
+              className="flex flex-wrap gap-4 mt-8"
             >
               <Link
                 to="/contact"

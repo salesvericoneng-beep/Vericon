@@ -113,9 +113,6 @@ export default function Footer() {
                 <img src="/LOGO.png" alt="Vericon Engineering Services" className="h-14 md:h-16 object-contain" />
               </div>
             </Link>
-            <p className="text-gray-300 text-sm md:text-[15px] max-w-sm leading-relaxed font-medium">
-              Engineering excellence through integrated MEP, HVAC, Electrical &amp; Fire Fighting solutions delivered with precision and commitment.
-            </p>
           </div>
           {/* Social icons */}
           <div className="flex items-center gap-3.5">

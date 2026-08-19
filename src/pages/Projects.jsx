@@ -12,7 +12,13 @@ import {
   Award,
   TrendingDown,
   PhoneCall,
-  Sparkles
+  Sparkles,
+  Activity,
+  Gauge,
+  Sliders,
+  Flame,
+  SearchCheck,
+  Cpu
 } from 'lucide-react';
 
 const specializedServices = [
@@ -90,6 +96,93 @@ const specializedServices = [
   }
 ];
 
+const diagnosticServices = [
+  {
+    id: 'vibration-analysis',
+    title: 'Vibration Analysis',
+    subtitle: 'Predictive Machinery Health & Dynamic Balancing',
+    badge: 'PREDICTIVE DIAGNOSTICS',
+    badgeColor: 'bg-blue-600/10 text-blue-600 border-blue-600/30',
+    accentColor: '#123EB7',
+    icon: Activity,
+    image: 'https://images.unsplash.com/photo-1581092160607-ee22621dd758?q=80&w=800',
+    description: 'Precision Fast Fourier Transform (FFT) spectral vibration analysis for rotating machinery including chillers, primary/secondary pumps, cooling tower fans, and AHU blower assemblies. Identifies dynamic unbalance, shaft misalignment, bearing degradation, and mechanical resonance at early stages to prevent sudden catastrophic motor breakdowns.',
+    features: [
+      'FFT Spectral Signature Analysis',
+      'ISO 10816 Vibration Severity Standards',
+      'Dynamic In-Situ Machine Balancing',
+      'Early Stage Bearing Wear Detection'
+    ]
+  },
+  {
+    id: 'equipment-performance-test',
+    title: 'Equipment Performance Test',
+    subtitle: 'Efficiency Verification & Output Benchmarking',
+    badge: 'EFFICIENCY BENCHMARKING',
+    badgeColor: 'bg-indigo-600/10 text-indigo-600 border-indigo-600/30',
+    accentColor: '#4F46E5',
+    icon: Gauge,
+    image: 'https://images.unsplash.com/photo-1581092335397-9583fe92d232?q=80&w=800',
+    description: 'Comprehensive thermodynamic, volumetric airflow, and electrical efficiency testing of critical plant equipment. Validates real-time kW/TR cooling output, coefficient of performance (COP), air handling CFM ratings, water flow GPM, and static pressures against factory design specifications.',
+    features: [
+      'Real-time kW/TR & COP Calculations',
+      'Airflow CFM & Static Pressure Balances',
+      'Chilled & Condenser Water Flow Auditing',
+      'Certified Performance Validation Reports'
+    ]
+  },
+  {
+    id: 'auto-sequence-asp-panel',
+    title: 'Auto Sequence Solution (ASP Panel)',
+    subtitle: 'Intelligent Multi-Equipment Staging & Lead-Lag Control',
+    badge: 'SMART PLANT AUTOMATION',
+    badgeColor: 'bg-amber-600/10 text-amber-600 border-amber-600/30',
+    accentColor: '#D97706',
+    icon: Sliders,
+    image: 'https://images.unsplash.com/photo-1558494949-ef010cbdcc31?q=80&w=800',
+    description: 'Custom micro-PLC auto-sequencing control panels designed for automatic lead-lag staging of multi-chiller banks, cooling tower loops, and secondary pumping stations. Features intelligent load sharing, automated standby switchover upon fault detection, and equalized runtime scheduling.',
+    features: [
+      'Automated Lead-Lag Duty Cycling',
+      'Instant Auto-Changeover on Fault Alarm',
+      'Seamless BMS & SCADA Protocol Integration',
+      'Part-Load Power Minimization'
+    ]
+  },
+  {
+    id: 'electrical-thermography',
+    title: 'Electrical Thermography',
+    subtitle: 'Non-Invasive Infrared Hotspot & Safety Inspection',
+    badge: 'INFRARED THERMAL SCANNING',
+    badgeColor: 'bg-brand-red/10 text-brand-red border-brand-red/30',
+    accentColor: '#D80C20',
+    icon: Flame,
+    image: 'https://images.unsplash.com/photo-1544724569-5f546fd6f2b6?q=80&w=800',
+    description: 'Non-invasive infrared radiometric thermal imaging of high/low voltage switchgear, transformers, bus ducts, capacitor banks, and distribution boards under live working loads. Locates high-resistance hotspots, phase imbalances, and loose terminal connections to eliminate electrical fire risks.',
+    features: [
+      'High-Resolution Radiometric Scans',
+      'Zero Disruption / Live Load Testing',
+      'Early Phase Overheat Detection',
+      'NFPA 70B & NBC Compliance Reports'
+    ]
+  },
+  {
+    id: 'cylinder-hp-testing',
+    title: 'Cylinder HP Testing & Re-filling',
+    badge: 'PESO / CCOE CERTIFIED TESTING',
+    badgeColor: 'bg-emerald-600/10 text-emerald-600 border-emerald-600/30',
+    accentColor: '#059669',
+    icon: ShieldCheck,
+    image: 'https://images.unsplash.com/photo-1549488344-1f9b8d2bd1f3?q=80&w=800',
+    description: 'Statutory high-pressure hydrostatic stretch testing (HP testing) and precision refilling for fire suppression gas cylinders including FM-200, Novec 1230, CO2, Inergen, and Nitrogen. Executed in PESO-approved test facilities with ultrasonic wall thickness measurement and certified inspection stamps.',
+    features: [
+      'Hydrostatic Stretch Test up to 250+ Bar',
+      'Certified Gas Re-filling & Purity Verification',
+      'PESO / CCOE Testing Certificates',
+      'Valve Overhaul & O-ring Replacement'
+    ]
+  }
+];
+
 export default function Projects() {
   return (
     <div className="pt-20 min-h-screen bg-[#F8FAFC] overflow-hidden">
@@ -133,7 +226,7 @@ export default function Projects() {
             >
               <span className="w-2 h-2 rounded-full bg-brand-red animate-pulse" />
               <span className="text-xs font-bold uppercase tracking-[0.2em] text-white/90">
-                ENGINEERING EXCELLENCE &amp; LIFECYCLE SOLUTIONS
+                ENGINEERING EXCELLENCE &amp; ADVANCED AUDITS
               </span>
             </motion.div>
 
@@ -154,7 +247,7 @@ export default function Projects() {
               transition={{ duration: 0.6, delay: 0.2 }}
               className="text-xl sm:text-2xl md:text-3xl font-semibold text-blue-200/90 mb-6 leading-snug"
             >
-              Sustaining Efficiency, Enhancing Life Cycles &amp; Maximizing Performance.
+              Sustaining Efficiency, Enhancing Life Cycles &amp; Advanced Testing Diagnostics.
             </motion.h2>
 
             {/* Description */}
@@ -164,7 +257,7 @@ export default function Projects() {
               transition={{ duration: 0.6, delay: 0.3 }}
               className="text-gray-300 text-base md:text-lg leading-relaxed max-w-2xl mb-10 font-normal"
             >
-              From proactive 24/7 annual maintenance to turnkey modernization retrofits and cutting-edge energy audits, VERICON delivers end-to-end technical mastery engineered for long-term reliability.
+              From proactive 24/7 annual maintenance and retrofit modernizations to high-precision vibration diagnostics, electrical thermography, and PESO-certified cylinder testing, VERICON delivers end-to-end technical mastery.
             </motion.p>
 
             {/* Action Buttons */}
@@ -178,13 +271,13 @@ export default function Projects() {
                 to="/contact"
                 className="bg-brand-red hover:bg-red-700 text-white px-8 py-4 rounded-xl font-bold transition-all duration-300 flex items-center gap-2.5 text-sm shadow-lg shadow-brand-red/30 hover:shadow-brand-red/50 hover:-translate-y-0.5"
               >
-                Request a Service Quote <ArrowRight size={16} />
+                Request a Technical Quote <ArrowRight size={16} />
               </Link>
               <a
                 href="#services-list"
                 className="bg-white/10 hover:bg-white/20 border border-white/20 text-white px-8 py-4 rounded-xl font-bold transition-all duration-300 text-sm backdrop-blur-md hover:-translate-y-0.5"
               >
-                Explore Specialized Solutions
+                Explore All Solutions
               </a>
             </motion.div>
           </div>
@@ -204,7 +297,7 @@ export default function Projects() {
           <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6">
             {[
               { icon: Clock, label: '24/7 Rapid Response', desc: 'Guaranteed SLA uptime' },
-              { icon: ShieldCheck, label: '100% Code Compliance', desc: 'NBC & ASHRAE standards' },
+              { icon: ShieldCheck, label: '100% Code Compliance', desc: 'NBC, ASHRAE & PESO' },
               { icon: TrendingDown, label: 'Up to 35% Savings', desc: 'On utility power bills' },
               { icon: Award, label: 'Certified Specialists', desc: 'Decades of MEP mastery' }
             ].map((stat, i) => {
@@ -228,7 +321,7 @@ export default function Projects() {
         </div>
       </section>
 
-      {/* ── 3. SPECIALIZED SERVICES SHOWCASE ── */}
+      {/* ── 3. CORE SPECIALIZED CAPABILITIES ── */}
       <section id="services-list" className="py-16 lg:py-24">
         <div className="container mx-auto px-6 md:px-12 lg:px-20 max-w-[1400px]">
 
@@ -238,7 +331,7 @@ export default function Projects() {
               OUR SPECIALIZED CAPABILITIES
             </span>
             <h2 className="text-3xl md:text-5xl font-extrabold font-poppins text-brand-blue tracking-tight leading-tight">
-              Engineered for <span className="text-brand-red">Longevity &amp; Precision</span>
+              Lifecycle Engineering &amp; <span className="text-brand-red">Modernization</span>
             </h2>
             <div className="w-16 h-1 mx-auto flex mt-5">
               <div className="w-1/2 h-full bg-brand-blue" />
@@ -247,7 +340,7 @@ export default function Projects() {
           </div>
 
           {/* Service Cards (Alternating Layout) */}
-          <div className="flex flex-col gap-16 lg:gap-24">
+          <div className="flex flex-col gap-16 lg:gap-24 mb-24">
             {specializedServices.map((service, index) => {
               const isEven = index % 2 === 1;
               const Icon = service.icon;
@@ -353,10 +446,111 @@ export default function Projects() {
             })}
           </div>
 
+          {/* ── 4. ADVANCED TESTING, DIAGNOSTICS & AUDITS ── */}
+          <div className="mt-16 pt-16 border-t border-gray-200">
+            <div className="text-center mb-16 max-w-3xl mx-auto">
+              <span className="text-brand-red font-bold uppercase tracking-[0.2em] text-xs mb-3 block">
+                SPECIALIZED AUDITS &amp; DIAGNOSTICS
+              </span>
+              <h2 className="text-3xl md:text-4xl font-extrabold font-poppins text-brand-blue tracking-tight leading-tight">
+                Advanced Testing &amp; <span className="text-brand-red">Precision Diagnostics</span>
+              </h2>
+              <div className="w-16 h-1 mx-auto flex mt-5">
+                <div className="w-1/2 h-full bg-brand-red" />
+                <div className="w-1/2 h-full bg-brand-blue" />
+              </div>
+              <p className="text-gray-600 text-sm md:text-base mt-4 max-w-2xl mx-auto">
+                Specialized state-of-the-art diagnostic testing, statutory certifications, and smart sequence automation to guarantee zero equipment downtime.
+              </p>
+            </div>
+
+            {/* Diagnostics Grid */}
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+              {diagnosticServices.map((item, idx) => {
+                const DiagIcon = item.icon;
+                return (
+                  <motion.div
+                    key={item.id}
+                    initial={{ opacity: 0, y: 30 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ duration: 0.5, delay: idx * 0.1 }}
+                    className="bg-white rounded-3xl overflow-hidden border border-gray-200/80 shadow-md hover:shadow-2xl transition-all duration-300 flex flex-col group"
+                  >
+                    {/* Image Header */}
+                    <div className="relative h-52 w-full overflow-hidden">
+                      <img
+                        src={item.image}
+                        alt={item.title}
+                        className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                      />
+                      <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent" />
+                      <div className="absolute top-4 left-4">
+                        <span className={`text-[10px] font-extrabold uppercase tracking-widest px-3 py-1 rounded-full bg-white/90 backdrop-blur-md shadow-sm text-gray-800`}>
+                          {item.badge}
+                        </span>
+                      </div>
+                      <div
+                        className="absolute bottom-4 right-4 w-11 h-11 rounded-2xl flex items-center justify-center text-white shadow-lg"
+                        style={{ backgroundColor: item.accentColor }}
+                      >
+                        <DiagIcon size={20} strokeWidth={2} />
+                      </div>
+                    </div>
+
+                    {/* Content */}
+                    <div className="p-7 flex flex-col flex-grow justify-between">
+                      <div>
+                        <h3 className="text-xl font-bold text-brand-blue font-poppins mb-1.5 leading-snug">
+                          {item.title}
+                        </h3>
+                        <p className="text-brand-red font-semibold text-xs mb-4">
+                          {item.subtitle}
+                        </p>
+                        <p className="text-gray-600 text-xs sm:text-sm leading-relaxed mb-6">
+                          {item.description}
+                        </p>
+
+                        {/* Features */}
+                        <div className="space-y-2 mb-6 pt-4 border-t border-gray-100">
+                          {item.features.map((feat, fi) => (
+                            <div key={fi} className="flex items-start gap-2">
+                              <CheckCircle2 size={14} className="text-brand-red shrink-0 mt-0.5" strokeWidth={2.5} />
+                              <span className="text-xs text-gray-700 font-medium">{feat}</span>
+                            </div>
+                          ))}
+                        </div>
+                      </div>
+
+                      <Link
+                        to="/contact"
+                        className="w-full py-3 rounded-xl font-bold text-xs uppercase tracking-wider text-center border transition-all duration-300 flex items-center justify-center gap-2 group-hover:text-white"
+                        style={{
+                          borderColor: item.accentColor,
+                          color: item.accentColor,
+                        }}
+                        onMouseEnter={(e) => {
+                          e.currentTarget.style.backgroundColor = item.accentColor;
+                          e.currentTarget.style.color = '#FFFFFF';
+                        }}
+                        onMouseLeave={(e) => {
+                          e.currentTarget.style.backgroundColor = 'transparent';
+                          e.currentTarget.style.color = item.accentColor;
+                        }}
+                      >
+                        Schedule Audit <ArrowRight size={14} />
+                      </Link>
+                    </div>
+                  </motion.div>
+                );
+              })}
+            </div>
+          </div>
+
         </div>
       </section>
 
-      {/* ── 4. BOTTOM HEROIC CTA ── */}
+      {/* ── 5. BOTTOM HEROIC CTA ── */}
       <section className="relative bg-[#050D1A] py-20 overflow-hidden">
         {/* Background Graphic */}
         <div className="absolute inset-0 opacity-20">
@@ -373,7 +567,7 @@ export default function Projects() {
             <Sparkles size={14} /> Ready to Optimize Your Facility?
           </div>
           <h2 className="text-3xl md:text-5xl font-extrabold text-white font-poppins mb-6 leading-tight">
-            Let’s Build a Customized <br /><span className="text-brand-red">Engineering Maintenance Plan</span>
+            Let’s Build a Customized <br /><span className="text-brand-red">Engineering &amp; Audit Plan</span>
           </h2>
           <p className="text-gray-300 text-base md:text-lg leading-relaxed mb-10">
             Connect with our lead MEP engineers today for a dedicated on-site technical inspection, performance assessment, and transparent service proposal.
@@ -398,3 +592,4 @@ export default function Projects() {
     </div>
   );
 }
+

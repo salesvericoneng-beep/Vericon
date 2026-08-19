@@ -140,24 +140,21 @@ export default function Services() {
           >
             <h1 className="text-5xl md:text-6xl font-extrabold mb-4 tracking-tight">
               <span className="text-brand-blue">OUR </span>
-              <span className="text-brand-red">SERVICES</span>
+              <span className="text-brand-red">PROJECTS</span>
             </h1>
             <h2 className="text-2xl md:text-3xl font-bold text-brand-blue mb-6">
               End-to-End Engineering<br /><span className="text-brand-red">Solutions You Can Rely On</span>
             </h2>
-            <p className="text-gray-700 text-lg leading-relaxed">
-              VERICON Engineering Services offers a comprehensive range of MEP, HVAC, Electrical, and Fire Fighting solutions designed to meet global standards with precision, quality, and commitment.
-            </p>
           </motion.div>
         </div>
       </section>
 
-      {/* 2. OUR CORE SERVICES */}
+      {/* 2. OUR CORE PROJECTS */}
       <section className="py-20 bg-gray-50">
         <div className="container mx-auto px-4 md:px-6">
 
           <div className="text-center mb-14">
-            <h3 className="text-brand-blue font-bold uppercase tracking-wider text-sm mb-3">OUR CORE SERVICES</h3>
+            <h3 className="text-brand-blue font-bold uppercase tracking-wider text-sm mb-3">OUR PROJECTS</h3>
             <h2 className="text-3xl md:text-4xl font-bold font-poppins text-brand-blue">
               Integrated Engineering. <span className="text-brand-red">Built for Performance.</span>
             </h2>

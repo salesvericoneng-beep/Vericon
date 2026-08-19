@@ -7,7 +7,7 @@ const navLinks = [
   { name: 'Home', path: '/' },
   { name: 'About Us', path: '/about' },
   { 
-    name: 'Projects', 
+    name: 'Services', 
     path: '/services',
     dropdown: [
       { 
@@ -22,7 +22,7 @@ const navLinks = [
       { name: 'PHE Solutions', path: '/services/phe' }
     ]
   },
-  { name: 'Services', path: '/why-vericon' },
+  { name: 'Projects', path: '/projects' },
   { name: 'Contact Us', path: '/contact' }
 ];
 

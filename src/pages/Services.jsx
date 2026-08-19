@@ -143,7 +143,7 @@ export default function Services() {
               <span className="text-brand-red">SERVICES</span>
             </h1>
             <h2 className="text-2xl md:text-3xl font-bold text-brand-blue mb-6">
-              End-to-End Engineering<br/><span className="text-brand-red">Solutions You Can Rely On</span>
+              End-to-End Engineering<br /><span className="text-brand-red">Solutions You Can Rely On</span>
             </h2>
             <p className="text-gray-700 text-lg leading-relaxed">
               VERICON Engineering Services offers a comprehensive range of MEP, HVAC, Electrical, and Fire Fighting solutions designed to meet global standards with precision, quality, and commitment.

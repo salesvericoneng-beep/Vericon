@@ -11,6 +11,7 @@ const contactInfo = [
     icon: <MapPin size={24} className="text-brand-red" strokeWidth={1.5} />, 
     title: 'ADDRESS', 
     details: [
+      'VERICON Engineering Private Limited',
       'Plot no 13, Ground floor, Survey 64/2,',
       '(New) Software Units Layout, Awfis Ohris Tech Park,',
       'Madhapur, HITEC City, Hyderabad, Telangana 500081.'

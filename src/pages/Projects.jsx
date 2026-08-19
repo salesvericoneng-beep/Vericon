@@ -445,25 +445,6 @@ export default function Projects() {
                         </h3>
                         <div className="w-8 h-[2px] bg-brand-red mb-4" />
                       </div>
-
-                      <Link
-                        to="/contact"
-                        className="w-full py-2.5 rounded-lg font-bold text-xs uppercase tracking-wider text-center border transition-all duration-300 flex items-center justify-center gap-1.5 group-hover:text-white"
-                        style={{
-                          borderColor: item.accentColor,
-                          color: item.accentColor,
-                        }}
-                        onMouseEnter={(e) => {
-                          e.currentTarget.style.backgroundColor = item.accentColor;
-                          e.currentTarget.style.color = '#FFFFFF';
-                        }}
-                        onMouseLeave={(e) => {
-                          e.currentTarget.style.backgroundColor = 'transparent';
-                          e.currentTarget.style.color = item.accentColor;
-                        }}
-                      >
-                        Schedule Audit <ArrowRight size={13} />
-                      </Link>
                     </div>
                   </motion.div>
                 );

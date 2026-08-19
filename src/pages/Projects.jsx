@@ -65,25 +65,25 @@ const projects = [
 export default function Projects() {
   const [activeTab, setActiveTab] = useState('All');
 
-  const filteredProjects = activeTab === 'All' 
-    ? projects 
+  const filteredProjects = activeTab === 'All'
+    ? projects
     : projects.filter(p => p.category === activeTab);
 
   return (
     <div className="pt-20 min-h-screen bg-brand-light">
-      
+
       {/* Hero */}
       <section className="relative py-20 bg-brand-blue overflow-hidden">
         <div className="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/blueprint.png')] opacity-10 mix-blend-overlay"></div>
         <div className="container mx-auto px-4 md:px-6 relative z-10 text-center">
-          <motion.h1 
+          <motion.h1
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             className="text-4xl md:text-6xl font-poppins font-bold text-white mb-4"
           >
             Our Portfolio
           </motion.h1>
-          <motion.p 
+          <motion.p
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.1 }}
@@ -96,18 +96,17 @@ export default function Projects() {
 
       <section className="py-16">
         <div className="container mx-auto px-4 md:px-6">
-          
+
           {/* Filters */}
           <div className="flex flex-wrap justify-center gap-3 mb-12">
             {categories.map((cat) => (
               <button
                 key={cat}
                 onClick={() => setActiveTab(cat)}
-                className={`px-6 py-2.5 rounded-full font-medium transition-all ${
-                  activeTab === cat 
-                    ? 'bg-brand-blue text-white shadow-lg' 
+                className={`px-6 py-2.5 rounded-full font-medium transition-all ${activeTab === cat
+                    ? 'bg-brand-blue text-white shadow-lg'
                     : 'bg-white text-gray-600 hover:bg-gray-100 border border-brand-border'
-                }`}
+                  }`}
               >
                 {cat}
               </button>
@@ -128,9 +127,9 @@ export default function Projects() {
                   className="bg-white rounded-3xl overflow-hidden shadow-xl group border border-transparent hover:border-brand-blue/30 transition-all"
                 >
                   <div className="relative h-64 overflow-hidden">
-                    <img 
-                      src={project.image} 
-                      alt={project.title} 
+                    <img
+                      src={project.image}
+                      alt={project.title}
                       className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-6">
@@ -139,15 +138,15 @@ export default function Projects() {
                       </button>
                     </div>
                   </div>
-                  
+
                   <div className="p-6">
                     <div className="flex items-center gap-2 text-xs font-bold uppercase tracking-wider text-brand-blue mb-3">
                       <Tag size={14} />
                       <span>{project.category}</span>
                     </div>
-                    <h3 className="text-2xl font-poppins font-bold text-brand-dark mb-3">{project.title}</h3>
+                    <h3 className="text-2xl font-poppins font-bold text-brand-blue mb-3">{project.title}</h3>
                     <p className="text-gray-600 mb-6 line-clamp-2">{project.desc}</p>
-                    
+
                     <div className="flex items-center justify-between border-t border-brand-border pt-4">
                       <div className="flex items-center gap-2 text-sm text-gray-500">
                         <MapPin size={16} className="text-brand-red" />

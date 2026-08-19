@@ -61,8 +61,8 @@ export default function Contact() {
               transition={{ duration: 0.5 }}
               className="max-w-xl"
             >
-              <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold text-brand-dark mb-2 lg:mb-4">CONTACT US</h1>
-              <h2 className="text-lg sm:text-xl md:text-2xl lg:text-3xl font-bold text-brand-dark mb-3 lg:mb-6 leading-tight">
+              <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold text-brand-blue mb-2 lg:mb-4">CONTACT <span className="text-brand-red">US</span></h1>
+              <h2 className="text-lg sm:text-xl md:text-2xl lg:text-3xl font-bold text-brand-blue mb-3 lg:mb-6 leading-tight">
                 We're Here to Help You Build Safer, Smarter & Stronger Solutions.
               </h2>
               <p className="text-gray-700 text-xs sm:text-sm md:text-base font-medium leading-relaxed">
@@ -88,7 +88,7 @@ export default function Contact() {
             
             {/* Left Side: Get in Touch */}
             <div className="w-full lg:w-5/12">
-              <h2 className="text-xl font-bold text-brand-dark uppercase tracking-wide mb-2">GET IN TOUCH</h2>
+              <h2 className="text-xl font-bold text-brand-blue uppercase tracking-wide mb-2">GET IN <span className="text-brand-red">TOUCH</span></h2>
               <div className="w-10 h-0.5 bg-brand-red mb-6"></div>
               <p className="text-gray-600 text-sm leading-relaxed mb-8">
                 We are always ready to assist you. Feel free to contact us through any of the following channels.

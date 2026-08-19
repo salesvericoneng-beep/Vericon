@@ -24,6 +24,6 @@
     @apply font-inter text-brand-dark bg-white antialiased;
   }
   h1, h2, h3, h4, h5, h6 {
-    @apply font-poppins text-brand-dark;
+    @apply font-poppins text-brand-blue;
   }
 }

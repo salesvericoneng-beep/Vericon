@@ -31,8 +31,8 @@ export default function BottomSection() {
         {/* Header */}
         <div className="text-center mb-16">
           <h3 className="text-brand-blue font-bold uppercase tracking-wider text-sm mb-3">OUR LEADERSHIP</h3>
-          <h2 className="text-3xl md:text-4xl font-bold font-poppins text-gray-900 mb-6">
-            Meet Our Directors
+          <h2 className="text-3xl md:text-4xl font-bold font-poppins text-brand-blue mb-6">
+            Meet Our <span className="text-brand-red">Directors</span>
           </h2>
           {/* Small Divider */}
           <div className="w-16 h-1 mx-auto flex">
@@ -64,7 +64,7 @@ export default function BottomSection() {
 
               {/* Content */}
               <div className="p-6 text-center">
-                <h4 className="text-xl font-bold text-gray-900 font-poppins mb-1">{director.name}</h4>
+                <h4 className="text-xl font-bold text-brand-blue font-poppins mb-1">{director.name}</h4>
                 <p className="text-brand-red font-semibold text-xs mb-4 uppercase tracking-widest">{director.role}</p>
                 <div className="w-12 h-0.5 bg-gray-200 mx-auto mb-4"></div>
                 <p className="text-gray-600 text-sm leading-relaxed">

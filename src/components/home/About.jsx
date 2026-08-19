@@ -32,8 +32,8 @@ export default function About() {
             className="w-full lg:w-[60%] flex flex-col"
           >
             <h3 className="text-brand-blue font-bold uppercase tracking-wider text-sm mb-3">ABOUT VERICON</h3>
-            <h2 className="text-4xl md:text-5xl font-bold font-poppins text-gray-900 leading-tight mb-6">
-              Engineering Solutions<br/>That Build a Better Tomorrow
+            <h2 className="text-4xl md:text-5xl font-bold font-poppins text-brand-blue leading-tight mb-6">
+              Engineering <span className="text-brand-red">Solutions</span><br/>That Build a Better Tomorrow
             </h2>
             
             <ul className="text-gray-600 text-lg mb-10 leading-relaxed font-medium list-disc pl-5 marker:text-brand-red space-y-3">

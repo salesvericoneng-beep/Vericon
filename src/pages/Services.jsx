@@ -1,7 +1,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import {
-  Snowflake, Zap, Droplet, Check,
+  Snowflake, Zap, Droplet, Flame, Check,
   Building2, FileText, Settings, Wrench, ClipboardCheck, Headset,
   Users, Cpu, Diamond, ShieldCheck, Clock, HeartPulse, DollarSign, Smile,
   HardHat, Calendar, ArrowRight
@@ -10,68 +10,76 @@ import { Link } from 'react-router-dom';
 
 const coreServices = [
   {
-    id: 'hvac',
-    links: [
-      { text: 'HVAC Solutions', path: '/services/hvac' },
-      { text: 'Fire Fighting Solutions', path: '/services/fire' }
+    id: 'mechanical',
+    image: '/mechanical.jpg',
+    icon: Settings,
+    bgColor: 'bg-[#003B8F]',
+    borderColor: 'border-[#003B8F]',
+    color: 'text-[#003B8F]',
+    titleLine1: 'MECHANICAL',
+    titleLine2: 'SOLUTIONS',
+    description: 'Advanced HVAC and mechanical systems designed for efficiency, comfort and sustainability.',
+    features: [
+      'HVAC Design', 'Chilled Water Systems',
+      'Air Handling Units (AHU)', 'VRF / VRV Systems',
+      'Ventilation Solutions', 'Clean Room HVAC',
+      'Ducting & Piping', 'Energy Optimization',
     ],
-    title: 'MECHANICAL SOLUTIONS',
-    icon: <Snowflake size={24} strokeWidth={2} />,
-    color: 'brand-blue',
-    image: 'https://images.unsplash.com/photo-1581092921461-eab62e97a780?q=80&w=1000',
-    description: 'End-to-end mechanical engineering covering advanced HVAC systems and comprehensive fire protection infrastructure for all facility types.',
-    groups: [
-      {
-        label: 'HVAC',
-        features: [
-          'HVAC Design', 'Chilled Water Systems',
-          'Air Handling Units (AHU)', 'VRF / VRV Systems',
-          'Ventilation Solutions', 'Clean Room HVAC',
-          'Ducting & Piping', 'Energy Optimization'
-        ]
-      },
-      {
-        label: 'Fire Fighting',
-        features: [
-          'Fire Alarm Systems', 'Fire Hydrant Systems',
-          'Auto Sprinkler Systems', 'Gas Suppression',
-          'Clean Agent Systems', 'Deluge & Foam Systems',
-          'Fire Extinguishers', 'Testing & Commissioning'
-        ]
-      }
-    ]
+    link: '/services/mechanical'
   },
   {
     id: 'electrical',
-    link: '/services/electrical',
-    title: 'ELECTRICAL SOLUTIONS',
-    icon: <Zap size={24} strokeWidth={2} />,
-    color: 'brand-red',
-    image: 'https://images.unsplash.com/photo-1544724569-5f546fd6f2b6?q=80&w=1000',
-    description: 'Safe, reliable, and energy-efficient electrical systems engineered to power your operations seamlessly.',
+    image: '/electrical.jpg',
+    icon: Zap,
+    bgColor: 'bg-[#CE1126]',
+    borderColor: 'border-[#CE1126]',
+    color: 'text-[#CE1126]',
+    titleLine1: 'ELECTRICAL',
+    titleLine2: 'SOLUTIONS',
+    description: 'Safe, reliable and efficient electrical systems that power your projects seamlessly.',
     features: [
       'Electrical Design', 'Industrial Lighting',
       'LT & HT Panel Systems', 'Earthing & Lightning',
       'Power Distribution', 'DG Sets Integration',
       'Cabling & Trenching', 'Testing & Commissioning',
-      'Cable Trays & Busducts', 'Annual Maintenance'
-    ]
+    ],
+    link: '/services/electrical'
+  },
+  {
+    id: 'fire',
+    image: '/fire.jpg',
+    icon: Flame,
+    bgColor: 'bg-[#1E3A5F]',
+    borderColor: 'border-[#1E3A5F]',
+    color: 'text-[#1E3A5F]',
+    titleLine1: 'FIRE FIGHTING',
+    titleLine2: 'SOLUTIONS',
+    description: 'Comprehensive fire protection systems engineered to safeguard lives, assets and infrastructure.',
+    features: [
+      'Fire Alarm Systems', 'Fire Hydrant Systems',
+      'Auto Sprinkler Systems', 'Gas Suppression',
+      'Clean Agent Systems', 'Deluge & Foam Systems',
+      'Fire Extinguishers', 'Testing & Commissioning',
+    ],
+    link: '/services/fire'
   },
   {
     id: 'phe',
-    link: '/services/phe',
-    title: 'PUBLIC HEALTH ENGINEERING (PHE)',
-    icon: <Droplet size={24} strokeWidth={2} />,
-    color: 'brand-blue',
-    image: 'https://images.unsplash.com/photo-1541888086425-d81bb19240f5?q=80&w=1000',
-    description: 'Comprehensive Public Health Engineering solutions for safe, efficient, and sustainable water management.',
+    image: '/phe.jpg',
+    icon: Droplet,
+    bgColor: 'bg-[#1B7042]',
+    borderColor: 'border-[#1B7042]',
+    color: 'text-[#1B7042]',
+    titleLine1: 'PUBLIC HEALTH',
+    titleLine2: 'ENGINEERING',
+    description: 'Sustainable water supply, plumbing and drainage solutions for healthier communities.',
     features: [
       'Water Supply & Distribution', 'Sewage & Drainage Systems',
       'Water Treatment (WTP/STP)', 'Rainwater Harvesting',
       'Leak Detection Tech', 'Pumping & Storage',
       'Plumbing Design', 'Operation & AMC',
-      'Water Conservation', 'Grey Water Recycling'
-    ]
+    ],
+    link: '/services/phe'
   }
 ];
 
@@ -134,8 +142,8 @@ export default function Services() {
               <span className="text-brand-blue">OUR </span>
               <span className="text-brand-red">SERVICES</span>
             </h1>
-            <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-6">
-              End-to-End Engineering<br />Solutions You Can Rely On
+            <h2 className="text-2xl md:text-3xl font-bold text-brand-blue mb-6">
+              End-to-End Engineering<br/><span className="text-brand-red">Solutions You Can Rely On</span>
             </h2>
             <p className="text-gray-700 text-lg leading-relaxed">
               VERICON Engineering Services offers a comprehensive range of MEP, HVAC, Electrical, and Fire Fighting solutions designed to meet global standards with precision, quality, and commitment.
@@ -145,78 +153,68 @@ export default function Services() {
       </section>
 
       {/* 2. OUR CORE SERVICES */}
-      <section className="py-20 bg-white">
-        <div className="container mx-auto px-4 md:px-8 lg:px-12">
+      <section className="py-20 bg-gray-50">
+        <div className="container mx-auto px-4 md:px-6">
 
-          <div className="text-center mb-16 flex flex-col items-center">
-            <h2 className="text-2xl font-bold text-brand-blue tracking-wide uppercase">OUR CORE SERVICES</h2>
-            <div className="w-12 h-1 bg-brand-red mt-3"></div>
+          <div className="text-center mb-14">
+            <h3 className="text-brand-blue font-bold uppercase tracking-wider text-sm mb-3">OUR CORE SERVICES</h3>
+            <h2 className="text-3xl md:text-4xl font-bold font-poppins text-brand-blue">
+              Integrated Engineering. <span className="text-brand-red">Built for Performance.</span>
+            </h2>
+            <div className="w-12 h-1 mx-auto flex mt-5">
+              <div className="w-1/2 h-full bg-brand-red"></div>
+              <div className="w-1/2 h-full bg-brand-blue"></div>
+            </div>
           </div>
 
-          <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
-            {coreServices.map((service, idx) => (
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 max-w-[1400px] mx-auto">
+            {coreServices.map((service, index) => (
               <motion.div
                 key={service.id}
                 initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
-                transition={{ delay: idx * 0.1 }}
-                className="bg-white rounded-2xl shadow-[0_8px_30px_rgb(0,0,0,0.08)] overflow-hidden border border-gray-100 flex flex-col hover:-translate-y-1 transition-transform duration-300"
+                transition={{ duration: 0.5, delay: index * 0.1 }}
+                className="bg-white rounded-xl overflow-hidden shadow-md hover:shadow-2xl transition-shadow duration-300 relative group flex flex-col h-full"
               >
-                {/* Card Image */}
-                <div className="h-64 relative">
-                  <img src={service.image} alt={service.title} className="w-full h-full object-cover" />
+                {/* Dotted background */}
+                <div
+                  className="absolute bottom-0 left-0 right-0 h-48 opacity-[0.15] pointer-events-none"
+                  style={{ backgroundImage: 'radial-gradient(#64748b 1.5px, transparent 1.5px)', backgroundSize: '16px 16px' }}
+                />
 
-                  {/* Floating Icon */}
-                  <div className={`absolute -bottom-8 left-8 w-16 h-16 rounded-full bg-${service.color.replace('text-', '')} text-white flex items-center justify-center border-4 border-white shadow-lg`}>
-                    {service.icon}
+                {/* Image */}
+                <div className={`relative h-64 w-full border-b-4 ${service.borderColor}`}>
+                  <img src={service.image} alt={service.titleLine1} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" />
+                </div>
+
+                {/* Icon Circle */}
+                <div className="relative flex justify-center -mt-8 mb-4 z-10">
+                  <div className={`w-16 h-16 rounded-full border-[5px] border-white ${service.bgColor} flex items-center justify-center text-white shadow-sm group-hover:-translate-y-1 transition-transform`}>
+                    <service.icon size={24} strokeWidth={2} />
                   </div>
                 </div>
 
-                {/* Card Content */}
-                <div className="p-8 pt-12 flex flex-col grow">
-                  <h3 className={`text-xl font-bold text-${service.color.replace('text-', '')} mb-4 uppercase`}>{service.title}</h3>
-                  <p className="text-gray-600 text-sm leading-relaxed mb-6">
-                    {service.description}
-                  </p>
+                {/* Content */}
+                <div className="px-6 pb-6 flex flex-col items-center flex-grow text-center relative z-10">
+                  <h4 className={`text-[19px] font-extrabold font-poppins tracking-wide ${service.color} mb-0 leading-tight`}>{service.titleLine1}</h4>
+                  <h4 className="text-[19px] font-medium text-gray-500 tracking-wide mb-4 leading-tight">{service.titleLine2}</h4>
+                  <div className={`w-8 h-[2px] ${service.bgColor} mb-4`}></div>
+                  <p className="text-gray-500 text-[13px] leading-relaxed mb-4 font-medium">{service.description}</p>
 
-                  {/* Grouped features (Mechanical) or flat features */}
-                  {service.groups ? (
-                    <div className="flex flex-col gap-4 mb-8 grow">
-                      {service.groups.map((group, gi) => (
-                        <div key={gi}>
-                          <div className={`text-[10px] font-bold uppercase tracking-widest text-${service.color.replace('text-', '')} mb-2 border-b border-gray-100 pb-1`}>
-                            {group.label}
-                          </div>
-                          <div className="grid grid-cols-2 gap-x-2 gap-y-2">
-                            {group.features.map((feature, i) => (
-                              <div key={i} className="flex items-start gap-2">
-                                <Check size={13} className="text-gray-900 shrink-0 mt-0.5" strokeWidth={3} />
-                                <span className="text-[11px] font-medium text-gray-700 leading-tight">{feature}</span>
-                              </div>
-                            ))}
-                          </div>
-                        </div>
-                      ))}
-                    </div>
-                  ) : (
-                    <div className="grid grid-cols-2 gap-x-2 gap-y-2 mb-8">
-                      {service.features.map((feature, i) => (
-                        <div key={i} className="flex items-start gap-2">
-                          <Check size={14} className="text-gray-900 shrink-0 mt-1" strokeWidth={3} />
-                          <span className="text-[11px] font-medium text-gray-700 leading-tight">{feature}</span>
-                        </div>
-                      ))}
-                    </div>
-                  )}
+                  {/* Feature points */}
+                  <div className="w-full grid grid-cols-2 gap-x-3 gap-y-2 mb-6 text-left">
+                    {service.features.map((feature, i) => (
+                      <div key={i} className="flex items-start gap-1.5">
+                        <Check size={12} className="text-gray-700 shrink-0 mt-0.5" strokeWidth={3} />
+                        <span className="text-[11px] font-medium text-gray-600 leading-tight">{feature}</span>
+                      </div>
+                    ))}
+                  </div>
 
-                  {/* Learn More Link */}
-                  <div className="mt-auto">
-                    <Link 
-                      to={service.id === 'hvac' ? '/services/mechanical' : service.link} 
-                      className={`text-${service.color.replace('text-', '')} font-bold text-sm flex items-center gap-1 hover:opacity-80 transition-opacity`}
-                    >
-                      Learn More <ArrowRight size={16} />
+                  <div className="w-full text-left mt-auto">
+                    <Link to={service.link} className={`inline-flex items-center gap-2 font-bold text-xs tracking-wider uppercase hover:translate-x-2 transition-transform ${service.color}`}>
+                      EXPLORE <ArrowRight size={14} strokeWidth={2.5} />
                     </Link>
                   </div>
                 </div>

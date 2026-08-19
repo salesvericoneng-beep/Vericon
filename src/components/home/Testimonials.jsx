@@ -32,8 +32,8 @@ export default function Testimonials() {
       <div className="container mx-auto px-4 md:px-6">
         <div className="text-center max-w-3xl mx-auto mb-16">
           <span className="text-brand-blue font-bold tracking-wider uppercase text-sm mb-2 block">Client Stories</span>
-          <h2 className="text-4xl md:text-5xl font-poppins font-bold text-brand-dark mb-6">
-            Trusted by Industry Leaders
+          <h2 className="text-4xl md:text-5xl font-poppins font-bold text-brand-blue mb-6">
+            Trusted by <span className="text-brand-red">Industry Leaders</span>
           </h2>
         </div>
 
@@ -60,7 +60,7 @@ export default function Testimonials() {
                     <div className="w-16 h-16 rounded-full bg-brand-blue/20 mb-4 flex items-center justify-center text-brand-blue font-bold text-xl">
                       {t.name.charAt(0)}
                     </div>
-                    <h4 className="font-poppins font-bold text-brand-dark">{t.name}</h4>
+                    <h4 className="font-poppins font-bold text-brand-blue">{t.name}</h4>
                     <p className="text-sm text-brand-blue font-medium">{t.title}</p>
                     <p className="text-xs text-gray-500">{t.company}</p>
                   </div>

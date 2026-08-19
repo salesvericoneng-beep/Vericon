@@ -55,12 +55,12 @@ export default function WhyVericon() {
             transition={{ duration: 0.5 }}
             className="max-w-2xl"
           >
-            <h1 className="text-5xl md:text-6xl font-bold text-brand-dark mb-4">
+            <h1 className="text-5xl md:text-6xl font-bold text-brand-blue mb-4">
               WHY <span className="text-brand-red">VERICON?</span>
             </h1>
             <div className="w-16 h-1 bg-brand-red mb-6"></div>
             <h2 className="text-2xl md:text-3xl font-bold text-brand-blue mb-8 leading-tight">
-              Engineering Excellence.<br/>Delivering Lasting Value.
+              Engineering Excellence.<br/><span className="text-brand-red">Delivering Lasting Value.</span>
             </h2>
             <p className="text-gray-800 font-medium leading-relaxed mb-4">
               At VERICON Engineering Services, we combine expertise, innovation and commitment to deliver engineering solutions that make a real difference. Our focus is simple – to deliver reliable systems, build lasting relationships and create value for every client.

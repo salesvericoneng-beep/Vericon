@@ -25,8 +25,8 @@ export default function Industries() {
         {/* Header */}
         <div className="text-center mb-12">
           <h3 className="text-brand-blue font-bold uppercase tracking-wider text-sm mb-2">INDUSTRIES WE SERVE</h3>
-          <h2 className="text-3xl md:text-4xl font-bold font-poppins text-gray-900 mb-4">
-            Empowering Diverse Industries
+          <h2 className="text-3xl md:text-4xl font-bold font-poppins text-brand-blue mb-4">
+            Empowering Diverse <span className="text-brand-red">Industries</span>
           </h2>
           {/* Small Divider */}
           <div className="w-12 h-1 mx-auto flex">

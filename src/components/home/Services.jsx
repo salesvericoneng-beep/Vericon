@@ -62,7 +62,7 @@ export default function Services() {
         {/* Header */}
         <div className="text-center mb-16 max-w-4xl mx-auto">
           <h3 className="text-brand-blue font-bold uppercase tracking-wider text-sm mb-4">OUR ENGINEERING SERVICES</h3>
-          <h2 className="text-4xl md:text-5xl font-bold font-poppins text-brand-dark mb-6">
+          <h2 className="text-4xl md:text-5xl font-bold font-poppins text-brand-blue mb-6">
             Integrated Engineering. <br className="md:hidden" /><span className="text-brand-red">Built for Performance.</span>
           </h2>
           {/* Small Divider */}

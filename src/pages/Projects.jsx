@@ -100,86 +100,42 @@ const diagnosticServices = [
   {
     id: 'vibration-analysis',
     title: 'Vibration Analysis',
-    subtitle: 'Predictive Machinery Health & Dynamic Balancing',
     badge: 'PREDICTIVE DIAGNOSTICS',
-    badgeColor: 'bg-blue-600/10 text-blue-600 border-blue-600/30',
     accentColor: '#123EB7',
     icon: Activity,
-    image: 'https://images.unsplash.com/photo-1581092160607-ee22621dd758?q=80&w=800',
-    description: 'Precision Fast Fourier Transform (FFT) spectral vibration analysis for rotating machinery including chillers, primary/secondary pumps, cooling tower fans, and AHU blower assemblies. Identifies dynamic unbalance, shaft misalignment, bearing degradation, and mechanical resonance at early stages to prevent sudden catastrophic motor breakdowns.',
-    features: [
-      'FFT Spectral Signature Analysis',
-      'ISO 10816 Vibration Severity Standards',
-      'Dynamic In-Situ Machine Balancing',
-      'Early Stage Bearing Wear Detection'
-    ]
+    image: 'https://images.unsplash.com/photo-1581092160607-ee22621dd758?q=80&w=1000',
   },
   {
     id: 'equipment-performance-test',
     title: 'Equipment Performance Test',
-    subtitle: 'Efficiency Verification & Output Benchmarking',
-    badge: 'EFFICIENCY BENCHMARKING',
-    badgeColor: 'bg-indigo-600/10 text-indigo-600 border-indigo-600/30',
+    badge: 'BENCHMARKING',
     accentColor: '#4F46E5',
     icon: Gauge,
-    image: 'https://images.unsplash.com/photo-1581092335397-9583fe92d232?q=80&w=800',
-    description: 'Comprehensive thermodynamic, volumetric airflow, and electrical efficiency testing of critical plant equipment. Validates real-time kW/TR cooling output, coefficient of performance (COP), air handling CFM ratings, water flow GPM, and static pressures against factory design specifications.',
-    features: [
-      'Real-time kW/TR & COP Calculations',
-      'Airflow CFM & Static Pressure Balances',
-      'Chilled & Condenser Water Flow Auditing',
-      'Certified Performance Validation Reports'
-    ]
+    image: 'https://images.unsplash.com/photo-1581092335397-9583fe92d232?q=80&w=1000',
   },
   {
     id: 'auto-sequence-asp-panel',
     title: 'Auto Sequence Solution (ASP Panel)',
-    subtitle: 'Intelligent Multi-Equipment Staging & Lead-Lag Control',
-    badge: 'SMART PLANT AUTOMATION',
-    badgeColor: 'bg-amber-600/10 text-amber-600 border-amber-600/30',
+    badge: 'AUTOMATION',
     accentColor: '#D97706',
     icon: Sliders,
-    image: 'https://images.unsplash.com/photo-1558494949-ef010cbdcc31?q=80&w=800',
-    description: 'Custom micro-PLC auto-sequencing control panels designed for automatic lead-lag staging of multi-chiller banks, cooling tower loops, and secondary pumping stations. Features intelligent load sharing, automated standby switchover upon fault detection, and equalized runtime scheduling.',
-    features: [
-      'Automated Lead-Lag Duty Cycling',
-      'Instant Auto-Changeover on Fault Alarm',
-      'Seamless BMS & SCADA Protocol Integration',
-      'Part-Load Power Minimization'
-    ]
+    image: 'https://images.unsplash.com/photo-1558494949-ef010cbdcc31?q=80&w=1000',
   },
   {
     id: 'electrical-thermography',
     title: 'Electrical Thermography',
-    subtitle: 'Non-Invasive Infrared Hotspot & Safety Inspection',
-    badge: 'INFRARED THERMAL SCANNING',
-    badgeColor: 'bg-brand-red/10 text-brand-red border-brand-red/30',
+    badge: 'THERMAL SCANNING',
     accentColor: '#D80C20',
     icon: Flame,
-    image: 'https://images.unsplash.com/photo-1544724569-5f546fd6f2b6?q=80&w=800',
-    description: 'Non-invasive infrared radiometric thermal imaging of high/low voltage switchgear, transformers, bus ducts, capacitor banks, and distribution boards under live working loads. Locates high-resistance hotspots, phase imbalances, and loose terminal connections to eliminate electrical fire risks.',
-    features: [
-      'High-Resolution Radiometric Scans',
-      'Zero Disruption / Live Load Testing',
-      'Early Phase Overheat Detection',
-      'NFPA 70B & NBC Compliance Reports'
-    ]
+    image: 'https://images.unsplash.com/photo-1544724569-5f546fd6f2b6?q=80&w=1000',
   },
   {
     id: 'cylinder-hp-testing',
     title: 'Cylinder HP Testing & Re-filling',
-    badge: 'PESO / CCOE CERTIFIED TESTING',
-    badgeColor: 'bg-emerald-600/10 text-emerald-600 border-emerald-600/30',
+    badge: 'PESO / CCOE TESTING',
     accentColor: '#059669',
     icon: ShieldCheck,
-    image: 'https://images.unsplash.com/photo-1549488344-1f9b8d2bd1f3?q=80&w=800',
-    description: 'Statutory high-pressure hydrostatic stretch testing (HP testing) and precision refilling for fire suppression gas cylinders including FM-200, Novec 1230, CO2, Inergen, and Nitrogen. Executed in PESO-approved test facilities with ultrasonic wall thickness measurement and certified inspection stamps.',
-    features: [
-      'Hydrostatic Stretch Test up to 250+ Bar',
-      'Certified Gas Re-filling & Purity Verification',
-      'PESO / CCOE Testing Certificates',
-      'Valve Overhaul & O-ring Replacement'
-    ]
+    image: 'https://images.unsplash.com/photo-1549488344-1f9b8d2bd1f3?q=80&w=1000',
   }
 ];
 
@@ -189,7 +145,6 @@ export default function Projects() {
 
       {/* ── 1. BEAST HEROIC SECTION ── */}
       <section className="relative min-h-[580px] lg:min-h-[640px] bg-[#050D1A] flex items-center justify-center overflow-hidden">
-        {/* Background Engineering Image with Dark Gradients */}
         <div className="absolute inset-0 z-0">
           <img
             src="https://images.unsplash.com/photo-1541888946425-d0fbb18f15f6?q=80&w=2000"
@@ -200,11 +155,9 @@ export default function Projects() {
           <div className="absolute inset-0 bg-gradient-to-t from-[#050D1A] via-transparent to-transparent" />
         </div>
 
-        {/* Ambient Glowing Spheres */}
         <div className="absolute -top-24 -left-24 w-96 h-96 rounded-full bg-brand-blue/20 blur-3xl pointer-events-none" />
         <div className="absolute -bottom-24 -right-24 w-96 h-96 rounded-full bg-brand-red/15 blur-3xl pointer-events-none" />
 
-        {/* Blueprint Grid Overlay */}
         <div
           aria-hidden
           className="absolute inset-0 pointer-events-none opacity-10"
@@ -214,10 +167,8 @@ export default function Projects() {
           }}
         />
 
-        {/* Hero Content */}
         <div className="container mx-auto px-6 md:px-12 lg:px-20 relative z-10 py-16 lg:py-24">
           <div className="max-w-4xl">
-            {/* Top Badge */}
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
@@ -226,11 +177,10 @@ export default function Projects() {
             >
               <span className="w-2 h-2 rounded-full bg-brand-red animate-pulse" />
               <span className="text-xs font-bold uppercase tracking-[0.2em] text-white/90">
-                ENGINEERING EXCELLENCE &amp; ADVANCED AUDITS
+                ENGINEERING EXCELLENCE &amp; LIFECYCLE SOLUTIONS
               </span>
             </motion.div>
 
-            {/* Giant Title */}
             <motion.h1
               initial={{ opacity: 0, y: 24 }}
               animate={{ opacity: 1, y: 0 }}
@@ -240,27 +190,24 @@ export default function Projects() {
               SPECIALIZED <span className="text-brand-red">SERVICES</span>
             </motion.h1>
 
-            {/* Sub-headline */}
             <motion.h2
               initial={{ opacity: 0, y: 24 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.2 }}
               className="text-xl sm:text-2xl md:text-3xl font-semibold text-blue-200/90 mb-6 leading-snug"
             >
-              Sustaining Efficiency, Enhancing Life Cycles &amp; Advanced Testing Diagnostics.
+              Sustaining Efficiency, Enhancing Life Cycles &amp; Maximizing Performance.
             </motion.h2>
 
-            {/* Description */}
             <motion.p
               initial={{ opacity: 0, y: 24 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.3 }}
               className="text-gray-300 text-base md:text-lg leading-relaxed max-w-2xl mb-10 font-normal"
             >
-              From proactive 24/7 annual maintenance and retrofit modernizations to high-precision vibration diagnostics, electrical thermography, and PESO-certified cylinder testing, VERICON delivers end-to-end technical mastery.
+              From proactive 24/7 annual maintenance to turnkey modernization retrofits and cutting-edge energy audits, VERICON delivers end-to-end technical mastery engineered for long-term reliability.
             </motion.p>
 
-            {/* Action Buttons */}
             <motion.div
               initial={{ opacity: 0, y: 24 }}
               animate={{ opacity: 1, y: 0 }}
@@ -271,19 +218,18 @@ export default function Projects() {
                 to="/contact"
                 className="bg-brand-red hover:bg-red-700 text-white px-8 py-4 rounded-xl font-bold transition-all duration-300 flex items-center gap-2.5 text-sm shadow-lg shadow-brand-red/30 hover:shadow-brand-red/50 hover:-translate-y-0.5"
               >
-                Request a Technical Quote <ArrowRight size={16} />
+                Request a Service Quote <ArrowRight size={16} />
               </Link>
               <a
                 href="#services-list"
                 className="bg-white/10 hover:bg-white/20 border border-white/20 text-white px-8 py-4 rounded-xl font-bold transition-all duration-300 text-sm backdrop-blur-md hover:-translate-y-0.5"
               >
-                Explore All Solutions
+                Explore Specialized Solutions
               </a>
             </motion.div>
           </div>
         </div>
 
-        {/* Bottom Curved Wave */}
         <div className="absolute bottom-0 left-0 w-full overflow-hidden leading-none z-20">
           <svg className="relative block w-full h-[40px] md:h-[60px]" viewBox="0 0 1200 120" preserveAspectRatio="none">
             <path d="M0,0 C150,90 350,-40 500,60 C650,160 900,10 1200,40 L1200,120 L0,120 Z" className="fill-[#F8FAFC]" />
@@ -297,7 +243,7 @@ export default function Projects() {
           <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6">
             {[
               { icon: Clock, label: '24/7 Rapid Response', desc: 'Guaranteed SLA uptime' },
-              { icon: ShieldCheck, label: '100% Code Compliance', desc: 'NBC, ASHRAE & PESO' },
+              { icon: ShieldCheck, label: '100% Code Compliance', desc: 'NBC & ASHRAE standards' },
               { icon: TrendingDown, label: 'Up to 35% Savings', desc: 'On utility power bills' },
               { icon: Award, label: 'Certified Specialists', desc: 'Decades of MEP mastery' }
             ].map((stat, i) => {
@@ -321,17 +267,16 @@ export default function Projects() {
         </div>
       </section>
 
-      {/* ── 3. CORE SPECIALIZED CAPABILITIES ── */}
+      {/* ── 3. CORE SPECIALIZED SERVICES ── */}
       <section id="services-list" className="py-16 lg:py-24">
         <div className="container mx-auto px-6 md:px-12 lg:px-20 max-w-[1400px]">
 
-          {/* Section Header */}
           <div className="text-center mb-16 max-w-3xl mx-auto">
             <span className="text-brand-blue font-bold uppercase tracking-[0.2em] text-xs mb-3 block">
               OUR SPECIALIZED CAPABILITIES
             </span>
             <h2 className="text-3xl md:text-5xl font-extrabold font-poppins text-brand-blue tracking-tight leading-tight">
-              Lifecycle Engineering &amp; <span className="text-brand-red">Modernization</span>
+              Engineered for <span className="text-brand-red">Longevity &amp; Precision</span>
             </h2>
             <div className="w-16 h-1 mx-auto flex mt-5">
               <div className="w-1/2 h-full bg-brand-blue" />
@@ -339,7 +284,6 @@ export default function Projects() {
             </div>
           </div>
 
-          {/* Service Cards (Alternating Layout) */}
           <div className="flex flex-col gap-16 lg:gap-24 mb-24">
             {specializedServices.map((service, index) => {
               const isEven = index % 2 === 1;
@@ -356,7 +300,6 @@ export default function Projects() {
                 >
                   <div className={`grid grid-cols-1 lg:grid-cols-12 items-stretch ${isEven ? 'lg:flex-row-reverse' : ''}`}>
 
-                    {/* Image Column */}
                     <div className={`lg:col-span-5 relative min-h-[340px] lg:min-h-full overflow-hidden ${isEven ? 'lg:order-2' : 'lg:order-1'}`}>
                       <img
                         src={service.image}
@@ -365,7 +308,6 @@ export default function Projects() {
                       />
                       <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent lg:hidden" />
 
-                      {/* Number Watermark Badge */}
                       <div className="absolute top-6 left-6 bg-white/90 backdrop-blur-md px-4 py-2 rounded-2xl shadow-lg flex items-center gap-2">
                         <span className="font-extrabold text-sm tracking-wider" style={{ color: service.accentColor }}>
                           {service.number}
@@ -377,10 +319,8 @@ export default function Projects() {
                       </div>
                     </div>
 
-                    {/* Content Column */}
                     <div className={`lg:col-span-7 p-8 md:p-12 flex flex-col justify-between ${isEven ? 'lg:order-1' : 'lg:order-2'}`}>
                       <div>
-                        {/* Top Badge & Icon */}
                         <div className="flex items-center justify-between gap-4 mb-4">
                           <span className={`inline-block text-[11px] font-bold uppercase tracking-widest px-3 py-1.5 rounded-full border ${service.badgeColor}`}>
                             {service.badge}
@@ -393,7 +333,6 @@ export default function Projects() {
                           </div>
                         </div>
 
-                        {/* Heading */}
                         <h3 className="text-2xl sm:text-3xl font-extrabold text-brand-blue font-poppins mb-2">
                           {service.title}
                         </h3>
@@ -401,7 +340,6 @@ export default function Projects() {
                           {service.subtitle}
                         </p>
 
-                        {/* 5-6 Lines Deep Description Paragraphs */}
                         <div className="space-y-3 mb-8">
                           {service.description.map((para, pi) => (
                             <p key={pi} className="text-gray-600 text-sm leading-relaxed font-normal">
@@ -410,7 +348,6 @@ export default function Projects() {
                           ))}
                         </div>
 
-                        {/* Highlights Grid */}
                         <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 mb-8 pt-6 border-t border-gray-100">
                           {service.highlights.map((h, hi) => (
                             <div key={hi} className="flex items-center gap-2.5">
@@ -421,7 +358,6 @@ export default function Projects() {
                         </div>
                       </div>
 
-                      {/* Action CTA Row */}
                       <div className="flex flex-wrap items-center gap-4 pt-4">
                         <Link
                           to="/contact"
@@ -446,7 +382,6 @@ export default function Projects() {
             })}
           </div>
 
-          {/* ── 4. ADVANCED TESTING, DIAGNOSTICS & AUDITS ── */}
           <div className="mt-16 pt-16 border-t border-gray-200">
             <div className="text-center mb-16 max-w-3xl mx-auto">
               <span className="text-brand-red font-bold uppercase tracking-[0.2em] text-xs mb-3 block">
@@ -464,8 +399,8 @@ export default function Projects() {
               </p>
             </div>
 
-            {/* Diagnostics Grid */}
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {/* Diagnostics Grid: Image + Name Only */}
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
               {diagnosticServices.map((item, idx) => {
                 const DiagIcon = item.icon;
                 return (
@@ -474,57 +409,46 @@ export default function Projects() {
                     initial={{ opacity: 0, y: 30 }}
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
-                    transition={{ duration: 0.5, delay: idx * 0.1 }}
-                    className="bg-white rounded-3xl overflow-hidden border border-gray-200/80 shadow-md hover:shadow-2xl transition-all duration-300 flex flex-col group"
+                    transition={{ duration: 0.4, delay: idx * 0.08 }}
+                    className="bg-white rounded-2xl overflow-hidden border border-gray-200 shadow-md hover:shadow-2xl transition-all duration-300 flex flex-col group hover:-translate-y-1.5"
                   >
                     {/* Image Header */}
-                    <div className="relative h-52 w-full overflow-hidden">
+                    <div className="relative h-60 w-full overflow-hidden bg-gray-100">
                       <img
                         src={item.image}
                         alt={item.title}
-                        className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                        className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
                       />
-                      <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent" />
-                      <div className="absolute top-4 left-4">
-                        <span className={`text-[10px] font-extrabold uppercase tracking-widest px-3 py-1 rounded-full bg-white/90 backdrop-blur-md shadow-sm text-gray-800`}>
+                      <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-80 group-hover:opacity-60 transition-opacity" />
+
+                      {/* Badge */}
+                      <div className="absolute top-3.5 left-3.5">
+                        <span className="text-[10px] font-extrabold uppercase tracking-wider px-3 py-1 rounded-full bg-white/95 backdrop-blur-md shadow text-gray-900">
                           {item.badge}
                         </span>
                       </div>
+
+                      {/* Icon */}
                       <div
-                        className="absolute bottom-4 right-4 w-11 h-11 rounded-2xl flex items-center justify-center text-white shadow-lg"
+                        className="absolute bottom-3.5 right-3.5 w-10 h-10 rounded-xl flex items-center justify-center text-white shadow-lg transition-transform group-hover:scale-110"
                         style={{ backgroundColor: item.accentColor }}
                       >
                         <DiagIcon size={20} strokeWidth={2} />
                       </div>
                     </div>
 
-                    {/* Content */}
-                    <div className="p-7 flex flex-col flex-grow justify-between">
+                    {/* Content: Title & Enquire Action Only */}
+                    <div className="p-5 flex flex-col justify-between flex-grow">
                       <div>
-                        <h3 className="text-xl font-bold text-brand-blue font-poppins mb-1.5 leading-snug">
+                        <h3 className="text-lg font-bold text-brand-blue font-poppins mb-3 leading-snug group-hover:text-brand-red transition-colors">
                           {item.title}
                         </h3>
-                        <p className="text-brand-red font-semibold text-xs mb-4">
-                          {item.subtitle}
-                        </p>
-                        <p className="text-gray-600 text-xs sm:text-sm leading-relaxed mb-6">
-                          {item.description}
-                        </p>
-
-                        {/* Features */}
-                        <div className="space-y-2 mb-6 pt-4 border-t border-gray-100">
-                          {item.features.map((feat, fi) => (
-                            <div key={fi} className="flex items-start gap-2">
-                              <CheckCircle2 size={14} className="text-brand-red shrink-0 mt-0.5" strokeWidth={2.5} />
-                              <span className="text-xs text-gray-700 font-medium">{feat}</span>
-                            </div>
-                          ))}
-                        </div>
+                        <div className="w-8 h-[2px] bg-brand-red mb-4" />
                       </div>
 
                       <Link
                         to="/contact"
-                        className="w-full py-3 rounded-xl font-bold text-xs uppercase tracking-wider text-center border transition-all duration-300 flex items-center justify-center gap-2 group-hover:text-white"
+                        className="w-full py-2.5 rounded-lg font-bold text-xs uppercase tracking-wider text-center border transition-all duration-300 flex items-center justify-center gap-1.5 group-hover:text-white"
                         style={{
                           borderColor: item.accentColor,
                           color: item.accentColor,
@@ -538,7 +462,7 @@ export default function Projects() {
                           e.currentTarget.style.color = item.accentColor;
                         }}
                       >
-                        Schedule Audit <ArrowRight size={14} />
+                        Schedule Audit <ArrowRight size={13} />
                       </Link>
                     </div>
                   </motion.div>

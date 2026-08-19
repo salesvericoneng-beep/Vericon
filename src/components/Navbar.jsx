@@ -7,7 +7,7 @@ const navLinks = [
   { name: 'Home', path: '/' },
   { name: 'About Us', path: '/about' },
   { 
-    name: 'Services', 
+    name: 'Projects', 
     path: '/services',
     dropdown: [
       { 
@@ -22,7 +22,7 @@ const navLinks = [
       { name: 'PHE Solutions', path: '/services/phe' }
     ]
   },
-  { name: 'Projects', path: '/projects' },
+  { name: 'Services', path: '/projects' },
   { name: 'Contact Us', path: '/contact' }
 ];
 

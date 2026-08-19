@@ -11,7 +11,7 @@ const quickLinks = [
 ];
 
 const services = [
-  { name: 'HVAC Solutions', path: '/services/mechanical' },
+  { name: 'HVAC Solutions', path: '/services/hvac' },
   { name: 'Electrical Solutions', path: '/services/electrical' },
   { name: 'Fire Fighting Solutions', path: '/services/fire' },
   { name: 'Public Health Engineering', path: '/services/phe' },

@@ -1,20 +1,20 @@
 import React from 'react';
-import { Settings, Zap, Flame, Droplet, ArrowRight } from 'lucide-react';
+import { Snowflake, Zap, Flame, Droplet, ArrowRight } from 'lucide-react';
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
 
 const services = [
   {
-    id: 'mechanical',
+    id: 'hvac',
     image: '/mechanical.jpg',
-    icon: Settings,
+    icon: Snowflake,
     color: 'text-[#003B8F]',
     borderColor: 'border-[#003B8F]',
     bgColor: 'bg-[#003B8F]',
-    titleLine1: 'MECHANICAL',
+    titleLine1: 'HVAC',
     titleLine2: 'SOLUTIONS',
-    description: 'Advanced HVAC and mechanical systems designed for efficiency, comfort and sustainability.',
-    link: '/services/mechanical'
+    description: 'Advanced HVAC and climate control systems designed for efficiency, comfort and sustainability.',
+    link: '/services/hvac'
   },
   {
     id: 'electrical',

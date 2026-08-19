@@ -10,13 +10,7 @@ const navLinks = [
     name: 'Projects', 
     path: '/services',
     dropdown: [
-      { 
-        name: 'Mechanical Solutions',
-        path: '/services/mechanical',
-        subDropdown: [
-          { name: 'HVAC Solutions', path: '/services/hvac' }
-        ]
-      },
+      { name: 'HVAC Solutions', path: '/services/hvac' },
       { name: 'Electrical Solutions', path: '/services/electrical' },
       { name: 'Fire Fighting Solutions', path: '/services/fire' },
       { name: 'PHE Solutions', path: '/services/phe' }

@@ -10,22 +10,22 @@ import { Link } from 'react-router-dom';
 
 const coreServices = [
   {
-    id: 'mechanical',
+    id: 'hvac',
     image: '/mechanical.jpg',
-    icon: Settings,
+    icon: Snowflake,
     bgColor: 'bg-[#003B8F]',
     borderColor: 'border-[#003B8F]',
     color: 'text-[#003B8F]',
-    titleLine1: 'MECHANICAL',
+    titleLine1: 'HVAC',
     titleLine2: 'SOLUTIONS',
-    description: 'Advanced HVAC and mechanical systems designed for efficiency, comfort and sustainability.',
+    description: 'Advanced HVAC systems designed for optimal climate control, energy efficiency, and sustainability.',
     features: [
       'HVAC Design', 'Chilled Water Systems',
       'Air Handling Units (AHU)', 'VRF / VRV Systems',
       'Ventilation Solutions', 'Clean Room HVAC',
       'Ducting & Piping', 'Energy Optimization',
     ],
-    link: '/services/mechanical'
+    link: '/services/hvac'
   },
   {
     id: 'electrical',

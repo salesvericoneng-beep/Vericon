@@ -12,7 +12,7 @@ const contactInfo = [
     title: 'ADDRESS', 
     details: [
       'VERICON Engineering Private Limited',
-      'Plot no 13, Ground floor, Survey 64/2,',
+      'Plot No 13, Ground floor, Survey 64/2,',
       '(New) Software Units Layout, Awfis Ohris Tech Park,',
       'Madhapur, HITEC City, Hyderabad, Telangana 500081.'
     ]

@@ -48,7 +48,7 @@ export default function Contact() {
       <section className="relative w-full overflow-hidden bg-white">
         <div className="relative w-full h-auto lg:h-[75vh]">
           <img 
-            src="/Contact_hero.jpg" 
+            src="/Contact_hero.jpeg" 
             alt="Contact Us" 
             className="w-full h-full lg:object-cover lg:object-center object-contain block"
           />

@@ -253,102 +253,66 @@ export default function About() {
       </section>
 
       {/* Vision and Mission Split Section */}
-      <section className="py-24 bg-white relative overflow-hidden">
-        <div className="container mx-auto px-4 md:px-8 lg:px-16 max-w-[1400px]">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-24 relative z-10">
-            
+      <section className="py-14 bg-white relative overflow-hidden">
+        <div className="container mx-auto px-6 md:px-10 lg:px-16 max-w-7xl">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-16 relative z-10">
+
             {/* Left Column: VISION */}
             <div className="flex flex-col">
-              <h3 className="text-brand-red font-bold uppercase tracking-widest text-sm mb-3">OUR VISION</h3>
-              <div className="flex w-12 h-[3px] mb-8">
+              <h3 className="text-brand-red font-bold uppercase tracking-widest text-xs mb-2">OUR VISION</h3>
+              <div className="flex w-8 h-[2px] mb-5">
                 <div className="w-1/2 h-full bg-brand-red"></div>
                 <div className="w-1/2 h-full bg-brand-blue"></div>
               </div>
-              <h2 className="text-4xl md:text-5xl font-bold font-poppins leading-tight tracking-tight mb-8">
-                <span className="text-brand-blue block mb-2">Shaping the Future.</span>
+              <h2 className="text-2xl md:text-3xl font-bold font-poppins leading-snug tracking-tight mb-4">
+                <span className="text-brand-blue block">Shaping the Future.</span>
                 <span className="text-brand-red block">Engineering Lasting Value.</span>
               </h2>
-              <div className="flex w-12 h-[3px] mb-8">
-                <div className="w-1/2 h-full bg-brand-red"></div>
-                <div className="w-1/2 h-full bg-brand-blue"></div>
-              </div>
-              <p className="text-gray-700 text-lg leading-relaxed mb-12 max-w-md font-medium">
+              <p className="text-gray-600 text-sm leading-relaxed mb-6 max-w-sm">
                 We envision a future where engineering creates smarter, safer and more sustainable environments that empower communities and enrich generations to come.
               </p>
-              <div className="w-full relative rounded-tr-3xl overflow-hidden shadow-2xl flex-grow min-h-[400px] mt-auto">
+              <div className="w-full relative rounded-2xl overflow-hidden shadow-xl flex-grow min-h-[260px] mt-auto">
                 <img src="/building.jpg" alt="Modern Building" className="absolute inset-0 w-full h-full object-cover" />
               </div>
             </div>
 
             {/* Right Column: MISSION & VALUES */}
             <div className="flex flex-col">
-              <h3 className="text-brand-red font-bold uppercase tracking-widest text-sm mb-3">OUR MISSION</h3>
-              <div className="flex w-12 h-[3px] mb-8">
+              <h3 className="text-brand-red font-bold uppercase tracking-widest text-xs mb-2">OUR MISSION</h3>
+              <div className="flex w-8 h-[2px] mb-5">
                 <div className="w-1/2 h-full bg-brand-blue"></div>
                 <div className="w-1/2 h-full bg-brand-red"></div>
               </div>
-              <h2 className="text-4xl md:text-5xl font-bold font-poppins leading-tight tracking-tight mb-6">
-                <span className="text-brand-blue block mb-2">Engineering with Integrity.</span>
+              <h2 className="text-2xl md:text-3xl font-bold font-poppins leading-snug tracking-tight mb-3">
+                <span className="text-brand-blue block">Engineering with Integrity.</span>
                 <span className="text-brand-red block">Delivering with Impact.</span>
               </h2>
-              <p className="text-gray-700 text-lg leading-relaxed mb-12 font-medium">
+              <p className="text-gray-600 text-sm leading-relaxed mb-6">
                 We are committed to engineering excellence through integrity, innovation and collaboration to deliver measurable impact for our clients, our people and the world around us.
               </p>
 
               {/* Values List */}
-              <div className="flex flex-col space-y-8">
-                {/* 1 */}
-                <div className="flex items-start gap-6 border-b border-gray-100 pb-8">
-                  <div className="w-16 h-16 shrink-0 rounded-full bg-white shadow-md border border-gray-100 flex items-center justify-center text-brand-blue">
-                    <Target size={32} strokeWidth={1.5} />
+              <div className="flex flex-col divide-y divide-gray-100">
+                {[
+                  { icon: <Target size={20} strokeWidth={1.8} />, color: 'text-brand-blue', title: 'ENGINEERING EXCELLENCE', desc: 'Technical expertise, precision and dependable execution in everything we do.' },
+                  { icon: <TrendingUp size={20} strokeWidth={1.8} />, color: 'text-brand-red', title: 'LASTING VALUE', desc: 'Delivering efficient, reliable and future-ready solutions that create long-term value.' },
+                  { icon: <ShieldCheck size={20} strokeWidth={1.8} />, color: 'text-brand-blue', title: 'QUALITY & SAFETY', desc: 'Upholding uncompromising standards of quality, safety and integrity.' },
+                  { icon: <Lightbulb size={20} strokeWidth={1.8} />, color: 'text-green-600', title: 'INNOVATION & SUSTAINABILITY', desc: 'Embracing innovation and sustainable practices to build a better tomorrow.' },
+                  { icon: <Handshake size={20} strokeWidth={1.8} />, color: 'text-brand-blue', title: 'TRUSTED PARTNERSHIPS', desc: 'Building long-term relationships through transparency, trust and collaboration.' },
+                ].map((item, i) => (
+                  <div key={i} className="flex items-start gap-4 py-4">
+                    <div className={`w-9 h-9 shrink-0 rounded-lg bg-gray-50 border border-gray-100 flex items-center justify-center ${item.color}`}>
+                      {item.icon}
+                    </div>
+                    <div>
+                      <h4 className="text-gray-900 font-bold text-xs uppercase tracking-wider mb-0.5">{item.title}</h4>
+                      <p className="text-gray-500 text-xs leading-relaxed">{item.desc}</p>
+                    </div>
                   </div>
-                  <div>
-                    <h4 className="text-brand-dark font-bold text-lg mb-2 uppercase tracking-wide">ENGINEERING EXCELLENCE</h4>
-                    <p className="text-gray-600 font-medium leading-relaxed">Technical expertise, precision and dependable execution in everything we do.</p>
-                  </div>
-                </div>
-                {/* 2 */}
-                <div className="flex items-start gap-6 border-b border-gray-100 pb-8">
-                  <div className="w-16 h-16 shrink-0 rounded-full bg-white shadow-md border border-gray-100 flex items-center justify-center text-brand-red">
-                    <TrendingUp size={32} strokeWidth={1.5} />
-                  </div>
-                  <div>
-                    <h4 className="text-brand-dark font-bold text-lg mb-2 uppercase tracking-wide">LASTING VALUE</h4>
-                    <p className="text-gray-600 font-medium leading-relaxed">Delivering efficient, reliable and future-ready solutions that create long-term value.</p>
-                  </div>
-                </div>
-                {/* 3 */}
-                <div className="flex items-start gap-6 border-b border-gray-100 pb-8">
-                  <div className="w-16 h-16 shrink-0 rounded-full bg-white shadow-md border border-gray-100 flex items-center justify-center text-brand-blue">
-                    <ShieldCheck size={32} strokeWidth={1.5} />
-                  </div>
-                  <div>
-                    <h4 className="text-brand-dark font-bold text-lg mb-2 uppercase tracking-wide">QUALITY & SAFETY</h4>
-                    <p className="text-gray-600 font-medium leading-relaxed">Upholding uncompromising standards of quality, safety and integrity.</p>
-                  </div>
-                </div>
-                {/* 4 */}
-                <div className="flex items-start gap-6 border-b border-gray-100 pb-8">
-                  <div className="w-16 h-16 shrink-0 rounded-full bg-white shadow-md border border-gray-100 flex items-center justify-center text-green-600">
-                    <Lightbulb size={32} strokeWidth={1.5} />
-                  </div>
-                  <div>
-                    <h4 className="text-brand-dark font-bold text-lg mb-2 uppercase tracking-wide">INNOVATION & SUSTAINABILITY</h4>
-                    <p className="text-gray-600 font-medium leading-relaxed">Embracing innovation and sustainable practices to build a better, smarter tomorrow.</p>
-                  </div>
-                </div>
-                {/* 5 */}
-                <div className="flex items-start gap-6">
-                  <div className="w-16 h-16 shrink-0 rounded-full bg-white shadow-md border border-gray-100 flex items-center justify-center text-brand-blue">
-                    <Handshake size={32} strokeWidth={1.5} />
-                  </div>
-                  <div>
-                    <h4 className="text-brand-dark font-bold text-lg mb-2 uppercase tracking-wide">TRUSTED PARTNERSHIPS</h4>
-                    <p className="text-gray-600 font-medium leading-relaxed">Building long-term relationships through transparency, trust and collaboration.</p>
-                  </div>
-                </div>
+                ))}
               </div>
             </div>
+
           </div>
         </div>
       </section>

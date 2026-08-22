@@ -8,17 +8,57 @@ import {
 import WhyChooseVericon from '../components/WhyChooseVericon';
 
 const electricalServices = [
-  { icon: <PenTool size={32} strokeWidth={1.5} />, title: 'Electrical Design', desc: 'Safe and efficient electrical system design using latest standards and tools.', color: 'text-brand-red' },
-  { icon: <Cpu size={32} strokeWidth={1.5} />, title: 'Power Distribution', desc: 'Design and installation of LT & HT power distribution systems.', color: 'text-brand-blue' },
-  { icon: <Server size={32} strokeWidth={1.5} />, title: 'LT & HT Panels', desc: 'Manufacturing and installation of LT and HT panels with highest safety standards.', color: 'text-brand-red' },
-  { icon: <Share2 size={32} strokeWidth={1.5} />, title: 'Cabling & Wiring', desc: 'Structured and neatly executed cabling solutions for reliable power supply.', color: 'text-brand-red' },
-  { icon: <AlignJustify size={32} strokeWidth={1.5} />, title: 'Cable Trays & Busducts', desc: 'Installation of cable trays, busducts and supporting systems.', color: 'text-brand-blue' },
-  { icon: <Lightbulb size={32} strokeWidth={1.5} />, title: 'Lighting Systems', desc: 'Indoor, outdoor and industrial lighting solutions with energy efficiency.', color: 'text-brand-red' },
-  { icon: <ZapOff size={32} strokeWidth={1.5} />, title: 'Earthing & Lightning', desc: 'Effective earthing and lightning protection systems for safety and compliance.', color: 'text-brand-red' },
-  { icon: <Wrench size={32} strokeWidth={1.5} />, title: 'Testing & Commissioning', desc: 'Complete testing and commissioning for safe and smooth operations.', color: 'text-brand-red' }
+  { 
+    image: 'https://images.unsplash.com/photo-1581092160607-ee22621dd758?q=80&w=800',
+    icon: <PenTool size={24} strokeWidth={1.8} />, 
+    title: 'Electrical Design', 
+    desc: 'Safe and efficient electrical system design using latest standards, load calculations, and engineering tools.' 
+  },
+  { 
+    image: 'https://images.unsplash.com/photo-1544725121-be3bf52e2dc8?q=80&w=800',
+    icon: <Cpu size={24} strokeWidth={1.8} />, 
+    title: 'Power Distribution', 
+    desc: 'Design and installation of LT & HT power distribution networks, transformers, and switchyards.' 
+  },
+  { 
+    image: 'https://images.unsplash.com/photo-1621905252507-b35492cc74b4?q=80&w=800',
+    icon: <Server size={24} strokeWidth={1.8} />, 
+    title: 'LT & HT Panels', 
+    desc: 'Manufacturing and installation of PCC, MCC, APFC, and AMF control panels with highest safety standards.' 
+  },
+  { 
+    image: 'https://images.unsplash.com/photo-1558618666-fcd25c85cd64?q=80&w=800',
+    icon: <Share2 size={24} strokeWidth={1.8} />, 
+    title: 'Cabling & Wiring', 
+    desc: 'Structured and neatly executed heavy power cabling solutions for reliable, loss-free power supply.' 
+  },
+  { 
+    image: 'https://images.unsplash.com/photo-1504328345606-18bbc8c9d7d1?q=80&w=800',
+    icon: <AlignJustify size={24} strokeWidth={1.8} />, 
+    title: 'Cable Trays & Busducts', 
+    desc: 'Installation of perforated and ladder cable trays, sandwich busducts, and heavy-duty support systems.' 
+  },
+  { 
+    image: 'https://images.unsplash.com/photo-1507499739999-097706ad8914?q=80&w=800',
+    icon: <Lightbulb size={24} strokeWidth={1.8} />, 
+    title: 'Lighting Systems', 
+    desc: 'Indoor, outdoor, and industrial lighting solutions integrated with energy-efficient daylight and smart sensors.' 
+  },
+  { 
+    image: 'https://images.unsplash.com/photo-1518770660439-4636190af475?q=80&w=800',
+    icon: <ZapOff size={24} strokeWidth={1.8} />, 
+    title: 'Earthing & Lightning', 
+    desc: 'Effective chemical earthing and early streamer emission lightning protection systems for complete asset safety.' 
+  },
+  { 
+    image: 'https://images.unsplash.com/photo-1581092580497-e0d23cbdf1dc?q=80&w=800',
+    icon: <Wrench size={24} strokeWidth={1.8} />, 
+    title: 'Testing & Commissioning', 
+    desc: 'Complete pre-commissioning relay coordination, insulation resistance, and dielectric testing for smooth operation.' 
+  }
 ];
 
-const systems = [
+const electricalSystems = [
   { icon: <Cpu size={40} strokeWidth={1.5} />, title: 'Power Distribution\nSystems' },
   { icon: <Battery size={40} strokeWidth={1.5} />, title: 'DG Set\nSystems' },
   { icon: <ShieldCheck size={40} strokeWidth={1.5} />, title: 'Electrical Protection\nSystems' },
@@ -60,15 +100,20 @@ export default function ElectricalSolutions() {
             className="max-w-2xl"
           >
             <h1 className="text-5xl md:text-6xl font-bold text-white mb-6">Electrical Solutions</h1>
-            <p className="text-lg md:text-xl text-blue-100 mb-10 leading-relaxed font-medium">
+            <p className="text-lg md:text-xl text-blue-100 mb-6 leading-relaxed font-medium">
               Powering Performance. Ensuring Reliability.
             </p>
             <p className="text-gray-300 mb-10 leading-relaxed">
               We provide safe, reliable and energy-efficient electrical solutions tailored for commercial, industrial and infrastructure projects.
             </p>
-            <Link to="/contact" className="inline-flex items-center gap-2 bg-brand-red hover:bg-red-700 text-white px-8 py-4 rounded-md font-bold transition-colors">
-              Get a Quote <ArrowRight size={20} />
-            </Link>
+            <div className="flex flex-wrap gap-4">
+              <Link to="/contact" className="inline-flex items-center gap-2 bg-brand-red hover:bg-red-700 text-white px-8 py-4 rounded-md font-bold transition-colors">
+                Get a Quote <ArrowRight size={20} />
+              </Link>
+              <Link to="/services" className="inline-flex items-center gap-2 bg-white/10 hover:bg-white/20 border border-white/30 text-white px-6 py-4 rounded-md font-bold transition-colors">
+                ← All Services
+              </Link>
+            </div>
           </motion.div>
         </div>
       </section>
@@ -116,7 +161,7 @@ export default function ElectricalSolutions() {
         </div>
       </section>
 
-      {/* 3. Our Electrical Services */}
+      {/* 3. Our Electrical Services Grid with Images */}
       <section className="py-20 bg-gray-50/50 border-t border-gray-100">
         <div className="container mx-auto px-6 md:px-12 lg:px-20">
           
@@ -132,16 +177,32 @@ export default function ElectricalSolutions() {
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
-                transition={{ delay: idx * 0.1 }}
-                className="bg-white rounded-2xl p-8 border border-gray-100 shadow-[0_4px_20px_rgb(0,0,0,0.04)] flex flex-col items-center text-center hover:-translate-y-1 transition-transform"
+                transition={{ delay: idx * 0.05 }}
+                className="bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-xl border border-gray-100 hover:border-blue-100 transition-all duration-300 flex flex-col group"
               >
-                <div className={`w-16 h-16 rounded-full border border-gray-100 bg-gray-50 flex items-center justify-center ${service.color} mb-6`}>
-                  {service.icon}
+                {/* Image Header */}
+                <div className="h-44 overflow-hidden relative bg-gray-100">
+                  <img 
+                    src={service.image} 
+                    alt={service.title} 
+                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                  />
+                  <div className="absolute top-3 left-3 bg-white/90 backdrop-blur-md p-2.5 rounded-xl shadow-md text-brand-blue">
+                    {service.icon}
+                  </div>
                 </div>
-                <h3 className="text-brand-blue font-bold mb-4">{service.title}</h3>
-                <p className="text-gray-600 text-sm leading-relaxed">
-                  {service.desc}
-                </p>
+
+                {/* Content */}
+                <div className="p-6 flex-1 flex flex-col justify-between">
+                  <div>
+                    <h3 className="text-base sm:text-lg font-bold text-brand-blue mb-2.5 font-poppins group-hover:text-brand-red transition-colors">
+                      {service.title}
+                    </h3>
+                    <p className="text-gray-600 text-xs sm:text-sm leading-relaxed">
+                      {service.desc}
+                    </p>
+                  </div>
+                </div>
               </motion.div>
             ))}
           </div>
@@ -159,7 +220,7 @@ export default function ElectricalSolutions() {
           </div>
 
           <div className="flex flex-wrap justify-center gap-12 lg:gap-16">
-            {systems.map((system, idx) => (
+            {electricalSystems.map((system, idx) => (
               <div key={idx} className="flex flex-col items-center text-center max-w-[120px]">
                 <div className="text-brand-blue mb-4">
                   {system.icon}
@@ -174,7 +235,7 @@ export default function ElectricalSolutions() {
         </div>
       </section>
 
-      {/* 5. Why Choose Vericon for Electrical */}
+      {/* 5. Why Choose Vericon */}
       <WhyChooseVericon />
 
       {/* 6. CTA Bar with Engineer Background */}

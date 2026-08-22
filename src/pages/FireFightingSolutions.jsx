@@ -1,225 +1,273 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
-import { ChevronRight, ArrowRight, Flame } from 'lucide-react';
+import { 
+  ChevronRight, ArrowRight, Flame, ShieldAlert, Bell, Droplets, 
+  Wind, Cylinder, Waves, Wrench, ShieldCheck, Building2, Activity, Gauge
+} from 'lucide-react';
 import WhyChooseVericon from '../components/WhyChooseVericon';
 
 const fireServices = [
   {
-    id: 1,
-    title: 'Fire Alarm Systems',
     image: '/fire_alarm.png',
-    description:
-      'Our intelligent fire alarm systems provide early detection and quick alerts to ensure fast emergency response. Available in conventional and addressable models, they are tailored to fit residential, commercial, and industrial setups. Seamlessly integrates with fire suppression and building management systems. Enhances safety, minimizes risk, and ensures regulatory compliance. Reliable protection when seconds matter most.',
+    icon: <Bell size={24} strokeWidth={1.8} />,
+    title: 'Fire Alarm & Detection',
+    desc: 'Intelligent conventional and addressable smoke, heat, and flame detection systems with automated BMS and notification integration.'
   },
   {
-    id: 2,
-    title: 'Fire Hydrant Systems',
     image: '/hydrant.png',
-    description:
-      'Our fire hydrant systems deliver high-pressure water supply to combat large-scale fires effectively. They include pumps, pipes, valves, and hoses built to the latest fire safety standards. Ideal for factories, warehouses, and high-rise buildings with wide coverage needs. Designed for durability, performance, and easy maintenance. A critical component in any comprehensive firefighting setup.',
+    icon: <Droplets size={24} strokeWidth={1.8} />,
+    title: 'Fire Hydrant Systems',
+    desc: 'High-pressure internal and external hydrant networks, landing valves, hose reels, and dedicated fire pump house automation.'
   },
   {
-    id: 3,
-    title: 'Automatic Fire Sprinklers',
     image: '/sprinkler.png',
-    description:
-      'Sprinkler systems automatically sense heat and distribute water to quickly control or extinguish fires before they spread. These systems feature ceiling and roof-mounted heads placed strategically throughout your facility. We utilize hydraulic balancing and advanced heat-sensing technology to guarantee immediate response and minimal water damage during an emergency. Designed and installed to NFPA and NBC standards.',
+    icon: <Waves size={24} strokeWidth={1.8} />,
+    title: 'Automatic Fire Sprinklers',
+    desc: 'Wet pipe, dry pipe, and pre-action sprinkler systems engineered with precision hydraulic calculations to NFPA & NBC standards.'
   },
   {
-    id: 4,
-    title: 'Fire Extinguishers',
     image: '/extinguisher.png',
-    description:
-      'We supply, install, and maintain a complete range of fixed and portable fire extinguishers. Our inventory includes ABC dry powder, CO2, foam-based, and clean agent extinguishers suited for all fire risk categories. We ensure your facility is equipped with the right type of extinguisher for specific fire hazards, and provide regular refills and testing. Fully compliant with NBC and IS standards.',
+    icon: <ShieldAlert size={24} strokeWidth={1.8} />,
+    title: 'Fire Extinguishers',
+    desc: 'Complete range of ABC dry powder, CO2, foam-based, and clean agent extinguishers with scheduled refilling, testing and certification.'
   },
   {
-    id: 5,
-    title: 'Clean Agent Systems',
     image: '/clean_agent.png',
-    description:
-      'FM-200® fire suppression is an advanced, environmentally acceptable Halon replacement. This gas-based system has zero ozone depleting potential, is non-conductive, entirely safe for people, and leaves no residue. It is the perfect solution for protecting sensitive equipment in server rooms, data centers, and telecommunication facilities without causing collateral damage. Fast, effective, and internationally certified.',
+    icon: <Wind size={24} strokeWidth={1.8} />,
+    title: 'Clean Agent Suppression',
+    desc: 'FM-200, Novec 1230, and Inergen total flooding systems engineered for zero-residue protection in data centers and server rooms.'
   },
   {
-    id: 6,
-    title: 'Gas Suppression Systems',
     image: '/gas_suppression.png',
-    description:
-      'Our dry chemical powder and gas-based total flooding systems use premium nitrogen cylinders and ASME-grade pressure vessels. Designed with both electric and pneumatic actuation devices, these factory-designed units offer rapid fire knockdown. Perfect for industrial settings and critical control rooms where water-based suppression is not viable. Compliant with NFPA 2001, ISO 14520, and relevant IS codes.',
+    icon: <Cylinder size={24} strokeWidth={1.8} />,
+    title: 'Gas Suppression Systems',
+    desc: 'CO2 and dry chemical total flooding systems with pneumatic and electric actuators for electrical rooms and hazardous storage.'
   },
   {
-    id: 7,
-    title: 'Deluge, Spray & Foam Systems',
     image: '/deluge_foam.png',
-    description:
-      'We offer high and medium velocity water spray systems featuring automatic Deluge Valve actuation. These systems create a thick foam blanket or powerful water spray, specifically designed for protecting vessels, chemical plants, and areas exposed to flammable liquids and gases. Rigorous hydraulic calculations ensure optimal flow and coverage. Essential protection for petrochemical, oil & gas, and industrial facilities.',
+    icon: <Flame size={24} strokeWidth={1.8} />,
+    title: 'Deluge, Spray & Foam',
+    desc: 'High/medium velocity water spray and high-expansion foam systems with automatic deluge valves for transformers and chemical vessels.'
   },
+  {
+    image: 'https://images.unsplash.com/photo-1542456485-645903b41d4c?q=80&w=800',
+    icon: <Wrench size={24} strokeWidth={1.8} />,
+    title: 'Fire Pump Houses & NOC',
+    desc: 'Complete Main, Standby Diesel, and Jockey pump installations, hydro-pneumatic testing, and Fire NOC liaison support.'
+  }
+];
+
+const fireSystems = [
+  { icon: <Bell size={40} strokeWidth={1.5} />, title: 'Addressable Fire\nAlarm Systems' },
+  { icon: <Waves size={40} strokeWidth={1.5} />, title: 'Automatic Sprinkler\nNetworks' },
+  { icon: <Droplets size={40} strokeWidth={1.5} />, title: 'Fire Hydrant &\nStandpipe Systems' },
+  { icon: <Wind size={40} strokeWidth={1.5} />, title: 'Clean Agent Gas\nSuppression' },
+  { icon: <Gauge size={40} strokeWidth={1.5} />, title: 'Dedicated Fire\nPump Stations' },
+  { icon: <Building2 size={40} strokeWidth={1.5} />, title: 'Life Safety &\nBMS Integration' }
 ];
 
 export default function FireFightingSolutions() {
   return (
     <div className="pt-20 min-h-screen bg-white overflow-hidden">
-
+      
       {/* 1. Hero Section */}
-      <section className="relative w-full min-h-[520px] md:h-[600px] bg-brand-dark flex flex-col justify-center py-24 md:py-0">
+      <section className="relative w-full h-[500px] bg-brand-dark flex flex-col justify-center">
         <div className="absolute inset-0">
-          <img
-            src="https://images.unsplash.com/photo-1549488344-1f9b8d2bd1f3?q=80&w=2000"
-            alt="Fire Fighting Systems"
-            className="w-full h-full object-cover opacity-55"
+          <img 
+            src="https://images.unsplash.com/photo-1582139329536-e7284fece509?q=80&w=2000" 
+            alt="Fire Fighting Solutions" 
+            className="w-full h-full object-cover opacity-60"
           />
-          <div className="absolute inset-0 bg-gradient-to-r from-[#001838] via-[#001838]/85 to-transparent w-full md:w-[75%]"></div>
+          <div className="absolute inset-0 bg-gradient-to-r from-[#001838] via-[#001838]/80 to-transparent w-full md:w-[70%]"></div>
         </div>
 
         <div className="container mx-auto px-6 md:px-12 lg:px-20 relative z-10">
-
+          
           {/* Breadcrumbs */}
-          <div className="flex flex-wrap items-center gap-1.5 text-xs text-gray-300 mb-6">
+          <div className="flex items-center gap-2 text-sm text-gray-300 mb-8">
             <Link to="/" className="hover:text-white transition-colors">Home</Link>
             <ChevronRight size={14} />
             <Link to="/services" className="hover:text-white transition-colors">Services</Link>
             <ChevronRight size={14} />
-            <Link to="/services/mechanical" className="hover:text-white transition-colors">Mechanical Solutions</Link>
+            <Link to="/services/mechanical" className="hover:text-white transition-colors">Mechanical</Link>
             <ChevronRight size={14} />
             <span className="text-white font-medium">Fire Fighting Solutions</span>
           </div>
 
-          <motion.div
+          <motion.div 
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
-            className="max-w-3xl"
+            transition={{ duration: 0.5 }}
+            className="max-w-2xl"
           >
-            <div className="inline-flex items-center gap-2 bg-red-500/20 border border-red-400/40 text-red-200 text-sm font-semibold px-4 py-1.5 rounded-full mb-6">
-              <Flame size={14} />
-              Fire Fighting Engineering Excellence
-            </div>
-            <h1 className="text-3xl md:text-5xl lg:text-6xl font-bold text-white mb-5 leading-tight">
-              Fire Fighting Solutions
-            </h1>
-            <p className="text-base md:text-xl text-blue-100 mb-8 leading-relaxed">
-              VERICON delivers end-to-end fire protection systems for commercial, industrial, healthcare, and mission-critical facilities  from detection and suppression to commissioning and lifecycle maintenance, executed to international standards.
+            <h1 className="text-5xl md:text-6xl font-bold text-white mb-6">Fire Fighting Solutions</h1>
+            <p className="text-lg md:text-xl text-blue-100 mb-6 leading-relaxed font-medium">
+              Protecting Lives. Safeguarding Infrastructure.
             </p>
-            <div className="flex flex-col sm:flex-row gap-3">
-              <Link to="/contact" className="inline-flex items-center justify-center gap-2 bg-brand-red hover:bg-red-700 text-white px-6 py-3 rounded-md font-bold transition-colors text-sm">
-                Get a Quote <ArrowRight size={18} />
+            <p className="text-gray-300 mb-10 leading-relaxed">
+              We provide advanced fire detection, suppression, and life-safety engineering compliant with National Building Code (NBC), NFPA, and IS standards.
+            </p>
+            <div className="flex flex-wrap gap-4">
+              <Link to="/contact" className="inline-flex items-center gap-2 bg-brand-red hover:bg-red-700 text-white px-8 py-4 rounded-md font-bold transition-colors">
+                Get a Quote <ArrowRight size={20} />
               </Link>
-              <Link to="/services/mechanical" className="inline-flex items-center justify-center gap-2 bg-white/10 hover:bg-white/20 border border-white/30 text-white px-6 py-3 rounded-md font-bold transition-colors text-sm">
-                ← Back to Mechanical
+              <Link to="/services/mechanical" className="inline-flex items-center gap-2 bg-white/10 hover:bg-white/20 border border-white/30 text-white px-6 py-4 rounded-md font-bold transition-colors">
+                ← Mechanical Solutions
               </Link>
             </div>
           </motion.div>
         </div>
       </section>
 
-      {/* 2. Zig-Zag Fire Services */}
-      <section className="py-24 bg-gray-50">
+      {/* 2. About Section */}
+      <section className="py-20 bg-white">
         <div className="container mx-auto px-6 md:px-12 lg:px-20">
+          <div className="flex flex-col lg:flex-row items-center gap-16">
+            
+            {/* Left Content */}
+            <div className="w-full lg:w-1/2">
+              <div className="mb-8">
+                <span className="text-brand-red font-bold text-sm tracking-wide uppercase">ABOUT FIRE PROTECTION SOLUTIONS</span>
+                <div className="w-12 h-1 bg-brand-blue mt-2"></div>
+              </div>
+              <h2 className="text-4xl font-bold text-gray-900 mb-8 leading-tight">
+                Engineering Dependable, Life-Safety Fire Protection Systems
+              </h2>
+              <div className="text-gray-700 text-base leading-relaxed space-y-6">
+                <p>
+                  VERICON Engineering provides end-to-end fire protection solutions encompassing early stage hazard assessment, hydraulic design, equipment supply, statutory approvals, and precision installation.
+                </p>
+                <p>
+                  From automatic sprinkler networks to clean agent gas suppression and automated fire hydrant pump rooms, every system is engineered for zero-failure reliability when seconds matter most.
+                </p>
+              </div>
+            </div>
 
-          <div className="text-center mb-12 md:mb-20">
-            <h2 className="text-2xl md:text-4xl font-bold text-gray-900">Our Fire Fighting Services</h2>
-            <p className="text-gray-500 mt-3 max-w-2xl mx-auto text-base md:text-lg px-2">
-              From early detection to suppression and maintenance  every system we deliver is engineered for reliability, compliance, and maximum life-safety performance.
-            </p>
-            <div className="w-16 h-1 bg-brand-red mt-6 mx-auto"></div>
-          </div>
-
-          <div className="flex flex-col gap-16 md:gap-24">
-            {fireServices.map((item, index) => {
-              const isEven = index % 2 === 0;
-              return (
-                <div
-                  key={item.id}
-                  className={`flex flex-col md:flex-row items-center gap-8 lg:gap-20 ${!isEven ? 'md:flex-row-reverse' : ''}`}
-                >
-                  {/* Image Side */}
-                  <motion.div
-                    initial={{ opacity: 0, x: isEven ? -50 : 50 }}
-                    whileInView={{ opacity: 1, x: 0 }}
-                    viewport={{ once: true, margin: '-80px' }}
-                    transition={{ duration: 0.7, ease: 'easeOut' }}
-                    className="w-full md:w-1/2"
-                  >
-                    <div className="relative rounded-2xl overflow-hidden shadow-xl group aspect-[16/10]">
-                      <img
-                        src={item.image}
-                        alt={item.title}
-                        className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
-                      />
-                      {/* Number badge */}
-                      <div className="absolute top-5 left-5 w-12 h-12 rounded-full bg-brand-red text-white font-bold text-lg flex items-center justify-center shadow-lg">
-                        {String(item.id).padStart(2, '0')}
-                      </div>
-                      <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
-                    </div>
-                  </motion.div>
-
-                  {/* Text Side */}
-                  <motion.div
-                    initial={{ opacity: 0, x: isEven ? 50 : -50 }}
-                    whileInView={{ opacity: 1, x: 0 }}
-                    viewport={{ once: true, margin: '-80px' }}
-                    transition={{ duration: 0.7, ease: 'easeOut' }}
-                    className="w-full md:w-1/2 flex flex-col justify-center"
-                  >
-                    {/* Title */}
-                    <div className="flex items-start gap-4 mb-4">
-                      <div className="w-14 h-14 md:w-16 md:h-16 rounded-2xl bg-red-50 flex items-center justify-center shrink-0 shadow-sm">
-                        <Flame className="text-brand-red" size={32} />
-                      </div>
-                      <h3 className="text-xl md:text-2xl lg:text-3xl font-bold text-gray-900 leading-tight">
-                        {item.title}
-                      </h3>
-                    </div>
-
-                    {/* Accent Line */}
-                    <div className="w-12 h-1 bg-brand-red mb-5 ml-[72px]"></div>
-
-                    {/* Description */}
-                    <p className="text-gray-600 text-base leading-relaxed md:ml-[72px]">
-                      {item.description}
-                    </p>
-                  </motion.div>
-                </div>
-              );
-            })}
+            {/* Right Image */}
+            <div className="w-full lg:w-1/2">
+              <motion.div 
+                initial={{ opacity: 0, scale: 0.95 }}
+                whileInView={{ opacity: 1, scale: 1 }}
+                viewport={{ once: true }}
+                className="rounded-3xl overflow-hidden shadow-xl"
+              >
+                <img 
+                  src="https://images.unsplash.com/photo-1542456485-645903b41d4c?q=80&w=1000" 
+                  alt="Fire Protection Systems" 
+                  className="w-full h-[400px] object-cover hover:scale-105 transition-transform duration-700"
+                />
+              </motion.div>
+            </div>
           </div>
         </div>
       </section>
 
-      {/* 3. Why Choose Vericon */}
+      {/* 3. Our Fire Services Grid with Images */}
+      <section className="py-20 bg-gray-50/50 border-t border-gray-100">
+        <div className="container mx-auto px-6 md:px-12 lg:px-20">
+          
+          <div className="text-center mb-16 flex flex-col items-center">
+            <h2 className="text-xl font-bold text-brand-blue tracking-wide uppercase">OUR FIRE FIGHTING SERVICES</h2>
+            <div className="w-12 h-0.5 bg-brand-red mt-3"></div>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-6">
+            {fireServices.map((service, idx) => (
+              <motion.div 
+                key={idx}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: idx * 0.05 }}
+                className="bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-xl border border-gray-100 hover:border-red-100 transition-all duration-300 flex flex-col group"
+              >
+                {/* Image Header */}
+                <div className="h-44 overflow-hidden relative bg-gray-100">
+                  <img 
+                    src={service.image} 
+                    alt={service.title} 
+                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                  />
+                  <div className="absolute top-3 left-3 bg-white/90 backdrop-blur-md p-2.5 rounded-xl shadow-md text-brand-red">
+                    {service.icon}
+                  </div>
+                </div>
+
+                {/* Content */}
+                <div className="p-6 flex-1 flex flex-col justify-between">
+                  <div>
+                    <h3 className="text-base sm:text-lg font-bold text-brand-blue mb-2.5 font-poppins group-hover:text-brand-red transition-colors">
+                      {service.title}
+                    </h3>
+                    <p className="text-gray-600 text-xs sm:text-sm leading-relaxed">
+                      {service.desc}
+                    </p>
+                  </div>
+                </div>
+              </motion.div>
+            ))}
+          </div>
+
+        </div>
+      </section>
+
+      {/* 4. Fire Systems We Work With */}
+      <section className="py-16 bg-white border-t border-gray-100">
+        <div className="container mx-auto px-6 md:px-12 lg:px-20">
+          
+          <div className="text-center mb-16 flex flex-col items-center">
+            <h2 className="text-xl font-bold text-brand-blue tracking-wide uppercase">FIRE SYSTEMS WE WORK WITH</h2>
+            <div className="w-10 h-0.5 bg-brand-red mt-3"></div>
+          </div>
+
+          <div className="flex flex-wrap justify-center gap-12 lg:gap-16">
+            {fireSystems.map((system, idx) => (
+              <div key={idx} className="flex flex-col items-center text-center max-w-[120px]">
+                <div className="text-brand-blue mb-4">
+                  {system.icon}
+                </div>
+                <span className="text-brand-dark font-bold text-xs whitespace-pre-line leading-tight">
+                  {system.title}
+                </span>
+              </div>
+            ))}
+          </div>
+
+        </div>
+      </section>
+
+      {/* 5. Why Choose Vericon */}
       <WhyChooseVericon />
 
-      {/* 4. CTA Section */}
-      <section className="py-20 bg-[#001838]">
-        <div className="container mx-auto px-6 text-center">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.5 }}
-          >
-            <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
-              Need a Reliable Fire Safety System?
-            </h2>
-            <p className="text-blue-200 text-lg mb-10 max-w-2xl mx-auto">
-              Talk to our fire protection engineers today. We'll design, install, and maintain the right system for your facility  compliant, on time, and built to last.
-            </p>
-            <div className="flex flex-wrap gap-4 justify-center">
-              <Link
-                to="/contact"
-                className="inline-flex items-center gap-2 bg-brand-red hover:bg-red-700 text-white px-10 py-4 rounded-md font-bold transition-colors shadow-lg"
-              >
-                Request a Consultation <ArrowRight size={20} />
-              </Link>
-              <Link
-                to="/projects"
-                className="inline-flex items-center gap-2 bg-transparent border border-white/30 hover:bg-white/10 text-white px-10 py-4 rounded-md font-bold transition-colors"
-              >
-                View Our Projects
-              </Link>
-            </div>
-          </motion.div>
+      {/* 6. CTA Bar with Fire Engineer Background */}
+      <section className="relative bg-[#001838] py-16 overflow-hidden">
+        {/* Background Image on Right Side */}
+        <div className="absolute top-0 right-0 w-full md:w-1/2 h-full z-0 opacity-40 md:opacity-100">
+          <img 
+            src="https://images.unsplash.com/photo-1582139329536-e7284fece509?q=80&w=1000" 
+            alt="Fire Safety Engineering" 
+            className="w-full h-full object-cover object-right"
+          />
+          <div className="absolute inset-0 bg-gradient-to-r from-[#001838] via-[#001838]/80 to-transparent"></div>
+        </div>
+
+        <div className="container mx-auto px-6 md:px-12 lg:px-20 relative z-10 flex flex-col md:flex-row items-center justify-between gap-8">
+          
+          <div className="max-w-xl">
+            <h2 className="text-2xl md:text-3xl font-bold text-white mb-3">Need a Reliable Fire Safety System?</h2>
+            <p className="text-blue-100/90 text-sm md:text-base">Talk to our fire protection engineers today. We design, install, and maintain compliant systems.</p>
+          </div>
+
+          <div className="flex items-center gap-4 shrink-0">
+            <Link to="/contact" className="bg-brand-red hover:bg-red-700 text-white px-6 py-3 rounded-md font-bold transition-colors flex items-center gap-2 text-sm">
+              Request Consultation <ArrowRight size={16} />
+            </Link>
+            <Link to="/contact" className="bg-white hover:bg-gray-100 text-brand-blue px-6 py-3 rounded-md font-bold transition-colors text-sm flex items-center gap-2">
+              Contact Us <ArrowRight size={16} />
+            </Link>
+          </div>
+
         </div>
       </section>
 

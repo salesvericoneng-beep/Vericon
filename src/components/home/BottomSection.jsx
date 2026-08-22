@@ -4,21 +4,22 @@ import { motion } from 'framer-motion';
 const directors = [
   {
     name: 'Director 1',
-    role: 'VIVEK REDDY',
+    role: 'MR. VIVEK REDDY',
     image: '/1.jpeg',
   },
   {
     name: 'Director 2',
-    role: 'EHTESHAM AHMAD',
+    role: 'MR. EHTESHAM AHMAD',
     image: '/2.jpeg',
   },
   {
     name: 'Director 3',
-    role: 'SHAIK ABDUL MUJEEB',
-    image: '/3.jpeg',  },
+    role: 'MR. SHAIK ABDUL MUJEEB',
+    image: '/3.jpeg',
+  },
   {
     name: 'Director 4',
-    role: 'MOHD MOIZUDDIN',
+    role: 'MR. MOHD MOIZUDDIN',
     image: '/4.jpeg',
   }
 ];
@@ -50,26 +51,23 @@ export default function BottomSection() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: index * 0.1 }}
-              className="bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 border border-gray-100 group"
+              className="bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 border border-gray-100 group flex flex-col"
             >
-              {/* Image Container */}
-              <div className="h-72 overflow-hidden relative">
+              {/* Full Image Container */}
+              <div className="aspect-[3/4] sm:aspect-[4/5] lg:aspect-[3/4] w-full overflow-hidden relative bg-gray-100">
                 <img 
                   src={director.image} 
                   alt={director.name} 
-                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+                  className="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-700"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none" />
               </div>
 
               {/* Content */}
-              <div className="p-6 text-center">
+              <div className="p-6 text-center mt-auto">
                 <h4 className="text-xl font-bold text-brand-blue font-poppins mb-1">{director.name}</h4>
-                <p className="text-brand-red font-semibold text-xs mb-4 uppercase tracking-widest">{director.role}</p>
-                <div className="w-12 h-0.5 bg-gray-200 mx-auto mb-4"></div>
-                <p className="text-gray-600 text-sm leading-relaxed">
-                  {director.description}
-                </p>
+                <p className="text-brand-red font-semibold text-xs mb-3 uppercase tracking-widest">{director.role}</p>
+                <div className="w-12 h-0.5 bg-gray-200 mx-auto"></div>
               </div>
             </motion.div>
           ))}

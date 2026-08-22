@@ -6,28 +6,28 @@ import CTA from '../components/home/CTA';
 export default function About() {
   return (
     <div className="pt-16 min-h-screen bg-white font-poppins">
-      
+
       {/* 1. Hero Section */}
       <section className="relative w-full overflow-hidden bg-white">
-        
+
         {/* Background Image Container - Dictates height on mobile, full screen on desktop */}
         <div className="relative w-full h-auto lg:h-[75vh]">
-          <img 
-            src="/About-Hero.png" 
-            alt="About Vericon" 
+          <img
+            src="/About-Hero.png"
+            alt="About Vericon"
             className="w-full h-full lg:object-cover lg:object-center object-contain block"
           />
-          
+
           {/* White Gradient Overlay to ensure text readability */}
           <div className="absolute inset-0 bg-gradient-to-r from-white/95 via-white/80 to-transparent w-[90%] md:w-[70%] lg:w-[50%]"></div>
 
           {/* Absolute Overlay Container */}
           <div className="absolute inset-0 z-10 container mx-auto px-4 sm:px-8 lg:px-20 xl:px-24 pt-4 lg:pt-[140px]">
-            
+
             {/* Left Column - Content (Scaled dynamically) */}
             <div className="w-[65%] sm:w-[55%] lg:w-1/2 h-full flex flex-col justify-center pb-[5%] lg:pb-[15%]">
-              
-              <motion.h1 
+
+              <motion.h1
                 initial={{ opacity: 0, x: -30 }}
                 animate={{ opacity: 1, x: 0 }}
                 transition={{ duration: 0.8 }}
@@ -40,8 +40,8 @@ export default function About() {
                 <span className="block text-gray-900 mt-[2%] lg:mt-4 text-[clamp(12px,2.5vw,36px)] font-bold">Engineering Solutions</span>
                 <span className="block text-gray-900 text-[clamp(12px,2.5vw,36px)] font-bold">That Build a Better Tomorrow</span>
               </motion.h1>
-              
-              <motion.p 
+
+              <motion.p
                 initial={{ opacity: 0, x: -30 }}
                 animate={{ opacity: 1, x: 0 }}
                 transition={{ duration: 0.8, delay: 0.1 }}
@@ -64,9 +64,9 @@ export default function About() {
       <section className="py-8 md:py-24 bg-white relative z-30 mt-[-2px]">
         <div className="container mx-auto px-6 md:px-12 lg:px-20">
           <div className="flex flex-col lg:flex-row items-center gap-16">
-            
+
             {/* Left Image */}
-            <motion.div 
+            <motion.div
               initial={{ opacity: 0, scale: 0.95 }}
               whileInView={{ opacity: 1, scale: 1 }}
               viewport={{ once: true }}
@@ -74,16 +74,16 @@ export default function About() {
               className="w-full lg:w-1/2"
             >
               <div className="rounded-3xl overflow-hidden shadow-2xl relative">
-                <img 
-                  src="/Picture2.jpg" 
-                  alt="Engineer" 
+                <img
+                  src="/Picture2.jpg"
+                  alt="Engineer"
                   className="w-full h-[300px] sm:h-[400px] md:h-[500px] object-cover"
                 />
               </div>
             </motion.div>
 
             {/* Right Text */}
-            <motion.div 
+            <motion.div
               initial={{ opacity: 0, x: 30 }}
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
@@ -94,18 +94,23 @@ export default function About() {
                 <span className="text-brand-blue font-bold text-sm tracking-widest uppercase">WHO WE ARE</span>
                 <div className="w-12 h-1 bg-brand-red mt-2"></div>
               </div>
-              
+
               <h2 className="text-4xl md:text-5xl font-bold mt-6 mb-8 leading-tight">
                 <span className="text-gray-900 block mb-2">Building Excellence.</span>
                 <span className="text-brand-red block">Delivering Trust.</span>
               </h2>
-              
-              <div className="mt-2 bg-blue-50 border-l-4 border-brand-blue p-6 lg:p-8 rounded-r-2xl shadow-sm">
-                <p className="text-gray-900 text-lg lg:text-xl font-medium leading-relaxed">
+
+              <ul className="text-gray-700 text-base md:text-lg leading-relaxed font-medium list-disc pl-5 marker:text-brand-red space-y-4">
+                <li>
                   <strong className="text-brand-blue font-bold">VERICON Engineering Private Limited</strong> is a leading provider of HVAC, Electrical, Fire Fighting and MEP solutions.
-                  <p>We deliver end-to-end engineering services with a commitment to quality, safety and timely delivery.</p>
-                </p>
-              </div>
+                </li>
+                <li>
+                  We deliver end-to-end engineering services with a commitment to quality, safety and timely delivery.
+                </li>
+                <li>
+                  We combine technical expertise, disciplined execution and comprehensive lifecycle support to create lasting value for our clients.
+                </li>
+              </ul>
             </motion.div>
 
           </div>
@@ -114,10 +119,10 @@ export default function About() {
       {/* 3. Our Core Values Section */}
       <section className="py-20 lg:py-24 bg-white border-t border-gray-100">
         <div className="container mx-auto px-6 md:px-12 lg:px-20 max-w-7xl">
-          
+
           {/* Header */}
           <div className="text-center mb-14 flex flex-col items-center">
-            <motion.h2 
+            <motion.h2
               initial={{ opacity: 0, y: -20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
@@ -127,7 +132,7 @@ export default function About() {
               <span className="text-brand-blue mr-3">OUR</span>
               <span className="text-brand-red">CORE VALUES</span>
             </motion.h2>
-            
+
             {/* Split Accent Line */}
             <div className="flex w-16 h-1 mt-4 mb-4 rounded-full overflow-hidden">
               <div className="w-1/2 h-full bg-brand-blue"></div>
@@ -142,9 +147,9 @@ export default function About() {
 
           {/* 5 Cards Row */}
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-6">
-            
+
             {/* Card 1: TRUST */}
-            <motion.div 
+            <motion.div
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
@@ -165,7 +170,7 @@ export default function About() {
             </motion.div>
 
             {/* Card 2: QUALITY */}
-            <motion.div 
+            <motion.div
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
@@ -186,7 +191,7 @@ export default function About() {
             </motion.div>
 
             {/* Card 3: INNOVATION */}
-            <motion.div 
+            <motion.div
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
@@ -207,7 +212,7 @@ export default function About() {
             </motion.div>
 
             {/* Card 4: ACCOUNTABILITY */}
-            <motion.div 
+            <motion.div
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
@@ -228,7 +233,7 @@ export default function About() {
             </motion.div>
 
             {/* Card 5: PARTNERSHIP */}
-            <motion.div 
+            <motion.div
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
@@ -291,22 +296,26 @@ export default function About() {
                 We are committed to engineering excellence through integrity, innovation and collaboration to deliver measurable impact for our clients, our people and the world around us.
               </p>
 
-              {/* Values List */}
-              <div className="flex flex-col divide-y divide-gray-100">
+              {/* Mission Pillars List */}
+              <div className="flex flex-col divide-y divide-gray-100 pt-2">
                 {[
-                  { icon: <Target size={20} strokeWidth={1.8} />, color: 'text-brand-blue', title: 'ENGINEERING EXCELLENCE', desc: 'Technical expertise, precision and dependable execution in everything we do.' },
-                  { icon: <TrendingUp size={20} strokeWidth={1.8} />, color: 'text-brand-red', title: 'LASTING VALUE', desc: 'Delivering efficient, reliable and future-ready solutions that create long-term value.' },
-                  { icon: <ShieldCheck size={20} strokeWidth={1.8} />, color: 'text-brand-blue', title: 'QUALITY & SAFETY', desc: 'Upholding uncompromising standards of quality, safety and integrity.' },
-                  { icon: <Lightbulb size={20} strokeWidth={1.8} />, color: 'text-green-600', title: 'INNOVATION & SUSTAINABILITY', desc: 'Embracing innovation and sustainable practices to build a better tomorrow.' },
-                  { icon: <Handshake size={20} strokeWidth={1.8} />, color: 'text-brand-blue', title: 'TRUSTED PARTNERSHIPS', desc: 'Building long-term relationships through transparency, trust and collaboration.' },
+                  { num: '01', title: 'ENGINEERING EXCELLENCE', desc: 'Technical expertise, precision and dependable execution in everything we do.' },
+                  { num: '02', title: 'LASTING VALUE', desc: 'Delivering efficient, reliable and future-ready solutions that create long-term value.' },
+                  { num: '03', title: 'QUALITY & SAFETY', desc: 'Upholding uncompromising standards of quality, safety and integrity.' },
+                  { num: '04', title: 'INNOVATION & SUSTAINABILITY', desc: 'Embracing innovation and sustainable practices to build a better tomorrow.' },
+                  { num: '05', title: 'TRUSTED PARTNERSHIPS', desc: 'Building long-term relationships through transparency, trust and collaboration.' },
                 ].map((item, i) => (
-                  <div key={i} className="flex items-start gap-4 py-4">
-                    <div className={`w-9 h-9 shrink-0 rounded-lg bg-gray-50 border border-gray-100 flex items-center justify-center ${item.color}`}>
-                      {item.icon}
-                    </div>
+                  <div key={i} className="flex items-start gap-4 py-3.5 group">
+                    <span className="font-mono text-xs font-bold text-brand-blue tracking-wider shrink-0 mt-0.5">
+                      {item.num}
+                    </span>
                     <div>
-                      <h4 className="text-gray-900 font-bold text-xs uppercase tracking-wider mb-0.5">{item.title}</h4>
-                      <p className="text-gray-500 text-xs leading-relaxed">{item.desc}</p>
+                      <h4 className="text-gray-900 font-bold text-xs uppercase tracking-wider mb-1 group-hover:text-brand-blue transition-colors">
+                        {item.title}
+                      </h4>
+                      <p className="text-gray-600 text-xs leading-relaxed">
+                        {item.desc}
+                      </p>
                     </div>
                   </div>
                 ))}
@@ -321,7 +330,7 @@ export default function About() {
 
       {/* CTA Section */}
       <CTA />
-      
+
     </div>
   );
 }

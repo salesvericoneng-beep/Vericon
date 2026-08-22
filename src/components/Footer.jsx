@@ -15,9 +15,9 @@ const services = [
   { name: 'Electrical Solutions', path: '/services/electrical' },
   { name: 'Fire Fighting Solutions', path: '/services/fire' },
   { name: 'Public Health Engineering', path: '/services/phe' },
-  { name: 'Annual Maintenance Contract', path: '#' },
-  { name: 'Revamp & Retrofit', path: '#' },
-  { name: 'Energy Optimization', path: '#' },
+  { name: 'Annual Maintenance Contract', path: '/services/amc' },
+  { name: 'Revamp & Retrofit', path: '/services/retrofit' },
+  { name: 'Energy Optimization', path: '/services/energy-optimization' },
 ];
 
 const segments = [
@@ -96,12 +96,6 @@ export default function Footer() {
         }}
       />
 
-      {/* Top accent bar blue + red */}
-      <div className="h-1 w-full flex">
-        <div className="flex-1 bg-[#123EB7]" />
-        <div className="flex-1 bg-[#D80C20]" />
-      </div>
-
       {/* Main content */}
       <div className="relative z-10 container mx-auto px-6 md:px-10 max-w-[1400px] pt-16 pb-10">
 
@@ -113,8 +107,7 @@ export default function Footer() {
                 <img src="/LOGO.png" alt="Vericon Engineering Services" className="h-12 md:h-14 object-contain" />
               </div>
             </Link>
-            <div className="flex items-center gap-2.5">
-              <div className="w-1.5 h-4 bg-brand-red rounded-full shrink-0" />
+            <div>
               <p className="text-white text-sm md:text-base font-bold tracking-wide font-poppins">
                 VERICON Engineering Private Limited
               </p>
@@ -184,8 +177,7 @@ export default function Footer() {
             <div className="w-10 h-[2px] bg-brand-red mb-6" />
             <ul className="space-y-3.5">
               {segments.map((seg) => (
-                <li key={seg} className="flex items-center gap-2.5 text-gray-300 text-sm md:text-[15px] font-medium">
-                  <span className="w-2 h-2 rounded-full bg-brand-red shrink-0" />
+                <li key={seg} className="text-gray-300 text-sm md:text-[15px] font-medium">
                   {seg}
                 </li>
               ))}

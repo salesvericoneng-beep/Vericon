@@ -7,6 +7,7 @@ import {
   HardHat, Calendar, ArrowRight
 } from 'lucide-react';
 import { Link } from 'react-router-dom';
+import WhyChooseVericon from '../components/WhyChooseVericon';
 
 const coreServices = [
   {
@@ -90,17 +91,6 @@ const additionalServices = [
   { icon: <Wrench size={36} strokeWidth={1.5} />, title: 'INSTALLATION', desc: 'Professional installation by skilled technicians with strict adherence to safety and quality.', color: 'text-brand-red' },
   { icon: <ClipboardCheck size={36} strokeWidth={1.5} />, title: 'TESTING & COMMISSIONING', desc: 'Rigorous testing and commissioning to ensure systems operate at peak performance.', color: 'text-brand-blue' },
   { icon: <Headset size={36} strokeWidth={1.5} />, title: 'ANNUAL MAINTENANCE CONTRACTS (AMC)', desc: 'Comprehensive maintenance solutions to ensure reliability, efficiency, and long-term performance.', color: 'text-brand-red' },
-];
-
-const whyChoose = [
-  { icon: <Users size={32} strokeWidth={1.5} />, label: 'Experienced\nEngineers' },
-  { icon: <Cpu size={32} strokeWidth={1.5} />, label: 'Advanced\nTechnology' },
-  { icon: <Diamond size={32} strokeWidth={1.5} />, label: 'Quality\nMaterials' },
-  { icon: <ShieldCheck size={32} strokeWidth={1.5} />, label: 'Safety\nStandards' },
-  { icon: <Clock size={32} strokeWidth={1.5} />, label: 'On-Time\nDelivery' },
-  { icon: <Headset size={32} strokeWidth={1.5} />, label: '24x7\nSupport' },
-  { icon: <DollarSign size={32} strokeWidth={1.5} />, label: 'Cost Effective\nSolutions' },
-  { icon: <Smile size={32} strokeWidth={1.5} />, label: 'Customer\nSatisfaction' },
 ];
 
 export default function Services() {
@@ -259,31 +249,7 @@ export default function Services() {
       </section>
 
       {/* 4. WHY CHOOSE VERICON SERVICES */}
-      <section className="py-12 bg-white">
-        <div className="container mx-auto px-4 md:px-8 lg:px-12">
-          <div className="bg-[#0B1528] rounded-[2rem] p-8 md:p-12 shadow-2xl">
-
-            <div className="text-center mb-12 flex flex-col items-center">
-              <h2 className="text-xl font-bold text-white tracking-wide uppercase">WHY CHOOSE VERICON SERVICES?</h2>
-              <div className="w-10 h-0.5 bg-brand-red mt-3"></div>
-            </div>
-
-            <div className="grid grid-cols-2 sm:grid-cols-4 lg:grid-cols-8 gap-6 md:gap-4">
-              {whyChoose.map((item, idx) => (
-                <div key={idx} className="flex flex-col items-center text-center">
-                  <div className="w-14 h-14 mb-4 text-white flex items-center justify-center border border-white/20 rounded-xl bg-white/5">
-                    {item.icon}
-                  </div>
-                  <span className="text-xs font-medium text-white/90 whitespace-pre-line leading-tight">
-                    {item.label}
-                  </span>
-                </div>
-              ))}
-            </div>
-
-          </div>
-        </div>
-      </section>
+      <WhyChooseVericon />
 
       {/* 6. CTA Section */}
       <section className="relative w-full bg-brand-dark min-h-[300px] flex items-center">

@@ -3,9 +3,9 @@ import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
 import { 
   ChevronRight, ArrowRight, PenTool, Cpu, Server, Share2, AlignJustify, Lightbulb, ZapOff, Wrench,
-  Battery, ShieldCheck, BatteryCharging, Building2, Sun,
-  Users, Award, Clock, Headset, Zap
+  Battery, ShieldCheck, BatteryCharging, Building2, Sun, Zap
 } from 'lucide-react';
+import WhyChooseVericon from '../components/WhyChooseVericon';
 
 const electricalServices = [
   { icon: <PenTool size={32} strokeWidth={1.5} />, title: 'Electrical Design', desc: 'Safe and efficient electrical system design using latest standards and tools.', color: 'text-brand-red' },
@@ -25,14 +25,6 @@ const systems = [
   { icon: <BatteryCharging size={40} strokeWidth={1.5} />, title: 'UPS & Battery\nSystems' },
   { icon: <Building2 size={40} strokeWidth={1.5} />, title: 'Building Management\nSystems (BMS)' },
   { icon: <Sun size={40} strokeWidth={1.5} />, title: 'Solar Power\nIntegration' }
-];
-
-const whyChoose = [
-  { icon: <Users size={36} strokeWidth={1.5} />, title: 'Experienced Engineers', desc: 'Skilled professionals with vast industry experience.' },
-  { icon: <ShieldCheck size={36} strokeWidth={1.5} />, title: 'Safety First', desc: 'Strict adherence to safety standards and protocols.' },
-  { icon: <Award size={36} strokeWidth={1.5} />, title: 'Quality Assurance', desc: 'High quality components and tested solutions.' },
-  { icon: <Clock size={36} strokeWidth={1.5} />, title: 'On-Time Delivery', desc: 'Commitment to timely execution and delivery.' },
-  { icon: <Headset size={36} strokeWidth={1.5} />, title: 'AMC Support', desc: 'Reliable annual maintenance and technical support.' }
 ];
 
 export default function ElectricalSolutions() {
@@ -183,30 +175,7 @@ export default function ElectricalSolutions() {
       </section>
 
       {/* 5. Why Choose Vericon for Electrical */}
-      <section className="py-20 bg-gray-50/50 border-t border-gray-100">
-        <div className="container mx-auto px-6 md:px-12 lg:px-20">
-          
-          <div className="text-center mb-16 flex flex-col items-center">
-            <h2 className="text-xl font-bold text-brand-blue tracking-wide uppercase">WHY CHOOSE VERICON?</h2>
-            <div className="w-10 h-0.5 bg-brand-red mt-3"></div>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-5 gap-8 bg-white rounded-3xl p-8 border border-gray-100 shadow-sm">
-            {whyChoose.map((item, idx) => (
-              <div key={idx} className="flex flex-col items-center text-center">
-                <div className="text-brand-blue mb-6">
-                  {item.icon}
-                </div>
-                <h3 className="text-brand-dark font-bold text-sm mb-3">{item.title}</h3>
-                <p className="text-gray-600 text-xs leading-relaxed px-2">
-                  {item.desc}
-                </p>
-              </div>
-            ))}
-          </div>
-
-        </div>
-      </section>
+      <WhyChooseVericon />
 
       {/* 6. CTA Bar with Engineer Background */}
       <section className="relative bg-[#001838] py-16 overflow-hidden">

@@ -2,6 +2,7 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
 import { ChevronRight, ArrowRight, Snowflake, Flame } from 'lucide-react';
+import WhyChooseVericon from '../components/WhyChooseVericon';
 
 export default function MechanicalSolutions() {
   return (
@@ -111,6 +112,9 @@ export default function MechanicalSolutions() {
           </div>
         </div>
       </section>
+
+      {/* 3. Why Choose Vericon */}
+      <WhyChooseVericon />
 
       {/* CTA Section */}
       <section className="relative py-20 bg-brand-dark">

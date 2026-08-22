@@ -2,6 +2,7 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
 import { ChevronRight, ArrowRight, Droplet, Waves, Sprout, ShieldAlert, Database, PenTool, Wrench, Search } from 'lucide-react';
+import WhyChooseVericon from '../components/WhyChooseVericon';
 
 const pheServices = [
   {
@@ -181,6 +182,9 @@ export default function PheSolutions() {
           })}
         </div>
       </section>
+
+      {/* 3. Why Choose Vericon */}
+      <WhyChooseVericon />
 
       {/* 4. CTA Section */}
       <section className="py-20 bg-brand-blue">

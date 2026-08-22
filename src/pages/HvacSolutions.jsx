@@ -1,10 +1,11 @@
-﻿import React from 'react';
+import React from 'react';
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
 import {
   ChevronRight, ArrowRight, Snowflake, Wind, Thermometer,
   Activity, Settings, Layers, Factory, FlaskConical, BarChart2, Gauge
 } from 'lucide-react';
+import WhyChooseVericon from '../components/WhyChooseVericon';
 
 const hvacExpertise = [
   {
@@ -219,6 +220,9 @@ export default function HvacSolutions() {
           </div>
         </div>
       </section>
+
+      {/* 3. Why Choose Vericon */}
+      <WhyChooseVericon />
 
       {/* 4. CTA Section */}
       <section className="py-20 bg-[#001838]">

@@ -1,9 +1,8 @@
-﻿import React from 'react';
+import React from 'react';
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
-import {
-  ChevronRight, ArrowRight, Flame, ShieldCheck, Users, Clock, Headset, ClipboardList
-} from 'lucide-react';
+import { ChevronRight, ArrowRight, Flame } from 'lucide-react';
+import WhyChooseVericon from '../components/WhyChooseVericon';
 
 const fireServices = [
   {
@@ -55,14 +54,6 @@ const fireServices = [
     description:
       'We offer high and medium velocity water spray systems featuring automatic Deluge Valve actuation. These systems create a thick foam blanket or powerful water spray, specifically designed for protecting vessels, chemical plants, and areas exposed to flammable liquids and gases. Rigorous hydraulic calculations ensure optimal flow and coverage. Essential protection for petrochemical, oil & gas, and industrial facilities.',
   },
-];
-
-const whyChoose = [
-  { icon: <Users size={36} strokeWidth={1.5} />, title: 'Experienced Engineers', desc: 'Skilled team with extensive experience in fire protection systems.' },
-  { icon: <ShieldCheck size={36} strokeWidth={1.5} />, title: 'Quality Assurance', desc: 'Use of certified materials and strict quality control at every stage.' },
-  { icon: <ClipboardList size={36} strokeWidth={1.5} />, title: 'Compliance Focused', desc: 'All systems comply with national & international fire safety standards.' },
-  { icon: <Clock size={36} strokeWidth={1.5} />, title: 'On-Time Delivery', desc: 'Timely execution and commitment to project deadlines.' },
-  { icon: <Headset size={36} strokeWidth={1.5} />, title: 'AMC & Support', desc: 'Comprehensive annual maintenance and 24/7 technical support.' },
 ];
 
 export default function FireFightingSolutions() {
@@ -197,25 +188,7 @@ export default function FireFightingSolutions() {
       </section>
 
       {/* 3. Why Choose Vericon */}
-      <section className="py-20 bg-white border-t border-gray-100">
-        <div className="container mx-auto px-6 md:px-12 lg:px-20">
-
-          <div className="text-center mb-14 flex flex-col items-center">
-            <h2 className="text-2xl md:text-3xl font-bold text-brand-blue tracking-wide uppercase">Why Choose VERICON?</h2>
-            <div className="w-12 h-1 bg-brand-red mt-3"></div>
-          </div>
-
-          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-8">
-            {whyChoose.map((item, idx) => (
-              <div key={idx} className="flex flex-col items-center text-center">
-                <div className="text-brand-blue mb-4">{item.icon}</div>
-                <h3 className="text-brand-dark font-bold text-sm mb-2">{item.title}</h3>
-                <p className="text-gray-600 text-xs leading-relaxed px-2">{item.desc}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
+      <WhyChooseVericon />
 
       {/* 4. CTA Section */}
       <section className="py-20 bg-[#001838]">

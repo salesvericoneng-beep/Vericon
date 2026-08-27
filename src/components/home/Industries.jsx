@@ -3,16 +3,16 @@ import { Building2, Stethoscope, Coffee, Briefcase, Truck, FlaskConical, BookOpe
 import { motion } from 'framer-motion';
 
 const industries = [
-  { icon: Building2, label: 'Commercial Buildings' },
-  { icon: Stethoscope, label: 'Hospitals' },
-  { icon: Coffee, label: 'Hotels & Resorts' },
-  { icon: Briefcase, label: 'IT Parks & Offices' },
-  { icon: Truck, label: 'Warehouses & Logistics' },
-  { icon: FlaskConical, label: 'Pharmaceutical' },
-  { icon: BookOpen, label: 'Educational Institutions' },
-  { icon: Home, label: 'Residential Complexes' },
-  { icon: Landmark, label: 'Government Projects' },
-  { icon: Settings, label: 'Industrial Facilities' }
+  { icon: Building2, label: 'Commercial Buildings', desc: 'Custom MEP systems ensuring energy efficiency and comfort for large office spaces and malls.' },
+  { icon: Stethoscope, label: 'Hospitals', desc: 'Specialized HVAC and clean room solutions for critical healthcare environments.' },
+  { icon: Coffee, label: 'Hotels & Resorts', desc: 'Premium MEP integration for optimal guest comfort and continuous operational reliability.' },
+  { icon: Briefcase, label: 'IT Parks & Offices', desc: 'Scalable electrical and cooling infrastructure for uninterrupted technology operations.' },
+  { icon: Truck, label: 'Warehouses & Logistics', desc: 'Robust fire protection and ventilation systems for expansive storage facilities.' },
+  { icon: FlaskConical, label: 'Pharmaceutical', desc: 'Precision climate control and cleanroom setups meeting strict regulatory standards.' },
+  { icon: BookOpen, label: 'Educational Institutions', desc: 'Safe, sustainable MEP designs enhancing learning environments for students.' },
+  { icon: Home, label: 'Residential Complexes', desc: 'Reliable plumbing, electrical, and HVAC for comfortable, modern living spaces.' },
+  { icon: Landmark, label: 'Government Projects', desc: 'Compliant and robust infrastructure tailored for public sector buildings.' },
+  { icon: Settings, label: 'Industrial Facilities', desc: 'Heavy-duty MEP solutions supporting complex manufacturing and industrial operations.' }
 ];
 
 export default function Industries() {
@@ -42,18 +42,27 @@ export default function Industries() {
               whileInView={{ opacity: 1, scale: 1 }}
               viewport={{ once: true }}
               transition={{ duration: 0.3, delay: index * 0.05 }}
-              className="bg-white border border-gray-100 rounded-xl p-6 flex flex-col items-center justify-center text-center shadow-sm hover:shadow-md hover:border-blue-100 transition-all group"
+              className="bg-white border border-gray-100 rounded-xl p-6 flex flex-col items-center justify-center text-center shadow-sm hover:shadow-md hover:border-brand-blue transition-all group overflow-hidden relative h-40 cursor-pointer"
             >
-              <div className="mb-4 text-brand-blue group-hover:text-brand-red transition-colors">
-                <ind.icon size={36} strokeWidth={1.2} />
+              {/* Default State */}
+              <div className="absolute inset-0 flex flex-col items-center justify-center p-6 transition-all duration-300 group-hover:-translate-y-full group-hover:opacity-0">
+                <div className="mb-4 text-brand-blue">
+                  <ind.icon size={36} strokeWidth={1.2} />
+                </div>
+                <span className="text-sm font-semibold text-gray-800 whitespace-nowrap">
+                  {ind.label}
+                </span>
               </div>
-              <span className="text-xs font-semibold text-gray-800 leading-tight">
-                {ind.label.split(' ').map((word, i) => (
-                  <React.Fragment key={i}>
-                    {word} {i !== ind.label.split(' ').length - 1 && <br />}
-                  </React.Fragment>
-                ))}
-              </span>
+
+              {/* Hover State */}
+              <div className="absolute inset-0 flex flex-col items-center justify-center p-4 bg-brand-blue text-white transition-all duration-300 translate-y-full opacity-0 group-hover:translate-y-0 group-hover:opacity-100">
+                <span className="text-sm font-semibold mb-2 whitespace-nowrap">
+                  {ind.label}
+                </span>
+                <p className="text-[12px] leading-relaxed line-clamp-3">
+                  {ind.desc}
+                </p>
+              </div>
             </motion.div>
           ))}
         </div>

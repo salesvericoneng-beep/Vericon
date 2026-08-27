@@ -165,26 +165,20 @@ export default function CustomCursor() {
       </div>
 
       {/* ── Floating Sound Effect Toggle ── */}
-      <div className="fixed bottom-6 right-6 z-[9999]">
+      <div className="fixed bottom-12 right-6 z-[9999]">
         <button
           onClick={() => setSoundEnabled((prev) => !prev)}
           title={soundEnabled ? 'Mute click sounds' : 'Enable click sounds'}
-          className={`flex items-center gap-2 px-3 py-2 rounded-full text-xs font-semibold shadow-lg backdrop-blur-md border transition-all duration-300 ${
+          className={`flex items-center justify-center p-3 rounded-full shadow-lg backdrop-blur-md border transition-all duration-300 ${
             soundEnabled
               ? 'bg-[#050D1A]/90 text-white border-brand-blue/40 hover:border-brand-red shadow-brand-blue/20 hover:shadow-brand-red/30'
               : 'bg-gray-900/70 text-gray-400 border-gray-700 hover:text-white'
           }`}
         >
           {soundEnabled ? (
-            <>
-              <Volume2 size={14} className="text-brand-red animate-pulse" />
-              <span className="hidden sm:inline text-[11px] tracking-wide">Sound ON</span>
-            </>
+            <Volume2 size={16} className="text-brand-red animate-pulse" />
           ) : (
-            <>
-              <VolumeX size={14} />
-              <span className="hidden sm:inline text-[11px] tracking-wide">Sound OFF</span>
-            </>
+            <VolumeX size={16} />
           )}
         </button>
       </div>

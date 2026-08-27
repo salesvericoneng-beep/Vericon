@@ -165,7 +165,7 @@ export default function CustomCursor() {
       </div>
 
       {/* ── Floating Sound Effect Toggle ── */}
-      <div className="fixed bottom-12 right-6 z-[9999]">
+      <div className="fixed bottom-24 right-6 z-[9999]">
         <button
           onClick={() => setSoundEnabled((prev) => !prev)}
           title={soundEnabled ? 'Mute click sounds' : 'Enable click sounds'}

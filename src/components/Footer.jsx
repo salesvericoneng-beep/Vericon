@@ -177,7 +177,8 @@ export default function Footer() {
             <div className="w-10 h-[2px] bg-brand-red mb-6" />
             <ul className="space-y-3.5">
               {segments.map((seg) => (
-                <li key={seg} className="text-gray-300 text-sm md:text-[15px] font-medium">
+                <li key={seg} className="group flex items-center gap-2 text-gray-300 hover:text-white text-sm md:text-[15px] font-medium transition-colors duration-200 cursor-default">
+                  <span className="w-0 group-hover:w-3 h-[2px] bg-brand-red transition-all duration-300 shrink-0" />
                   {seg}
                 </li>
               ))}

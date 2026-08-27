@@ -1,5 +1,5 @@
 import React from 'react';
-import { Building2, Stethoscope, Coffee, Briefcase, Truck, Factory, FlaskConical, Wheat, BookOpen, Home, Landmark, Settings } from 'lucide-react';
+import { Building2, Stethoscope, Coffee, Briefcase, Truck, FlaskConical, BookOpen, Home, Landmark, Settings } from 'lucide-react';
 import { motion } from 'framer-motion';
 
 const industries = [
@@ -8,9 +8,7 @@ const industries = [
   { icon: Coffee, label: 'Hotels & Resorts' },
   { icon: Briefcase, label: 'IT Parks & Offices' },
   { icon: Truck, label: 'Warehouses & Logistics' },
-  { icon: Factory, label: 'Manufacturing Plants' },
   { icon: FlaskConical, label: 'Pharmaceutical' },
-  { icon: Wheat, label: 'Food Processing Plants' },
   { icon: BookOpen, label: 'Educational Institutions' },
   { icon: Home, label: 'Residential Complexes' },
   { icon: Landmark, label: 'Government Projects' },
@@ -35,8 +33,8 @@ export default function Industries() {
           </div>
         </div>
 
-        {/* 6x2 Grid */}
-        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4">
+        {/* 5x2 Grid */}
+        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4">
           {industries.map((ind, index) => (
             <motion.div 
               key={index}

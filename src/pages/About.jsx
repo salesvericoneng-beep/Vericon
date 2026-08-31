@@ -164,7 +164,7 @@ export default function About() {
               </h3>
               <div className="w-8 h-0.5 mb-4 bg-brand-red"></div>
               <p className="text-gray-600 text-xs md:text-sm font-normal leading-relaxed">
-                Building confidence through transparency and reliable delivery.
+                Building confidence through honesty, transparency and consistency.
               </p>
               <div className="absolute bottom-0 left-0 right-0 h-1.5 bg-brand-red"></div>
             </motion.div>
@@ -185,7 +185,7 @@ export default function About() {
               </h3>
               <div className="w-8 h-0.5 mb-4 bg-brand-blue"></div>
               <p className="text-gray-600 text-xs md:text-sm font-normal leading-relaxed">
-                We are committed to delivering the highest standards of quality in everything we do.
+                Pursuing excellence in every detail, every project and every outcome.
               </p>
               <div className="absolute bottom-0 left-0 right-0 h-1.5 bg-brand-blue"></div>
             </motion.div>
@@ -206,7 +206,7 @@ export default function About() {
               </h3>
               <div className="w-8 h-0.5 mb-4 bg-brand-red"></div>
               <p className="text-gray-600 text-xs md:text-sm font-normal leading-relaxed">
-                Embracing new ideas and technologies to create better solutions.
+                Challenging convention to create smarter, better solutions.
               </p>
               <div className="absolute bottom-0 left-0 right-0 h-1.5 bg-brand-red"></div>
             </motion.div>
@@ -227,7 +227,7 @@ export default function About() {
               </h3>
               <div className="w-8 h-0.5 mb-4 bg-brand-blue"></div>
               <p className="text-gray-600 text-xs md:text-sm font-normal leading-relaxed">
-                Taking ownership and delivering on our commitments.
+                Taking ownership of our commitments, decisions and results.
               </p>
               <div className="absolute bottom-0 left-0 right-0 h-1.5 bg-brand-blue"></div>
             </motion.div>
@@ -248,7 +248,7 @@ export default function About() {
               </h3>
               <div className="w-8 h-0.5 mb-4 bg-brand-red"></div>
               <p className="text-gray-600 text-xs md:text-sm font-normal leading-relaxed">
-                Building lasting relationships through collaboration and mutual success.
+                Growing stronger together through collaboration and shared success.
               </p>
               <div className="absolute bottom-0 left-0 right-0 h-1.5 bg-brand-red"></div>
             </motion.div>
@@ -299,11 +299,11 @@ export default function About() {
               {/* Mission Pillars List */}
               <div className="flex flex-col divide-y divide-gray-100 pt-2">
                 {[
-                  { num: '01', title: 'ENGINEERING EXCELLENCE', desc: 'Technical expertise, precision and dependable execution in everything we do.' },
-                  { num: '02', title: 'LASTING VALUE', desc: 'Delivering efficient, reliable and future-ready solutions that create long-term value.' },
-                  { num: '03', title: 'QUALITY & SAFETY', desc: 'Upholding uncompromising standards of quality, safety and integrity.' },
-                  { num: '04', title: 'INNOVATION & SUSTAINABILITY', desc: 'Embracing innovation and sustainable practices to build a better tomorrow.' },
-                  { num: '05', title: 'TRUSTED PARTNERSHIPS', desc: 'Building long-term relationships through transparency, trust and collaboration.' },
+                  { num: '01', title: 'ENGINEERING EXCELLENCE', desc: 'Technical expertise, precision and dependable execution in every project.' },
+                  { num: '02', title: 'CLIENT SUCCESS', desc: 'Understanding our clients\' priorities and delivering outcomes that exceed expectations.' },
+                  { num: '03', title: 'SMARTER SOLUTIONS', desc: 'Turning engineering insight into smarter solutions.' },
+                  { num: '04', title: 'RESPONSIBLE DELIVERY', desc: 'Balancing performance, safety, efficiency and sustainability.' },
+                  { num: '05', title: 'LASTING VALUE', desc: 'Delivering efficient, reliable and future-ready solutions built for long-term performance.' },
                 ].map((item, i) => (
                   <div key={i} className="flex items-start gap-4 py-3.5 group">
                     <span className="font-mono text-xs font-bold text-brand-blue tracking-wider shrink-0 mt-0.5">

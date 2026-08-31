@@ -1,18 +1,48 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { ArrowRight, Settings, Wrench, ShieldCheck, Award, Briefcase, Users, Building2, HardHat, RefreshCw, Lightbulb, Leaf, Zap } from 'lucide-react';
-import { motion } from 'framer-motion';
+import { motion, AnimatePresence } from 'framer-motion';
 import { Link } from 'react-router-dom';
 
+const heroImages = [
+  '/Home -Hero.png',
+  '/annual.jpg',
+  '/energy.jpg',
+  '/evamp.jpg'
+];
+
 export default function Hero() {
+  const [currentImageIndex, setCurrentImageIndex] = useState(0);
+
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setCurrentImageIndex((prevIndex) => (prevIndex + 1) % heroImages.length);
+    }, 5000); // Change image every 5 seconds
+    return () => clearInterval(timer);
+  }, []);
+
   return (
     <section className="relative w-full overflow-hidden bg-white">
 
       {/* Background Image Container - Dictates height on mobile, full screen on desktop */}
-      <div className="relative w-full h-auto lg:h-[85vh]">
+      <div className="relative w-full h-auto lg:h-[85vh] bg-gray-100">
+        <AnimatePresence mode="wait">
+          <motion.img
+            key={currentImageIndex}
+            src={heroImages[currentImageIndex]}
+            alt="Vericon Engineering Hero"
+            className="absolute inset-0 w-full h-full lg:object-cover lg:object-center object-contain block"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            transition={{ duration: 1 }}
+          />
+        </AnimatePresence>
+
+        {/* This invisible image ensures the container maintains height on mobile based on the first image aspect ratio */}
         <img
-          src="/Home -Hero.png"
-          alt="Vericon Engineering Hero"
-          className="w-full h-full lg:object-cover lg:object-center object-contain block"
+          src={heroImages[0]}
+          alt="Spacer"
+          className="w-full h-auto opacity-0 lg:hidden pointer-events-none"
         />
 
         {/* Absolute Overlay Container */}

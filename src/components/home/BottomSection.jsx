@@ -28,7 +28,7 @@ export default function BottomSection() {
   return (
     <section className="py-20 bg-[#F8FAFC]">
       <div className="container mx-auto px-4 md:px-6 max-w-[1400px]">
-        
+
         {/* Header */}
         <div className="text-center mb-16">
           <h3 className="text-brand-blue font-bold uppercase tracking-wider text-sm mb-3">OUR LEADERSHIP</h3>
@@ -45,7 +45,7 @@ export default function BottomSection() {
         {/* Directors Grid */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
           {directors.map((director, index) => (
-            <motion.div 
+            <motion.div
               key={index}
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -55,9 +55,9 @@ export default function BottomSection() {
             >
               {/* Full Image Container */}
               <div className="aspect-[3/4] sm:aspect-[4/5] lg:aspect-[3/4] w-full overflow-hidden relative bg-gray-100">
-                <img 
-                  src={director.image} 
-                  alt={director.name} 
+                <img
+                  src={director.image}
+                  alt={director.name}
                   className="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-700"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none" />

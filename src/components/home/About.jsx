@@ -96,7 +96,7 @@ export default function About() {
                   <div className="w-1/2 h-full bg-brand-blue"></div>
                 </div>
                 <h3 className="text-lg lg:text-xl font-bold font-poppins leading-relaxed tracking-tight text-brand-blue">
-                  Trust <span className="text-brand-red mx-2">•</span> Integrity <span className="text-brand-red mx-2">•</span> Excellence <span className="text-brand-red mx-2">•</span> Safety <span className="text-brand-red mx-2">•</span> Innovation <span className="text-brand-red mx-2">•</span> Accountability <span className="text-brand-red mx-2">•</span> Partnership
+                  Trust <span className="text-brand-red mx-2">•</span> Quality <span className="text-brand-red mx-2">•</span> Innovation <span className="text-brand-red mx-2">•</span> Accountability <span className="text-brand-red mx-2">•</span> Partnership
                 </h3>
               </motion.div>
             </div>

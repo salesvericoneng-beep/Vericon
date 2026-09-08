@@ -3,6 +3,7 @@ import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
 import { ChevronRight, ArrowRight, Snowflake, Flame } from 'lucide-react';
 import WhyChooseVericon from '../components/WhyChooseVericon';
+import CTASection from '../components/CTASection';
 
 export default function MechanicalSolutions() {
   return (

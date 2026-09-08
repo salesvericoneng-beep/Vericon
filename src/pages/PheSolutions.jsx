@@ -6,6 +6,7 @@ import {
   Database, PenTool, Wrench, Search, Building2, Activity, Gauge
 } from 'lucide-react';
 import WhyChooseVericon from '../components/WhyChooseVericon';
+import CTASection from '../components/CTASection';
 
 const pheServices = [
   {
@@ -239,35 +240,13 @@ export default function PheSolutions() {
       <WhyChooseVericon />
 
       {/* 6. CTA Bar with Water Infrastructure Background */}
-      <section className="relative bg-[#001838] py-16 overflow-hidden">
-        {/* Background Image on Right Side */}
-        <div className="absolute top-0 right-0 w-full md:w-1/2 h-full z-0 opacity-40 md:opacity-100">
-          <img 
-            src="https://images.unsplash.com/photo-1518837695005-2083093ee35b?q=80&w=1000" 
-            alt="Water Treatment and Plumbing" 
-            className="w-full h-full object-cover object-right"
-          />
-          <div className="absolute inset-0 bg-gradient-to-r from-[#001838] via-[#001838]/80 to-transparent"></div>
-        </div>
-
-        <div className="container mx-auto px-6 md:px-12 lg:px-20 relative z-10 flex flex-col md:flex-row items-center justify-between gap-8">
-          
-          <div className="max-w-xl">
-            <h2 className="text-2xl md:text-3xl font-bold text-white mb-3">Ready to Build Sustainable Water Infrastructure?</h2>
-            <p className="text-blue-100/90 text-sm md:text-base">Contact us today to discuss your Public Health Engineering requirements with our specialists.</p>
-          </div>
-
-          <div className="flex items-center gap-4 shrink-0">
-            <Link to="/contact" className="bg-brand-red hover:bg-red-700 text-white px-6 py-3 rounded-md font-bold transition-colors flex items-center gap-2 text-sm">
-              Get a Quote <ArrowRight size={16} />
-            </Link>
-            <Link to="/contact" className="bg-white hover:bg-gray-100 text-brand-blue px-6 py-3 rounded-md font-bold transition-colors text-sm flex items-center gap-2">
-              Contact Us <ArrowRight size={16} />
-            </Link>
-          </div>
-
-        </div>
-      </section>
+            {/* 6. CTA Bar */}
+      <CTASection 
+        title="Looking for Reliable PHE Solutions?" 
+        description="Let's ensure safe, efficient, and sustainable plumbing for your facility."
+        bgImage="https://images.unsplash.com/photo-1585704032915-c3400ca199e7?q=80&w=1000"
+        bgImageAlt="PHE Systems"
+      />
 
     </div>
   );

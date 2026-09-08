@@ -6,6 +6,7 @@ import {
   Activity, Zap, Snowflake, Flame, Droplet, RefreshCw, CheckCircle2, PhoneCall
 } from 'lucide-react';
 import WhyChooseVericon from '../components/WhyChooseVericon';
+import CTASection from '../components/CTASection';
 
 const amcServices = [
   {
@@ -238,25 +239,13 @@ export default function AmcSolutions() {
       <WhyChooseVericon />
 
       {/* 5. Bottom CTA */}
-      <section className="py-16 bg-brand-blue text-white relative overflow-hidden">
-        <div className="container mx-auto px-6 md:px-12 lg:px-20 relative z-10 flex flex-col md:flex-row items-center justify-between gap-8">
-          <div>
-            <h2 className="text-3xl md:text-4xl font-bold font-poppins mb-3">
-              Need a Tailored AMC Contract?
-            </h2>
-            <p className="text-blue-100 max-w-xl text-sm md:text-base">
-              Get in touch with our lifecycle support directors for a site inspection and custom maintenance proposal.
-            </p>
-          </div>
-          <Link 
-            to="/contact" 
-            className="bg-brand-red hover:bg-red-700 text-white font-semibold px-8 py-4 rounded-xl shadow-lg transition-all shrink-0 flex items-center gap-2"
-          >
-            <span>Contact Maintenance Team</span>
-            <ArrowRight size={18} />
-          </Link>
-        </div>
-      </section>
+            {/* CTA Bar */}
+      <CTASection 
+        title="Looking for Comprehensive AMC Solutions?" 
+        description="Ensure maximum uptime and extended life for your engineering systems."
+        bgImage="https://images.unsplash.com/photo-1504328345606-18bbc8c9d7d1?q=80&w=1000"
+        bgImageAlt="AMC Solutions"
+      />
 
     </div>
   );

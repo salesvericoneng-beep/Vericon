@@ -6,6 +6,7 @@ import {
   Wrench, Building2, Zap, Flame, CheckCircle2, PhoneCall
 } from 'lucide-react';
 import WhyChooseVericon from '../components/WhyChooseVericon';
+import CTASection from '../components/CTASection';
 
 const retrofitServices = [
   {
@@ -238,25 +239,13 @@ export default function RetrofitSolutions() {
       <WhyChooseVericon />
 
       {/* 5. Bottom CTA */}
-      <section className="py-16 bg-brand-blue text-white relative overflow-hidden">
-        <div className="container mx-auto px-6 md:px-12 lg:px-20 relative z-10 flex flex-col md:flex-row items-center justify-between gap-8">
-          <div>
-            <h2 className="text-3xl md:text-4xl font-bold font-poppins mb-3">
-              Plan Your Building Retrofit
-            </h2>
-            <p className="text-blue-100 max-w-xl text-sm md:text-base">
-              Contact our engineering consultants today for a comprehensive facility audit and phased revamping strategy.
-            </p>
-          </div>
-          <Link 
-            to="/contact" 
-            className="bg-brand-red hover:bg-red-700 text-white font-semibold px-8 py-4 rounded-xl shadow-lg transition-all shrink-0 flex items-center gap-2"
-          >
-            <span>Schedule Facility Audit</span>
-            <ArrowRight size={18} />
-          </Link>
-        </div>
-      </section>
+            {/* CTA Bar */}
+      <CTASection 
+        title="Ready to Revamp Your Engineering Systems?" 
+        description="Upgrade to modern, energy-efficient solutions with our expert retrofit services."
+        bgImage="https://images.unsplash.com/photo-1504328345606-18bbc8c9d7d1?q=80&w=1000"
+        bgImageAlt="Retrofit Solutions"
+      />
 
     </div>
   );

@@ -6,6 +6,7 @@ import {
   BarChart3, ShieldCheck, Sun, CheckCircle2, PhoneCall
 } from 'lucide-react';
 import WhyChooseVericon from '../components/WhyChooseVericon';
+import CTASection from '../components/CTASection';
 
 const energyServices = [
   {
@@ -238,25 +239,13 @@ export default function EnergyOptimizationSolutions() {
       <WhyChooseVericon />
 
       {/* 5. Bottom CTA */}
-      <section className="py-16 bg-brand-blue text-white relative overflow-hidden">
-        <div className="container mx-auto px-6 md:px-12 lg:px-20 relative z-10 flex flex-col md:flex-row items-center justify-between gap-8">
-          <div>
-            <h2 className="text-3xl md:text-4xl font-bold font-poppins mb-3">
-              Ready to Cut Facility Energy Costs?
-            </h2>
-            <p className="text-blue-100 max-w-xl text-sm md:text-base">
-              Schedule an energy audit today and discover your building’s full energy savings potential.
-            </p>
-          </div>
-          <Link 
-            to="/contact" 
-            className="bg-brand-red hover:bg-red-700 text-white font-semibold px-8 py-4 rounded-xl shadow-lg transition-all shrink-0 flex items-center gap-2"
-          >
-            <span>Book an Energy Audit</span>
-            <ArrowRight size={18} />
-          </Link>
-        </div>
-      </section>
+            {/* CTA Bar */}
+      <CTASection 
+        title="Want to Optimize Energy & Reduce Costs?" 
+        description="Let us conduct a comprehensive audit and implement sustainable efficiency measures."
+        bgImage="https://images.unsplash.com/photo-1504328345606-18bbc8c9d7d1?q=80&w=1000"
+        bgImageAlt="Energy Optimization"
+      />
 
     </div>
   );

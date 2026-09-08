@@ -8,6 +8,7 @@ import {
 } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import WhyChooseVericon from '../components/WhyChooseVericon';
+import CTASection from '../components/CTASection';
 
 const coreServices = [
   {
@@ -252,39 +253,12 @@ export default function Services() {
       <WhyChooseVericon />
 
       {/* 6. CTA Section */}
-      <section className="relative w-full bg-brand-dark min-h-[300px] flex items-center">
-
-        {/* Background Image */}
-        <div className="absolute inset-0">
-          <img
-            src="/cta-bg-engineering.png"
-            alt="Construction Site"
-            className="w-full h-full object-cover"
-          />
-          <div className="absolute inset-0 bg-gradient-to-r from-[#001838] via-[#001838]/90 to-[#001838]/40 md:to-transparent w-full"></div>
-        </div>
-
-        {/* Content */}
-        <div className="container mx-auto px-6 md:px-12 lg:px-20 relative z-10 py-12 md:py-16">
-          <div className="max-w-xl">
-            <h2 className="text-3xl md:text-4xl font-bold text-white mb-4 leading-tight">
-              Ready to Start Your<br className="hidden sm:block" /> Next Project?
-            </h2>
-            <p className="text-base text-blue-100/90 mb-8 leading-relaxed pr-4">
-              Partner with VERICON Engineering Services for reliable, innovative, and end-to-end engineering solutions tailored to your needs.
-            </p>
-
-            <div className="flex flex-wrap gap-4">
-              <Link to="/contact" className="bg-brand-red hover:bg-red-700 text-white px-6 py-3 rounded-lg font-bold transition-colors flex items-center gap-2 text-sm">
-                Get a Quote <ArrowRight size={16} />
-              </Link>
-              <Link to="/contact" className="bg-transparent border border-white hover:bg-white hover:text-brand-blue text-white px-6 py-3 rounded-lg font-bold transition-colors text-sm">
-                Contact Our Experts
-              </Link>
-            </div>
-          </div>
-        </div>
-      </section>
+            <CTASection 
+        title="Discuss Your Project With Us" 
+        description="Let our experts design and execute the perfect solution for your facility."
+        bgImage="https://images.unsplash.com/photo-1541888086425-d81bb19240f5?q=80&w=1000"
+        bgImageAlt="Construction Project"
+      />
 
     </div>
   );

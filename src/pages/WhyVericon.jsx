@@ -1,6 +1,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
+import CTASection from '../components/CTASection';
 import { 
   ShieldCheck, Award, Lightbulb, Leaf, 
   Users, Cog, Handshake, Clock, CircleDollarSign, Headset,
@@ -221,31 +222,12 @@ export default function WhyVericon() {
       </section>
 
       {/* 6. Footer CTA */}
-      <section className="bg-[#001838] py-16">
-        <div className="container mx-auto px-6 md:px-12 lg:px-20">
-          <div className="flex flex-col lg:flex-row items-center justify-between gap-8">
-            
-            <div className="flex items-center gap-6 max-w-2xl">
-              <div className="w-16 h-16 rounded-full border-2 border-white/20 flex items-center justify-center shrink-0">
-                <HardHat size={32} className="text-white" strokeWidth={1.5} />
-              </div>
-              <p className="text-xl md:text-2xl font-semibold text-white leading-snug">
-                Partner with VERICON and experience engineering solutions that are reliable, efficient and future-ready.
-              </p>
-            </div>
-
-            <div className="flex items-center gap-4 shrink-0 mt-6 lg:mt-0">
-              <Link to="/contact" className="bg-brand-red hover:bg-red-700 text-white px-8 py-4 rounded-md font-bold transition-colors flex items-center gap-2 text-sm">
-                Get a Quote <ArrowRight size={16} />
-              </Link>
-              <Link to="/contact" className="bg-transparent border border-white/20 hover:bg-white/10 text-white px-8 py-4 rounded-md font-bold transition-colors text-sm flex items-center gap-2">
-                Contact Us <ArrowRight size={16} />
-              </Link>
-            </div>
-
-          </div>
-        </div>
-      </section>
+            <CTASection 
+        title="Ready to Upgrade Your Engineering Solutions?" 
+        description="Partner with VERICON for reliable, safe, and efficient systems tailored to your needs."
+        bgImage="https://images.unsplash.com/photo-1504328345606-18bbc8c9d7d1?q=80&w=1000"
+        bgImageAlt="Industrial Solutions"
+      />
 
     </div>
   );

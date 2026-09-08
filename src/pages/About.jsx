@@ -273,7 +273,7 @@ export default function About() {
                 <span className="text-brand-blue block">Shaping the Future.</span>
                 <span className="text-brand-red block">Engineering Lasting Value.</span>
               </h2>
-              <p className="text-gray-600 text-sm leading-relaxed mb-6 max-w-sm">
+              <p className="text-gray-600 text-sm leading-relaxed mb-6">
                 We envision a future where engineering creates smarter, safer and more sustainable environments that empower communities and enrich generations to come.
               </p>
               <div className="w-full relative rounded-2xl overflow-hidden shadow-xl flex-grow min-h-[260px] mt-auto">

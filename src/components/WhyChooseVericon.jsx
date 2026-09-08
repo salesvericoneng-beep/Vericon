@@ -50,7 +50,7 @@ export default function WhyChooseVericon({ className = "py-16 md:py-20 bg-[#F8FA
                 <div className="text-brand-blue mb-5 flex items-center justify-center">
                   {item.icon}
                 </div>
-                <h3 className="text-brand-dark font-bold text-sm md:text-base mb-2 font-poppins">
+                <h3 className="text-brand-dark font-bold text-sm md:text-base mb-2 font-poppins whitespace-nowrap">
                   {item.title}
                 </h3>
                 <p className="text-gray-600 text-xs leading-relaxed max-w-xs">

@@ -6,6 +6,7 @@ import {
   Wind, Cylinder, Waves, Wrench, ShieldCheck, Building2, Activity, Gauge
 } from 'lucide-react';
 import WhyChooseVericon from '../components/WhyChooseVericon';
+import CTASection from '../components/CTASection';
 
 const fireServices = [
   {
@@ -112,8 +113,8 @@ export default function FireFightingSolutions() {
               <Link to="/contact" className="inline-flex items-center gap-2 bg-brand-red hover:bg-red-700 text-white px-8 py-4 rounded-md font-bold transition-colors">
                 Get a Quote <ArrowRight size={20} />
               </Link>
-              <Link to="/services/mechanical" className="inline-flex items-center gap-2 bg-white/10 hover:bg-white/20 border border-white/30 text-white px-6 py-4 rounded-md font-bold transition-colors">
-                ← Mechanical Solutions
+              <Link to="/services" className="inline-flex items-center gap-2 bg-white/10 hover:bg-white/20 border border-white/30 text-white px-6 py-4 rounded-md font-bold transition-colors">
+                ← All Services
               </Link>
             </div>
           </motion.div>
@@ -241,35 +242,13 @@ export default function FireFightingSolutions() {
       <WhyChooseVericon />
 
       {/* 6. CTA Bar with Fire Engineer Background */}
-      <section className="relative bg-[#001838] py-16 overflow-hidden">
-        {/* Background Image on Right Side */}
-        <div className="absolute top-0 right-0 w-full md:w-1/2 h-full z-0 opacity-40 md:opacity-100">
-          <img 
-            src="https://images.unsplash.com/photo-1582139329536-e7284fece509?q=80&w=1000" 
-            alt="Fire Safety Engineering" 
-            className="w-full h-full object-cover object-right"
-          />
-          <div className="absolute inset-0 bg-gradient-to-r from-[#001838] via-[#001838]/80 to-transparent"></div>
-        </div>
-
-        <div className="container mx-auto px-6 md:px-12 lg:px-20 relative z-10 flex flex-col md:flex-row items-center justify-between gap-8">
-          
-          <div className="max-w-xl">
-            <h2 className="text-2xl md:text-3xl font-bold text-white mb-3">Need a Reliable Fire Safety System?</h2>
-            <p className="text-blue-100/90 text-sm md:text-base">Talk to our fire protection engineers today. We design, install, and maintain compliant systems.</p>
-          </div>
-
-          <div className="flex items-center gap-4 shrink-0">
-            <Link to="/contact" className="bg-brand-red hover:bg-red-700 text-white px-6 py-3 rounded-md font-bold transition-colors flex items-center gap-2 text-sm">
-              Request Consultation <ArrowRight size={16} />
-            </Link>
-            <Link to="/contact" className="bg-white hover:bg-gray-100 text-brand-blue px-6 py-3 rounded-md font-bold transition-colors text-sm flex items-center gap-2">
-              Contact Us <ArrowRight size={16} />
-            </Link>
-          </div>
-
-        </div>
-      </section>
+            {/* 6. CTA Bar */}
+      <CTASection 
+        title="Looking for Reliable Fire Protection Solutions?" 
+        description="Protect your assets with our certified fire fighting and life safety systems."
+        bgImage="https://images.unsplash.com/photo-1582298538104-e25f8ceb09d9?q=80&w=1000"
+        bgImageAlt="Fire Protection Systems"
+      />
 
     </div>
   );

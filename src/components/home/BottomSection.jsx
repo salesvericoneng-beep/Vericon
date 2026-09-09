@@ -3,23 +3,19 @@ import { motion } from 'framer-motion';
 
 const directors = [
   {
-    name: 'Director 1',
-    role: 'MR. VIVEK REDDY',
+    name: 'MR. VIVEK REDDY',
     image: '/1.jpeg',
   },
   {
-    name: 'Director 2',
-    role: 'MR. EHTESHAM AHMAD',
+    name: 'MR. EHTESHAM AHMAD',
     image: '/2.jpeg',
   },
   {
-    name: 'Director 3',
-    role: 'MR. SHAIK ABDUL MUJEEB',
+    name: 'MR. SHAIK ABDUL MUJEEB',
     image: '/3.jpeg',
   },
   {
-    name: 'Director 4',
-    role: 'MR. MOHD MOIZUDDIN',
+    name: 'MR. MOHD MOIZUDDIN',
     image: '/4.jpeg',
   }
 ];

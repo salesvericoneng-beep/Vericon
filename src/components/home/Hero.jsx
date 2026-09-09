@@ -45,6 +45,9 @@ export default function Hero() {
           className="w-full h-auto opacity-0 lg:hidden pointer-events-none"
         />
 
+        {/* Overlay Shade for Text Readability (Left Side Only) */}
+        <div className="absolute inset-y-0 left-0 w-full lg:w-2/3 bg-gradient-to-r from-white/95 via-white/80 to-transparent z-0 pointer-events-none"></div>
+
         {/* Absolute Overlay Container */}
         <div className="absolute inset-0 z-10 container mx-auto px-4 sm:px-8 lg:px-20 xl:px-24 pt-[100px] lg:pt-[120px]">
 

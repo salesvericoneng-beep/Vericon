@@ -61,8 +61,7 @@ export default function BottomSection() {
 
               {/* Content */}
               <div className="p-6 text-center mt-auto">
-                <h4 className="text-xl font-bold text-brand-blue font-poppins mb-1">{director.name}</h4>
-                <p className="text-brand-red font-semibold text-xs mb-3 uppercase tracking-widest">{director.role}</p>
+                <h4 className="text-xl font-bold text-brand-blue font-poppins mb-3">{director.name}</h4>
                 <div className="w-12 h-0.5 bg-gray-200 mx-auto"></div>
               </div>
             </motion.div>

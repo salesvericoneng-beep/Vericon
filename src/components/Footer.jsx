@@ -206,13 +206,13 @@ export default function Footer() {
                 <div className="w-8 h-8 rounded-lg bg-red-600/20 border border-red-500/30 flex items-center justify-center shrink-0">
                   <Phone size={16} className="text-red-400" />
                 </div>
-                <a href="tel:+919876543210" className="text-gray-300 text-sm md:text-[15px] font-medium hover:text-white transition-colors">+91 98765 43210</a>
+                <a href="tel:+919000019249" className="text-gray-300 text-sm md:text-[15px] font-medium hover:text-white transition-colors">+91 90000 19249</a>
               </li>
               <li className="flex items-center gap-3">
                 <div className="w-8 h-8 rounded-lg bg-blue-600/20 border border-blue-500/30 flex items-center justify-center shrink-0">
                   <Mail size={16} className="text-blue-400" />
                 </div>
-                <a href="mailto:info@vericon.in" className="text-gray-300 text-sm md:text-[15px] font-medium hover:text-white transition-colors">info@vericon.in</a>
+                <a href="mailto:Sales@vericon.in" className="text-gray-300 text-sm md:text-[15px] font-medium hover:text-white transition-colors">Sales@vericon.in</a>
               </li>
               <li className="flex items-center gap-3">
                 <div className="w-8 h-8 rounded-lg bg-red-600/20 border border-red-500/30 flex items-center justify-center shrink-0">

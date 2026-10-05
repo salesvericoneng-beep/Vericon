@@ -115,7 +115,7 @@ export default function AmcSolutions() {
                 <ArrowRight size={18} className="group-hover:translate-x-1 transition-transform" />
               </Link>
               <a 
-                href="tel:+919876543210" 
+                href="tel:+919000019249" 
                 className="bg-white/10 hover:bg-white/20 text-white font-semibold px-6 py-3.5 rounded-xl backdrop-blur-md border border-white/20 transition-all flex items-center gap-2"
               >
                 <PhoneCall size={18} />

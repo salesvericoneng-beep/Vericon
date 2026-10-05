@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
 import { 
@@ -20,12 +20,12 @@ const contactInfo = [
   { 
     icon: <Phone size={24} className="text-brand-red" strokeWidth={1.5} />, 
     title: 'PHONE', 
-    details: ['+91 98765 43210', '+91 40 1234 5678']
+    details: ['+91 90000 19249']
   },
   { 
     icon: <Mail size={24} className="text-brand-red" strokeWidth={1.5} />, 
     title: 'EMAIL', 
-    details: ['info@vericon.in', 'sales@vericon.in']
+    details: ['Sales@vericon.in']
   },
   { 
     icon: <Globe size={24} className="text-brand-red" strokeWidth={1.5} />, 
@@ -42,6 +42,40 @@ const features = [
 ];
 
 export default function Contact() {
+  const [formData, setFormData] = useState({ name: '', email: '', phone: '', company: '', inquiry_type: '', message: '' });
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [submitStatus, setSubmitStatus] = useState(null);
+
+  const handleChange = (e) => {
+    setFormData({ ...formData, [e.target.name]: e.target.value });
+  };
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    setIsSubmitting(true);
+    setSubmitStatus(null);
+    
+    try {
+      const response = await fetch('http://localhost:5000/api/contact', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(formData)
+      });
+      
+      const data = await response.json();
+      if (response.ok) {
+        setSubmitStatus({ type: 'success', message: 'Thank you! Your message has been sent successfully.' });
+        setFormData({ name: '', email: '', phone: '', company: '', inquiry_type: '', message: '' });
+      } else {
+        setSubmitStatus({ type: 'error', message: data.error || 'Something went wrong. Please try again.' });
+      }
+    } catch (error) {
+      setSubmitStatus({ type: 'error', message: 'Failed to connect to the server. Please check your connection.' });
+    } finally {
+      setIsSubmitting(false);
+    }
+  };
+
   return (
     <div className="pt-20 min-h-screen bg-white">
       
@@ -121,13 +155,22 @@ export default function Contact() {
                   Fill in the form below and our team will get back to you promptly.
                 </p>
 
-                <form className="space-y-6" onSubmit={(e) => e.preventDefault()}>
+                <form onSubmit={handleSubmit} className="space-y-6">
                   
+                  {submitStatus && (
+                    <div className={`p-4 rounded-lg text-sm font-medium ${submitStatus.type === 'success' ? 'bg-green-50 text-green-700 border border-green-200' : 'bg-red-50 text-red-700 border border-red-200'}`}>
+                      {submitStatus.message}
+                    </div>
+                  )}
+
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                     <div className="space-y-2">
                       <label className="text-sm font-bold text-gray-800">Full Name <span className="text-brand-red">*</span></label>
                       <input 
-                        type="text" 
+                        type="text"
+                        name="name"
+                        value={formData.name}
+                        onChange={handleChange}
                         placeholder="Enter your full name" 
                         className="w-full px-4 py-3 rounded-lg border border-gray-200 focus:outline-none focus:border-brand-red focus:ring-1 focus:ring-brand-red transition-colors text-sm"
                         required
@@ -136,7 +179,10 @@ export default function Contact() {
                     <div className="space-y-2">
                       <label className="text-sm font-bold text-gray-800">Email Address <span className="text-brand-red">*</span></label>
                       <input 
-                        type="email" 
+                        type="email"
+                        name="email"
+                        value={formData.email}
+                        onChange={handleChange}
                         placeholder="Enter your email address" 
                         className="w-full px-4 py-3 rounded-lg border border-gray-200 focus:outline-none focus:border-brand-red focus:ring-1 focus:ring-brand-red transition-colors text-sm"
                         required
@@ -148,7 +194,10 @@ export default function Contact() {
                     <div className="space-y-2">
                       <label className="text-sm font-bold text-gray-800">Phone Number</label>
                       <input 
-                        type="tel" 
+                        type="tel"
+                        name="phone"
+                        value={formData.phone}
+                        onChange={handleChange}
                         placeholder="Enter your phone number" 
                         className="w-full px-4 py-3 rounded-lg border border-gray-200 focus:outline-none focus:border-brand-red focus:ring-1 focus:ring-brand-red transition-colors text-sm"
                       />
@@ -156,7 +205,10 @@ export default function Contact() {
                     <div className="space-y-2">
                       <label className="text-sm font-bold text-gray-800">Company Name</label>
                       <input 
-                        type="text" 
+                        type="text"
+                        name="company"
+                        value={formData.company}
+                        onChange={handleChange}
                         placeholder="Enter your company name" 
                         className="w-full px-4 py-3 rounded-lg border border-gray-200 focus:outline-none focus:border-brand-red focus:ring-1 focus:ring-brand-red transition-colors text-sm"
                       />
@@ -164,14 +216,14 @@ export default function Contact() {
                   </div>
 
                   <div className="space-y-2">
-                    <label className="text-sm font-bold text-gray-800">Subject <span className="text-brand-red">*</span></label>
+                    <label className="text-sm font-bold text-gray-800">Inquiry Type <span className="text-brand-red">*</span></label>
                     <div className="relative">
-                      <select className="w-full px-4 py-3 rounded-lg border border-gray-200 focus:outline-none focus:border-brand-red focus:ring-1 focus:ring-brand-red transition-colors text-sm appearance-none bg-white" required>
-                        <option value="" disabled selected hidden>Select a subject</option>
-                        <option value="hvac">HVAC Solutions</option>
-                        <option value="electrical">Electrical Solutions</option>
-                        <option value="fire">Fire Fighting Solutions</option>
-                        <option value="other">Other Inquiry</option>
+                      <select name="inquiry_type" value={formData.inquiry_type} onChange={handleChange} className="w-full px-4 py-3 rounded-lg border border-gray-200 focus:outline-none focus:border-brand-red focus:ring-1 focus:ring-brand-red transition-colors text-sm appearance-none bg-white" required>
+                        <option value="" disabled hidden>Select an inquiry type</option>
+                        <option value="HVAC Solutions">HVAC Solutions</option>
+                        <option value="Electrical Solutions">Electrical Solutions</option>
+                        <option value="Fire Fighting Solutions">Fire Fighting Solutions</option>
+                        <option value="Other Inquiry">Other Inquiry</option>
                       </select>
                       <div className="absolute inset-y-0 right-0 flex items-center px-4 pointer-events-none text-gray-500">
                         <svg className="w-4 h-4 fill-current" viewBox="0 0 20 20"><path d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clipRule="evenodd" fillRule="evenodd"></path></svg>
@@ -182,6 +234,9 @@ export default function Contact() {
                   <div className="space-y-2">
                     <label className="text-sm font-bold text-gray-800">Message <span className="text-brand-red">*</span></label>
                     <textarea 
+                      name="message"
+                      value={formData.message}
+                      onChange={handleChange}
                       rows={5}
                       placeholder="Type your message here..." 
                       className="w-full px-4 py-3 rounded-lg border border-gray-200 focus:outline-none focus:border-brand-red focus:ring-1 focus:ring-brand-red transition-colors text-sm resize-none"
@@ -190,10 +245,11 @@ export default function Contact() {
                   </div>
 
                   <button 
-                    type="submit" 
-                    className="bg-brand-red hover:bg-red-700 text-white px-8 py-3.5 rounded-md font-bold transition-colors text-sm flex items-center gap-2 uppercase tracking-wide"
+                    type="submit"
+                    disabled={isSubmitting}
+                    className="bg-brand-red hover:bg-red-700 disabled:opacity-70 disabled:cursor-not-allowed text-white px-8 py-3.5 rounded-md font-bold transition-colors text-sm flex items-center gap-2 uppercase tracking-wide"
                   >
-                    SEND MESSAGE <Send size={16} />
+                    {isSubmitting ? 'SENDING...' : 'SEND MESSAGE'} <Send size={16} />
                   </button>
                 </form>
 

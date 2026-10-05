@@ -10,31 +10,31 @@ import CTASection from '../components/CTASection';
 
 const electricalServices = [
   { 
-    image: 'https://images.unsplash.com/photo-1581092160607-ee22621dd758?q=80&w=800',
+    image: '/images/electrical/electrical_design.jpg',
     icon: <PenTool size={24} strokeWidth={1.8} />, 
     title: 'Electrical Design', 
     desc: 'Safe and efficient electrical system design using latest standards, load calculations, and engineering tools.' 
   },
   { 
-    image: 'https://images.unsplash.com/photo-1544725121-be3bf52e2dc8?q=80&w=800',
+    image: '/images/electrical/power_distribution.jpg',
     icon: <Cpu size={24} strokeWidth={1.8} />, 
     title: 'Power Distribution', 
     desc: 'Design and installation of LT & HT power distribution networks, transformers, and switchyards.' 
   },
   { 
-    image: 'https://images.unsplash.com/photo-1621905252507-b35492cc74b4?q=80&w=800',
+    image: '/images/electrical/lt_ht_panels.jpg',
     icon: <Server size={24} strokeWidth={1.8} />, 
     title: 'LT & HT Panels', 
     desc: 'Manufacturing and installation of PCC, MCC, APFC, and AMF control panels with highest safety standards.' 
   },
   { 
-    image: 'https://images.unsplash.com/photo-1558618666-fcd25c85cd64?q=80&w=800',
+    image: '/images/electrical/cabling_wiring.jpg',
     icon: <Share2 size={24} strokeWidth={1.8} />, 
     title: 'Cabling & Wiring', 
     desc: 'Structured and neatly executed heavy power cabling solutions for reliable, loss-free power supply.' 
   },
   { 
-    image: 'https://images.unsplash.com/photo-1504328345606-18bbc8c9d7d1?q=80&w=800',
+    image: '/images/electrical/cable_trays_busducts.jpg',
     icon: <AlignJustify size={24} strokeWidth={1.8} />, 
     title: 'Cable Trays & Busducts', 
     desc: 'Installation of perforated and ladder cable trays, sandwich busducts, and heavy-duty support systems.' 
@@ -76,7 +76,7 @@ export default function ElectricalSolutions() {
       <section className="relative w-full h-[500px] bg-brand-dark flex flex-col justify-center">
         <div className="absolute inset-0">
           <img 
-            src="https://images.unsplash.com/photo-1544724569-5f546fd6f2b6?q=80&w=2000" 
+            src="/images/heroes/electrical_hero.jpg" 
             alt="Electrical Systems" 
             className="w-full h-full object-cover opacity-60"
           />
@@ -152,7 +152,7 @@ export default function ElectricalSolutions() {
                 className="rounded-3xl overflow-hidden shadow-xl"
               >
                 <img 
-                  src="https://images.unsplash.com/photo-1621905252507-b35492cc74b4?q=80&w=1000" 
+                  src="/images/electrical/lt_ht_panels.jpg" 
                   alt="Electrical Panel Room" 
                   className="w-full h-[400px] object-cover hover:scale-105 transition-transform duration-700"
                 />
@@ -244,7 +244,7 @@ export default function ElectricalSolutions() {
       <CTASection 
         title="Looking for Reliable Electrical Solutions?" 
         description="Let's power your project with safety, efficiency and excellence."
-        bgImage="https://images.unsplash.com/photo-1574689211272-bc1550ce15f5?q=80&w=1000"
+        bgImage="/images/electrical/electrical_design.jpg"
         bgImageAlt="Engineer inspecting panels"
       />
 

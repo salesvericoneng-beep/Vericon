@@ -10,49 +10,49 @@ import CTASection from '../components/CTASection';
 
 const pheServices = [
   {
-    image: 'https://images.unsplash.com/photo-1541888086425-d81bb19240f5?q=80&w=800',
+    image: '/images/phe/water_supply_distribution.jpg',
     icon: <Droplet size={24} strokeWidth={1.8} />,
     title: 'Water Supply & Distribution',
     desc: 'Design and installation of pressurized cold and hot water networks, ring mains, and riser distribution for uninterrupted supply.'
   },
   {
-    image: 'https://images.unsplash.com/photo-1584483749216-41f237ee4828?q=80&w=800',
+    image: '/images/phe/sewage_drainage_systems.jpg',
     icon: <Waves size={24} strokeWidth={1.8} />,
     title: 'Sewage & Drainage Systems',
     desc: 'Gravity and pumped drainage systems for soil, waste, and rainwater management to ensure zero waterlogging and hygiene.'
   },
   {
-    image: 'https://images.unsplash.com/photo-1518837695005-2083093ee35b?q=80&w=800',
+    image: '/images/phe/wtp_stp_plants.jpg',
     icon: <Sprout size={24} strokeWidth={1.8} />,
     title: 'WTP & STP Treatment Plants',
     desc: 'Turnkey Water Treatment Plants (WTP), Sewage Treatment Plants (STP), and Greywater Recycling for maximum sustainable reuse.'
   },
   {
-    image: 'https://images.unsplash.com/photo-1519888998845-db43085e5052?q=80&w=800',
+    image: '/images/phe/rainwater_harvesting.jpg',
     icon: <Database size={24} strokeWidth={1.8} />,
     title: 'Rainwater Harvesting',
     desc: 'Customized catchment, pre-filtration, storage, and ground recharge wells compliant with local municipal environmental codes.'
   },
   {
-    image: 'https://images.unsplash.com/photo-1581092580497-e0d23cbdf1dc?q=80&w=800',
+    image: '/images/phe/leak_detection.jpg',
     icon: <Search size={24} strokeWidth={1.8} />,
     title: 'Leak Detection & Conservation',
     desc: 'Smart acoustic and electronic leak telemetry and pressure management to eliminate non-revenue water loss.'
   },
   {
-    image: 'https://images.unsplash.com/photo-1621259599507-6a7f0e34ed6a?q=80&w=800',
+    image: '/images/phe/hydro_pneumatic_pumping.jpg',
     icon: <Gauge size={24} strokeWidth={1.8} />,
     title: 'Hydro-Pneumatic Pumping',
     desc: 'Underground/overhead storage tanks, VFD-driven booster pump skids, and precision pressure control stations.'
   },
   {
-    image: 'https://images.unsplash.com/photo-1504328345606-18bbc8c9d7d1?q=80&w=800',
+    image: '/images/phe/plumbing_design.jpg',
     icon: <PenTool size={24} strokeWidth={1.8} />,
     title: 'Plumbing Design & Sanitary',
     desc: 'Complete architectural plumbing, CPVC/UPVC/CI pipe installations, and modern fixture layouts with long-lasting integrity.'
   },
   {
-    image: 'https://images.unsplash.com/photo-1581092921461-eab62e97a780?q=80&w=800',
+    image: '/images/phe/phe_maintenance.jpg',
     icon: <Wrench size={24} strokeWidth={1.8} />,
     title: 'PHE Maintenance & AMC',
     desc: 'Scheduled pump servicing, pipe descaling, bacterial water testing, and 24/7 breakdown support across facility lifecycles.'
@@ -76,7 +76,7 @@ export default function PheSolutions() {
       <section className="relative w-full h-[500px] bg-brand-dark flex flex-col justify-center">
         <div className="absolute inset-0">
           <img 
-            src="https://images.unsplash.com/photo-1581093458791-9f3c3900df4b?q=80&w=2000" 
+            src="/images/heroes/phe_hero.jpg" 
             alt="Public Health Engineering" 
             className="w-full h-full object-cover opacity-60"
           />
@@ -152,7 +152,7 @@ export default function PheSolutions() {
                 className="rounded-3xl overflow-hidden shadow-xl"
               >
                 <img 
-                  src="https://images.unsplash.com/photo-1541888086425-d81bb19240f5?q=80&w=1000" 
+                  src="/images/phe/water_supply_distribution.jpg" 
                   alt="Water Infrastructure" 
                   className="w-full h-[400px] object-cover hover:scale-105 transition-transform duration-700"
                 />
@@ -244,7 +244,7 @@ export default function PheSolutions() {
       <CTASection 
         title="Looking for Reliable PHE Solutions?" 
         description="Let's ensure safe, efficient, and sustainable plumbing for your facility."
-        bgImage="https://images.unsplash.com/photo-1585704032915-c3400ca199e7?q=80&w=1000"
+        bgImage="/images/phe/wtp_stp_plants.jpg"
         bgImageAlt="PHE Systems"
       />
 

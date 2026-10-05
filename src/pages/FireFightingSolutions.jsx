@@ -52,7 +52,7 @@ const fireServices = [
     desc: 'High/medium velocity water spray and high-expansion foam systems with automatic deluge valves for transformers and chemical vessels.'
   },
   {
-    image: 'https://images.unsplash.com/photo-1542456485-645903b41d4c?q=80&w=800',
+    image: '/images/fire/fire_pump_house.jpg',
     icon: <Wrench size={24} strokeWidth={1.8} />,
     title: 'Fire Pump Houses & NOC',
     desc: 'Complete Main, Standby Diesel, and Jockey pump installations, hydro-pneumatic testing, and Fire NOC liaison support.'
@@ -76,7 +76,7 @@ export default function FireFightingSolutions() {
       <section className="relative w-full h-[500px] bg-brand-dark flex flex-col justify-center">
         <div className="absolute inset-0">
           <img 
-            src="https://images.unsplash.com/photo-1582139329536-e7284fece509?q=80&w=2000" 
+            src="/images/heroes/fire_hero.jpg" 
             alt="Fire Fighting Solutions" 
             className="w-full h-full object-cover opacity-60"
           />

@@ -102,13 +102,9 @@ export default function Services() {
       <section className="relative w-full h-[500px] md:h-[600px] bg-[#001838]">
         <div className="absolute inset-0">
           <img
-            src="/Services-Hero.png"
-            alt="Services Hero"
+            src="/images/projects/proj_retrofits.jpg"
+            alt="All Engineering Services"
             className="w-full h-full object-cover opacity-70"
-            onError={(e) => {
-              e.target.onerror = null;
-              e.target.src = "https://images.unsplash.com/photo-1503387762-592deb58ef4e?q=80&w=2000"
-            }}
           />
           {/* White Gradient Overlay for Text */}
           <div className="absolute inset-0 bg-gradient-to-r from-white via-white/90 to-transparent w-full md:w-[70%] lg:w-[50%]"></div>

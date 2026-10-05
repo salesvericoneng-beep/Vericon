@@ -11,49 +11,49 @@ import CTASection from '../components/CTASection';
 
 const hvacServices = [
   { 
-    image: 'https://images.unsplash.com/photo-1581092921461-eab62e97a780?q=80&w=800',
+    image: '/images/hvac/central_air_conditioning.jpg',
     icon: <Snowflake size={24} strokeWidth={1.8} />, 
     title: 'Central Air Conditioning', 
     desc: 'High-efficiency centralized chiller plants, cooling towers and hydronic circulation for large commercial and industrial complexes.' 
   },
   { 
-    image: 'https://images.unsplash.com/photo-1558618666-fcd25c85cd64?q=80&w=800',
+    image: '/images/hvac/chilled_water_piping.jpg',
     icon: <Activity size={24} strokeWidth={1.8} />, 
     title: 'Chilled Water Piping', 
     desc: 'Heavy-duty pre-insulated chilled water distribution piping networks engineered to ASHRAE and ASME standards.' 
   },
   { 
-    image: 'https://images.unsplash.com/photo-1621259599507-6a7f0e34ed6a?q=80&w=800',
+    image: '/images/hvac/air_handling_units.jpg',
     icon: <Wind size={24} strokeWidth={1.8} />, 
     title: 'Air Handling Units (AHU)', 
     desc: 'Custom double-skin modular AHUs and FCUs configured with advanced multi-stage filtration and automated BMS integration.' 
   },
   { 
-    image: 'https://images.unsplash.com/photo-1504328345606-18bbc8c9d7d1?q=80&w=800',
+    image: '/images/hvac/fresh_air_ventilation.jpg',
     icon: <Fan size={24} strokeWidth={1.8} />, 
     title: 'Fresh Air & Ventilation', 
     desc: 'Energy Recovery Ventilators (ERV), kitchen exhaust hoods, basement ventilation, and stairwell pressurization systems.' 
   },
   { 
-    image: 'https://images.unsplash.com/photo-1531297484001-80022131f5a1?q=80&w=800',
+    image: '/images/hvac/precision_air_conditioning.jpg',
     icon: <Thermometer size={24} strokeWidth={1.8} />, 
     title: 'Precision Air Conditioning', 
     desc: 'Mission-critical CRAC units and in-row cooling systems providing ±0.5°C and ±3% RH tolerances for data centers and server rooms.' 
   },
   { 
-    image: 'https://images.unsplash.com/photo-1562259929-b4e1fd3aef09?q=80&w=800',
+    image: '/images/hvac/vrf_vrv_systems.jpg',
     icon: <Settings size={24} strokeWidth={1.8} />, 
     title: 'VRF / VRV Systems', 
     desc: 'Multi-zone variable refrigerant flow systems offering flexible simultaneous heating, cooling, and energy optimization.' 
   },
   { 
-    image: 'https://images.unsplash.com/photo-1565043666747-69f6646db940?q=80&w=800',
+    image: '/images/hvac/industrial_ventilation.jpg',
     icon: <Factory size={24} strokeWidth={1.8} />, 
     title: 'Industrial Ventilation', 
     desc: 'Engineered dilution ventilation, dust extraction, local exhaust hoods, and HVLS fan systems for manufacturing plants.' 
   },
   { 
-    image: 'https://images.unsplash.com/photo-1532187863486-abf9dbad1b69?q=80&w=800',
+    image: '/images/hvac/clean_room_tab.jpg',
     icon: <FlaskConical size={24} strokeWidth={1.8} />, 
     title: 'Clean Room & TAB Services', 
     desc: 'ISO 14644 / GMP compliant clean room HVAC design with HEPA cascades, along with certified Testing, Adjusting & Balancing (TAB).' 
@@ -77,7 +77,7 @@ export default function HvacSolutions() {
       <section className="relative w-full h-[500px] bg-brand-dark flex flex-col justify-center">
         <div className="absolute inset-0">
           <img 
-            src="https://images.unsplash.com/photo-1621259599507-6a7f0e34ed6a?q=80&w=2000" 
+            src="/images/heroes/hvac_hero.jpg" 
             alt="HVAC Engineering" 
             className="w-full h-full object-cover opacity-60"
           />
@@ -153,7 +153,7 @@ export default function HvacSolutions() {
                 className="rounded-3xl overflow-hidden shadow-xl"
               >
                 <img 
-                  src="https://images.unsplash.com/photo-1581092921461-eab62e97a780?q=80&w=1000" 
+                  src="/images/hvac/central_air_conditioning.jpg" 
                   alt="HVAC Chiller Plant" 
                   className="w-full h-[400px] object-cover hover:scale-105 transition-transform duration-700"
                 />
@@ -245,7 +245,7 @@ export default function HvacSolutions() {
       <CTASection 
         title="Looking for High-Performance HVAC Solutions?" 
         description="Let's design and engineer an energy-efficient climate control system for your facility."
-        bgImage="https://images.unsplash.com/photo-1504328345606-18bbc8c9d7d1?q=80&w=1000"
+        bgImage="/images/hvac/fresh_air_ventilation.jpg"
         bgImageAlt="HVAC Ventilation Ductwork"
       />
 

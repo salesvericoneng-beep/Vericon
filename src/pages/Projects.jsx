@@ -34,7 +34,7 @@ const specializedServices = [
     badgeColor: 'bg-brand-blue/10 text-brand-blue border-brand-blue/30',
     accentColor: '#123EB7',
     icon: Wrench,
-    image: 'https://images.unsplash.com/photo-1581092921461-eab62e97a780?q=80&w=1200',
+    image: '/images/projects/proj_amc.jpg',
     description: [
       'VERICON delivers comprehensive Annual Maintenance Contracts (AMC) engineered to maximize equipment uptime, extend operational lifespan, and ensure strict safety compliance across critical facility systems.',
       'Our certified technical teams provide planned preventive maintenance, real-time diagnostic checks, emergency breakdown resolution, and performance tuning for HVAC, electrical, fire protection, and plumbing infrastructure.',
@@ -58,7 +58,7 @@ const specializedServices = [
     badgeColor: 'bg-brand-red/10 text-brand-red border-brand-red/30',
     accentColor: '#D80C20',
     icon: RefreshCw,
-    image: 'https://images.unsplash.com/photo-1504328345606-18bbc8c9d7d1?q=80&w=1200',
+    image: '/images/projects/proj_retrofits.jpg',
     description: [
       'Our Revamp & Retrofit engineering solutions breathe new life into existing, outdated, or underperforming MEP and HVAC infrastructure without requiring complete facility shutdowns.',
       'We evaluate system bottlenecks, thermal efficiency, aging ductwork, worn chiller loops, and obsolete electrical switchgear to engineer phased modernization plans.',
@@ -82,7 +82,7 @@ const specializedServices = [
     badgeColor: 'bg-emerald-600/10 text-emerald-600 border-emerald-600/30',
     accentColor: '#059669',
     icon: Zap,
-    image: 'https://images.unsplash.com/photo-1497435334941-8c899ee9e8e9?q=80&w=1200',
+    image: '/images/projects/proj_energy.jpg',
     description: [
       'VERICON’s Energy Optimization services empower building owners and facility operators to drastically curtail utility expenses while accelerating their green building sustainability targets.',
       'We execute deep-dive energy audits, load profiling, harmonic distortion analysis, and thermodynamic modeling to uncover hidden energy waste across central plant and distribution networks.',
@@ -106,7 +106,7 @@ const diagnosticServices = [
     badge: 'NEBB / AABC STANDARDS',
     accentColor: '#123EB7',
     icon: SlidersHorizontal,
-    image: 'https://images.unsplash.com/photo-1581092335397-9583fe92d232?q=80&w=1000',
+    image: '/images/hvac/clean_room_tab.jpg',
   },
   {
     id: 'hvac-energy-audit',
@@ -114,7 +114,7 @@ const diagnosticServices = [
     badge: 'ENERGY EFFICIENCY',
     accentColor: '#059669',
     icon: Zap,
-    image: 'https://images.unsplash.com/photo-1497435334941-8c899ee9e8e9?q=80&w=1000',
+    image: '/images/hvac/vrf_vrv_systems.jpg',
   },
   {
     id: 'duct-leakage',
@@ -122,7 +122,7 @@ const diagnosticServices = [
     badge: 'SMACNA COMPLIANCE',
     accentColor: '#D80C20',
     icon: Wind,
-    image: 'https://images.unsplash.com/photo-1621905251189-08b45d6a269e?q=80&w=1000',
+    image: '/images/phe/leak_detection.jpg',
   },
   {
     id: 'duct-cleaning',
@@ -130,7 +130,7 @@ const diagnosticServices = [
     badge: 'HYGIENE & DISINFECTION',
     accentColor: '#0284C7',
     icon: Sparkles,
-    image: 'https://images.unsplash.com/photo-1584622650111-993a426fbf0a?q=80&w=1000',
+    image: '/images/hvac/fresh_air_ventilation.jpg',
   },
   {
     id: 'uvgi-solutions',
@@ -138,7 +138,7 @@ const diagnosticServices = [
     badge: 'GERMICIDAL PURIFICATION',
     accentColor: '#7C3AED',
     icon: SunMedium,
-    image: 'https://images.unsplash.com/photo-1516549655169-df83a0774514?q=80&w=1000',
+    image: '/images/hvac/precision_air_conditioning.jpg',
   },
   {
     id: 'iaq-assessment',
@@ -146,7 +146,7 @@ const diagnosticServices = [
     badge: 'ASHRAE 62.1 STANDARDS',
     accentColor: '#059669',
     icon: ShieldAlert,
-    image: 'https://images.unsplash.com/photo-1507668077129-56e32842fceb?q=80&w=1000',
+    image: '/images/hvac/industrial_ventilation.jpg',
   },
   {
     id: 'automatic-tube-cleaning',
@@ -154,7 +154,7 @@ const diagnosticServices = [
     badge: 'CHILLER OPTIMIZATION',
     accentColor: '#D97706',
     icon: RefreshCw,
-    image: 'https://images.unsplash.com/photo-1581092162384-8987c1d64718?q=80&w=1000',
+    image: '/images/hvac/chilled_water_piping.jpg',
   },
   {
     id: 'vfd-pump-fan-optimization',
@@ -162,7 +162,7 @@ const diagnosticServices = [
     badge: 'DRIVE CALIBRATION',
     accentColor: '#2563EB',
     icon: Cpu,
-    image: 'https://images.unsplash.com/photo-1581092580497-e0d23cbdf1dc?q=80&w=1000',
+    image: '/images/electrical/power_distribution.jpg',
   },
   {
     id: 'vibration-analysis',
@@ -170,7 +170,7 @@ const diagnosticServices = [
     badge: 'PREDICTIVE DIAGNOSTICS',
     accentColor: '#123EB7',
     icon: Activity,
-    image: 'https://images.unsplash.com/photo-1581092160607-ee22621dd758?q=80&w=1000',
+    image: '/images/electrical/electrical_design.jpg',
   },
   {
     id: 'auto-sequence-asp-panel',
@@ -178,7 +178,7 @@ const diagnosticServices = [
     badge: 'SMART AUTOMATION',
     accentColor: '#D97706',
     icon: Sliders,
-    image: 'https://images.unsplash.com/photo-1558494949-ef010cbdcc31?q=80&w=1000',
+    image: '/images/electrical/lt_ht_panels.jpg',
   },
   {
     id: 'electrical-thermography',
@@ -186,7 +186,7 @@ const diagnosticServices = [
     badge: 'THERMAL SCANNING',
     accentColor: '#D80C20',
     icon: Flame,
-    image: 'https://images.unsplash.com/photo-1544724569-5f546fd6f2b6?q=80&w=1000',
+    image: '/images/electrical/cabling_wiring.jpg',
   },
   {
     id: 'cylinder-hp-testing',
@@ -194,7 +194,7 @@ const diagnosticServices = [
     badge: 'PESO / CCOE TESTING',
     accentColor: '#059669',
     icon: ShieldCheck,
-    image: 'https://images.unsplash.com/photo-1549488344-1f9b8d2bd1f3?q=80&w=1000',
+    image: '/images/fire/fire_pump_house.jpg',
   }
 ];
 
@@ -206,12 +206,12 @@ export default function Projects() {
       <section className="relative min-h-[580px] lg:min-h-[640px] bg-[#050D1A] flex items-center justify-center overflow-hidden">
         <div className="absolute inset-0 z-0">
           <img
-            src="https://images.unsplash.com/photo-1541888946425-d0fbb18f15f6?q=80&w=2000"
+            src="/images/projects/proj_retrofits.jpg"
             alt="Engineering Services Hero"
-            className="w-full h-full object-cover opacity-25 scale-105"
+            className="w-full h-full object-cover opacity-60 scale-105"
           />
-          <div className="absolute inset-0 bg-gradient-to-r from-[#050D1A] via-[#050D1A]/90 to-[#050D1A]/70" />
-          <div className="absolute inset-0 bg-gradient-to-t from-[#050D1A] via-transparent to-transparent" />
+          <div className="absolute inset-0 bg-gradient-to-r from-[#050D1A] via-[#050D1A]/50 to-transparent" />
+          <div className="absolute inset-0 bg-gradient-to-t from-[#050D1A] via-[#050D1A]/20 to-transparent" />
         </div>
 
         <div className="absolute -top-24 -left-24 w-96 h-96 rounded-full bg-brand-blue/20 blur-3xl pointer-events-none" />

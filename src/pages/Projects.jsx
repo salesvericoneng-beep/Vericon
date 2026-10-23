@@ -199,7 +199,7 @@ export default function Projects() {
       <section className="relative min-h-[580px] lg:min-h-[640px] bg-[#050D1A] flex items-center justify-center overflow-hidden">
         <div className="absolute inset-0 z-0">
           <img
-            src="/images/projects/proj_retrofits.jpg"
+            src="/projects_Hero.jpeg"
             alt="Engineering Services Hero"
             className="w-full h-full object-cover opacity-60 scale-105"
           />

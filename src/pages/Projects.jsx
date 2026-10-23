@@ -58,7 +58,7 @@ const specializedServices = [
     badgeColor: 'bg-brand-red/10 text-brand-red border-brand-red/30',
     accentColor: '#D80C20',
     icon: RefreshCw,
-    image: '/images/projects/proj_retrofits.jpg',
+    image: '/images/projects/retro.jpeg',
     description: [
       'Our Revamp & Retrofit engineering solutions breathe new life into existing, outdated, or underperforming MEP and HVAC infrastructure without requiring complete facility shutdowns.',
       'We evaluate system bottlenecks, thermal efficiency, aging ductwork, worn chiller loops, and obsolete electrical switchgear to engineer phased modernization plans.',

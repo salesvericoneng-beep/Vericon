@@ -40,19 +40,19 @@ const electricalServices = [
     desc: 'Installation of perforated and ladder cable trays, sandwich busducts, and heavy-duty support systems.' 
   },
   { 
-    image: 'https://images.unsplash.com/photo-1507499739999-097706ad8914?q=80&w=800',
+    image: '/images/electrical/lighting_systems.jpg',
     icon: <Lightbulb size={24} strokeWidth={1.8} />, 
     title: 'Lighting Systems', 
     desc: 'Indoor, outdoor, and industrial lighting solutions integrated with energy-efficient daylight and smart sensors.' 
   },
   { 
-    image: 'https://images.unsplash.com/photo-1518770660439-4636190af475?q=80&w=800',
+    image: '/images/electrical/earthing_lightning.jpg',
     icon: <ZapOff size={24} strokeWidth={1.8} />, 
     title: 'Earthing & Lightning', 
     desc: 'Effective chemical earthing and early streamer emission lightning protection systems for complete asset safety.' 
   },
   { 
-    image: 'https://images.unsplash.com/photo-1581092580497-e0d23cbdf1dc?q=80&w=800',
+    image: '/images/electrical/testing_commissioning.jpg',
     icon: <Wrench size={24} strokeWidth={1.8} />, 
     title: 'Testing & Commissioning', 
     desc: 'Complete pre-commissioning relay coordination, insulation resistance, and dielectric testing for smooth operation.' 

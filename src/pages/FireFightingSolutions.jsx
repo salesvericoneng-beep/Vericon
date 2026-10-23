@@ -46,7 +46,7 @@ const fireServices = [
     desc: 'CO2 and dry chemical total flooding systems with pneumatic and electric actuators for electrical rooms and hazardous storage.'
   },
   {
-    image: '/deluge_foam.png',
+    image: '/images/fire/Fire Protection Systems.png',
     icon: <Flame size={24} strokeWidth={1.8} />,
     title: 'Deluge, Spray & Foam',
     desc: 'High/medium velocity water spray and high-expansion foam systems with automatic deluge valves for transformers and chemical vessels.'

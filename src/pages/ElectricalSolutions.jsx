@@ -34,7 +34,7 @@ const electricalServices = [
     desc: 'Structured and neatly executed heavy power cabling solutions for reliable, loss-free power supply.' 
   },
   { 
-    image: '/images/electrical/cable_trays_busducts.jpg',
+    image: '/images/electrical/Cable Tray and Busduct.png',
     icon: <AlignJustify size={24} strokeWidth={1.8} />, 
     title: 'Cable Trays & Busducts', 
     desc: 'Installation of perforated and ladder cable trays, sandwich busducts, and heavy-duty support systems.' 

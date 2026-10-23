@@ -29,7 +29,7 @@ const hvacServices = [
     desc: 'Custom double-skin modular AHUs and FCUs configured with advanced multi-stage filtration and automated BMS integration.' 
   },
   { 
-    image: '/images/hvac/fresh_air_ventilation.jpg',
+    image: '/images/hvac/fresh.png',
     icon: <Fan size={24} strokeWidth={1.8} />, 
     title: 'Fresh Air & Ventilation', 
     desc: 'Energy Recovery Ventilators (ERV), kitchen exhaust hoods, basement ventilation, and stairwell pressurization systems.' 
@@ -53,10 +53,10 @@ const hvacServices = [
     desc: 'Engineered dilution ventilation, dust extraction, local exhaust hoods, and HVLS fan systems for manufacturing plants.' 
   },
   { 
-    image: '/images/hvac/clean_room_tab.jpg',
+    image: '/images/hvac/cleaning room.jpg',
     icon: <FlaskConical size={24} strokeWidth={1.8} />, 
     title: 'Clean Room & TAB Services', 
-    desc: 'ISO 14644 / GMP compliant clean room HVAC design with HEPA cascades, along with certified Testing, Adjusting & Balancing (TAB).' 
+    desc: 'clean room HVAC design with HEPA cascades, along with certified Testing, Adjusting & Balancing (TAB).' 
   }
 ];
 
@@ -77,7 +77,7 @@ export default function HvacSolutions() {
       <section className="relative w-full h-[500px] bg-brand-dark flex flex-col justify-center">
         <div className="absolute inset-0">
           <img 
-            src="/images/heroes/hvac_hero.jpg" 
+            src="/images/heroes/hvac_hero.png" 
             alt="HVAC Engineering" 
             className="w-full h-full object-cover opacity-60"
           />

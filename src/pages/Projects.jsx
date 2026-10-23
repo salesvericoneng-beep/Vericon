@@ -87,14 +87,7 @@ const specializedServices = [
       'VERICON’s Energy Optimization services empower building owners and facility operators to drastically curtail utility expenses while accelerating their green building sustainability targets.',
       'We execute deep-dive energy audits, load profiling, harmonic distortion analysis, and thermodynamic modeling to uncover hidden energy waste across central plant and distribution networks.',
       'Through smart Building Management System (BMS) calibrations, automated demand-controlled ventilation, heat recovery wheels, and precision power factor corrections, we maximize kilowatt-per-ton cooling efficiency.',
-      'Our data-driven optimizations typically yield 15% to 35% reductions in lifecycle energy consumption with measurable return on investment.',
-      'We help clients achieve IGBC, LEED, and GRIHA green building certifications while safeguarding environmental resources for future generations.'
-    ],
-    highlights: [
-      'Comprehensive ASHRAE Energy Audits',
-      'Smart BMS & IoT Demand Control',
-      '15% to 35% Reduction in Energy Bills',
-      'LEED, IGBC & GRIHA Certification Support'
+      'Our data-driven optimizations typically yield 15% to 35% reductions in lifecycle energy consumption with measurable return on investment.'
     ]
   }
 ];
@@ -106,7 +99,7 @@ const diagnosticServices = [
     badge: 'NEBB / AABC STANDARDS',
     accentColor: '#123EB7',
     icon: SlidersHorizontal,
-    image: '/images/hvac/clean_room_tab.jpg',
+    image: '/TAB Image.png',
   },
   {
     id: 'hvac-energy-audit',
@@ -114,7 +107,7 @@ const diagnosticServices = [
     badge: 'ENERGY EFFICIENCY',
     accentColor: '#059669',
     icon: Zap,
-    image: '/images/hvac/vrf_vrv_systems.jpg',
+    image: '/HVAC Energy image.jpg',
   },
   {
     id: 'duct-leakage',
@@ -122,7 +115,7 @@ const diagnosticServices = [
     badge: 'SMACNA COMPLIANCE',
     accentColor: '#D80C20',
     icon: Wind,
-    image: '/images/phe/leak_detection.jpg',
+    image: '/DUCT leakage.jpg',
   },
   {
     id: 'duct-cleaning',
@@ -130,7 +123,7 @@ const diagnosticServices = [
     badge: 'HYGIENE & DISINFECTION',
     accentColor: '#0284C7',
     icon: Sparkles,
-    image: '/images/hvac/fresh_air_ventilation.jpg',
+    image: '/Duct Cleaning.jpg',
   },
   {
     id: 'uvgi-solutions',
@@ -138,7 +131,7 @@ const diagnosticServices = [
     badge: 'GERMICIDAL PURIFICATION',
     accentColor: '#7C3AED',
     icon: SunMedium,
-    image: '/images/hvac/precision_air_conditioning.jpg',
+    image: '/UVGI Solutions.jpg',
   },
   {
     id: 'iaq-assessment',
@@ -146,7 +139,7 @@ const diagnosticServices = [
     badge: 'ASHRAE 62.1 STANDARDS',
     accentColor: '#059669',
     icon: ShieldAlert,
-    image: '/images/hvac/industrial_ventilation.jpg',
+    image: '/indore Air.jpg',
   },
   {
     id: 'automatic-tube-cleaning',
@@ -154,7 +147,7 @@ const diagnosticServices = [
     badge: 'CHILLER OPTIMIZATION',
     accentColor: '#D97706',
     icon: RefreshCw,
-    image: '/images/hvac/chilled_water_piping.jpg',
+    image: '/Automatic tube cleaning.jpg',
   },
   {
     id: 'vfd-pump-fan-optimization',
@@ -162,7 +155,7 @@ const diagnosticServices = [
     badge: 'DRIVE CALIBRATION',
     accentColor: '#2563EB',
     icon: Cpu,
-    image: '/images/electrical/power_distribution.jpg',
+    image: '/VFD&Pump.jpg',
   },
   {
     id: 'vibration-analysis',
@@ -170,7 +163,7 @@ const diagnosticServices = [
     badge: 'PREDICTIVE DIAGNOSTICS',
     accentColor: '#123EB7',
     icon: Activity,
-    image: '/images/electrical/electrical_design.jpg',
+    image: '/Vibration.jpg',
   },
   {
     id: 'auto-sequence-asp-panel',
@@ -178,7 +171,7 @@ const diagnosticServices = [
     badge: 'SMART AUTOMATION',
     accentColor: '#D97706',
     icon: Sliders,
-    image: '/images/electrical/lt_ht_panels.jpg',
+    image: '/ASP Panel.png',
   },
   {
     id: 'electrical-thermography',
@@ -194,7 +187,7 @@ const diagnosticServices = [
     badge: 'PESO / CCOE TESTING',
     accentColor: '#059669',
     icon: ShieldCheck,
-    image: '/images/fire/fire_pump_house.jpg',
+    image: '/Cylinder HP.jpg',
   }
 ];
 
@@ -357,16 +350,6 @@ export default function Projects() {
                         className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
                       />
                       <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent lg:hidden" />
-
-                      <div className="absolute top-6 left-6 bg-white/90 backdrop-blur-md px-4 py-2 rounded-2xl shadow-lg flex items-center gap-2">
-                        <span className="font-extrabold text-sm tracking-wider" style={{ color: service.accentColor }}>
-                          {service.number}
-                        </span>
-                        <span className="w-1 h-3 rounded-full bg-gray-300" />
-                        <span className="text-[11px] font-bold uppercase tracking-wider text-gray-700">
-                          VERICON
-                        </span>
-                      </div>
                     </div>
 
                     <div className={`lg:col-span-7 p-8 md:p-12 flex flex-col justify-between ${isEven ? 'lg:order-1' : 'lg:order-2'}`}>
@@ -398,14 +381,16 @@ export default function Projects() {
                           ))}
                         </div>
 
-                        <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 mb-8 pt-6 border-t border-gray-100">
-                          {service.highlights.map((h, hi) => (
-                            <div key={hi} className="flex items-center gap-2.5">
-                              <CheckCircle2 size={16} className="text-brand-red shrink-0" strokeWidth={2.5} />
-                              <span className="text-xs font-semibold text-gray-800">{h}</span>
-                            </div>
-                          ))}
-                        </div>
+                        {service.highlights && service.highlights.length > 0 && (
+                          <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 mb-8 pt-6 border-t border-gray-100">
+                            {service.highlights.map((h, hi) => (
+                              <div key={hi} className="flex items-center gap-2.5">
+                                <CheckCircle2 size={16} className="text-brand-red shrink-0" strokeWidth={2.5} />
+                                <span className="text-xs font-semibold text-gray-800">{h}</span>
+                              </div>
+                            ))}
+                          </div>
+                        )}
                       </div>
 
                       <div className="flex flex-wrap items-center gap-4 pt-4">
@@ -470,13 +455,6 @@ export default function Projects() {
                         className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
                       />
                       <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-80 group-hover:opacity-60 transition-opacity" />
-
-                      {/* Badge */}
-                      <div className="absolute top-3.5 left-3.5">
-                        <span className="text-[10px] font-extrabold uppercase tracking-wider px-3 py-1 rounded-full bg-white/95 backdrop-blur-md shadow text-gray-900">
-                          {item.badge}
-                        </span>
-                      </div>
 
                       {/* Icon */}
                       <div

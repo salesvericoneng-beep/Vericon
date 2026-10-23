@@ -102,7 +102,7 @@ export default function Services() {
       <section className="relative w-full h-[500px] md:h-[600px] bg-[#001838]">
         <div className="absolute inset-0">
           <img
-            src="/images/projects/proj_retrofits.jpg"
+            src="/images/projects/proj_retrofits.png"
             alt="All Engineering Services"
             className="w-full h-full object-cover opacity-70"
           />

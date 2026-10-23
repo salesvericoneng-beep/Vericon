@@ -154,7 +154,7 @@ export default function FireFightingSolutions() {
                 className="rounded-3xl overflow-hidden shadow-xl"
               >
                 <img 
-                  src="https://images.unsplash.com/photo-1542456485-645903b41d4c?q=80&w=1000" 
+                  src="/images/fire/hero.jpg" 
                   alt="Fire Protection Systems" 
                   className="w-full h-[400px] object-cover hover:scale-105 transition-transform duration-700"
                 />

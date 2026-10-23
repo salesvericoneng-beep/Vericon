@@ -265,13 +265,13 @@ export default function Contact() {
         <div className="container mx-auto px-6 md:px-12 lg:px-20">
           <div className="w-full h-[450px] rounded-[2rem] overflow-hidden shadow-sm border border-gray-100 bg-gray-50/50">
             <iframe
-              src="https://maps.google.com/maps?ll=17.437462,78.384661&z=15&t=m&hl=en&output=embed"
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3806.468859961165!2d78.38103900000002!3d17.437259199999996!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bcb9397fde6d84f%3A0x135d3cd03a024574!2sAwfis%20Ohris%20Tech%20Park!5e0!3m2!1sen!2sin!4v1792738038601!5m2!1sen!2sin"
               width="100%"
               height="100%"
               style={{ border: 0 }}
               allowFullScreen=""
               loading="lazy"
-              referrerPolicy="no-referrer-when-downgrade"
+              referrerPolicy="strict-origin-when-cross-origin"
               title="Vericon Engineering Office Location"
             ></iframe>
           </div>

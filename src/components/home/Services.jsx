@@ -42,7 +42,7 @@ const services = [
   },
   {
     id: 'phe',
-    image: '/phe.jpg',
+    image: '/phe.jpeg',
     icon: Droplet,
     color: 'text-[#1B7042]',
     borderColor: 'border-[#1B7042]',

@@ -67,7 +67,7 @@ const coreServices = [
   },
   {
     id: 'phe',
-    image: '/phe.jpg',
+    image: '/phe.jpeg',
     icon: Droplet,
     bgColor: 'bg-[#1B7042]',
     borderColor: 'border-[#1B7042]',

@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { ArrowRight, Settings, HardHat, RefreshCw, Zap, ChevronLeft, ChevronRight, Play, Pause } from 'lucide-react';
+import { ArrowRight, Settings, HardHat, RefreshCw, Zap } from 'lucide-react';
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
 
@@ -48,7 +48,6 @@ const heroSlides = [
 
 export default function Hero() {
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
-  const [isAutoPlay, setIsAutoPlay] = useState(true);
 
   // Preload all slide images on mount to eliminate loading lag
   useEffect(() => {
@@ -58,33 +57,16 @@ export default function Hero() {
     });
   }, []);
 
-  // Continuous auto-slide timer (resets cleanly when user interacts manually)
+  // Continuous auto-slide timer
   useEffect(() => {
-    if (!isAutoPlay) return;
     const timer = setInterval(() => {
       setCurrentImageIndex((prevIndex) => (prevIndex + 1) % heroSlides.length);
     }, 4500); // 4.5 seconds per slide
     return () => clearInterval(timer);
-  }, [isAutoPlay, currentImageIndex]);
-
-  // Manual navigation handlers
-  const handlePrev = (e) => {
-    e?.stopPropagation();
-    setCurrentImageIndex((prev) => (prev - 1 + heroSlides.length) % heroSlides.length);
-  };
-
-  const handleNext = (e) => {
-    e?.stopPropagation();
-    setCurrentImageIndex((prev) => (prev + 1) % heroSlides.length);
-  };
+  }, [currentImageIndex]);
 
   const handleSelectSlide = (index) => {
     setCurrentImageIndex(index);
-  };
-
-  const toggleAutoPlay = (e) => {
-    e?.stopPropagation();
-    setIsAutoPlay((prev) => !prev);
   };
 
   return (
@@ -125,16 +107,6 @@ export default function Hero() {
         {/* Soft Left Overlay for Text Readability */}
         <div className="absolute inset-y-0 left-0 w-full lg:w-2/3 bg-gradient-to-r from-white/90 via-white/60 to-transparent z-10 pointer-events-none"></div>
 
-        {/* Floating Side Arrow for Desktop (Quick Manual Nav) */}
-        <button
-          type="button"
-          onClick={handlePrev}
-          aria-label="Previous Slide"
-          className="hidden xl:flex absolute left-4 top-1/2 -translate-y-1/2 z-30 p-2.5 rounded-full bg-white/70 hover:bg-white text-gray-800 hover:text-brand-blue shadow-lg backdrop-blur-sm transition-all hover:scale-110 cursor-pointer"
-        >
-          <ChevronLeft size={22} />
-        </button>
-
         {/* Content Container */}
         <div className="absolute inset-0 z-20 container mx-auto px-4 sm:px-8 lg:px-20 xl:px-24 pt-[80px] lg:pt-[110px]">
           {/* Left Column - Content */}
@@ -173,80 +145,6 @@ export default function Hero() {
                 Contact Us <ArrowRight className="w-[clamp(8px,1.5vw,18px)] h-[clamp(8px,1.5vw,18px)]" />
               </Link>
             </motion.div>
-
-            {/* Slide Controller Bar (Both Auto & Manual) */}
-            <div className="flex items-center gap-2.5 sm:gap-3 bg-white/90 backdrop-blur-md px-3.5 py-1.5 sm:py-2 rounded-full border border-gray-200/90 shadow-md w-fit mt-1 z-30">
-              {/* Play / Pause Toggle for Auto-slide */}
-              <button
-                type="button"
-                onClick={toggleAutoPlay}
-                title={isAutoPlay ? 'Click to Pause Auto-Slide' : 'Click to Resume Auto-Slide'}
-                aria-label={isAutoPlay ? 'Pause Auto-slide' : 'Play Auto-slide'}
-                className="p-1 rounded-full text-brand-blue hover:bg-brand-blue/10 transition-colors cursor-pointer flex items-center justify-center"
-              >
-                {isAutoPlay ? (
-                  <Pause size={15} className="fill-brand-blue" />
-                ) : (
-                  <Play size={15} className="fill-brand-blue" />
-                )}
-              </button>
-
-              <span className="w-[1px] h-3.5 bg-gray-300"></span>
-
-              {/* Manual Prev Arrow */}
-              <button
-                type="button"
-                onClick={handlePrev}
-                aria-label="Previous Slide"
-                title="Previous Slide"
-                className="p-1 rounded-full text-gray-700 hover:text-brand-blue hover:bg-gray-100 transition-colors cursor-pointer"
-              >
-                <ChevronLeft size={16} />
-              </button>
-
-              {/* Manual Clickable Dots / Indicators */}
-              <div className="flex items-center gap-1.5">
-                {heroSlides.map((slide, idx) => (
-                  <button
-                    key={idx}
-                    type="button"
-                    onClick={() => handleSelectSlide(idx)}
-                    title={`Slide ${idx + 1}: ${slide.cardTitle} ${slide.cardSubtitle}`}
-                    aria-label={`Go to slide ${idx + 1}`}
-                    className={`h-2 rounded-full transition-all duration-300 cursor-pointer ${
-                      idx === currentImageIndex 
-                        ? 'w-7 bg-brand-blue shadow-sm' 
-                        : 'w-2 bg-gray-300 hover:bg-gray-400'
-                    }`}
-                  />
-                ))}
-              </div>
-
-              {/* Manual Next Arrow */}
-              <button
-                type="button"
-                onClick={handleNext}
-                aria-label="Next Slide"
-                title="Next Slide"
-                className="p-1 rounded-full text-gray-700 hover:text-brand-blue hover:bg-gray-100 transition-colors cursor-pointer"
-              >
-                <ChevronRight size={16} />
-              </button>
-
-              <span className="w-[1px] h-3.5 bg-gray-300"></span>
-
-              {/* Live Status Badge */}
-              <span className="text-[11px] font-semibold tracking-wide select-none">
-                {isAutoPlay ? (
-                  <span className="text-emerald-700 flex items-center gap-1">
-                    <span className="w-1.5 h-1.5 rounded-full bg-emerald-700 animate-pulse"></span>
-                    Auto
-                  </span>
-                ) : (
-                  <span className="text-gray-500">Manual</span>
-                )}
-              </span>
-            </div>
           </div>
 
           {/* Right Side - Interactive Stack of 4 Cards (Synced with Slideshow + Clickable Manual Nav) */}

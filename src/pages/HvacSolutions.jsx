@@ -74,9 +74,9 @@ export default function HvacSolutions() {
   return (
     <div className="pt-20 min-h-screen bg-white overflow-hidden">
       <SEO 
-        title="Commercial HVAC Contractors in Hyderabad | VERICON Engineering"
-        description="Turnkey commercial & industrial HVAC services in Hyderabad, Telangana & AP: Chilled water plants, VRF/VRV systems, cleanrooms, AHU & ventilation systems."
-        keywords="HVAC contractors Hyderabad, HVAC installation contractors, Commercial HVAC services, Industrial HVAC contractors, HVAC engineering company, HVAC turnkey contractors, Centralized chiller plant installation, Chilled water piping contractors, Air handling unit installation, AHU installation contractors, FCU installation services, VRF system installation, VRV air conditioning contractors, Industrial ventilation systems, Basement ventilation contractors, Precision air conditioning, Data center cooling solutions, CRAC unit installation, Cleanroom HVAC contractors, Hospital HVAC contractors, HVAC testing and balancing, HVAC energy audit, Chiller plant maintenance, HVAC commissioning services"
+        title="Commercial HVAC &amp; Duct Installation Contractors Hyderabad | VERICON"
+        description="Turnkey commercial &amp; industrial HVAC services in Hyderabad, Telangana &amp; AP: Chilled water plants, duct cleaning, VRF/VRV systems, cleanrooms &amp; ventilation."
+        keywords="HVAC contractors Hyderabad, HVAC installation contractors, Commercial HVAC services, Industrial HVAC contractors, HVAC engineering company, HVAC turnkey contractors, Centralized chiller plant installation, Chilled water piping contractors, Air handling unit installation, AHU installation contractors, FCU installation services, VRF system installation, VRV air conditioning contractors, Commercial AC duct cleaning Hyderabad, Industrial kitchen exhaust duct cleaning, HVAC air duct sanitization, Robotic duct cleaning, Kitchen grease exhaust duct installation, Industrial ventilation systems, Basement ventilation contractors, Precision air conditioning, Data center cooling solutions, CRAC unit installation, Cleanroom HVAC contractors, Hospital HVAC contractors, HVAC testing and balancing, HVAC energy audit, Chiller plant maintenance, HVAC commissioning services"
         canonical="https://www.vericon.in/services/hvac"
       />
       

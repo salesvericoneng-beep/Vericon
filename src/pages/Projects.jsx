@@ -120,8 +120,8 @@ const diagnosticServices = [
   },
   {
     id: 'duct-cleaning',
-    title: 'Duct Cleaning',
-    badge: 'HYGIENE & DISINFECTION',
+    title: 'Commercial & Kitchen Duct Cleaning',
+    badge: 'HYGIENE & NADCA STANDARDS',
     accentColor: '#0284C7',
     icon: Sparkles,
     image: '/Duct Cleaning.jpg',
@@ -196,9 +196,9 @@ export default function Projects() {
   return (
     <div className="pt-20 min-h-screen bg-[#F8FAFC] overflow-hidden">
       <SEO 
-        title="MEP Testing, Adjusting & Balancing (TAB) & Diagnostics | VERICON"
-        description="Specialized MEP diagnostic audits: NEBB/AABC certified TAB, duct leakage testing, IAQ audits, chiller tube cleaning, electrical thermography & vibration analysis."
-        keywords="HVAC TAB services, Testing adjusting and balancing, Air balancing contractors, Hydronic balancing services, Duct leakage testing, SMACNA duct testing, Commercial duct cleaning, Industrial duct cleaning, UVGI HVAC systems, Indoor air quality testing, IAQ assessment services, Automatic tube cleaning system, Condenser tube cleaning, VFD calibration services, Industrial vibration analysis, Predictive vibration diagnostics, Chiller automation systems, Automatic sequence control panels, Electrical thermal imaging, Infrared thermography services, Gas cylinder hydro testing, High pressure cylinder testing"
+        title="Specialized MEP Diagnostics, Duct Cleaning &amp; TAB Services | VERICON"
+        description="Specialized engineering diagnostics: Commercial AC &amp; kitchen duct cleaning, SMACNA duct leakage testing, NEBB/AABC certified TAB, electrical thermography, UVGI &amp; cylinder testing."
+        keywords="HVAC TAB services, Testing adjusting and balancing, Air balancing contractors, Hydronic balancing services, Duct leakage testing, SMACNA duct testing, Commercial duct cleaning, Industrial duct cleaning, Commercial AC duct cleaning Hyderabad, Industrial kitchen exhaust duct cleaning, HVAC air duct sanitization, Robotic duct cleaning services, Restaurant kitchen hood degreasing, AHU coil cleaning, Hospital ventilation duct decontamination, UVGI HVAC systems, Indoor air quality testing, IAQ assessment services, Automatic tube cleaning system, Condenser tube cleaning, VFD calibration services, Industrial vibration analysis, Predictive vibration diagnostics, Chiller automation systems, Automatic sequence control panels, Electrical thermal imaging, Infrared thermography services, Gas cylinder hydro testing, High pressure cylinder testing PESO"
         canonical="https://www.vericon.in/projects"
       />
 

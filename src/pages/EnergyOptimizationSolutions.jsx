@@ -1,6 +1,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
+import SEO from '../components/SEO';
 import { 
   ChevronRight, ArrowRight, Zap, Leaf, Cpu, Activity, 
   BarChart3, ShieldCheck, Sun, CheckCircle2, PhoneCall
@@ -70,6 +71,12 @@ const energyServices = [
 export default function EnergyOptimizationSolutions() {
   return (
     <div className="pt-20 min-h-screen bg-gray-50/30 overflow-hidden">
+      <SEO 
+        title="MEP & HVAC Energy Audit & Optimization Services | VERICON"
+        description="Cut facility power bills by 15% to 35%. Investment-grade MEP energy audits, chiller optimization, APFC harmonic filtration & LEED/IGBC green building support."
+        keywords="MEP energy audit Hyderabad, Industrial energy audit, Commercial building energy audit, HVAC energy optimization, Chiller energy optimization, Energy efficiency consultants, Building energy management, Power factor correction, Harmonic filtration systems, VFD optimization services, Pump energy optimization, Fan energy optimization, Green building MEP consultants, LEED MEP consultants, IGBC MEP consultants, GRIHA consultants, Building management system integration, IoT energy monitoring, Commercial rooftop solar integration"
+        canonical="https://www.vericon.in/services/energy-optimization"
+      />
       
       {/* 1. Hero Section */}
       <section className="relative w-full h-[500px] md:h-[600px] bg-brand-dark flex flex-col justify-center">

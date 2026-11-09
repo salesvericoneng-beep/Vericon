@@ -1,6 +1,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
+import SEO from '../components/SEO';
 import { 
   ChevronRight, ArrowRight, Snowflake, Wind, Thermometer,
   Activity, Settings, Layers, Factory, FlaskConical, BarChart2, Gauge,
@@ -72,6 +73,12 @@ const hvacSystems = [
 export default function HvacSolutions() {
   return (
     <div className="pt-20 min-h-screen bg-white overflow-hidden">
+      <SEO 
+        title="Commercial HVAC Contractors in Hyderabad | VERICON Engineering"
+        description="Turnkey commercial & industrial HVAC services in Hyderabad, Telangana & AP: Chilled water plants, VRF/VRV systems, cleanrooms, AHU & ventilation systems."
+        keywords="HVAC contractors Hyderabad, HVAC installation contractors, Commercial HVAC services, Industrial HVAC contractors, HVAC engineering company, HVAC turnkey contractors, Centralized chiller plant installation, Chilled water piping contractors, Air handling unit installation, AHU installation contractors, FCU installation services, VRF system installation, VRV air conditioning contractors, Industrial ventilation systems, Basement ventilation contractors, Precision air conditioning, Data center cooling solutions, CRAC unit installation, Cleanroom HVAC contractors, Hospital HVAC contractors, HVAC testing and balancing, HVAC energy audit, Chiller plant maintenance, HVAC commissioning services"
+        canonical="https://www.vericon.in/services/hvac"
+      />
       
       {/* 1. Hero Section */}
       <section className="relative w-full h-[500px] bg-brand-dark flex flex-col justify-center">
@@ -90,7 +97,7 @@ export default function HvacSolutions() {
           <div className="flex items-center gap-2 text-sm text-gray-300 mb-8">
             <Link to="/" className="hover:text-white transition-colors">Home</Link>
             <ChevronRight size={14} />
-            <Link to="/projects" className="hover:text-white transition-colors">Projects</Link>
+            <Link to="/services" className="hover:text-white transition-colors">Services</Link>
             <ChevronRight size={14} />
             <span className="text-white font-medium">HVAC Solutions</span>
           </div>
@@ -136,10 +143,10 @@ export default function HvacSolutions() {
               </h2>
               <div className="text-gray-700 text-base leading-relaxed space-y-6">
                 <p>
-                  VERICON Engineering designs and installs high-performance HVAC systems that optimize indoor environmental quality (IEQ), thermal comfort, and energy performance across complex industrial and commercial spaces.
+                  VERICON Engineering designs, builds, and commissions high-performance HVAC systems that optimize indoor environmental quality (IEQ), thermal comfort, and energy performance across complex industrial, healthcare, and commercial facilities throughout Telangana and Andhra Pradesh.
                 </p>
                 <p>
-                  From centralized chiller plants to VRF/VRV multi-zone systems and ISO cleanroom environments, our certified engineers adhere to ASHRAE, ISHRAE, and NBC guidelines to ensure superior lifecycle efficiency.
+                  From centralized chiller plants engineered for high-ambient Hyderabad summers to anti-corrosive coated coils for coastal industrial zones like Visakhapatnam and Sri City, our certified engineers adhere strictly to ASHRAE, ISHRAE, and NBC guidelines.
                 </p>
               </div>
             </div>

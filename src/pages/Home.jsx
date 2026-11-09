@@ -1,4 +1,5 @@
 import React from 'react';
+import SEO from '../components/SEO';
 import Hero from '../components/home/Hero';
 import Ticker from '../components/home/Ticker';
 import About from '../components/home/About';
@@ -12,6 +13,12 @@ import CTA from '../components/home/CTA';
 export default function Home() {
   return (
     <div className="pt-16">
+      <SEO 
+        title="MEP Contractors in Hyderabad | Turnkey HVAC, Fire & Electrical | VERICON"
+        description="VERICON Engineering is a premier turnkey MEP contracting firm serving Telangana & Andhra Pradesh. Turnkey HVAC, Electrical, Fire Protection, PHE, AMC & Energy Audits."
+        keywords="MEP contractors Hyderabad, MEP contracting company Hyderabad, MEP services Hyderabad, MEP turnkey contractors, MEP engineering consultants, MEP engineering company India, Commercial MEP contractors, Industrial MEP contractors, MEP design and build contractors, MEP installation services, MEP project contractors, MEP maintenance services, Building services engineering, Turnkey engineering solutions, MEP contractors Madhapur, MEP contractors HITEC City, MEP contractors Gachibowli, MEP contractors Telangana, MEP contractors Andhra Pradesh, MEP contractors Visakhapatnam, MEP contractors Vijayawada"
+        canonical="https://www.vericon.in/"
+      />
       <Hero />
       <Ticker />
       <About />

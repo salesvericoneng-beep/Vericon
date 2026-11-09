@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
+import SEO from '../components/SEO';
 import { 
   ChevronRight, MapPin, Phone, Mail, Globe, Clock, Send,
   Headset, Users, Handshake, ShieldCheck
@@ -31,6 +32,14 @@ const contactInfo = [
     icon: <Globe size={24} className="text-brand-red" strokeWidth={1.5} />, 
     title: 'WEBSITE', 
     details: ['www.vericon.in']
+  },
+  { 
+    icon: <MapPin size={24} className="text-brand-red" strokeWidth={1.5} />, 
+    title: 'REGIONAL EXECUTION', 
+    details: [
+      'Telangana: Hyderabad, Medchal, Patancheru, Warangal',
+      'Andhra Pradesh: Visakhapatnam, Vijayawada, Guntur, Sri City, Tirupati'
+    ]
   },
 ];
 
@@ -78,6 +87,12 @@ export default function Contact() {
 
   return (
     <div className="pt-20 min-h-screen bg-white">
+      <SEO 
+        title="Contact VERICON Engineering | Madhapur, HITEC City, Hyderabad"
+        description="Connect with VERICON Engineering in HITEC City, Hyderabad. Request an MEP quote, site audit, or AMC proposal across Telangana & Andhra Pradesh. Call +91 90000 19249."
+        keywords="MEP contractors Madhapur, MEP contractors HITEC City, MEP contractors Gachibowli, MEP contractors Kondapur, MEP contractors Kukatpally, MEP contractors Financial District Hyderabad, MEP contractors Telangana, MEP contractors Andhra Pradesh, MEP contractors Visakhapatnam, MEP contractors Vijayawada, MEP contractors Tirupati, MEP contractors Nellore, HVAC contractors Madhapur, HVAC contractors HITEC City, Electrical contractors Madhapur, Fire fighting contractors Gachibowli, Industrial MEP contractors Hyderabad, VERICON Engineering contact"
+        canonical="https://www.vericon.in/contact"
+      />
       
       {/* 1. Hero Section */}
       <section className="relative w-full overflow-hidden bg-white">

@@ -1,6 +1,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
+import SEO from '../components/SEO';
 import { 
   ChevronRight, ArrowRight, RefreshCw, Layers, Cpu, ShieldCheck, 
   Wrench, Building2, Zap, Flame, CheckCircle2, PhoneCall
@@ -70,6 +71,12 @@ const retrofitServices = [
 export default function RetrofitSolutions() {
   return (
     <div className="pt-20 min-h-screen bg-gray-50/30 overflow-hidden">
+      <SEO 
+        title="MEP & HVAC Retrofit & Modernization Contractors | VERICON"
+        description="Upgrade aging MEP infrastructure with zero tenant downtime. Chiller retrofits, green refrigerant upgrades, electrical switchgear modernization & BMS automation."
+        keywords="MEP retrofit contractors, MEP revamp services, HVAC retrofit contractors, Chiller plant modernization, AHU replacement contractors, Electrical panel retrofit, Transformer upgrade services, Switchgear modernization, Fire safety retrofit contractors, Plumbing infrastructure retrofit, Building MEP renovation, MEP capacity expansion, HVAC system upgrades, BMS retrofit contractors"
+        canonical="https://www.vericon.in/services/retrofit"
+      />
       
       {/* 1. Hero Section */}
       <section className="relative w-full h-[500px] md:h-[600px] bg-brand-dark flex flex-col justify-center">

@@ -5,8 +5,9 @@ import { MapPin, Phone, Mail, Globe } from 'lucide-react';
 const quickLinks = [
   { name: 'Home', path: '/' },
   { name: 'About Us', path: '/about' },
-  { name: 'Projects', path: '/services' },
-  { name: 'Services', path: '/projects' },
+  { name: 'Services', path: '/services' },
+  { name: 'Specialized Audits', path: '/projects' },
+  { name: 'Why VERICON', path: '/why-vericon' },
   { name: 'Contact Us', path: '/contact' },
 ];
 

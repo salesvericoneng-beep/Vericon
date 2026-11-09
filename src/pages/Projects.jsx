@@ -1,6 +1,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
+import SEO from '../components/SEO';
 import {
   Wrench,
   RefreshCw,
@@ -194,6 +195,12 @@ const diagnosticServices = [
 export default function Projects() {
   return (
     <div className="pt-20 min-h-screen bg-[#F8FAFC] overflow-hidden">
+      <SEO 
+        title="MEP Testing, Adjusting & Balancing (TAB) & Diagnostics | VERICON"
+        description="Specialized MEP diagnostic audits: NEBB/AABC certified TAB, duct leakage testing, IAQ audits, chiller tube cleaning, electrical thermography & vibration analysis."
+        keywords="HVAC TAB services, Testing adjusting and balancing, Air balancing contractors, Hydronic balancing services, Duct leakage testing, SMACNA duct testing, Commercial duct cleaning, Industrial duct cleaning, UVGI HVAC systems, Indoor air quality testing, IAQ assessment services, Automatic tube cleaning system, Condenser tube cleaning, VFD calibration services, Industrial vibration analysis, Predictive vibration diagnostics, Chiller automation systems, Automatic sequence control panels, Electrical thermal imaging, Infrared thermography services, Gas cylinder hydro testing, High pressure cylinder testing"
+        canonical="https://www.vericon.in/projects"
+      />
 
       {/* ── 1. BEAST HEROIC SECTION ── */}
       <section className="relative min-h-[580px] lg:min-h-[640px] bg-[#050D1A] flex items-center justify-center overflow-hidden">

@@ -1,6 +1,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
+import SEO from '../components/SEO';
 import { 
   ChevronRight, ArrowRight, PenTool, Cpu, Server, Share2, AlignJustify, Lightbulb, ZapOff, Wrench,
   Battery, ShieldCheck, BatteryCharging, Building2, Sun, Zap
@@ -71,6 +72,12 @@ const electricalSystems = [
 export default function ElectricalSolutions() {
   return (
     <div className="pt-20 min-h-screen bg-white overflow-hidden">
+      <SEO 
+        title="Industrial Electrical Contractors Hyderabad | HT LT Panels | VERICON"
+        description="Turnkey industrial & commercial electrical contracting in Hyderabad: HT/LT power distribution, substations, PCC/MCC panel manufacturing, CEIG approvals & testing."
+        keywords="Electrical contractors Hyderabad, Commercial electrical contractors, Industrial electrical contractors, Electrical engineering services, HT LT electrical contractors, Electrical substation installation, Transformer installation contractors, LT panel installation, HT panel installation, PCC panel contractors, MCC panel installation, APFC panel installation, AMF panel installation, Power distribution contractors, Industrial cabling contractors, Cable tray installation, Busduct installation, Chemical earthing contractors, Lightning protection systems, Electrical testing and commissioning, Electrical thermography, Industrial electrical safety audit"
+        canonical="https://www.vericon.in/services/electrical"
+      />
       
       {/* 1. Hero Section */}
       <section className="relative w-full h-[500px] bg-brand-dark flex flex-col justify-center">
@@ -135,10 +142,10 @@ export default function ElectricalSolutions() {
               </h2>
               <div className="text-gray-700 text-base leading-relaxed space-y-6">
                 <p>
-                  VERICON Engineering offers complete electrical engineering solutions from design to commissioning. Our systems are built to ensure safety, reliability, efficiency and long-term performance.
+                  VERICON Engineering offers turnkey industrial and commercial electrical engineering solutions from load calculations to substation commissioning across Telangana and Andhra Pradesh. Our systems guarantee uninterruptible power, safety, and energy efficiency.
                 </p>
                 <p>
-                  We use advanced technology, quality components and industry best practices to deliver solutions that meet global standards and client requirements.
+                  From LT &amp; HT control panels (PCC, MCC, APFC) and transformers to heavy cabling and early streamer lightning protection, all projects are executed in strict accordance with CEIG standards and DISCOM norms (TSSPDCL/TSNPDCL and APSPDCL/APEPDCL).
                 </p>
               </div>
             </div>

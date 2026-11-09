@@ -1,6 +1,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
+import SEO from '../components/SEO';
 import { 
   ChevronRight, ArrowRight, Headset, ShieldCheck, Wrench, Clock, 
   Activity, Zap, Snowflake, Flame, Droplet, RefreshCw, CheckCircle2, PhoneCall
@@ -70,6 +71,12 @@ const amcServices = [
 export default function AmcSolutions() {
   return (
     <div className="pt-20 min-h-screen bg-gray-50/30 overflow-hidden">
+      <SEO 
+        title="MEP & HVAC Annual Maintenance Contract (AMC) Hyderabad | VERICON"
+        description="24/7 MEP, HVAC, Electrical & Fire Protection AMC services in Hyderabad. Guaranteed SLAs, preventive maintenance, OEM spares & emergency breakdown support."
+        keywords="MEP AMC contractors Hyderabad, MEP annual maintenance contract, HVAC AMC services, Electrical AMC services, Fire fighting AMC services, Commercial building maintenance, Industrial facility maintenance, Preventive MEP maintenance, Predictive maintenance services, Chiller AMC contractors, AHU maintenance services, Cooling tower maintenance, Transformer AMC services, Substation AMC contractors, Building maintenance contractors, MEP facility management services"
+        canonical="https://www.vericon.in/services/amc"
+      />
       
       {/* 1. Hero Section */}
       <section className="relative w-full h-[500px] md:h-[600px] bg-brand-dark flex flex-col justify-center">

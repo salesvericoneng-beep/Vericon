@@ -1,6 +1,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
+import SEO from '../components/SEO';
 import { 
   ChevronRight, ArrowRight, Flame, ShieldAlert, Bell, Droplets, 
   Wind, Cylinder, Waves, Wrench, ShieldCheck, Building2, Activity, Gauge
@@ -71,6 +72,12 @@ const fireSystems = [
 export default function FireFightingSolutions() {
   return (
     <div className="pt-20 min-h-screen bg-white overflow-hidden">
+      <SEO 
+        title="Fire Fighting System Contractors Hyderabad | Fire NOC | VERICON"
+        description="Turnkey fire protection systems in Hyderabad & AP: Hydrants, automatic sprinklers, FM-200 clean agent gas suppression & Fire NOC liaison. NFPA & NBC compliant."
+        keywords="Fire fighting contractors Hyderabad, Fire protection contractors, Fire safety system installation, Fire alarm system installation, Fire hydrant contractors, Fire sprinkler installation, Automatic sprinkler systems, Fire pump house installation, Fire detection systems, Addressable fire alarm systems, FM200 fire suppression systems, Clean agent fire suppression, CO2 flooding systems, Inergen fire suppression, Deluge system installation, Foam fire suppression systems, Fire extinguisher refilling, Fire extinguisher hydro testing, Fire NOC consultants Hyderabad, Fire safety audit, Fire fighting AMC, Fire protection system maintenance"
+        canonical="https://www.vericon.in/services/fire"
+      />
       
       {/* 1. Hero Section */}
       <section className="relative w-full h-[500px] bg-brand-dark flex flex-col justify-center">
@@ -137,10 +144,10 @@ export default function FireFightingSolutions() {
               </h2>
               <div className="text-gray-700 text-base leading-relaxed space-y-6">
                 <p>
-                  VERICON Engineering provides end-to-end fire protection solutions encompassing early stage hazard assessment, hydraulic design, equipment supply, statutory approvals, and precision installation.
+                  VERICON Engineering provides end-to-end fire protection solutions encompassing early-stage hazard assessment, hydraulic design, equipment supply, statutory Fire NOC liaisons, and turnkey installation across Telangana and Andhra Pradesh.
                 </p>
                 <p>
-                  From automatic sprinkler networks to clean agent gas suppression and automated fire hydrant pump rooms, every system is engineered for zero-failure reliability when seconds matter most.
+                  From automatic sprinkler networks to clean agent gas suppression (FM-200 / Novec) and automated fire hydrant pump stations, every system is engineered in strict compliance with NBC 2016 Part 4, NFPA, TG-bPASS, and AP State Disaster Response &amp; Fire Services mandates.
                 </p>
               </div>
             </div>

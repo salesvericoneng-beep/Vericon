@@ -1,6 +1,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
+import SEO from '../components/SEO';
 import { ChevronRight, ArrowRight, Snowflake, Flame } from 'lucide-react';
 import WhyChooseVericon from '../components/WhyChooseVericon';
 import CTASection from '../components/CTASection';
@@ -8,6 +9,12 @@ import CTASection from '../components/CTASection';
 export default function MechanicalSolutions() {
   return (
     <div className="pt-20 min-h-screen bg-gray-50/30 overflow-hidden">
+      <SEO 
+        title="Mechanical Engineering Solutions Hyderabad | HVAC & Fire | VERICON"
+        description="Comprehensive mechanical engineering contracting: High-efficiency HVAC systems, industrial ventilation, cleanrooms, and turnkey fire fighting solutions."
+        keywords="mechanical engineering contractors Hyderabad, commercial mechanical solutions, HVAC mechanical contractor Telangana, industrial ventilation systems, cleanroom HVAC contractors, centralized chiller plant installation, chilled water piping contractors"
+        canonical="https://www.vericon.in/services/mechanical"
+      />
       
       {/* 1. Hero Section */}
       <section className="relative w-full h-[500px] bg-brand-dark flex flex-col justify-center">

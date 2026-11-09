@@ -1,6 +1,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
+import SEO from '../components/SEO';
 import { 
   ChevronRight, ArrowRight, Droplet, Waves, Sprout, ShieldAlert, 
   Database, PenTool, Wrench, Search, Building2, Activity, Gauge
@@ -71,6 +72,12 @@ const pheSystems = [
 export default function PheSolutions() {
   return (
     <div className="pt-20 min-h-screen bg-white overflow-hidden">
+      <SEO 
+        title="Public Health Engineering (PHE) & Plumbing Contractors | VERICON"
+        description="Turnkey PHE & commercial plumbing engineering in Hyderabad: Pressurized water supply, WTP/STP plants, rainwater harvesting, sewage & hydro-pneumatic pumping."
+        keywords="Public health engineering contractors, PHE contractors Hyderabad, Commercial plumbing contractors, Industrial plumbing contractors, Plumbing engineering services, Water supply system installation, Pressurized water distribution, Hydro pneumatic pumping systems, Booster pump installation, Sewage treatment plant contractors, STP installation Hyderabad, Water treatment plant contractors, WTP installation, Industrial drainage contractors, Stormwater drainage systems, Greywater recycling systems, Rainwater harvesting contractors, Groundwater recharge systems, Leak detection services, Sanitary plumbing contractors"
+        canonical="https://www.vericon.in/services/phe"
+      />
       
       {/* 1. Hero Section */}
       <section className="relative w-full h-[500px] bg-brand-dark flex flex-col justify-center">
@@ -135,10 +142,10 @@ export default function PheSolutions() {
               </h2>
               <div className="text-gray-700 text-base leading-relaxed space-y-6">
                 <p>
-                  Public Health Engineering is essential for ensuring hygiene, environmental sustainability, and long-term asset value. VERICON designs and implements robust water networks that guarantee high efficiency and minimal water loss.
+                  Public Health Engineering is essential for ensuring hygiene, environmental sustainability, and long-term asset value. VERICON designs and implements robust water and sanitation networks across commercial complexes, IT parks, and industrial facilities in Telangana and Andhra Pradesh.
                 </p>
                 <p>
-                  From large commercial developments to pharmaceutical campuses, our plumbing systems adhere strictly to IPC, NBC, and Uniform Plumbing Code (UPC-I) standards.
+                  From hydro-pneumatic booster pumping and rainwater harvesting to turnkey Sewage &amp; Water Treatment Plants (STP/WTP), our installations adhere strictly to IPC, NBC, TGPCB, and APPCB environmental compliance guidelines.
                 </p>
               </div>
             </div>

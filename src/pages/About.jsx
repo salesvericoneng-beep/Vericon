@@ -1,4 +1,5 @@
 import React from 'react';
+import SEO from '../components/SEO';
 import { motion } from 'framer-motion';
 import { Target, Eye, Users, ShieldCheck, Award, Lightbulb, Handshake, UserCheck, TrendingUp } from 'lucide-react';
 import CTA from '../components/home/CTA';
@@ -6,6 +7,12 @@ import CTA from '../components/home/CTA';
 export default function About() {
   return (
     <div className="pt-16 min-h-screen bg-white font-poppins">
+      <SEO 
+        title="About VERICON Engineering | Premier MEP Turnkey Contractors"
+        description="Learn about VERICON Engineering Private Limited, our leadership, 15+ years of engineering excellence, and track record of 250+ completed MEP projects across India."
+        keywords="VERICON Engineering, VERICON Engineering Private Limited, VERICON Engineering Hyderabad, VERICON Engineering Madhapur, VERICON Engineering HITEC City, VERICON MEP contractors, VERICON HVAC services, VERICON electrical services, VERICON fire fighting services, VERICON plumbing services, VERICON PHE services, VERICON MEP AMC, VERICON engineering projects, VERICON energy optimization, VERICON Engineering India"
+        canonical="https://www.vericon.in/about"
+      />
 
       {/* 1. Hero Section */}
       <section className="relative w-full overflow-hidden bg-white">

@@ -1,6 +1,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
+import SEO from '../components/SEO';
 import CTASection from '../components/CTASection';
 import { 
   ShieldCheck, Award, Lightbulb, Leaf, 
@@ -37,6 +38,12 @@ const differentiators = [
 export default function WhyVericon() {
   return (
     <div className="pt-20 min-h-screen bg-white overflow-hidden">
+      <SEO 
+        title="Why Choose VERICON | Trusted MEP Engineering Excellence"
+        description="Discover why leading developers and plant heads choose VERICON for MEP projects: 15+ years experience, 250+ completed projects, safety-first culture and on-time delivery."
+        keywords="Best MEP contractors in Hyderabad, MEP turnkey contractors for commercial buildings, Industrial MEP contracting company Hyderabad, Chilled water piping installation contractors, Fire fighting system installation for high rise buildings, Electrical substation installation contractors Hyderabad, Cleanroom HVAC contractors for pharmaceutical plants, MEP annual maintenance contract for office buildings, Hospital HVAC installation contractors Hyderabad, Data center precision cooling contractors, Commercial building energy audit services, Turnkey engineering solutions"
+        canonical="https://www.vericon.in/why-vericon"
+      />
       
       {/* 1. Hero Section */}
       <section className="relative w-full min-h-[500px] bg-brand-dark flex flex-col justify-center">

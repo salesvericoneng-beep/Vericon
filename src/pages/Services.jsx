@@ -7,6 +7,7 @@ import {
   HardHat, Calendar, ArrowRight
 } from 'lucide-react';
 import { Link } from 'react-router-dom';
+import SEO from '../components/SEO';
 import WhyChooseVericon from '../components/WhyChooseVericon';
 import CTASection from '../components/CTASection';
 
@@ -97,6 +98,12 @@ const additionalServices = [
 export default function Services() {
   return (
     <div className="pt-20 min-h-screen bg-gray-50/30 overflow-hidden">
+      <SEO 
+        title="MEP Engineering Services Hyderabad | Turnkey Contracting | VERICON"
+        description="Explore VERICON's turnkey MEP services: HVAC, industrial electrical, fire protection systems, public health engineering, AMC, and energy retrofits across Telangana & AP."
+        keywords="Commercial building MEP contractors, IT park MEP contractors, Hospital MEP contractors, Healthcare HVAC contractors, Hotel MEP contractors, Resort MEP services, Data center MEP contractors, Data center precision cooling, Warehouse MEP contractors, Warehouse ventilation contractors, Pharmaceutical MEP contractors, Pharma cleanroom HVAC, Cleanroom engineering contractors, Educational institution MEP contractors, Residential MEP contractors, High rise building MEP contractors, Industrial plant MEP contractors, Factory electrical contractors"
+        canonical="https://www.vericon.in/services"
+      />
 
       {/* 1. Hero Section */}
       <section className="relative w-full h-[500px] md:h-[600px] bg-[#001838]">
@@ -127,11 +134,14 @@ export default function Services() {
           >
             <h1 className="text-5xl md:text-6xl font-extrabold mb-4 tracking-tight">
               <span className="text-brand-blue">OUR </span>
-              <span className="text-brand-red">PROJECTS</span>
+              <span className="text-brand-red">SERVICES</span>
             </h1>
-            <h2 className="text-2xl md:text-3xl font-bold text-brand-blue mb-6">
-              End-to-End Engineering<br /><span className="text-brand-red">Solutions You Can Rely On</span>
+            <h2 className="text-2xl md:text-3xl font-bold text-brand-blue mb-4">
+              Turnkey MEP Engineering<br /><span className="text-brand-red">Solutions for Telangana &amp; Andhra Pradesh</span>
             </h2>
+            <p className="text-gray-700 text-sm md:text-base font-medium max-w-xl">
+              From centralized HVAC and industrial power distribution to fire safety and PHE systems, VERICON delivers end-to-end engineering excellence compliant with TG-bPASS, APCRDA, and NBC standards.
+            </p>
           </motion.div>
         </div>
       </section>
@@ -141,7 +151,7 @@ export default function Services() {
         <div className="container mx-auto px-4 md:px-6">
 
           <div className="text-center mb-14">
-            <h3 className="text-brand-blue font-bold uppercase tracking-wider text-sm mb-3">OUR PROJECTS</h3>
+            <h3 className="text-brand-blue font-bold uppercase tracking-wider text-sm mb-3">OUR CORE SERVICES</h3>
             <h2 className="text-3xl md:text-4xl font-bold font-poppins text-brand-blue">
               Integrated Engineering. <span className="text-brand-red">Built for Performance.</span>
             </h2>

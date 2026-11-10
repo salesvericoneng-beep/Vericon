@@ -26,7 +26,7 @@ const contactInfo = [
   { 
     icon: <Mail size={24} className="text-brand-red" strokeWidth={1.5} />, 
     title: 'EMAIL', 
-    details: ['Sales@vericon.in']
+    details: ['sales@vericon.com']
   },
   { 
     icon: <Globe size={24} className="text-brand-red" strokeWidth={1.5} />, 
@@ -65,7 +65,8 @@ export default function Contact() {
     setSubmitStatus(null);
     
     try {
-      const response = await fetch('http://localhost:5000/api/contact', {
+      const endpoint = import.meta.env.VITE_API_URL || '/api/contact';
+      const response = await fetch(endpoint, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(formData)

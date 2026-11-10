@@ -213,7 +213,7 @@ export default function Footer() {
                 <div className="w-8 h-8 rounded-lg bg-blue-600/20 border border-blue-500/30 flex items-center justify-center shrink-0">
                   <Mail size={16} className="text-blue-400" />
                 </div>
-                <a href="mailto:Sales@vericon.in" className="text-gray-300 text-sm md:text-[15px] font-medium hover:text-white transition-colors">Sales@vericon.in</a>
+                <a href="mailto:sales@vericon.com" className="text-gray-300 text-sm md:text-[15px] font-medium hover:text-white transition-colors">sales@vericon.com</a>
               </li>
               <li className="flex items-center gap-3">
                 <div className="w-8 h-8 rounded-lg bg-red-600/20 border border-red-500/30 flex items-center justify-center shrink-0">

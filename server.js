@@ -42,6 +42,12 @@ app.post('/api/contact', async (req, res) => {
   try {
     const servicesText = inquiryList.length > 0 ? inquiryList.join(', ') : inquirySummary;
 
+    const receivedTime = new Date().toLocaleString('en-IN', {
+      timeZone: 'Asia/Kolkata',
+      dateStyle: 'full',
+      timeStyle: 'short'
+    });
+
     const mailOptions = {
       from: `"VERICON Website" <${process.env.SMTP_USER}>`,
       to: process.env.RECIPIENT_EMAIL 

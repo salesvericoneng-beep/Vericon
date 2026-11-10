@@ -43,9 +43,10 @@ export default async function handler(req, res) {
       },
     });
 
-    const recipient = process.env.RECIPIENT_EMAIL 
-      ? `${process.env.RECIPIENT_EMAIL}, sales@vericon.in`
-      : 'sales@vericon.com, sales@vericon.in';
+    // Primary recipient is sales@vericon.in (internal M365 mailbox)
+    // Also CC salesvericoneng@gmail.com so a copy is available on Gmail
+    const recipient = 'sales@vericon.in';
+    const ccRecipient = 'salesvericoneng@gmail.com';
 
     const servicesText = inquiryList.length > 0 ? inquiryList.join(', ') : inquirySummary;
 
@@ -56,8 +57,9 @@ export default async function handler(req, res) {
     });
 
     const mailOptions = {
-      from: `"VERICON Website" <${process.env.SMTP_USER}>`,
+      from: process.env.SMTP_USER,
       to: recipient,
+      cc: ccRecipient,
       replyTo: email,
       subject: `New Website Inquiry: [${inquirySummary}] from ${name}`,
       html: `

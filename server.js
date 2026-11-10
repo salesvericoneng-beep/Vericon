@@ -48,11 +48,13 @@ app.post('/api/contact', async (req, res) => {
       timeStyle: 'short'
     });
 
+    const recipient = 'sales@vericon.in';
+    const ccRecipient = 'salesvericoneng@gmail.com';
+
     const mailOptions = {
-      from: `"VERICON Website" <${process.env.SMTP_USER}>`,
-      to: process.env.RECIPIENT_EMAIL 
-        ? `${process.env.RECIPIENT_EMAIL}, sales@vericon.in`
-        : 'sales@vericon.com, sales@vericon.in', // The email address receiving the inquiries
+      from: process.env.SMTP_USER,
+      to: recipient,
+      cc: ccRecipient,
       replyTo: email,
       subject: `New Website Inquiry: [${inquirySummary}] from ${name}`,
       html: `

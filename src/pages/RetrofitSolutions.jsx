@@ -72,9 +72,9 @@ export default function RetrofitSolutions() {
   return (
     <div className="pt-20 min-h-screen bg-gray-50/30 overflow-hidden">
       <SEO 
-        title="MEP & HVAC Retrofit & Modernization Contractors | VERICON"
-        description="Upgrade aging MEP infrastructure with zero tenant downtime. Chiller retrofits, green refrigerant upgrades, electrical switchgear modernization & BMS automation."
-        keywords="MEP retrofit contractors, MEP revamp services, HVAC retrofit contractors, Chiller plant modernization, AHU replacement contractors, Electrical panel retrofit, Transformer upgrade services, Switchgear modernization, Fire safety retrofit contractors, Plumbing infrastructure retrofit, Building MEP renovation, MEP capacity expansion, HVAC system upgrades, BMS retrofit contractors"
+        title="MEP &amp; Industrial Plant Retrofit, Modernization &amp; Reconditioning | VERICON"
+        description="Modernize &amp; recondition aging MEP and industrial plant infrastructure with zero downtime: Equipment overhaul, chiller retrofits, switchgear modernization, BMS automation &amp; capacity expansion."
+        keywords="MEP retrofit contractors, MEP revamp services, Industrial plant modernization, Plant machinery reconditioning, Equipment overhaul and renovation, Industrial plant renovation contractors, Reconditioning and alteration engineering, HVAC retrofit contractors, Chiller plant modernization, AHU replacement contractors, Electrical panel retrofit, Transformer upgrade services, Switchgear modernization, Fire safety retrofit contractors, Plumbing infrastructure retrofit, Building MEP renovation, MEP capacity expansion, HVAC system upgrades, BMS retrofit contractors"
         canonical="https://www.vericon.in/services/retrofit"
       />
       

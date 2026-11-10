@@ -73,9 +73,9 @@ export default function PheSolutions() {
   return (
     <div className="pt-20 min-h-screen bg-white overflow-hidden">
       <SEO 
-        title="Public Health Engineering (PHE) & Plumbing Contractors | VERICON"
-        description="Turnkey PHE & commercial plumbing engineering in Hyderabad: Pressurized water supply, WTP/STP plants, rainwater harvesting, sewage & hydro-pneumatic pumping."
-        keywords="Public health engineering contractors, PHE contractors Hyderabad, Commercial plumbing contractors, Industrial plumbing contractors, Plumbing engineering services, Water supply system installation, Pressurized water distribution, Hydro pneumatic pumping systems, Booster pump installation, Sewage treatment plant contractors, STP installation Hyderabad, Water treatment plant contractors, WTP installation, Industrial drainage contractors, Stormwater drainage systems, Greywater recycling systems, Rainwater harvesting contractors, Groundwater recharge systems, Leak detection services, Sanitary plumbing contractors"
+        title="Public Health Engineering (PHE), ETP &amp; Plumbing Contractors | VERICON"
+        description="Turnkey PHE, plumbing &amp; effluent treatment engineering in Hyderabad: Pressurized water supply, WTP/STP/ETP plants, effluent treatment equipment, pollution control &amp; industrial piping."
+        keywords="Public health engineering contractors, PHE contractors Hyderabad, Effluent treatment equipment ETP, Industrial effluent treatment plant contractors, Pollution control systems, Commercial plumbing contractors, Industrial plumbing contractors, Plumbing engineering services, Water supply system installation, Pressurized water distribution, Hydro pneumatic pumping systems, Booster pump installation, Sewage treatment plant contractors, STP installation Hyderabad, Water treatment plant contractors, WTP installation, Industrial drainage contractors, Stormwater drainage systems, Chemical plant piping, Industrial valves and instrumentation, Greywater recycling systems, Rainwater harvesting contractors, Groundwater recharge systems, Leak detection services, Sanitary plumbing contractors"
         canonical="https://www.vericon.in/services/phe"
       />
       

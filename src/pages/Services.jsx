@@ -99,9 +99,9 @@ export default function Services() {
   return (
     <div className="pt-20 min-h-screen bg-gray-50/30 overflow-hidden">
       <SEO 
-        title="MEP Engineering Services Hyderabad | Turnkey Contracting | VERICON"
-        description="Explore VERICON's turnkey MEP services: HVAC, industrial electrical, fire protection systems, public health engineering, AMC, and energy retrofits across Telangana & AP."
-        keywords="Commercial building MEP contractors, IT park MEP contractors, Hospital MEP contractors, Healthcare HVAC contractors, Hotel MEP contractors, Resort MEP services, Data center MEP contractors, Data center precision cooling, Warehouse MEP contractors, Warehouse ventilation contractors, Pharmaceutical MEP contractors, Pharma cleanroom HVAC, Cleanroom engineering contractors, Educational institution MEP contractors, Residential MEP contractors, High rise building MEP contractors, Industrial plant MEP contractors, Factory electrical contractors"
+        title="MEP &amp; Industrial Plant Engineering Services | Turnkey Contracting | VERICON"
+        description="Explore VERICON's turnkey MEP &amp; industrial plant engineering solutions: Commercial refrigeration, chemical/pharma plants, HVAC, electrical, fire safety, PHE, BMS &amp; interior fit-outs."
+        keywords="MEP & interior turnkey contracting, Commercial refrigeration equipment, Industrial plant erection and commissioning, Fabrication and engineering works, Chemical and pharmaceutical plant engineering, Food processing plant MEP, Commercial building MEP contractors, IT park MEP contractors, Hospital MEP contractors, Healthcare HVAC contractors, Data center precision cooling, Warehouse ventilation contractors, Cleanroom engineering contractors, Effluent treatment equipment ETP, Heat recovery systems, Building Management System BMS, Factory electrical contractors"
         canonical="https://www.vericon.in/services"
       />
 

@@ -8,9 +8,9 @@ export default function About() {
   return (
     <div className="pt-16 min-h-screen bg-white font-poppins">
       <SEO 
-        title="About VERICON Engineering | Premier MEP Turnkey Contractors"
-        description="Learn about VERICON Engineering Private Limited, our leadership, 15+ years of engineering excellence, and track record of 250+ completed MEP projects across India."
-        keywords="VERICON Engineering, VERICON Engineering Private Limited, VERICON Engineering Hyderabad, VERICON Engineering Madhapur, VERICON Engineering HITEC City, VERICON MEP contractors, VERICON HVAC services, VERICON electrical services, VERICON fire fighting services, VERICON plumbing services, VERICON PHE services, VERICON MEP AMC, VERICON engineering projects, VERICON energy optimization, VERICON Engineering India"
+        title="About VERICON Engineering | Premier MEP &amp; Industrial Plant Contractors"
+        description="Learn about VERICON Engineering Private Limited, our leadership, 15+ years of engineering excellence, commercial refrigeration, industrial plant erection &amp; 250+ completed projects."
+        keywords="VERICON Engineering, VERICON Engineering Private Limited, VERICON Engineering Hyderabad, VERICON Engineering Madhapur, Commercial refrigeration equipment, Industrial plant erection and commissioning, Fabrication and engineering works, VERICON MEP contractors, VERICON HVAC services, VERICON electrical services, VERICON fire fighting services, VERICON plumbing services, VERICON PHE services, VERICON MEP AMC, VERICON energy optimization, VERICON Engineering India"
         canonical="https://www.vericon.in/about"
       />
 
@@ -116,6 +116,9 @@ export default function About() {
                 </li>
                 <li>
                   We combine technical expertise, disciplined execution and comprehensive lifecycle support to create lasting value for our clients.
+                </li>
+                <li>
+                  Our full-scope industrial capabilities encompass turnkey supply, fabrication, assembly, erection, and commissioning of commercial refrigeration, chemical &amp; pharmaceutical plants, heat exchangers, microfilters, pollution control, effluent treatment (ETP), and Building Management Systems (BMS).
                 </li>
               </ul>
             </motion.div>

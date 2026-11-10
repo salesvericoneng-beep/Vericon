@@ -48,7 +48,9 @@ app.post('/api/contact', async (req, res) => {
 
     const mailOptions = {
       from: process.env.SMTP_USER,
-      to: process.env.RECIPIENT_EMAIL || 'sales@vericon.com', // The email address receiving the inquiries
+      to: process.env.RECIPIENT_EMAIL 
+        ? `${process.env.RECIPIENT_EMAIL}, sales@vericon.in`
+        : 'sales@vericon.com, sales@vericon.in', // The email address receiving the inquiries
       replyTo: email,
       subject: `New Website Inquiry: [${inquirySummary}] from ${name}`,
       html: `

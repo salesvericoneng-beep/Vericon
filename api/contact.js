@@ -43,7 +43,9 @@ export default async function handler(req, res) {
       },
     });
 
-    const recipient = process.env.RECIPIENT_EMAIL || 'sales@vericon.com';
+    const recipient = process.env.RECIPIENT_EMAIL 
+      ? `${process.env.RECIPIENT_EMAIL}, sales@vericon.in`
+      : 'sales@vericon.com, sales@vericon.in';
 
     const inquiryHtml = inquiryList.length > 1
       ? `<ul style="margin: 0; padding-left: 20px; color: #002244; font-weight: bold;">

@@ -50,8 +50,19 @@ const features = [
   { icon: <ShieldCheck size={40} strokeWidth={1.5} />, title: 'Trusted Partner', desc: 'Committed to quality, safety and long-term relationships.' }
 ];
 
+const inquiryOptions = [
+  'HVAC Solutions',
+  'Electrical Solutions',
+  'Fire Fighting Solutions',
+  'PHE / Plumbing Solutions',
+  'AMC & Maintenance Services',
+  'Other Inquiry',
+];
+
 export default function Contact() {
-  const [formData, setFormData] = useState({ name: '', email: '', phone: '', company: '', inquiry_type: '', message: '' });
+  const [formData, setFormData] = useState({ name: '', email: '', phone: '', company: '', message: '' });
+  const [selectedInquiries, setSelectedInquiries] = useState([]);
+  const [inquiryError, setInquiryError] = useState(false);
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitStatus, setSubmitStatus] = useState(null);
 
@@ -59,23 +70,46 @@ export default function Contact() {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
+  const toggleInquiry = (option) => {
+    setSelectedInquiries(prev => {
+      const next = prev.includes(option)
+        ? prev.filter(item => item !== option)
+        : [...prev, option];
+      if (next.length > 0) setInquiryError(false);
+      return next;
+    });
+  };
+
   const handleSubmit = async (e) => {
     e.preventDefault();
+    if (selectedInquiries.length === 0) {
+      setInquiryError(true);
+      return;
+    }
+
     setIsSubmitting(true);
     setSubmitStatus(null);
+    setInquiryError(false);
     
     try {
       const endpoint = import.meta.env.VITE_API_URL || '/api/contact';
+      const payload = {
+        ...formData,
+        inquiry_type: selectedInquiries.join(', '),
+        inquiry_types: selectedInquiries,
+      };
+
       const response = await fetch(endpoint, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(formData)
+        body: JSON.stringify(payload)
       });
       
       const data = await response.json();
       if (response.ok) {
         setSubmitStatus({ type: 'success', message: 'Thank you! Your message has been sent successfully.' });
-        setFormData({ name: '', email: '', phone: '', company: '', inquiry_type: '', message: '' });
+        setFormData({ name: '', email: '', phone: '', company: '', message: '' });
+        setSelectedInquiries([]);
       } else {
         setSubmitStatus({ type: 'error', message: data.error || 'Something went wrong. Please try again.' });
       }
@@ -232,19 +266,45 @@ export default function Contact() {
                   </div>
 
                   <div className="space-y-2">
-                    <label className="text-sm font-bold text-gray-800">Inquiry Type <span className="text-brand-red">*</span></label>
-                    <div className="relative">
-                      <select name="inquiry_type" value={formData.inquiry_type} onChange={handleChange} className="w-full px-4 py-3 rounded-lg border border-gray-200 focus:outline-none focus:border-brand-red focus:ring-1 focus:ring-brand-red transition-colors text-sm appearance-none bg-white" required>
-                        <option value="" disabled hidden>Select an inquiry type</option>
-                        <option value="HVAC Solutions">HVAC Solutions</option>
-                        <option value="Electrical Solutions">Electrical Solutions</option>
-                        <option value="Fire Fighting Solutions">Fire Fighting Solutions</option>
-                        <option value="Other Inquiry">Other Inquiry</option>
-                      </select>
-                      <div className="absolute inset-y-0 right-0 flex items-center px-4 pointer-events-none text-gray-500">
-                        <svg className="w-4 h-4 fill-current" viewBox="0 0 20 20"><path d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clipRule="evenodd" fillRule="evenodd"></path></svg>
-                      </div>
+                    <div className="flex items-center justify-between">
+                      <label className="text-sm font-bold text-gray-800">
+                        Inquiry Type / Services <span className="text-brand-red">*</span>
+                      </label>
+                      <span className="text-xs text-gray-500 font-medium">
+                        (Select one or more)
+                      </span>
                     </div>
+
+                    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-2.5 pt-1">
+                      {inquiryOptions.map((option) => {
+                        const isChecked = selectedInquiries.includes(option);
+                        return (
+                          <label
+                            key={option}
+                            onClick={() => toggleInquiry(option)}
+                            className={`flex items-center gap-3 p-3 rounded-lg border text-sm font-medium cursor-pointer transition-all duration-200 select-none ${
+                              isChecked
+                                ? 'border-brand-red bg-red-50/70 text-brand-blue shadow-xs ring-1 ring-brand-red/30'
+                                : 'border-gray-200 bg-white text-gray-700 hover:border-gray-300 hover:bg-gray-50'
+                            }`}
+                          >
+                            <input
+                              type="checkbox"
+                              checked={isChecked}
+                              onChange={() => {}}
+                              className="w-4 h-4 rounded border-gray-300 text-brand-red focus:ring-brand-red cursor-pointer accent-[#D80C20]"
+                            />
+                            <span className="text-xs sm:text-[13px] font-semibold">{option}</span>
+                          </label>
+                        );
+                      })}
+                    </div>
+
+                    {inquiryError && (
+                      <p className="text-xs text-brand-red font-semibold mt-1">
+                        Please select at least one inquiry type or service.
+                      </p>
+                    )}
                   </div>
 
                   <div className="space-y-2">

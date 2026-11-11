@@ -78,7 +78,7 @@ export const directors = [
       'B.E. — Mechanical Engineering',
       'IGBC Accredited Professional (IGBC AP®)',
     ],
-    pedigreeNote: 'Prior Associations: ETA · VKBS · ABS Fujitsu · SpaceAir Limited',
+    pedigreeNote: null,
     badges: ['ISHRAE', 'ASHRAE', 'IGBC AP®'],
     segments: ['HVAC & MEP', 'AMC & Retrofits', 'Energy Optimisation'],
     expertise: [
@@ -197,7 +197,7 @@ export const directors = [
       'Electrical & Electronics Engineering Background',
       'Specialisation — Refrigeration, Air Conditioning & MEP Services',
     ],
-    pedigreeNote: 'Prior Associations: ETA · VKBS · ABS Fujitsu',
+    pedigreeNote: null,
     badges: ['Energy Audits', 'PLC & Automation'],
     segments: ['Government & Defence', 'Pharma & Healthcare', 'Industrial & High-Rise'],
     expertise: [
@@ -216,7 +216,7 @@ export const directors = [
         shortLabel: '01 · Engineering Standing',
         paragraphs: [
           'Mr. Mohd Moizuddin is a seasoned engineering professional with over two decades of experience in the HVAC and MEP industry, bringing extensive technical expertise, operational insight and a deep understanding of complex building engineering systems. With a strong foundation in Electrical & Electronics Engineering, his professional experience encompasses project commissioning, service operations and the lifecycle performance of critical engineering infrastructure.',
-          'His professional journey includes significant technical and leadership experience with established engineering organisations such as ETA, VKBS and ABS Fujitsu. Over the years, he has developed a strong understanding of integrated building engineering systems and cultivated valuable professional relationships with consultants, PMCs, OEMs, contractors and clients. With an established presence in the regional engineering market, he is recognised for his technical insight, practical problem-solving capabilities and commitment to engineering and service excellence.',
+          'Over the years, he has developed a strong understanding of integrated building engineering systems and cultivated valuable professional relationships with consultants, PMCs, OEMs, contractors and clients. With an established presence in the regional engineering market, he is recognised for his technical insight, practical problem-solving capabilities and commitment to engineering and service excellence.',
         ],
       },
       {

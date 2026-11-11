@@ -104,8 +104,8 @@ function DirectorProfileModal({ director, isOpen, onClose, onStep }) {
             {/* Single Unified Editorial Sheet with Top-Left Floated Portrait Box */}
             <div className="flex-1 overflow-y-auto overflow-x-hidden p-6 md:p-8 lg:p-10">
               {/* Compact Top-Left Portrait Card — Floated so Content Wraps Right & Below */}
-              <div className="relative z-10 bg-[#081224] text-white -mx-6 -mt-6 mb-5 px-5 py-6 md:px-6 md:py-7 md:float-left md:w-[335px] lg:w-[375px] md:-ml-8 md:-mt-8 md:mr-8 md:mb-5 lg:-ml-10 lg:-mt-10 lg:mr-9 lg:mb-6 md:rounded-br-2xl md:border-r md:border-b border-[#C9A86A]/35 flex flex-col items-center justify-center text-center">
-                <div className="rounded-t-[84px] rounded-b-xl overflow-hidden border border-[#C9A86A]/45 w-[150px] md:w-[160px] lg:w-[175px] aspect-[4/4.35] mb-4 shadow-lg">
+              <div className="relative z-10 bg-[#081224] text-white -mx-6 -mt-6 mb-5 px-4 py-5 md:px-5 md:py-5 md:float-left md:w-[335px] lg:w-[375px] md:-ml-8 md:-mt-8 md:mr-8 md:mb-5 lg:-ml-10 lg:-mt-10 lg:mr-9 lg:mb-6 md:rounded-br-2xl md:border-r md:border-b border-[#C9A86A]/35 flex flex-col items-center justify-center text-center">
+                <div className="rounded-t-[135px] rounded-b-xl overflow-hidden border border-[#C9A86A]/45 w-full max-w-[240px] md:max-w-[285px] lg:max-w-[320px] aspect-[1/0.92] mb-3.5 shadow-lg">
                   <img
                     src={director.image}
                     alt={director.name}

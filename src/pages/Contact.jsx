@@ -26,7 +26,7 @@ const contactInfo = [
   { 
     icon: <Mail size={24} className="text-brand-red" strokeWidth={1.5} />, 
     title: 'EMAIL', 
-    details: ['sales@vericon.com']
+    details: ['sales@vericon.in']
   },
   { 
     icon: <Globe size={24} className="text-brand-red" strokeWidth={1.5} />, 

@@ -52,9 +52,6 @@ function DirectorCard({ director, index, onOpen }) {
       transition={{ duration: 0.45, delay: index * 0.08 }}
       className="group relative text-left rounded-2xl overflow-hidden bg-white border border-[#E5DEC9] shadow-sm hover:shadow-[0_24px_48px_-14px_rgba(18,62,183,0.22)] hover:-translate-y-2 hover:border-[#123EB7]/45 transition-all duration-300 flex flex-col cursor-pointer focus:outline-none focus-visible:ring-2 focus-visible:ring-[#123EB7]"
     >
-      {/* Top Dual-Tone Hover Highlight Strip */}
-      <div className="h-1.5 w-full bg-gradient-to-r from-[#123EB7] via-[#123EB7] to-[#D80C20] opacity-75 group-hover:opacity-100 transition-opacity duration-300" />
-
       {/* Member Portrait Frame */}
       <div className="relative aspect-[3/3.6] w-full overflow-hidden bg-slate-100">
         <img

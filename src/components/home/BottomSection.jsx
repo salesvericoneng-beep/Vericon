@@ -116,7 +116,7 @@ function DirectorProfileModal({ director, isOpen, onClose, onStep }) {
             >
               {/* Compact Top-Left Portrait Card — Floated so Content Wraps Right & Below */}
               <div className="relative z-10 bg-[#081224] text-white -mx-5 -mt-5 mb-4 px-4 py-4 md:px-5 md:py-4 md:float-left md:w-[335px] lg:w-[375px] md:-ml-7 md:-mt-7 md:mr-7 md:mb-4 lg:-ml-8 lg:-mt-8 lg:mr-8 lg:mb-4 md:rounded-br-2xl md:border-r md:border-b border-[#C9A86A]/35 flex flex-col items-center justify-center text-center">
-                <div className="rounded-t-[135px] rounded-b-xl overflow-hidden border border-[#C9A86A]/45 w-full max-w-[235px] md:max-w-[285px] lg:max-w-[315px] aspect-[1/0.86] mb-3 shadow-lg">
+                <div className="rounded-xl overflow-hidden border border-[#C9A86A]/45 w-full max-w-[235px] md:max-w-[285px] lg:max-w-[315px] aspect-[1/0.86] mb-3 shadow-lg">
                   <img
                     src={director.image}
                     alt={director.name}

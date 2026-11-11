@@ -89,7 +89,7 @@ function DirectorProfileModal({ director, isOpen, onClose, onStep }) {
             exit={{ opacity: 0, scale: 0.96, y: 16 }}
             transition={{ duration: 0.25 }}
             onClick={(e) => e.stopPropagation()}
-            className="relative w-full max-w-6xl lg:min-h-[600px] max-h-[92vh] bg-[#FFFDF9] text-[#081530] rounded-3xl shadow-2xl overflow-hidden flex flex-col lg:flex-row border border-[#E5DEC9]"
+            className="relative w-full max-w-6xl max-h-[92vh] bg-[#FFFDF9] text-[#081530] rounded-3xl shadow-2xl overflow-hidden flex flex-col border border-[#E5DEC9]"
           >
             {/* Close Button */}
             <button
@@ -101,9 +101,9 @@ function DirectorProfileModal({ director, isOpen, onClose, onStep }) {
               <X size={17} />
             </button>
 
-            {/* Left Obsidian Portrait Column — Photo & Name Only */}
-            <div className="lg:w-[40%] bg-[#081224] text-white px-5 py-6 sm:px-6 sm:py-8 lg:py-12 flex flex-col items-center justify-center text-center shrink-0">
-              <div className="rounded-t-[110px] rounded-b-2xl overflow-hidden border border-[#C9A86A]/40 max-w-[220px] sm:max-w-[260px] lg:max-w-[295px] w-full aspect-[4/4.35] mb-5 lg:mb-6 shadow-xl">
+            {/* Compact Dark Top Header — Small Portrait & Single-Line Name */}
+            <div className="bg-[#081224] text-white px-5 py-5 sm:px-10 sm:py-6 pr-12 sm:pr-16 flex flex-col sm:flex-row items-center gap-4 sm:gap-7 border-b border-[#C9A86A]/30 shrink-0">
+              <div className="w-20 h-24 sm:w-24 sm:h-28 rounded-t-[44px] rounded-b-xl overflow-hidden border border-[#C9A86A]/45 shadow-lg shrink-0">
                 <img
                   src={director.image}
                   alt={director.name}
@@ -111,24 +111,26 @@ function DirectorProfileModal({ director, isOpen, onClose, onStep }) {
                 />
               </div>
 
-              <h4
-                id="modal-director-name"
-                className="font-editorial font-bold text-white whitespace-nowrap text-[15.5px] sm:text-[20px] lg:text-[17px] xl:text-[20px] leading-snug tracking-[0.01em]"
-              >
-                {director.name}
-                {director.credential && (
-                  <>
-                    ,{' '}
-                    <span className="text-[#E5B973]">{director.credential}</span>
-                  </>
-                )}
-              </h4>
+              <div className="min-w-0 text-center sm:text-left">
+                <h4
+                  id="modal-director-name"
+                  className="font-editorial font-bold text-white whitespace-nowrap text-[15px] sm:text-[22px] lg:text-[25px] leading-snug tracking-[0.01em]"
+                >
+                  {director.name}
+                  {director.credential && (
+                    <>
+                      ,{' '}
+                      <span className="text-[#E5B973]">{director.credential}</span>
+                    </>
+                  )}
+                </h4>
+              </div>
             </div>
 
-            {/* Right Ivory Editorial Reader — Simple Role, Education & Bio */}
-            <div className="flex-1 p-6 sm:p-9 lg:p-10 overflow-y-auto flex flex-col justify-between">
+            {/* Full-Width Ivory Content Below — Role, Education & Bio */}
+            <div className="flex-1 px-5 py-5 sm:px-10 sm:py-8 overflow-y-auto flex flex-col justify-between">
               <div>
-                <div className="pb-4 mb-6 border-b border-[#EAE4D7] pr-8">
+                <div className="pb-4 mb-5 border-b border-[#EAE4D7]">
                   <p className="font-display text-sm sm:text-base font-semibold text-[#D80C20]">
                     {director.role}{' '}
                     <span className="text-slate-300 mx-1.5">|</span>{' '}

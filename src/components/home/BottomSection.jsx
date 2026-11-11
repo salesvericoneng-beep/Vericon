@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useCallback } from 'react';
+import React, { useState, useEffect, useCallback, useRef } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import {
   X,
@@ -17,7 +17,7 @@ function DirectorCard({ director, index, onOpen }) {
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true }}
       transition={{ duration: 0.45, delay: index * 0.08 }}
-      className="group relative text-left rounded-2xl overflow-hidden bg-white border border-[#E5DEC9] shadow-sm hover:shadow-[0_24px_48px_-14px_rgba(18,62,183,0.22)] hover:-translate-y-2 hover:border-[#123EB7]/45 transition-all duration-300 flex flex-col cursor-pointer focus:outline-none focus-visible:ring-2 focus-visible:ring-[#123EB7]"
+      className="h-full group relative text-left rounded-2xl overflow-hidden bg-white border border-[#E5DEC9] shadow-sm hover:shadow-[0_24px_48px_-14px_rgba(18,62,183,0.22)] hover:-translate-y-2 hover:border-[#123EB7]/45 transition-all duration-300 flex flex-col cursor-pointer focus:outline-none focus-visible:ring-2 focus-visible:ring-[#123EB7]"
     >
       {/* Member Portrait Frame */}
       <div className="relative aspect-[3/3.6] w-full overflow-hidden bg-slate-100">
@@ -47,6 +47,8 @@ function DirectorCard({ director, index, onOpen }) {
 }
 
 function DirectorProfileModal({ director, isOpen, onClose, onStep }) {
+  const contentScrollRef = useRef(null);
+
   useEffect(() => {
     if (!isOpen) return undefined;
 
@@ -65,6 +67,12 @@ function DirectorProfileModal({ director, isOpen, onClose, onStep }) {
     };
   }, [isOpen, onClose, onStep]);
 
+  useEffect(() => {
+    if (contentScrollRef.current) {
+      contentScrollRef.current.scrollTop = 0;
+    }
+  }, [director?.id]);
+
   const allParagraphs = director?.chapters
     ? director.chapters.flatMap((c) => c.paragraphs)
     : [];
@@ -78,102 +86,105 @@ function DirectorProfileModal({ director, isOpen, onClose, onStep }) {
           animate={{ opacity: 1 }}
           exit={{ opacity: 0 }}
           onClick={onClose}
-          className="fixed inset-0 z-50 bg-[#050C1B]/80 backdrop-blur-md overflow-y-auto p-3 sm:p-5"
+          className="fixed inset-0 z-50 bg-[#050C1B]/80 backdrop-blur-md flex items-center justify-center p-3 sm:p-5"
         >
-          <div className="min-h-full flex items-center justify-center">
-            <motion.div
-              role="dialog"
-              aria-modal="true"
-              aria-labelledby="modal-director-name"
-              initial={{ opacity: 0, scale: 0.96, y: 16 }}
-              animate={{ opacity: 1, scale: 1, y: 0 }}
-              exit={{ opacity: 0, scale: 0.96, y: 16 }}
-              transition={{ duration: 0.25 }}
-              onClick={(e) => e.stopPropagation()}
-              className="relative w-full max-w-6xl bg-[#FFFDF9] text-[#081530] rounded-3xl shadow-2xl overflow-hidden border border-[#E5DEC9]"
+          <motion.div
+            role="dialog"
+            aria-modal="true"
+            aria-labelledby="modal-director-name"
+            initial={{ opacity: 0, scale: 0.96, y: 16 }}
+            animate={{ opacity: 1, scale: 1, y: 0 }}
+            exit={{ opacity: 0, scale: 0.96, y: 16 }}
+            transition={{ duration: 0.25 }}
+            onClick={(e) => e.stopPropagation()}
+            className="relative w-full max-w-6xl h-[85vh] md:h-[580px] lg:h-[600px] max-h-[90vh] bg-[#FFFDF9] text-[#081530] rounded-3xl shadow-2xl overflow-hidden flex flex-col border border-[#E5DEC9]"
+          >
+            {/* Close Button */}
+            <button
+              type="button"
+              onClick={onClose}
+              aria-label="Close profile modal"
+              className="absolute top-4 right-4 z-20 w-9 h-9 rounded-full bg-white hover:bg-[#D80C20] text-[#081530] hover:text-white shadow-md border border-slate-200 flex items-center justify-center transition-colors cursor-pointer"
             >
-              {/* Close Button */}
-              <button
-                type="button"
-                onClick={onClose}
-                aria-label="Close profile modal"
-                className="absolute top-4 right-4 z-20 w-9 h-9 rounded-full bg-white hover:bg-[#D80C20] text-[#081530] hover:text-white shadow-md border border-slate-200 flex items-center justify-center transition-colors cursor-pointer"
-              >
-                <X size={17} />
-              </button>
+              <X size={17} />
+            </button>
 
-              {/* Single Unclipped Card with Top-Left Floated Portrait Box */}
-              <div className="p-5 md:p-7 lg:p-8">
-                {/* Compact Top-Left Portrait Card — Floated so Content Wraps Right & Below */}
-                <div className="relative z-10 bg-[#081224] text-white -mx-5 -mt-5 mb-4 px-4 py-4 md:px-5 md:py-4 md:float-left md:w-[335px] lg:w-[375px] md:-ml-7 md:-mt-7 md:mr-7 md:mb-4 lg:-ml-8 lg:-mt-8 lg:mr-8 lg:mb-4 md:rounded-br-2xl md:border-r md:border-b border-[#C9A86A]/35 flex flex-col items-center justify-center text-center">
-                  <div className="rounded-t-[135px] rounded-b-xl overflow-hidden border border-[#C9A86A]/45 w-full max-w-[235px] md:max-w-[285px] lg:max-w-[315px] aspect-[1/0.86] mb-3 shadow-lg">
-                    <img
-                      src={director.image}
-                      alt={director.name}
-                      className="w-full h-full object-cover object-top"
-                    />
-                  </div>
-
-                  <h4
-                    id="modal-director-name"
-                    className="font-editorial font-bold text-white whitespace-nowrap text-[16px] sm:text-[20px] md:text-[15.5px] lg:text-[17px] leading-snug tracking-[0.01em]"
-                  >
-                    {director.name}
-                    {director.credential && (
-                      <>
-                        ,{' '}
-                        <span className="text-[#E5B973]">{director.credential}</span>
-                      </>
-                    )}
-                  </h4>
+            {/* Scrollable Editorial Body — Same Card Dimensions for All 4 Directors */}
+            <div
+              ref={contentScrollRef}
+              className="flex-1 overflow-y-auto overflow-x-hidden scrollbar-ivory p-5 md:p-7 lg:p-8"
+            >
+              {/* Compact Top-Left Portrait Card — Floated so Content Wraps Right & Below */}
+              <div className="relative z-10 bg-[#081224] text-white -mx-5 -mt-5 mb-4 px-4 py-4 md:px-5 md:py-4 md:float-left md:w-[335px] lg:w-[375px] md:-ml-7 md:-mt-7 md:mr-7 md:mb-4 lg:-ml-8 lg:-mt-8 lg:mr-8 lg:mb-4 md:rounded-br-2xl md:border-r md:border-b border-[#C9A86A]/35 flex flex-col items-center justify-center text-center">
+                <div className="rounded-t-[135px] rounded-b-xl overflow-hidden border border-[#C9A86A]/45 w-full max-w-[235px] md:max-w-[285px] lg:max-w-[315px] aspect-[1/0.86] mb-3 shadow-lg">
+                  <img
+                    src={director.image}
+                    alt={director.name}
+                    className="w-full h-full object-cover object-top"
+                  />
                 </div>
 
-                {/* Header & Bio Paragraphs — Flow Right of Image Box, Then Full-Width Below */}
-                <div className="pb-3 mb-3.5 border-b border-[#EAE4D7] md:pr-10">
-                  <p className="font-display text-sm sm:text-base font-semibold text-[#D80C20]">
-                    {director.role}{' '}
-                    <span className="text-slate-300 mx-1.5">|</span>{' '}
-                    <span className="text-[#123EB7]">{director.company}</span>
-                  </p>
-                  {director.educationLine && (
-                    <p className="font-jakarta text-xs sm:text-[13px] font-medium text-slate-600 mt-1 leading-relaxed">
-                      {director.educationLine}
-                    </p>
+                <h4
+                  id="modal-director-name"
+                  className="font-editorial font-bold text-white whitespace-nowrap text-[16px] sm:text-[20px] md:text-[15.5px] lg:text-[17px] leading-snug tracking-[0.01em]"
+                >
+                  {director.name}
+                  {director.credential && (
+                    <>
+                      ,{' '}
+                      <span className="text-[#E5B973]">{director.credential}</span>
+                    </>
                   )}
-                </div>
-
-                <div className="font-jakarta text-[12px] sm:text-[12.5px] leading-[1.6] text-slate-700">
-                  {allParagraphs.map((para, idx) => (
-                    <p key={idx} className="mb-2.5 last:mb-0">
-                      {para}
-                    </p>
-                  ))}
-                </div>
-
-                {/* Modal Prev / Next Director Navigation */}
-                <div className="clear-both mt-5 pt-3.5 border-t border-[#EAE4D7] flex items-center justify-end gap-3">
-                  <div className="flex items-center gap-2">
-                    <button
-                      type="button"
-                      onClick={() => onStep(-1)}
-                      className="inline-flex items-center gap-1 px-3 py-1.5 rounded-full bg-[#F4F1EA] hover:bg-[#123EB7] text-[#123EB7] hover:text-white border border-[#E4DEC9] font-display text-xs font-semibold transition-colors cursor-pointer"
-                    >
-                      <ChevronLeft size={14} />
-                      <span>Prev</span>
-                    </button>
-                    <button
-                      type="button"
-                      onClick={() => onStep(1)}
-                      className="inline-flex items-center gap-1 px-3 py-1.5 rounded-full bg-[#F4F1EA] hover:bg-[#D80C20] text-[#D80C20] hover:text-white border border-[#E4DEC9] font-display text-xs font-semibold transition-colors cursor-pointer"
-                    >
-                      <span>Next</span>
-                      <ChevronRight size={14} />
-                    </button>
-                  </div>
-                </div>
+                </h4>
               </div>
-            </motion.div>
-          </div>
+
+              {/* Header & Bio Paragraphs — Flow Right of Image Box, Then Full-Width Below */}
+              <div className="pb-3 mb-3.5 border-b border-[#EAE4D7] md:pr-10">
+                <p className="font-display text-sm sm:text-base font-semibold text-[#D80C20]">
+                  {director.role}{' '}
+                  <span className="text-slate-300 mx-1.5">|</span>{' '}
+                  <span className="text-[#123EB7]">{director.company}</span>
+                </p>
+                {director.educationLine && (
+                  <p className="font-jakarta text-xs sm:text-[13px] font-medium text-slate-600 mt-1 leading-relaxed">
+                    {director.educationLine}
+                  </p>
+                )}
+              </div>
+
+              <div className="font-jakarta text-[12.5px] sm:text-[13px] leading-[1.65] text-slate-700">
+                {allParagraphs.map((para, idx) => (
+                  <p key={idx} className="mb-3 last:mb-0">
+                    {para}
+                  </p>
+                ))}
+              </div>
+
+              <div className="clear-both" />
+            </div>
+
+            {/* Pinned Bottom Prev / Next Director Navigation */}
+            <div className="shrink-0 px-5 py-3.5 md:px-7 lg:px-8 border-t border-[#EAE4D7] bg-[#FFFDF9] flex items-center justify-end gap-3">
+              <div className="flex items-center gap-2">
+                <button
+                  type="button"
+                  onClick={() => onStep(-1)}
+                  className="inline-flex items-center gap-1 px-3 py-1.5 rounded-full bg-[#F4F1EA] hover:bg-[#123EB7] text-[#123EB7] hover:text-white border border-[#E4DEC9] font-display text-xs font-semibold transition-colors cursor-pointer"
+                >
+                  <ChevronLeft size={14} />
+                  <span>Prev</span>
+                </button>
+                <button
+                  type="button"
+                  onClick={() => onStep(1)}
+                  className="inline-flex items-center gap-1 px-3 py-1.5 rounded-full bg-[#F4F1EA] hover:bg-[#D80C20] text-[#D80C20] hover:text-white border border-[#E4DEC9] font-display text-xs font-semibold transition-colors cursor-pointer"
+                >
+                  <span>Next</span>
+                  <ChevronRight size={14} />
+                </button>
+              </div>
+            </div>
+          </motion.div>
         </motion.div>
       )}
     </AnimatePresence>

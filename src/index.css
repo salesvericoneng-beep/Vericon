@@ -58,3 +58,17 @@
   background: rgba(255, 255, 255, 0.4);
 }
 
+.scrollbar-ivory::-webkit-scrollbar {
+  width: 6px;
+}
+.scrollbar-ivory::-webkit-scrollbar-track {
+  background: transparent;
+}
+.scrollbar-ivory::-webkit-scrollbar-thumb {
+  background: rgba(8, 21, 48, 0.2);
+  border-radius: 9999px;
+}
+.scrollbar-ivory::-webkit-scrollbar-thumb:hover {
+  background: rgba(8, 21, 48, 0.36);
+}
+

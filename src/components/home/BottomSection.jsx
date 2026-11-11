@@ -114,9 +114,9 @@ function DirectorProfileModal({ director, isOpen, onClose, onStep }) {
               ref={contentScrollRef}
               className="flex-1 overflow-y-auto overflow-x-hidden scrollbar-ivory p-5 md:p-7 lg:p-8"
             >
-              {/* Compact Top-Left Portrait Card — Floated so Content Wraps Right & Below */}
-              <div className="relative z-10 bg-[#081224] text-white -mx-5 -mt-5 mb-4 px-4 py-4 md:px-5 md:py-4 md:float-left md:w-[335px] lg:w-[375px] md:-ml-7 md:-mt-7 md:mr-7 md:mb-4 lg:-ml-8 lg:-mt-8 lg:mr-8 lg:mb-4 md:rounded-br-2xl md:border-r md:border-b border-[#C9A86A]/35 flex flex-col items-center justify-center text-center">
-                <div className="rounded-xl overflow-hidden border border-[#C9A86A]/45 w-full max-w-[235px] md:max-w-[285px] lg:max-w-[315px] aspect-[1/0.86] mb-3 shadow-lg">
+              {/* Compact Top-Left Portrait Card — Full-Bleed Image with Name Strip Below */}
+              <div className="relative z-10 bg-[#081224] text-white -mx-5 -mt-5 mb-4 md:float-left md:w-[335px] lg:w-[375px] md:-ml-7 md:-mt-7 md:mr-7 md:mb-4 lg:-ml-8 lg:-mt-8 lg:mr-8 lg:mb-4 md:rounded-br-2xl overflow-hidden md:border-r md:border-b border-[#C9A86A]/35">
+                <div className="w-full aspect-[4/3.2] overflow-hidden">
                   <img
                     src={director.image}
                     alt={director.name}
@@ -124,18 +124,20 @@ function DirectorProfileModal({ director, isOpen, onClose, onStep }) {
                   />
                 </div>
 
-                <h4
-                  id="modal-director-name"
-                  className="font-editorial font-bold text-white whitespace-nowrap text-[16px] sm:text-[20px] md:text-[15.5px] lg:text-[17px] leading-snug tracking-[0.01em]"
-                >
-                  {director.name}
-                  {director.credential && (
-                    <>
-                      ,{' '}
-                      <span className="text-[#E5B973]">{director.credential}</span>
-                    </>
-                  )}
-                </h4>
+                <div className="w-full px-4 py-3 text-center">
+                  <h4
+                    id="modal-director-name"
+                    className="font-editorial font-bold text-white whitespace-nowrap text-[16px] sm:text-[20px] md:text-[15.5px] lg:text-[17px] leading-snug tracking-[0.01em]"
+                  >
+                    {director.name}
+                    {director.credential && (
+                      <>
+                        ,{' '}
+                        <span className="text-[#E5B973]">{director.credential}</span>
+                      </>
+                    )}
+                  </h4>
+                </div>
               </div>
 
               {/* Header & Bio Paragraphs — Flow Right of Image Box, Then Full-Width Below */}

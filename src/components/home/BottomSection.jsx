@@ -18,6 +18,27 @@ import { directors } from '../../data/directors';
 
 const SLIDE_DURATION_MS = 10000;
 
+function TwoToneDirectorName({ name, darkSurface = false }) {
+  const words = name.trim().split(/\s+/);
+  const surname = words.length > 1 ? words.pop() : '';
+  const lead = words.join(' ');
+
+  const leadColor = darkSurface ? 'text-[#7DD3FC]' : 'text-[#123EB7]';
+  const surnameColor = darkSurface ? 'text-[#FF6B79]' : 'text-[#D80C20]';
+
+  return (
+    <>
+      <span className={leadColor}>{lead}</span>
+      {surname && (
+        <>
+          {' '}
+          <span className={surnameColor}>{surname}</span>
+        </>
+      )}
+    </>
+  );
+}
+
 function BoardDockCard({ director, isActive, progressPct, isAutoPlay, onSelect }) {
   return (
     <button
@@ -76,12 +97,8 @@ function BoardDockCard({ director, isActive, progressPct, isAutoPlay, onSelect }
           )}
         </div>
 
-        <h4
-          className={`font-cinzel font-bold text-xs sm:text-[13.5px] leading-snug truncate ${
-            isActive ? 'text-white' : 'text-[#081530]'
-          }`}
-        >
-          {director.name}
+        <h4 className="font-cinzel font-bold text-xs sm:text-[13.5px] leading-snug truncate">
+          <TwoToneDirectorName name={director.name} darkSurface={isActive} />
         </h4>
 
         <p
@@ -187,9 +204,9 @@ function DirectorProfileModal({ director, isOpen, onClose }) {
                 </span>
                 <h4
                   id="modal-director-name"
-                  className="font-cinzel font-bold text-2xl sm:text-[26px] text-white leading-snug tracking-wide"
+                  className="font-cinzel font-bold text-2xl sm:text-[26px] leading-snug tracking-wide"
                 >
-                  {director.name}
+                  <TwoToneDirectorName name={director.name} darkSurface />
                 </h4>
                 <p className="font-display text-xs sm:text-sm text-blue-200/90 mt-1.5">
                   {director.role} | {director.company}
@@ -523,8 +540,8 @@ export default function BottomSection() {
                       </div>
 
                       {/* Chiselled Monumental Display Name */}
-                      <h3 className="font-cinzel font-bold text-3xl sm:text-4xl lg:text-[42px] text-[#081530] tracking-[0.04em] leading-[1.12]">
-                        {selectedDirector.name}
+                      <h3 className="font-cinzel font-bold text-3xl sm:text-4xl lg:text-[42px] tracking-[0.04em] leading-[1.12]">
+                        <TwoToneDirectorName name={selectedDirector.name} />
                       </h3>
 
                       <p className="font-display text-sm sm:text-[15px] font-medium text-slate-600 mt-2">
@@ -639,8 +656,8 @@ export default function BottomSection() {
                       </span>
                     </div>
 
-                    <h3 className="font-cinzel font-bold text-3xl sm:text-4xl lg:text-[44px] text-[#081530] tracking-[0.04em] leading-tight">
-                      {selectedDirector.name}
+                    <h3 className="font-cinzel font-bold text-3xl sm:text-4xl lg:text-[44px] tracking-[0.04em] leading-tight">
+                      <TwoToneDirectorName name={selectedDirector.name} />
                     </h3>
 
                     <p className="font-display text-base text-slate-600 mt-2.5">
@@ -648,13 +665,13 @@ export default function BottomSection() {
                     </p>
 
                     <div className="mt-8 p-6 rounded-2xl bg-[#F4F1EA] border border-[#E4DEC9]">
-                      <p className="font-editorial italic text-xl text-[#081530] mb-2">
+                      <p className="font-editorial italic text-xl text-[#123EB7] mb-2">
                         Executive Dossier Coming Soon
                       </p>
                       <p className="font-jakarta text-sm text-slate-600 leading-relaxed">
                         Detailed credentials, engineering background, and leadership biography for{' '}
-                        <span className="font-semibold text-[#081530]">
-                          {selectedDirector.name}
+                        <span className="font-semibold">
+                          <TwoToneDirectorName name={selectedDirector.name} />
                         </span>{' '}
                         are being curated for this executive showcase.
                       </p>

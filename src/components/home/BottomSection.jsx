@@ -38,7 +38,7 @@ function DirectorCard({ director, index, onOpen }) {
 
       {/* Card Footer — Name Only in Black */}
       <div className="px-4 py-5 flex-1 flex items-center justify-center text-center bg-[#FFFDF9]">
-        <h3 className="font-editorial font-bold text-[16px] sm:text-[17px] lg:text-[14.5px] xl:text-[17px] text-black tracking-wide leading-snug">
+        <h3 className="font-editorial font-bold text-[16px] sm:text-[17px] lg:text-[14px] xl:text-[17px] text-black tracking-wide leading-snug">
           {director.name}
         </h3>
       </div>

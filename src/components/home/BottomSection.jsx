@@ -101,20 +101,21 @@ function DirectorProfileModal({ director, isOpen, onClose, onStep }) {
               <X size={17} />
             </button>
 
-            {/* Compact Dark Top Header — Small Portrait & Single-Line Name */}
-            <div className="bg-[#081224] text-white px-5 py-5 sm:px-10 sm:py-6 pr-12 sm:pr-16 flex flex-col sm:flex-row items-center gap-4 sm:gap-7 border-b border-[#C9A86A]/30 shrink-0">
-              <div className="w-20 h-24 sm:w-24 sm:h-28 rounded-t-[44px] rounded-b-xl overflow-hidden border border-[#C9A86A]/45 shadow-lg shrink-0">
-                <img
-                  src={director.image}
-                  alt={director.name}
-                  className="w-full h-full object-cover object-top"
-                />
-              </div>
+            {/* Single Unified Editorial Sheet with Top-Left Floated Portrait Box */}
+            <div className="flex-1 overflow-y-auto overflow-x-hidden p-6 md:p-8 lg:p-10">
+              {/* Compact Top-Left Portrait Card — Floated so Content Wraps Right & Below */}
+              <div className="relative z-10 bg-[#081224] text-white -mx-6 -mt-6 mb-5 px-5 py-6 md:px-6 md:py-7 md:float-left md:w-[335px] lg:w-[375px] md:-ml-8 md:-mt-8 md:mr-8 md:mb-5 lg:-ml-10 lg:-mt-10 lg:mr-9 lg:mb-6 md:rounded-br-2xl md:border-r md:border-b border-[#C9A86A]/35 flex flex-col items-center justify-center text-center">
+                <div className="rounded-t-[84px] rounded-b-xl overflow-hidden border border-[#C9A86A]/45 w-[150px] md:w-[160px] lg:w-[175px] aspect-[4/4.35] mb-4 shadow-lg">
+                  <img
+                    src={director.image}
+                    alt={director.name}
+                    className="w-full h-full object-cover object-top"
+                  />
+                </div>
 
-              <div className="min-w-0 text-center sm:text-left">
                 <h4
                   id="modal-director-name"
-                  className="font-editorial font-bold text-white whitespace-nowrap text-[15px] sm:text-[22px] lg:text-[25px] leading-snug tracking-[0.01em]"
+                  className="font-editorial font-bold text-white whitespace-nowrap text-[16px] sm:text-[20px] md:text-[15.5px] lg:text-[17px] leading-snug tracking-[0.01em]"
                 >
                   {director.name}
                   {director.credential && (
@@ -125,33 +126,31 @@ function DirectorProfileModal({ director, isOpen, onClose, onStep }) {
                   )}
                 </h4>
               </div>
-            </div>
 
-            {/* Full-Width Ivory Content Below — Role, Education & Bio */}
-            <div className="flex-1 px-5 py-5 sm:px-10 sm:py-8 overflow-y-auto flex flex-col justify-between">
-              <div>
-                <div className="pb-4 mb-5 border-b border-[#EAE4D7]">
-                  <p className="font-display text-sm sm:text-base font-semibold text-[#D80C20]">
-                    {director.role}{' '}
-                    <span className="text-slate-300 mx-1.5">|</span>{' '}
-                    <span className="text-[#123EB7]">{director.company}</span>
+              {/* Header & Bio Paragraphs — Flow Right of Image Box, Then Full-Width Below */}
+              <div className="pb-3.5 mb-4 border-b border-[#EAE4D7] md:pr-10">
+                <p className="font-display text-sm sm:text-base font-semibold text-[#D80C20]">
+                  {director.role}{' '}
+                  <span className="text-slate-300 mx-1.5">|</span>{' '}
+                  <span className="text-[#123EB7]">{director.company}</span>
+                </p>
+                {director.educationLine && (
+                  <p className="font-jakarta text-xs sm:text-[13.5px] font-medium text-slate-600 mt-1.5 leading-relaxed">
+                    {director.educationLine}
                   </p>
-                  {director.educationLine && (
-                    <p className="font-jakarta text-xs sm:text-[13.5px] font-medium text-slate-600 mt-1.5 leading-relaxed">
-                      {director.educationLine}
-                    </p>
-                  )}
-                </div>
+                )}
+              </div>
 
-                <div className="space-y-3 font-jakarta text-[12.5px] sm:text-[13px] leading-[1.68] text-slate-700">
-                  {allParagraphs.map((para, idx) => (
-                    <p key={idx}>{para}</p>
-                  ))}
-                </div>
+              <div className="font-jakarta text-[12.5px] sm:text-[13px] leading-[1.68] text-slate-700">
+                {allParagraphs.map((para, idx) => (
+                  <p key={idx} className="mb-3 last:mb-0">
+                    {para}
+                  </p>
+                ))}
               </div>
 
               {/* Modal Prev / Next Director Navigation */}
-              <div className="mt-8 pt-5 border-t border-[#EAE4D7] flex items-center justify-end gap-3">
+              <div className="clear-both mt-7 pt-4 border-t border-[#EAE4D7] flex items-center justify-end gap-3">
                 <div className="flex items-center gap-2">
                   <button
                     type="button"

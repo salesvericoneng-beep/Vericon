@@ -387,40 +387,40 @@ export default function BottomSection() {
           ?.paragraphs || [];
 
   return (
-    <section className="py-20 md:py-28 bg-[#F4F1EA] relative overflow-hidden">
+    <section className="py-14 md:py-20 bg-[#F4F1EA] relative overflow-hidden">
       {/* Subtle Organic Radial Accents (Distinct from Grid Sections) */}
-      <div className="absolute -top-40 -left-40 w-[520px] h-[520px] rounded-full bg-[#C9A86A]/10 blur-[120px] pointer-events-none" />
-      <div className="absolute -bottom-40 -right-40 w-[560px] h-[560px] rounded-full bg-[#123EB7]/8 blur-[130px] pointer-events-none" />
+      <div className="absolute -top-40 -left-40 w-[460px] h-[460px] rounded-full bg-[#C9A86A]/10 blur-[110px] pointer-events-none" />
+      <div className="absolute -bottom-40 -right-40 w-[500px] h-[500px] rounded-full bg-[#123EB7]/8 blur-[120px] pointer-events-none" />
 
-      <div className="container mx-auto px-4 md:px-6 max-w-[1360px] relative z-10">
+      <div className="container mx-auto px-4 md:px-6 max-w-[1140px] relative z-10">
         {/* Editorial Masthead Header */}
-        <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 pb-8 mb-10 border-b border-[#DED6C4]">
+        <div className="flex flex-col md:flex-row md:items-end justify-between gap-4 pb-5 mb-7 border-b border-[#DED6C4]">
           <div>
-            <div className="inline-flex items-center gap-2.5 mb-3">
-              <span className="w-6 h-[2px] bg-[#D80C20]" />
-              <span className="font-tech text-[#123EB7] font-semibold uppercase tracking-[0.24em] text-[11px]">
+            <div className="inline-flex items-center gap-2 mb-2">
+              <span className="w-5 h-[2px] bg-[#D80C20]" />
+              <span className="font-tech text-[#123EB7] font-semibold uppercase tracking-[0.22em] text-[10.5px]">
                 OUR LEADERSHIP
               </span>
             </div>
-            <h2 className="text-4xl sm:text-5xl md:text-[56px] font-display font-bold text-[#081530] tracking-tight leading-[1.04]">
+            <h2 className="text-3xl sm:text-4xl md:text-[44px] font-display font-bold text-[#081530] tracking-tight leading-[1.06]">
               Meet Our{' '}
-              <span className="font-editorial italic font-bold text-[#D80C20] text-[1.14em] tracking-normal">
+              <span className="font-editorial italic font-bold text-[#D80C20] text-[1.12em] tracking-normal">
                 Directors
               </span>
             </h2>
           </div>
 
-          <p className="font-jakarta text-slate-600 text-sm sm:text-[15px] leading-relaxed max-w-md md:text-right">
+          <p className="font-jakarta text-slate-600 text-xs sm:text-sm leading-relaxed max-w-sm md:text-right">
             Leadership combining deep mechanical &amp; MEP engineering discipline with market vision across Telangana &amp; Andhra Pradesh.
           </p>
         </div>
 
-        {/* MONUMENTAL TWO-PAGE MAGAZINE SPREAD */}
+        {/* COMPACT TWO-PAGE MAGAZINE SPREAD */}
         <div
           id="director-dossier"
           onMouseEnter={() => setIsHovered(true)}
           onMouseLeave={() => setIsHovered(false)}
-          className="rounded-[2rem] overflow-hidden bg-[#FFFDF9] border border-[#E4DEC9] shadow-[0_32px_80px_-22px_rgba(8,21,48,0.22)]"
+          className="rounded-3xl overflow-hidden bg-[#FFFDF9] border border-[#E4DEC9] shadow-[0_24px_60px_-20px_rgba(8,21,48,0.2)]"
         >
           <AnimatePresence mode="wait">
             <motion.div
@@ -428,48 +428,43 @@ export default function BottomSection() {
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               exit={{ opacity: 0 }}
-              transition={{ duration: 0.28 }}
+              transition={{ duration: 0.25 }}
               className="grid grid-cols-1 lg:grid-cols-12"
             >
               {/* LEFT WING: OBSIDIAN SCULPTED PORTRAIT ARCH + CREDENTIALS */}
-              <div className="lg:col-span-5 bg-gradient-to-b from-[#081224] via-[#0B1933] to-[#071020] text-white p-6 sm:p-8 lg:p-10 flex flex-col justify-between relative overflow-hidden">
+              <div className="lg:col-span-4 bg-gradient-to-b from-[#081224] via-[#0B1933] to-[#071020] text-white p-5 sm:p-6 flex flex-col justify-between relative overflow-hidden">
                 {/* Ambient warm spotlight inside dark portrait wing */}
-                <div className="absolute -top-24 -left-24 w-72 h-72 rounded-full bg-[#C9A86A]/15 blur-[90px] pointer-events-none" />
-                <div className="absolute -bottom-24 -right-20 w-72 h-72 rounded-full bg-[#D80C20]/15 blur-[100px] pointer-events-none" />
+                <div className="absolute -top-20 -left-20 w-56 h-56 rounded-full bg-[#C9A86A]/15 blur-[80px] pointer-events-none" />
+                <div className="absolute -bottom-20 -right-16 w-56 h-56 rounded-full bg-[#D80C20]/15 blur-[90px] pointer-events-none" />
 
                 {/* Top Wing Index Bar */}
-                <div className="relative z-10 flex items-center justify-between gap-2 mb-6">
-                  <span className="font-tech text-[11px] uppercase tracking-[0.24em] text-[#E5B973]">
+                <div className="relative z-10 flex items-center justify-between gap-2 mb-4">
+                  <span className="font-tech text-[10.5px] uppercase tracking-[0.22em] text-[#E5B973]">
                     {selectedDirector.code}
                   </span>
-                  <span className="font-tech text-[10px] uppercase tracking-[0.2em] text-slate-300/80 border border-white/15 px-2.5 py-1 rounded-full">
+                  <span className="font-tech text-[9.5px] uppercase tracking-[0.18em] text-slate-300/80 border border-white/15 px-2 py-0.5 rounded-full">
                     Executive Board
                   </span>
                 </div>
 
-                {/* PROMINENT SCULPTED ARCH PORTRAIT */}
-                <div className="relative z-10 mx-auto w-full max-w-[340px] lg:max-w-none">
-                  {/* Subtle Gold Offset Arch Frame */}
-                  <div className="relative p-2 rounded-t-[130px] rounded-b-2xl border border-[#C9A86A]/35 bg-white/[0.02]">
-                    <div className="relative aspect-[3/3.65] rounded-t-[122px] rounded-b-xl overflow-hidden bg-slate-900 shadow-2xl">
+                {/* COMPACT SCULPTED ARCH PORTRAIT */}
+                <div className="relative z-10 mx-auto w-full max-w-[225px] sm:max-w-[240px]">
+                  <div className="relative p-1.5 rounded-t-[96px] rounded-b-xl border border-[#C9A86A]/35 bg-white/[0.02]">
+                    <div className="relative aspect-[4/4.35] rounded-t-[90px] rounded-b-lg overflow-hidden bg-slate-900 shadow-xl">
                       <img
                         src={selectedDirector.image}
                         alt={`${selectedDirector.name} — ${selectedDirector.role}`}
                         className="w-full h-full object-cover object-top"
                       />
 
-                      {/* Clean Bottom-Only Gradient for Caption Contrast (never covers face) */}
                       <div className="absolute inset-x-0 bottom-0 h-1/3 bg-gradient-to-t from-[#060E1D] via-[#060E1D]/65 to-transparent pointer-events-none" />
 
-                      {/* Overlaid Editorial Number & Tenure Tag */}
-                      <div className="absolute bottom-3.5 inset-x-4 flex items-end justify-between gap-2">
-                        <div>
-                          <span className="font-editorial italic text-4xl font-bold text-white/90 leading-none block">
-                            {selectedDirector.number}
-                          </span>
-                        </div>
+                      <div className="absolute bottom-2.5 inset-x-3 flex items-end justify-between gap-2">
+                        <span className="font-editorial italic text-3xl font-bold text-white/90 leading-none block">
+                          {selectedDirector.number}
+                        </span>
                         {selectedDirector.hasFullProfile && (
-                          <span className="px-3 py-1 rounded-full bg-[#D80C20] text-white font-tech text-[10px] font-semibold uppercase tracking-[0.16em] shadow-lg">
+                          <span className="px-2.5 py-0.5 rounded-full bg-[#D80C20] text-white font-tech text-[9.5px] font-semibold uppercase tracking-[0.14em] shadow-md">
                             {selectedDirector.experience} Exp
                           </span>
                         )}
@@ -480,17 +475,17 @@ export default function BottomSection() {
 
                 {/* Hairline Academic & Affiliation Ledger Below Photo */}
                 {selectedDirector.hasFullProfile ? (
-                  <div className="relative z-10 mt-7 pt-6 border-t border-white/12 space-y-5">
+                  <div className="relative z-10 mt-5 pt-4 border-t border-white/12 space-y-3.5">
                     <div>
-                      <div className="flex items-center gap-2 font-tech text-[10px] uppercase tracking-[0.2em] text-[#E5B973] mb-2.5">
-                        <GraduationCap size={14} />
+                      <div className="flex items-center gap-1.5 font-tech text-[9.5px] uppercase tracking-[0.18em] text-[#E5B973] mb-1.5">
+                        <GraduationCap size={12} />
                         <span>{selectedDirector.pedigreeLabel}</span>
                       </div>
-                      <ul className="space-y-1.5">
+                      <ul className="space-y-1">
                         {selectedDirector.education.map((deg) => (
                           <li
                             key={deg}
-                            className="font-jakarta text-[13px] font-medium text-white flex items-start gap-2"
+                            className="font-jakarta text-[12px] font-medium text-white flex items-start gap-2 leading-snug"
                           >
                             <span className="w-1.5 h-1.5 rounded-full bg-[#D80C20] mt-1.5 shrink-0" />
                             <span>{deg}</span>
@@ -498,25 +493,25 @@ export default function BottomSection() {
                         ))}
                       </ul>
                       {selectedDirector.pedigreeNote && (
-                        <p className="font-jakarta text-xs text-blue-200/80 mt-2 pl-3.5 leading-relaxed">
+                        <p className="font-jakarta text-[11px] text-blue-200/80 mt-1.5 pl-3.5 leading-snug">
                           {selectedDirector.pedigreeNote}
                         </p>
                       )}
                     </div>
 
-                    <div className="pt-4 border-t border-white/10 flex flex-wrap items-center justify-between gap-3">
-                      <div className="flex items-center gap-1.5 text-xs font-jakarta text-slate-200">
-                        <MapPin size={14} className="text-[#D80C20] shrink-0" />
+                    <div className="pt-3 border-t border-white/10 flex flex-col gap-2">
+                      <div className="flex items-center gap-1.5 text-[11px] font-jakarta text-slate-200">
+                        <MapPin size={12} className="text-[#D80C20] shrink-0" />
                         <span>{selectedDirector.regionSubtitle}</span>
                       </div>
 
-                      <div className="flex items-center gap-2 flex-wrap">
+                      <div className="flex items-center gap-1.5 flex-wrap">
                         {selectedDirector.badges.map((badge) => (
                           <span
                             key={badge}
-                            className="inline-flex items-center gap-1 px-2.5 py-1 rounded-md border border-[#C9A86A]/45 bg-[#C9A86A]/10 font-tech text-[10px] font-semibold tracking-wider text-[#F5DDB0]"
+                            className="inline-flex items-center gap-1 px-2 py-0.5 rounded-md border border-[#C9A86A]/45 bg-[#C9A86A]/10 font-tech text-[9.5px] font-semibold tracking-wider text-[#F5DDB0]"
                           >
-                            <Award size={11} />
+                            <Award size={10} />
                             {badge}
                           </span>
                         ))}
@@ -524,7 +519,7 @@ export default function BottomSection() {
                     </div>
                   </div>
                 ) : (
-                  <div className="relative z-10 mt-7 pt-5 border-t border-white/12 text-center">
+                  <div className="relative z-10 mt-5 pt-4 border-t border-white/12 text-center">
                     <span className="font-tech text-[10px] uppercase tracking-[0.2em] text-[#E5B973]">
                       {selectedDirector.role} · {selectedDirector.company}
                     </span>
@@ -532,12 +527,12 @@ export default function BottomSection() {
                 )}
               </div>
 
-              {/* RIGHT WING: WARM IVORY MAGAZINE MANUSCRIPT SPREAD */}
-              <div className="lg:col-span-7 bg-[#FFFDF9] text-[#081530] p-7 sm:p-10 lg:p-12 flex flex-col justify-between relative">
+              {/* RIGHT WING: COMPACT IVORY MAGAZINE MANUSCRIPT SPREAD */}
+              <div className="lg:col-span-8 bg-[#FFFDF9] text-[#081530] p-5 sm:p-7 lg:p-8 flex flex-col justify-between relative">
                 {/* Watermark Monogram */}
                 <span
                   aria-hidden="true"
-                  className="hidden sm:block absolute top-4 right-8 font-editorial italic font-bold text-[150px] leading-none text-[#081530]/[0.03] select-none pointer-events-none"
+                  className="hidden sm:block absolute top-3 right-6 font-editorial italic font-bold text-[105px] leading-none text-[#081530]/[0.03] select-none pointer-events-none"
                 >
                   {selectedDirector.monogram}
                 </span>
@@ -546,10 +541,10 @@ export default function BottomSection() {
                   <>
                     <div className="relative z-10">
                       {/* Top Strip */}
-                      <div className="flex flex-wrap items-center justify-between gap-3 mb-5">
-                        <div className="flex items-center gap-2.5">
-                          <span className="w-7 h-[2px] bg-[#D80C20]" />
-                          <span className="font-tech text-[11px] font-semibold uppercase tracking-[0.22em] text-[#D80C20]">
+                      <div className="flex flex-wrap items-center justify-between gap-2 mb-3">
+                        <div className="flex items-center gap-2">
+                          <span className="w-6 h-[2px] bg-[#D80C20]" />
+                          <span className="font-tech text-[10.5px] font-semibold uppercase tracking-[0.2em] text-[#D80C20]">
                             {selectedDirector.role}
                           </span>
                         </div>
@@ -557,22 +552,22 @@ export default function BottomSection() {
                         <button
                           type="button"
                           onClick={() => setIsModalOpen(true)}
-                          className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-[#081224] hover:bg-[#123EB7] text-white font-display text-xs font-semibold tracking-wide transition-colors shadow-sm cursor-pointer"
+                          className="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full bg-[#081224] hover:bg-[#123EB7] text-white font-display text-[11px] font-semibold tracking-wide transition-colors shadow-xs cursor-pointer"
                         >
-                          <BookOpen size={13} />
+                          <BookOpen size={12} />
                           <span>Full Profile View</span>
                         </button>
                       </div>
 
-                      {/* Chiselled Monumental Display Name */}
-                      <h3 className="font-cinzel font-bold text-3xl sm:text-4xl lg:text-[42px] tracking-[0.04em] leading-[1.12]">
+                      {/* Chiselled Executive Display Name */}
+                      <h3 className="font-cinzel font-bold text-2xl sm:text-[28px] lg:text-[32px] tracking-[0.03em] leading-[1.16]">
                         <TwoToneDirectorName
                           name={selectedDirector.name}
                           credential={selectedDirector.credential}
                         />
                       </h3>
 
-                      <p className="font-display text-sm sm:text-[15px] font-medium text-slate-600 mt-2">
+                      <p className="font-display text-xs sm:text-[13.5px] font-medium text-slate-600 mt-1.5">
                         {selectedDirector.company}
                         <span className="mx-2 text-[#C9A86A]">•</span>
                         <span className="text-[#123EB7] font-semibold">
@@ -580,21 +575,21 @@ export default function BottomSection() {
                         </span>
                       </p>
 
-                      {/* Editorial Pull Quote with Top/Bottom Hairlines */}
-                      <blockquote className="my-6 py-5 border-y border-[#EAE4D7] flex items-start gap-3">
+                      {/* Compact Editorial Pull Quote */}
+                      <blockquote className="my-4 py-3 border-y border-[#EAE4D7] flex items-start gap-2.5">
                         <span
                           aria-hidden="true"
-                          className="font-editorial font-bold text-5xl leading-[0.8] text-[#D80C20] select-none pt-1"
+                          className="font-editorial font-bold text-4xl leading-[0.8] text-[#D80C20] select-none pt-0.5"
                         >
                           “
                         </span>
-                        <p className="font-editorial italic font-semibold text-xl sm:text-[23px] leading-[1.38] text-[#10254D]">
+                        <p className="font-editorial italic font-semibold text-lg sm:text-[19px] leading-[1.35] text-[#10254D]">
                           {selectedDirector.quote}”
                         </p>
                       </blockquote>
 
                       {/* Editorial Underline Chapter Navigation */}
-                      <div className="flex flex-wrap items-center gap-x-5 gap-y-2 border-b border-[#EAE4D7] mb-6">
+                      <div className="flex flex-wrap items-center gap-x-4 gap-y-1.5 border-b border-[#EAE4D7] mb-4">
                         {selectedDirector.chapters.map((chapter) => {
                           const selected = activeChapter === chapter.id;
                           return (
@@ -602,7 +597,7 @@ export default function BottomSection() {
                               key={chapter.id}
                               type="button"
                               onClick={() => handleSelectChapter(chapter.id)}
-                              className={`pb-3 -mb-px font-display text-xs sm:text-[13px] tracking-wide transition-all cursor-pointer border-b-2 ${
+                              className={`pb-2 -mb-px font-display text-[11.5px] sm:text-xs tracking-wide transition-all cursor-pointer border-b-2 ${
                                 selected
                                   ? 'border-[#D80C20] text-[#081530] font-bold'
                                   : 'border-transparent text-slate-500 hover:text-[#081530] font-medium'
@@ -615,7 +610,7 @@ export default function BottomSection() {
                         <button
                           type="button"
                           onClick={() => handleSelectChapter('all')}
-                          className={`pb-3 -mb-px font-tech text-[11px] uppercase tracking-wider transition-all cursor-pointer border-b-2 ${
+                          className={`pb-2 -mb-px font-tech text-[10.5px] uppercase tracking-wider transition-all cursor-pointer border-b-2 ${
                             activeChapter === 'all'
                               ? 'border-[#123EB7] text-[#123EB7] font-semibold'
                               : 'border-transparent text-slate-500 hover:text-[#123EB7]'
@@ -625,22 +620,22 @@ export default function BottomSection() {
                         </button>
                       </div>
 
-                      {/* Clean Prose Body */}
+                      {/* Compact Flowing Bio Copy */}
                       <AnimatePresence mode="wait">
                         <motion.div
                           key={activeChapter}
-                          initial={{ opacity: 0, y: 6 }}
+                          initial={{ opacity: 0, y: 5 }}
                           animate={{ opacity: 1, y: 0 }}
                           exit={{ opacity: 0, y: -4 }}
                           transition={{ duration: 0.2 }}
-                          className="space-y-4 font-jakarta text-[15px] sm:text-[15.5px] leading-[1.85] text-slate-700"
+                          className="space-y-3 font-jakarta text-[13.5px] sm:text-[14px] leading-[1.72] text-slate-700"
                         >
                           {visibleParagraphs.map((paragraph, idx) => (
                             <p
                               key={idx}
                               className={
                                 idx === 0
-                                  ? 'first-letter:font-cinzel first-letter:font-bold first-letter:text-4xl first-letter:text-[#D80C20] first-letter:float-left first-letter:mr-2.5 first-letter:leading-[0.86]'
+                                  ? 'first-letter:font-cinzel first-letter:font-bold first-letter:text-3xl first-letter:text-[#D80C20] first-letter:float-left first-letter:mr-2 first-letter:leading-[0.88]'
                                   : ''
                               }
                             >
@@ -651,22 +646,22 @@ export default function BottomSection() {
                       </AnimatePresence>
                     </div>
 
-                    {/* Expertise Footer */}
-                    <div className="relative z-10 mt-8 pt-6 border-t border-[#EAE4D7]">
-                      <div className="flex items-center justify-between flex-wrap gap-2 mb-3">
-                        <span className="font-tech text-[10px] uppercase tracking-[0.22em] text-slate-500">
+                    {/* Compact Expertise Footer */}
+                    <div className="relative z-10 mt-5 pt-4 border-t border-[#EAE4D7]">
+                      <div className="flex items-center justify-between flex-wrap gap-2 mb-2">
+                        <span className="font-tech text-[9.5px] uppercase tracking-[0.2em] text-slate-500">
                           Core Expertise &amp; Industry Scope
                         </span>
-                        <span className="inline-flex items-center gap-1 font-tech text-[10px] uppercase tracking-wider text-emerald-700">
-                          <CheckCircle2 size={12} />
+                        <span className="inline-flex items-center gap-1 font-tech text-[9.5px] uppercase tracking-wider text-emerald-700">
+                          <CheckCircle2 size={11} />
                           Verified Executive Dossier
                         </span>
                       </div>
-                      <div className="flex flex-wrap gap-2">
+                      <div className="flex flex-wrap gap-1.5">
                         {selectedDirector.expertise.map((skill) => (
                           <span
                             key={skill}
-                            className="px-3 py-1 rounded-full bg-[#F4F1EA] border border-[#E4DEC9] font-jakarta text-xs font-medium text-[#081530]"
+                            className="px-2.5 py-0.5 rounded-full bg-[#F4F1EA] border border-[#E4DEC9] font-jakarta text-[11px] font-medium text-[#081530]"
                           >
                             {skill}
                           </span>

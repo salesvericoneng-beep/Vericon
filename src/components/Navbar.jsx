@@ -7,20 +7,16 @@ const navLinks = [
   { name: 'Home', path: '/' },
   { name: 'About Us', path: '/about' },
   { 
-    name: 'Services', 
+    name: 'Projects', 
     path: '/services',
     dropdown: [
       { name: 'HVAC Solutions', path: '/services/hvac' },
       { name: 'Electrical Solutions', path: '/services/electrical' },
       { name: 'Fire Fighting Solutions', path: '/services/fire' },
-      { name: 'PHE Solutions', path: '/services/phe' },
-      { name: 'Annual Maintenance (AMC)', path: '/services/amc' },
-      { name: 'Revamp & Retrofits', path: '/services/retrofit' },
-      { name: 'Energy Optimization', path: '/services/energy-optimization' }
+      { name: 'PHE Solutions', path: '/services/phe' }
     ]
   },
-  { name: 'Specialized Audits', path: '/projects' },
-  { name: 'Why VERICON', path: '/why-vericon' },
+  { name: 'Services', path: '/projects' },
   { name: 'Contact Us', path: '/contact' }
 ];
 

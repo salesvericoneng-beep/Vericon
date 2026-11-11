@@ -63,7 +63,7 @@ function DirectorCard({ director, index, onOpen }) {
         {/* Simple Hover Gradient & View Profile Pill */}
         <div className="absolute inset-0 bg-gradient-to-t from-[#081224]/80 via-[#081224]/15 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end justify-center pb-5 pointer-events-none">
           <span className="inline-flex items-center gap-1.5 px-4 py-2 rounded-full bg-white text-[#123EB7] font-display text-xs font-bold tracking-wide shadow-lg translate-y-3 group-hover:translate-y-0 transition-transform duration-300">
-            <span>View Full Profile</span>
+            <span>View Profile</span>
             <ArrowUpRight size={14} className="text-[#D80C20]" />
           </span>
         </div>

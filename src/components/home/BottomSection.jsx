@@ -1,22 +1,16 @@
-import React, { useState, useEffect, useRef } from 'react';
+import React, { useState, useEffect, useCallback } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import {
   GraduationCap,
   Award,
   MapPin,
-  BookOpen,
   X,
-  CheckCircle2,
   ArrowUpRight,
-  Sparkles,
-  Play,
-  Pause,
   ChevronLeft,
   ChevronRight,
+  UserCheck,
 } from 'lucide-react';
 import { directors } from '../../data/directors';
-
-const SLIDE_DURATION_MS = 10000;
 
 function TwoToneDirectorName({ name, credential = null, darkSurface = false, compact = false }) {
   const words = name.trim().split(/\s+/);
@@ -40,8 +34,8 @@ function TwoToneDirectorName({ name, credential = null, darkSurface = false, com
         <span
           className={`whitespace-nowrap ${credColor} ${
             compact
-              ? 'text-[0.82em] font-semibold'
-              : 'text-[0.62em] font-tech tracking-wider ml-2 align-middle'
+              ? 'text-[0.84em] font-semibold'
+              : 'text-[0.62em] font-tech tracking-wider ml-1.5 align-middle'
           }`}
         >
           , {credential}
@@ -51,113 +45,88 @@ function TwoToneDirectorName({ name, credential = null, darkSurface = false, com
   );
 }
 
-function BoardDockCard({ director, isActive, progressPct, isAutoPlay, onSelect }) {
+function DirectorCard({ director, index, onOpen }) {
   return (
-    <button
+    <motion.button
       type="button"
-      onClick={onSelect}
-      aria-pressed={isActive}
-      className={`group relative text-left rounded-2xl p-3 sm:p-4 overflow-hidden transition-all duration-300 flex items-center gap-3.5 border cursor-pointer focus:outline-none focus-visible:ring-2 focus-visible:ring-[#123EB7] ${
-        isActive
-          ? 'bg-[#081224] text-white border-[#081224] shadow-[0_18px_38px_-12px_rgba(8,18,36,0.45)] -translate-y-0.5'
-          : 'bg-white/95 hover:bg-white text-[#081530] border-[#E5DEC9] hover:border-[#123EB7]/40 hover:shadow-md'
-      }`}
+      onClick={onOpen}
+      initial={{ opacity: 0, y: 24 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true }}
+      transition={{ duration: 0.45, delay: index * 0.08 }}
+      className="group relative text-left rounded-2xl overflow-hidden bg-white border border-[#E5DEC9] shadow-sm hover:shadow-[0_24px_48px_-14px_rgba(18,62,183,0.22)] hover:-translate-y-2 hover:border-[#123EB7]/45 transition-all duration-300 flex flex-col cursor-pointer focus:outline-none focus-visible:ring-2 focus-visible:ring-[#123EB7]"
     >
-      {/* Active Crimson Indicator Accent */}
-      <span
-        className={`absolute left-0 top-3 bottom-3 w-1 rounded-r-full transition-colors duration-300 ${
-          isActive ? 'bg-[#D80C20]' : 'bg-transparent group-hover:bg-[#123EB7]/50'
-        }`}
-      />
+      {/* Top Dual-Tone Hover Highlight Strip */}
+      <div className="h-1.5 w-full bg-gradient-to-r from-[#123EB7] via-[#123EB7] to-[#D80C20] opacity-75 group-hover:opacity-100 transition-opacity duration-300" />
 
-      {/* Director Portrait Thumbnail */}
-      <div
-        className={`w-12 h-14 sm:w-14 sm:h-16 rounded-xl overflow-hidden shrink-0 border transition-all duration-300 ${
-          isActive
-            ? 'border-[#C9A86A]/60 shadow-md'
-            : 'border-slate-200 group-hover:border-[#123EB7]/40'
-        }`}
-      >
+      {/* Member Portrait Frame */}
+      <div className="relative aspect-[3/3.6] w-full overflow-hidden bg-slate-100">
         <img
           src={director.image}
-          alt={director.name}
-          className="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-500"
+          alt={`${director.name}${director.credential ? `, ${director.credential}` : ''}`}
+          className="w-full h-full object-cover object-top transition-transform duration-500 ease-out group-hover:scale-105"
         />
-      </div>
 
-      {/* Director Metadata */}
-      <div className="min-w-0 flex-1">
-        <div className="flex items-center justify-between gap-1.5 mb-0.5">
-          <span
-            className={`font-tech text-[10px] tracking-[0.16em] uppercase ${
-              isActive ? 'text-[#E5B973]' : 'text-[#D80C20]'
-            }`}
-          >
+        {/* Subtle Top Tags */}
+        <div className="absolute top-3 inset-x-3 flex items-center justify-between gap-2 pointer-events-none">
+          <span className="px-2.5 py-1 rounded-md bg-white/90 backdrop-blur-sm border border-[#E5DEC9] font-tech text-[10px] font-semibold tracking-[0.16em] text-[#123EB7] shadow-xs">
             {director.code}
           </span>
-          {director.hasFullProfile && (
-            <span
-              className={`inline-flex items-center gap-0.5 text-[9px] font-tech uppercase tracking-wider px-1.5 py-0.5 rounded ${
-                isActive
-                  ? 'bg-[#D80C20] text-white'
-                  : 'bg-[#FAF5EB] text-[#9A7432] border border-[#E5DEC9]'
-              }`}
-            >
-              <Sparkles size={8} />
-              Bio
-            </span>
-          )}
+          <span className="px-2.5 py-1 rounded-full bg-[#081224]/80 backdrop-blur-sm font-tech text-[10px] font-medium tracking-wider text-[#E5B973] shadow-xs">
+            {director.experience}
+          </span>
         </div>
 
-        <h4 className="font-cinzel font-bold text-xs sm:text-[13px] leading-snug line-clamp-2">
-          <TwoToneDirectorName
-            name={director.name}
-            credential={director.credential}
-            darkSurface={isActive}
-            compact
-          />
-        </h4>
-
-        <p
-          className={`font-jakarta text-[11px] truncate mt-0.5 ${
-            isActive ? 'text-blue-200/85' : 'text-slate-500'
-          }`}
-        >
-          {director.role}
-        </p>
+        {/* Simple Hover Gradient & View Profile Pill */}
+        <div className="absolute inset-0 bg-gradient-to-t from-[#081224]/80 via-[#081224]/15 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end justify-center pb-5 pointer-events-none">
+          <span className="inline-flex items-center gap-1.5 px-4 py-2 rounded-full bg-white text-[#123EB7] font-display text-xs font-bold tracking-wide shadow-lg translate-y-3 group-hover:translate-y-0 transition-transform duration-300">
+            <span>View Full Profile</span>
+            <ArrowUpRight size={14} className="text-[#D80C20]" />
+          </span>
+        </div>
       </div>
 
-      <ArrowUpRight
-        size={15}
-        className={`hidden sm:block shrink-0 transition-transform duration-300 ${
-          isActive
-            ? 'text-[#E5B973] rotate-45'
-            : 'text-slate-400 group-hover:text-[#123EB7] group-hover:translate-x-0.5 group-hover:-translate-y-0.5'
-        }`}
-      />
+      {/* Card Footer */}
+      <div className="p-5 flex-1 flex flex-col justify-between text-center bg-[#FFFDF9]">
+        <div>
+          <p className="font-tech text-[10px] font-semibold uppercase tracking-[0.2em] text-[#D80C20] mb-1.5">
+            {director.role}
+          </p>
 
-      {/* 10-Second Auto-Slide Progress Bar on Active Card */}
-      {isActive && isAutoPlay && (
-        <span
-          aria-hidden="true"
-          className="absolute bottom-0 left-0 right-0 h-[3px] bg-white/10"
-        >
-          <span
-            className="block h-full bg-gradient-to-r from-[#D80C20] to-[#E5B973] transition-[width] duration-100 ease-linear"
-            style={{ width: `${progressPct}%` }}
+          <h3 className="font-cinzel font-bold text-[16px] sm:text-[17px] leading-snug">
+            <TwoToneDirectorName
+              name={director.name}
+              credential={director.credential}
+              compact
+            />
+          </h3>
+
+          <p className="font-jakarta text-xs text-slate-600 mt-2 line-clamp-1">
+            {director.education[0]}
+          </p>
+        </div>
+
+        {/* Subtle Bottom Cue */}
+        <div className="mt-4 pt-3 border-t border-[#EAE4D7] flex items-center justify-center gap-1.5 font-display text-xs font-semibold text-[#123EB7] group-hover:text-[#D80C20] transition-colors">
+          <span>Read Profile</span>
+          <ArrowUpRight
+            size={14}
+            className="transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5"
           />
-        </span>
-      )}
-    </button>
+        </div>
+      </div>
+    </motion.button>
   );
 }
 
-function DirectorProfileModal({ director, isOpen, onClose }) {
+function DirectorProfileModal({ director, activeIndex, totalCount, isOpen, onClose, onStep }) {
   useEffect(() => {
     if (!isOpen) return undefined;
 
     const handleKeyDown = (e) => {
       if (e.key === 'Escape') onClose();
+      if (e.key === 'ArrowRight') onStep(1);
+      if (e.key === 'ArrowLeft') onStep(-1);
     };
     const prevOverflow = document.body.style.overflow;
     document.body.style.overflow = 'hidden';
@@ -167,7 +136,7 @@ function DirectorProfileModal({ director, isOpen, onClose }) {
       document.body.style.overflow = prevOverflow;
       window.removeEventListener('keydown', handleKeyDown);
     };
-  }, [isOpen, onClose]);
+  }, [isOpen, onClose, onStep]);
 
   const allParagraphs = director?.chapters
     ? director.chapters.flatMap((c) => c.paragraphs)
@@ -175,7 +144,7 @@ function DirectorProfileModal({ director, isOpen, onClose }) {
 
   return (
     <AnimatePresence>
-      {isOpen && director && director.hasFullProfile && (
+      {isOpen && director && (
         <motion.div
           key="director-profile-modal"
           initial={{ opacity: 0 }}
@@ -199,16 +168,16 @@ function DirectorProfileModal({ director, isOpen, onClose }) {
             <button
               type="button"
               onClick={onClose}
-              aria-label="Close executive dossier"
-              className="absolute top-4 right-4 z-20 w-10 h-10 rounded-full bg-white hover:bg-[#D80C20] text-[#081530] hover:text-white shadow-md border border-slate-200 flex items-center justify-center transition-colors cursor-pointer"
+              aria-label="Close profile modal"
+              className="absolute top-4 right-4 z-20 w-9 h-9 rounded-full bg-white hover:bg-[#D80C20] text-[#081530] hover:text-white shadow-md border border-slate-200 flex items-center justify-center transition-colors cursor-pointer"
             >
-              <X size={18} />
+              <X size={17} />
             </button>
 
             {/* Left Obsidian Portrait Column */}
-            <div className="lg:w-[37%] bg-[#081224] text-white p-6 sm:p-8 flex flex-col justify-between shrink-0 overflow-y-auto">
+            <div className="lg:w-[37%] bg-[#081224] text-white p-6 sm:p-7 flex flex-col justify-between shrink-0 overflow-y-auto">
               <div>
-                <div className="rounded-t-[90px] rounded-b-2xl overflow-hidden border border-[#C9A86A]/40 max-w-[260px] mx-auto lg:max-w-none aspect-[4/4.4] mb-6 shadow-xl">
+                <div className="rounded-t-[90px] rounded-b-2xl overflow-hidden border border-[#C9A86A]/40 max-w-[230px] mx-auto lg:max-w-none aspect-[4/4.35] mb-5 shadow-xl">
                   <img
                     src={director.image}
                     alt={director.name}
@@ -216,12 +185,13 @@ function DirectorProfileModal({ director, isOpen, onClose }) {
                   />
                 </div>
 
-                <span className="font-tech text-[10px] uppercase tracking-[0.22em] text-[#E5B973] block mb-1.5">
+                <span className="font-tech text-[10px] uppercase tracking-[0.22em] text-[#E5B973] block mb-1">
                   {director.code} · {director.experience} Experience
                 </span>
+
                 <h4
                   id="modal-director-name"
-                  className="font-cinzel font-bold text-2xl sm:text-[26px] leading-snug tracking-wide"
+                  className="font-cinzel font-bold text-xl sm:text-2xl leading-snug tracking-wide"
                 >
                   <TwoToneDirectorName
                     name={director.name}
@@ -229,13 +199,15 @@ function DirectorProfileModal({ director, isOpen, onClose }) {
                     darkSurface
                   />
                 </h4>
-                <p className="font-display text-xs sm:text-sm text-blue-200/90 mt-1.5">
+
+                <p className="font-display text-xs sm:text-[13px] text-blue-200/90 mt-1">
                   {director.role} | {director.company}
                 </p>
 
-                <div className="mt-6 pt-5 border-t border-white/10 space-y-2.5">
-                  <div className="font-tech text-[10px] uppercase tracking-[0.18em] text-[#E5B973]">
-                    {director.pedigreeLabel}
+                <div className="mt-5 pt-4 border-t border-white/10 space-y-2">
+                  <div className="font-tech text-[10px] uppercase tracking-[0.18em] text-[#E5B973] flex items-center gap-1.5">
+                    <GraduationCap size={13} />
+                    <span>{director.pedigreeLabel}</span>
                   </div>
                   {director.education.map((deg) => (
                     <p
@@ -246,71 +218,107 @@ function DirectorProfileModal({ director, isOpen, onClose }) {
                     </p>
                   ))}
                   {director.pedigreeNote && (
-                    <p className="font-jakarta text-xs text-slate-300 leading-relaxed pt-1">
+                    <p className="font-jakarta text-[11.5px] text-slate-300 leading-relaxed pt-1">
                       {director.pedigreeNote}
                     </p>
                   )}
                 </div>
               </div>
 
-              <div className="mt-6 pt-5 border-t border-white/10 flex flex-wrap gap-2">
-                {director.badges.map((badge) => (
-                  <span
-                    key={badge}
-                    className="px-3 py-1 rounded-full bg-white/[0.06] border border-[#C9A86A]/40 font-tech text-[11px] font-medium text-[#F3D8A4]"
-                  >
-                    {badge}
-                  </span>
-                ))}
+              <div className="mt-5 pt-4 border-t border-white/10 flex flex-col gap-3">
+                <div className="flex items-center gap-1.5 text-xs font-jakarta text-slate-200">
+                  <MapPin size={13} className="text-[#D80C20] shrink-0" />
+                  <span>{director.regionSubtitle}</span>
+                </div>
+                <div className="flex flex-wrap gap-1.5">
+                  {director.badges.map((badge) => (
+                    <span
+                      key={badge}
+                      className="inline-flex items-center gap-1 px-2.5 py-1 rounded-full bg-white/[0.06] border border-[#C9A86A]/40 font-tech text-[10px] font-medium text-[#F3D8A4]"
+                    >
+                      <Award size={10} />
+                      {badge}
+                    </span>
+                  ))}
+                </div>
               </div>
             </div>
 
             {/* Right Ivory Editorial Reader */}
-            <div className="flex-1 p-6 sm:p-10 lg:p-12 overflow-y-auto">
-              <div className="flex items-center gap-2 font-tech text-[11px] uppercase tracking-[0.22em] text-[#D80C20] mb-3">
-                <span>EXECUTIVE BIOGRAPHY</span>
-                <span className="text-slate-300">/</span>
-                <span className="text-slate-500">{director.regionSubtitle}</span>
-              </div>
+            <div className="flex-1 p-6 sm:p-9 lg:p-10 overflow-y-auto flex flex-col justify-between">
+              <div>
+                <div className="flex items-center gap-2 font-tech text-[10.5px] uppercase tracking-[0.22em] text-[#D80C20] mb-2.5 pr-8">
+                  <UserCheck size={13} />
+                  <span>EXECUTIVE PROFILE</span>
+                  <span className="text-slate-300">/</span>
+                  <span className="text-slate-500">{director.segments.join(' · ')}</span>
+                </div>
 
-              <h3 className="font-editorial font-bold text-3xl sm:text-4xl text-[#081530] leading-tight mb-5">
-                Leadership, Commercial Strategy &amp; Engineering Excellence
-              </h3>
+                <h3 className="font-editorial font-bold text-2xl sm:text-3xl text-[#123EB7] leading-tight mb-4">
+                  Leadership, Technical Vision &amp; Engineering Excellence
+                </h3>
 
-              <blockquote className="mb-7 pl-4 border-l-2 border-[#D80C20]">
-                <p className="font-editorial italic text-xl sm:text-2xl text-[#123EB7] leading-snug">
-                  “{director.quote}”
-                </p>
-              </blockquote>
-
-              <div className="space-y-5 font-jakarta text-[15.5px] leading-[1.85] text-slate-700">
-                {allParagraphs.map((para, idx) => (
-                  <p
-                    key={idx}
-                    className={
-                      idx === 0
-                        ? 'first-letter:font-cinzel first-letter:font-bold first-letter:text-5xl first-letter:text-[#D80C20] first-letter:float-left first-letter:mr-3 first-letter:leading-[0.82]'
-                        : ''
-                    }
-                  >
-                    {para}
+                <blockquote className="mb-6 pl-4 border-l-2 border-[#D80C20]">
+                  <p className="font-editorial italic text-lg sm:text-xl text-[#10254D] leading-snug">
+                    “{director.quote}”
                   </p>
-                ))}
+                </blockquote>
+
+                <div className="space-y-4 font-jakarta text-[14.5px] sm:text-[15px] leading-[1.82] text-slate-700">
+                  {allParagraphs.map((para, idx) => (
+                    <p
+                      key={idx}
+                      className={
+                        idx === 0
+                          ? 'first-letter:font-cinzel first-letter:font-bold first-letter:text-4xl first-letter:text-[#D80C20] first-letter:float-left first-letter:mr-2.5 first-letter:leading-[0.84]'
+                          : ''
+                      }
+                    >
+                      {para}
+                    </p>
+                  ))}
+                </div>
+
+                <div className="mt-7 pt-5 border-t border-[#EAE4D7]">
+                  <p className="font-tech text-[10px] uppercase tracking-[0.2em] text-slate-500 mb-2.5">
+                    Areas of Expertise
+                  </p>
+                  <div className="flex flex-wrap gap-1.5">
+                    {director.expertise.map((item) => (
+                      <span
+                        key={item}
+                        className="px-3 py-1 rounded-full bg-[#F4F1EA] border border-[#E4DEC9] font-jakarta text-xs font-medium text-[#081530]"
+                      >
+                        {item}
+                      </span>
+                    ))}
+                  </div>
+                </div>
               </div>
 
-              <div className="mt-8 pt-6 border-t border-[#EAE4D7]">
-                <p className="font-tech text-[10px] uppercase tracking-[0.2em] text-slate-500 mb-3">
-                  Areas of Expertise
-                </p>
-                <div className="flex flex-wrap gap-2">
-                  {director.expertise.map((item) => (
-                    <span
-                      key={item}
-                      className="px-3.5 py-1.5 rounded-full bg-[#F4F1EA] border border-[#E4DEC9] font-jakarta text-xs font-medium text-[#081530]"
-                    >
-                      {item}
-                    </span>
-                  ))}
+              {/* Modal Prev / Next Director Navigation */}
+              <div className="mt-7 pt-4 border-t border-[#EAE4D7] flex items-center justify-between gap-3">
+                <span className="font-tech text-[11px] uppercase tracking-[0.18em] text-slate-500">
+                  Director {String(activeIndex + 1).padStart(2, '0')} of{' '}
+                  {String(totalCount).padStart(2, '0')}
+                </span>
+                <div className="flex items-center gap-2">
+                  <button
+                    type="button"
+                    onClick={() => onStep(-1)}
+                    className="inline-flex items-center gap-1 px-3 py-1.5 rounded-full bg-[#F4F1EA] hover:bg-[#123EB7] text-[#123EB7] hover:text-white border border-[#E4DEC9] font-display text-xs font-semibold transition-colors cursor-pointer"
+                  >
+                    <ChevronLeft size={14} />
+                    <span>Prev</span>
+                  </button>
+                  <button
+                    type="button"
+                    onClick={() => onStep(1)}
+                    className="inline-flex items-center gap-1 px-3 py-1.5 rounded-full bg-[#F4F1EA] hover:bg-[#D80C20] text-[#D80C20] hover:text-white border border-[#E4DEC9] font-display text-xs font-semibold transition-colors cursor-pointer"
+                  >
+                    <span>Next</span>
+                    <ChevronRight size={14} />
+                  </button>
                 </div>
               </div>
             </div>
@@ -322,465 +330,76 @@ function DirectorProfileModal({ director, isOpen, onClose }) {
 }
 
 export default function BottomSection() {
-  const [activeIndex, setActiveIndex] = useState(0);
-  const [activeChapter, setActiveChapter] = useState('vision');
-  const [isModalOpen, setIsModalOpen] = useState(false);
-  const [isAutoPlay, setIsAutoPlay] = useState(true);
-  const [isHovered, setIsHovered] = useState(false);
-  const [elapsedMs, setElapsedMs] = useState(0);
-  const elapsedRef = useRef(0);
+  const [modalIndex, setModalIndex] = useState(null);
 
-  const selectedDirector = directors[activeIndex] || directors[0];
+  const selectedDirector =
+    modalIndex !== null ? directors[modalIndex] : null;
 
-  const handleSelectIndex = (index) => {
-    const safeIdx = ((index % directors.length) + directors.length) % directors.length;
-    elapsedRef.current = 0;
-    setElapsedMs(0);
-    setActiveIndex(safeIdx);
-    setActiveChapter('vision');
-  };
+  const handleClose = useCallback(() => {
+    setModalIndex(null);
+  }, []);
 
-  const handleStep = (delta) => {
-    handleSelectIndex(activeIndex + delta);
-  };
-
-  const handleSelectChapter = (chapterId) => {
-    elapsedRef.current = 0;
-    setElapsedMs(0);
-    setActiveChapter(chapterId);
-  };
-
-  useEffect(() => {
-    if (!isAutoPlay || isHovered || isModalOpen) return undefined;
-
-    const tick = 100;
-    const timer = setInterval(() => {
-      const next = elapsedRef.current + tick;
-      if (next >= SLIDE_DURATION_MS) {
-        elapsedRef.current = 0;
-        setElapsedMs(0);
-        setActiveIndex((prev) => (prev + 1) % directors.length);
-        setActiveChapter('vision');
-      } else {
-        elapsedRef.current = next;
-        setElapsedMs(next);
-      }
-    }, tick);
-
-    return () => clearInterval(timer);
-  }, [isAutoPlay, isHovered, isModalOpen]);
-
-  const progressPct = Math.min(100, (elapsedMs / SLIDE_DURATION_MS) * 100);
-  const remainingSec = Math.max(
-    1,
-    Math.ceil((SLIDE_DURATION_MS - elapsedMs) / 1000)
-  );
-
-  const allParagraphs = selectedDirector.chapters
-    ? selectedDirector.chapters.flatMap((c) => c.paragraphs)
-    : [];
-
-  const visibleParagraphs =
-    activeChapter === 'all'
-      ? allParagraphs
-      : selectedDirector.chapters?.find((c) => c.id === activeChapter)
-          ?.paragraphs || [];
+  const handleStep = useCallback((delta) => {
+    setModalIndex((prev) => {
+      if (prev === null) return 0;
+      return (prev + delta + directors.length) % directors.length;
+    });
+  }, []);
 
   return (
-    <section className="py-14 md:py-20 bg-[#F4F1EA] relative overflow-hidden">
-      {/* Subtle Organic Radial Accents (Distinct from Grid Sections) */}
-      <div className="absolute -top-40 -left-40 w-[460px] h-[460px] rounded-full bg-[#C9A86A]/10 blur-[110px] pointer-events-none" />
-      <div className="absolute -bottom-40 -right-40 w-[500px] h-[500px] rounded-full bg-[#123EB7]/8 blur-[120px] pointer-events-none" />
+    <section className="py-16 md:py-24 bg-[#F4F1EA] relative overflow-hidden">
+      {/* Subtle Organic Radial Accents */}
+      <div className="absolute -top-36 -left-36 w-[440px] h-[440px] rounded-full bg-[#C9A86A]/10 blur-[110px] pointer-events-none" />
+      <div className="absolute -bottom-36 -right-36 w-[480px] h-[480px] rounded-full bg-[#123EB7]/8 blur-[120px] pointer-events-none" />
 
-      <div className="container mx-auto px-4 md:px-6 max-w-[1140px] relative z-10">
+      <div className="container mx-auto px-4 md:px-6 max-w-[1260px] relative z-10">
         {/* Editorial Masthead Header */}
-        <div className="flex flex-col md:flex-row md:items-end justify-between gap-4 pb-5 mb-7 border-b border-[#DED6C4]">
-          <div>
-            <div className="inline-flex items-center gap-2 mb-2">
-              <span className="w-5 h-[2px] bg-[#D80C20]" />
-              <span className="font-tech text-[#123EB7] font-semibold uppercase tracking-[0.22em] text-[10.5px]">
-                OUR LEADERSHIP
-              </span>
-            </div>
-            <h2 className="text-3xl sm:text-4xl md:text-[44px] font-display font-bold text-[#081530] tracking-tight leading-[1.06]">
-              Meet Our{' '}
-              <span className="font-editorial italic font-bold text-[#D80C20] text-[1.12em] tracking-normal">
-                Directors
-              </span>
-            </h2>
-          </div>
-
-          <p className="font-jakarta text-slate-600 text-xs sm:text-sm leading-relaxed max-w-sm md:text-right">
-            Leadership combining deep mechanical &amp; MEP engineering discipline with market vision across Telangana &amp; Andhra Pradesh.
-          </p>
-        </div>
-
-        {/* COMPACT TWO-PAGE MAGAZINE SPREAD */}
-        <div
-          id="director-dossier"
-          onMouseEnter={() => setIsHovered(true)}
-          onMouseLeave={() => setIsHovered(false)}
-          className="rounded-3xl overflow-hidden bg-[#FFFDF9] border border-[#E4DEC9] shadow-[0_24px_60px_-20px_rgba(8,21,48,0.2)]"
-        >
-          <AnimatePresence mode="wait">
-            <motion.div
-              key={selectedDirector.id}
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              exit={{ opacity: 0 }}
-              transition={{ duration: 0.25 }}
-              className="grid grid-cols-1 lg:grid-cols-12"
-            >
-              {/* LEFT WING: OBSIDIAN SCULPTED PORTRAIT ARCH + CREDENTIALS */}
-              <div className="lg:col-span-4 bg-gradient-to-b from-[#081224] via-[#0B1933] to-[#071020] text-white p-5 sm:p-6 flex flex-col justify-between relative overflow-hidden">
-                {/* Ambient warm spotlight inside dark portrait wing */}
-                <div className="absolute -top-20 -left-20 w-56 h-56 rounded-full bg-[#C9A86A]/15 blur-[80px] pointer-events-none" />
-                <div className="absolute -bottom-20 -right-16 w-56 h-56 rounded-full bg-[#D80C20]/15 blur-[90px] pointer-events-none" />
-
-                {/* Top Wing Index Bar */}
-                <div className="relative z-10 flex items-center justify-between gap-2 mb-4">
-                  <span className="font-tech text-[10.5px] uppercase tracking-[0.22em] text-[#E5B973]">
-                    {selectedDirector.code}
-                  </span>
-                  <span className="font-tech text-[9.5px] uppercase tracking-[0.18em] text-slate-300/80 border border-white/15 px-2 py-0.5 rounded-full">
-                    Executive Board
-                  </span>
-                </div>
-
-                {/* COMPACT SCULPTED ARCH PORTRAIT */}
-                <div className="relative z-10 mx-auto w-full max-w-[225px] sm:max-w-[240px]">
-                  <div className="relative p-1.5 rounded-t-[96px] rounded-b-xl border border-[#C9A86A]/35 bg-white/[0.02]">
-                    <div className="relative aspect-[4/4.35] rounded-t-[90px] rounded-b-lg overflow-hidden bg-slate-900 shadow-xl">
-                      <img
-                        src={selectedDirector.image}
-                        alt={`${selectedDirector.name} — ${selectedDirector.role}`}
-                        className="w-full h-full object-cover object-top"
-                      />
-
-                      <div className="absolute inset-x-0 bottom-0 h-1/3 bg-gradient-to-t from-[#060E1D] via-[#060E1D]/65 to-transparent pointer-events-none" />
-
-                      <div className="absolute bottom-2.5 inset-x-3 flex items-end justify-between gap-2">
-                        <span className="font-editorial italic text-3xl font-bold text-white/90 leading-none block">
-                          {selectedDirector.number}
-                        </span>
-                        {selectedDirector.hasFullProfile && (
-                          <span className="px-2.5 py-0.5 rounded-full bg-[#D80C20] text-white font-tech text-[9.5px] font-semibold uppercase tracking-[0.14em] shadow-md">
-                            {selectedDirector.experience} Exp
-                          </span>
-                        )}
-                      </div>
-                    </div>
-                  </div>
-                </div>
-
-                {/* Hairline Academic & Affiliation Ledger Below Photo */}
-                {selectedDirector.hasFullProfile ? (
-                  <div className="relative z-10 mt-5 pt-4 border-t border-white/12 space-y-3.5">
-                    <div>
-                      <div className="flex items-center gap-1.5 font-tech text-[9.5px] uppercase tracking-[0.18em] text-[#E5B973] mb-1.5">
-                        <GraduationCap size={12} />
-                        <span>{selectedDirector.pedigreeLabel}</span>
-                      </div>
-                      <ul className="space-y-1">
-                        {selectedDirector.education.map((deg) => (
-                          <li
-                            key={deg}
-                            className="font-jakarta text-[12px] font-medium text-white flex items-start gap-2 leading-snug"
-                          >
-                            <span className="w-1.5 h-1.5 rounded-full bg-[#D80C20] mt-1.5 shrink-0" />
-                            <span>{deg}</span>
-                          </li>
-                        ))}
-                      </ul>
-                      {selectedDirector.pedigreeNote && (
-                        <p className="font-jakarta text-[11px] text-blue-200/80 mt-1.5 pl-3.5 leading-snug">
-                          {selectedDirector.pedigreeNote}
-                        </p>
-                      )}
-                    </div>
-
-                    <div className="pt-3 border-t border-white/10 flex flex-col gap-2">
-                      <div className="flex items-center gap-1.5 text-[11px] font-jakarta text-slate-200">
-                        <MapPin size={12} className="text-[#D80C20] shrink-0" />
-                        <span>{selectedDirector.regionSubtitle}</span>
-                      </div>
-
-                      <div className="flex items-center gap-1.5 flex-wrap">
-                        {selectedDirector.badges.map((badge) => (
-                          <span
-                            key={badge}
-                            className="inline-flex items-center gap-1 px-2 py-0.5 rounded-md border border-[#C9A86A]/45 bg-[#C9A86A]/10 font-tech text-[9.5px] font-semibold tracking-wider text-[#F5DDB0]"
-                          >
-                            <Award size={10} />
-                            {badge}
-                          </span>
-                        ))}
-                      </div>
-                    </div>
-                  </div>
-                ) : (
-                  <div className="relative z-10 mt-5 pt-4 border-t border-white/12 text-center">
-                    <span className="font-tech text-[10px] uppercase tracking-[0.2em] text-[#E5B973]">
-                      {selectedDirector.role} · {selectedDirector.company}
-                    </span>
-                  </div>
-                )}
-              </div>
-
-              {/* RIGHT WING: COMPACT IVORY MAGAZINE MANUSCRIPT SPREAD */}
-              <div className="lg:col-span-8 bg-[#FFFDF9] text-[#081530] p-5 sm:p-7 lg:p-8 flex flex-col justify-between relative">
-                {/* Watermark Monogram */}
-                <span
-                  aria-hidden="true"
-                  className="hidden sm:block absolute top-3 right-6 font-editorial italic font-bold text-[105px] leading-none text-[#081530]/[0.03] select-none pointer-events-none"
-                >
-                  {selectedDirector.monogram}
-                </span>
-
-                {selectedDirector.hasFullProfile ? (
-                  <>
-                    <div className="relative z-10">
-                      {/* Top Strip */}
-                      <div className="flex flex-wrap items-center justify-between gap-2 mb-3">
-                        <div className="flex items-center gap-2">
-                          <span className="w-6 h-[2px] bg-[#D80C20]" />
-                          <span className="font-tech text-[10.5px] font-semibold uppercase tracking-[0.2em] text-[#D80C20]">
-                            {selectedDirector.role}
-                          </span>
-                        </div>
-
-                        <button
-                          type="button"
-                          onClick={() => setIsModalOpen(true)}
-                          className="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full bg-[#081224] hover:bg-[#123EB7] text-white font-display text-[11px] font-semibold tracking-wide transition-colors shadow-xs cursor-pointer"
-                        >
-                          <BookOpen size={12} />
-                          <span>Full Profile View</span>
-                        </button>
-                      </div>
-
-                      {/* Chiselled Executive Display Name */}
-                      <h3 className="font-cinzel font-bold text-2xl sm:text-[28px] lg:text-[32px] tracking-[0.03em] leading-[1.16]">
-                        <TwoToneDirectorName
-                          name={selectedDirector.name}
-                          credential={selectedDirector.credential}
-                        />
-                      </h3>
-
-                      <p className="font-display text-xs sm:text-[13.5px] font-medium text-slate-600 mt-1.5">
-                        {selectedDirector.company}
-                        <span className="mx-2 text-[#C9A86A]">•</span>
-                        <span className="text-[#123EB7] font-semibold">
-                          {selectedDirector.segments.join(' · ')}
-                        </span>
-                      </p>
-
-                      {/* Compact Editorial Pull Quote */}
-                      <blockquote className="my-4 py-3 border-y border-[#EAE4D7] flex items-start gap-2.5">
-                        <span
-                          aria-hidden="true"
-                          className="font-editorial font-bold text-4xl leading-[0.8] text-[#D80C20] select-none pt-0.5"
-                        >
-                          “
-                        </span>
-                        <p className="font-editorial italic font-semibold text-lg sm:text-[19px] leading-[1.35] text-[#10254D]">
-                          {selectedDirector.quote}”
-                        </p>
-                      </blockquote>
-
-                      {/* Editorial Underline Chapter Navigation */}
-                      <div className="flex flex-wrap items-center gap-x-4 gap-y-1.5 border-b border-[#EAE4D7] mb-4">
-                        {selectedDirector.chapters.map((chapter) => {
-                          const selected = activeChapter === chapter.id;
-                          return (
-                            <button
-                              key={chapter.id}
-                              type="button"
-                              onClick={() => handleSelectChapter(chapter.id)}
-                              className={`pb-2 -mb-px font-display text-[11.5px] sm:text-xs tracking-wide transition-all cursor-pointer border-b-2 ${
-                                selected
-                                  ? 'border-[#D80C20] text-[#081530] font-bold'
-                                  : 'border-transparent text-slate-500 hover:text-[#081530] font-medium'
-                              }`}
-                            >
-                              {chapter.shortLabel}
-                            </button>
-                          );
-                        })}
-                        <button
-                          type="button"
-                          onClick={() => handleSelectChapter('all')}
-                          className={`pb-2 -mb-px font-tech text-[10.5px] uppercase tracking-wider transition-all cursor-pointer border-b-2 ${
-                            activeChapter === 'all'
-                              ? 'border-[#123EB7] text-[#123EB7] font-semibold'
-                              : 'border-transparent text-slate-500 hover:text-[#123EB7]'
-                          }`}
-                        >
-                          Complete Bio
-                        </button>
-                      </div>
-
-                      {/* Compact Flowing Bio Copy */}
-                      <AnimatePresence mode="wait">
-                        <motion.div
-                          key={activeChapter}
-                          initial={{ opacity: 0, y: 5 }}
-                          animate={{ opacity: 1, y: 0 }}
-                          exit={{ opacity: 0, y: -4 }}
-                          transition={{ duration: 0.2 }}
-                          className="space-y-3 font-jakarta text-[13.5px] sm:text-[14px] leading-[1.72] text-slate-700"
-                        >
-                          {visibleParagraphs.map((paragraph, idx) => (
-                            <p
-                              key={idx}
-                              className={
-                                idx === 0
-                                  ? 'first-letter:font-cinzel first-letter:font-bold first-letter:text-3xl first-letter:text-[#D80C20] first-letter:float-left first-letter:mr-2 first-letter:leading-[0.88]'
-                                  : ''
-                              }
-                            >
-                              {paragraph}
-                            </p>
-                          ))}
-                        </motion.div>
-                      </AnimatePresence>
-                    </div>
-
-                    {/* Compact Expertise Footer */}
-                    <div className="relative z-10 mt-5 pt-4 border-t border-[#EAE4D7]">
-                      <div className="flex items-center justify-between flex-wrap gap-2 mb-2">
-                        <span className="font-tech text-[9.5px] uppercase tracking-[0.2em] text-slate-500">
-                          Core Expertise &amp; Industry Scope
-                        </span>
-                        <span className="inline-flex items-center gap-1 font-tech text-[9.5px] uppercase tracking-wider text-emerald-700">
-                          <CheckCircle2 size={11} />
-                          Verified Executive Dossier
-                        </span>
-                      </div>
-                      <div className="flex flex-wrap gap-1.5">
-                        {selectedDirector.expertise.map((skill) => (
-                          <span
-                            key={skill}
-                            className="px-2.5 py-0.5 rounded-full bg-[#F4F1EA] border border-[#E4DEC9] font-jakarta text-[11px] font-medium text-[#081530]"
-                          >
-                            {skill}
-                          </span>
-                        ))}
-                      </div>
-                    </div>
-                  </>
-                ) : (
-                  /* Dignified Editorial Placeholder when selecting other directors */
-                  <div className="relative z-10 flex-1 flex flex-col justify-center py-8">
-                    <div className="flex items-center gap-2.5 mb-4">
-                      <span className="w-7 h-[2px] bg-[#123EB7]" />
-                      <span className="font-tech text-[11px] font-semibold uppercase tracking-[0.22em] text-[#123EB7]">
-                        {selectedDirector.code} · {selectedDirector.role}
-                      </span>
-                    </div>
-
-                    <h3 className="font-cinzel font-bold text-3xl sm:text-4xl lg:text-[44px] tracking-[0.04em] leading-tight">
-                      <TwoToneDirectorName name={selectedDirector.name} />
-                    </h3>
-
-                    <p className="font-display text-base text-slate-600 mt-2.5">
-                      {selectedDirector.company}
-                    </p>
-
-                    <div className="mt-8 p-6 rounded-2xl bg-[#F4F1EA] border border-[#E4DEC9]">
-                      <p className="font-editorial italic text-xl text-[#123EB7] mb-2">
-                        Executive Dossier Coming Soon
-                      </p>
-                      <p className="font-jakarta text-sm text-slate-600 leading-relaxed">
-                        Detailed credentials, engineering background, and leadership biography for{' '}
-                        <span className="font-semibold">
-                          <TwoToneDirectorName name={selectedDirector.name} />
-                        </span>{' '}
-                        are being curated for this executive showcase.
-                      </p>
-                    </div>
-                  </div>
-                )}
-              </div>
-            </motion.div>
-          </AnimatePresence>
-        </div>
-
-        {/* BOARD OF DIRECTORS INTERACTIVE SELECTOR DOCK */}
-        <div className="mt-6">
-          <div className="flex flex-wrap items-center justify-between gap-3 mb-3 px-1">
-            <span className="font-tech text-[10.5px] uppercase tracking-[0.22em] text-slate-500">
-              Board of Directors · Select Member
+        <div className="text-center max-w-2xl mx-auto mb-12">
+          <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-white border border-[#E5DEC9] shadow-2xs mb-4">
+            <span className="w-2 h-2 rounded-full bg-[#D80C20]" />
+            <span className="font-tech text-[#123EB7] font-semibold uppercase tracking-[0.22em] text-[10.5px]">
+              OUR LEADERSHIP
             </span>
-
-            {/* Auto-Slide 10s + Step Controls */}
-            <div className="flex items-center gap-2">
-              <button
-                type="button"
-                onClick={() => handleStep(-1)}
-                aria-label="Previous director"
-                className="w-8 h-8 rounded-full bg-white hover:bg-[#081224] text-[#081530] hover:text-white border border-[#E5DEC9] flex items-center justify-center transition-colors shadow-xs cursor-pointer"
-              >
-                <ChevronLeft size={15} />
-              </button>
-
-              <button
-                type="button"
-                onClick={() => setIsAutoPlay((prev) => !prev)}
-                aria-pressed={isAutoPlay}
-                className={`inline-flex items-center gap-2 px-3 py-1.5 rounded-full border font-tech text-[10.5px] uppercase tracking-[0.14em] transition-all cursor-pointer ${
-                  isAutoPlay
-                    ? 'bg-[#081224] text-white border-[#081224] shadow-xs'
-                    : 'bg-white text-slate-600 border-[#E5DEC9] hover:text-[#081530]'
-                }`}
-              >
-                {isAutoPlay ? (
-                  <>
-                    <Pause size={11} className="text-[#E5B973]" />
-                    <span>
-                      {isHovered || isModalOpen
-                        ? 'Paused · 10s'
-                        : `Auto · ${String(remainingSec).padStart(2, '0')}s`}
-                    </span>
-                  </>
-                ) : (
-                  <>
-                    <Play size={11} className="text-[#D80C20]" />
-                    <span>Auto Slide Off</span>
-                  </>
-                )}
-              </button>
-
-              <button
-                type="button"
-                onClick={() => handleStep(1)}
-                aria-label="Next director"
-                className="w-8 h-8 rounded-full bg-white hover:bg-[#081224] text-[#081530] hover:text-white border border-[#E5DEC9] flex items-center justify-center transition-colors shadow-xs cursor-pointer"
-              >
-                <ChevronRight size={15} />
-              </button>
-            </div>
           </div>
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-4">
-            {directors.map((director, idx) => (
-              <BoardDockCard
-                key={director.id}
-                director={director}
-                isActive={idx === activeIndex}
-                progressPct={progressPct}
-                isAutoPlay={isAutoPlay}
-                onSelect={() => handleSelectIndex(idx)}
-              />
-            ))}
+
+          <h2 className="text-3xl sm:text-4xl md:text-[46px] font-display font-bold tracking-tight leading-[1.08] mb-4">
+            <span className="text-[#123EB7]">Meet Our</span>{' '}
+            <span className="font-editorial italic font-bold text-[#D80C20] text-[1.12em] tracking-normal">
+              Directors
+            </span>
+          </h2>
+
+          <p className="font-jakarta text-slate-600 text-sm sm:text-[15px] leading-relaxed">
+            Click on any Founder &amp; Director portrait below to explore their complete engineering credentials and leadership profile.
+          </p>
+
+          <div className="w-20 h-1 mx-auto mt-6 flex rounded-full overflow-hidden">
+            <div className="w-1/2 h-full bg-[#D80C20]" />
+            <div className="w-1/2 h-full bg-[#123EB7]" />
           </div>
+        </div>
+
+        {/* 4-Column Simple Portrait Gallery */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+          {directors.map((director, index) => (
+            <DirectorCard
+              key={director.id}
+              director={director}
+              index={index}
+              onOpen={() => setModalIndex(index)}
+            />
+          ))}
         </div>
       </div>
 
-      {/* Full-Screen Reading Modal */}
+      {/* Click-Triggered Executive Profile Modal */}
       <DirectorProfileModal
         director={selectedDirector}
-        isOpen={isModalOpen}
-        onClose={() => setIsModalOpen(false)}
+        activeIndex={modalIndex ?? 0}
+        totalCount={directors.length}
+        isOpen={modalIndex !== null}
+        onClose={handleClose}
+        onStep={handleStep}
       />
     </section>
   );

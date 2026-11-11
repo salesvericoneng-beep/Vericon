@@ -12,7 +12,7 @@ import {
 } from 'lucide-react';
 import { directors } from '../../data/directors';
 
-function TwoToneDirectorName({ name, credential = null, darkSurface = false, compact = false }) {
+function TwoToneDirectorName({ name, credential = null, darkSurface = false }) {
   const words = name.trim().split(/\s+/);
   const surname = words.length > 1 ? words.pop() : '';
   const lead = words.join(' ');
@@ -32,11 +32,7 @@ function TwoToneDirectorName({ name, credential = null, darkSurface = false, com
       )}
       {credential && (
         <span
-          className={`whitespace-nowrap ${credColor} ${
-            compact
-              ? 'text-[0.84em] font-semibold'
-              : 'text-[0.62em] font-tech tracking-wider ml-1.5 align-middle'
-          }`}
+          className={`whitespace-nowrap ${credColor} text-[0.62em] font-tech tracking-wider ml-1.5 align-middle`}
         >
           , {credential}
         </span>
@@ -76,34 +72,11 @@ function DirectorCard({ director, index, onOpen }) {
         </div>
       </div>
 
-      {/* Card Footer */}
-      <div className="p-5 flex-1 flex flex-col justify-between text-center bg-[#FFFDF9]">
-        <div>
-          <p className="font-tech text-[10px] font-semibold uppercase tracking-[0.2em] text-[#D80C20] mb-1.5">
-            {director.role}
-          </p>
-
-          <h3 className="font-cinzel font-bold text-[16px] sm:text-[17px] leading-snug">
-            <TwoToneDirectorName
-              name={director.name}
-              credential={director.credential}
-              compact
-            />
-          </h3>
-
-          <p className="font-jakarta text-xs text-slate-600 mt-2 line-clamp-1">
-            {director.education[0]}
-          </p>
-        </div>
-
-        {/* Subtle Bottom Cue */}
-        <div className="mt-4 pt-3 border-t border-[#EAE4D7] flex items-center justify-center gap-1.5 font-display text-xs font-semibold text-[#123EB7] group-hover:text-[#D80C20] transition-colors">
-          <span>Read Profile</span>
-          <ArrowUpRight
-            size={14}
-            className="transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5"
-          />
-        </div>
+      {/* Card Footer — Name Only in Black */}
+      <div className="px-4 py-5 flex-1 flex items-center justify-center text-center bg-[#FFFDF9]">
+        <h3 className="font-cinzel font-bold text-[15px] sm:text-base text-black tracking-wide leading-snug">
+          {director.name}
+        </h3>
       </div>
     </motion.button>
   );

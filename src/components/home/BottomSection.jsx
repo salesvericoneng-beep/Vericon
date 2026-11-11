@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import {
   GraduationCap,
@@ -22,7 +22,7 @@ function BoardDockCard({ director, isActive, progressPct, isAutoPlay, onSelect }
   return (
     <button
       type="button"
-      onClick={() => onSelect(director)}
+      onClick={onSelect}
       aria-pressed={isActive}
       className={`group relative text-left rounded-2xl p-3 sm:p-4 overflow-hidden transition-all duration-300 flex items-center gap-3.5 border cursor-pointer focus:outline-none focus-visible:ring-2 focus-visible:ring-[#123EB7] ${
         isActive
@@ -282,32 +282,32 @@ function DirectorProfileModal({ director, isOpen, onClose }) {
 }
 
 export default function BottomSection() {
-  const [selectedId, setSelectedId] = useState(directors[0].id);
+  const [activeIndex, setActiveIndex] = useState(0);
   const [activeChapter, setActiveChapter] = useState('vision');
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [isAutoPlay, setIsAutoPlay] = useState(true);
   const [isHovered, setIsHovered] = useState(false);
   const [elapsedMs, setElapsedMs] = useState(0);
+  const elapsedRef = useRef(0);
 
-  const selectedIndex = directors.findIndex((d) => d.id === selectedId);
-  const selectedDirector =
-    selectedIndex >= 0 ? directors[selectedIndex] : directors[0];
+  const selectedDirector = directors[activeIndex] || directors[0];
 
-  const handleSelectDirector = (director) => {
-    setSelectedId(director.id);
-    setActiveChapter('vision');
+  const handleSelectIndex = (index) => {
+    const safeIdx = ((index % directors.length) + directors.length) % directors.length;
+    elapsedRef.current = 0;
     setElapsedMs(0);
+    setActiveIndex(safeIdx);
+    setActiveChapter('vision');
   };
 
   const handleStep = (delta) => {
-    const currentIdx = selectedIndex >= 0 ? selectedIndex : 0;
-    const nextIdx = (currentIdx + delta + directors.length) % directors.length;
-    handleSelectDirector(directors[nextIdx]);
+    handleSelectIndex(activeIndex + delta);
   };
 
   const handleSelectChapter = (chapterId) => {
-    setActiveChapter(chapterId);
+    elapsedRef.current = 0;
     setElapsedMs(0);
+    setActiveChapter(chapterId);
   };
 
   useEffect(() => {
@@ -315,22 +315,20 @@ export default function BottomSection() {
 
     const tick = 100;
     const timer = setInterval(() => {
-      setElapsedMs((prev) => prev + tick);
+      const next = elapsedRef.current + tick;
+      if (next >= SLIDE_DURATION_MS) {
+        elapsedRef.current = 0;
+        setElapsedMs(0);
+        setActiveIndex((prev) => (prev + 1) % directors.length);
+        setActiveChapter('vision');
+      } else {
+        elapsedRef.current = next;
+        setElapsedMs(next);
+      }
     }, tick);
 
     return () => clearInterval(timer);
   }, [isAutoPlay, isHovered, isModalOpen]);
-
-  useEffect(() => {
-    if (elapsedMs < SLIDE_DURATION_MS) return;
-    setSelectedId((currId) => {
-      const idx = directors.findIndex((d) => d.id === currId);
-      const next = directors[(idx + 1) % directors.length];
-      return next.id;
-    });
-    setActiveChapter('vision');
-    setElapsedMs(0);
-  }, [elapsedMs]);
 
   const progressPct = Math.min(100, (elapsedMs / SLIDE_DURATION_MS) * 100);
   const remainingSec = Math.max(
@@ -724,14 +722,14 @@ export default function BottomSection() {
             </div>
           </div>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-4">
-            {directors.map((director) => (
+            {directors.map((director, idx) => (
               <BoardDockCard
                 key={director.id}
                 director={director}
-                isActive={director.id === selectedId}
+                isActive={idx === activeIndex}
                 progressPct={progressPct}
                 isAutoPlay={isAutoPlay}
-                onSelect={handleSelectDirector}
+                onSelect={() => handleSelectIndex(idx)}
               />
             ))}
           </div>

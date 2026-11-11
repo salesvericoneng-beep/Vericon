@@ -1,6 +1,10 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { MapPin, Phone, Mail, Globe } from 'lucide-react';
+
+// Show developer credit for 3 months from 2026-11-11 (automatically hides after 2027-02-11 IST)
+const DEVELOPER_CREDIT_EXPIRY_MS = new Date('2027-02-11T23:59:59+05:30').getTime();
+const MAX_TIMEOUT_MS = 2_147_483_647;
 
 const quickLinks = [
   { name: 'Home', path: '/' },
@@ -74,6 +78,22 @@ const socials = [
 ];
 
 export default function Footer() {
+  const [showDeveloperCredit, setShowDeveloperCredit] = useState(
+    () => Date.now() <= DEVELOPER_CREDIT_EXPIRY_MS
+  );
+
+  useEffect(() => {
+    const remaining = DEVELOPER_CREDIT_EXPIRY_MS - Date.now();
+    if (remaining <= 0) {
+      setShowDeveloperCredit(false);
+      return undefined;
+    }
+    if (remaining > MAX_TIMEOUT_MS) return undefined;
+
+    const timer = setTimeout(() => setShowDeveloperCredit(false), remaining);
+    return () => clearTimeout(timer);
+  }, []);
+
   return (
     <footer className="relative bg-[#050D1A] text-white overflow-hidden">
 
@@ -231,21 +251,23 @@ export default function Footer() {
             © 2026 <span className="text-white font-semibold">VERICON Engineering Private Limited.</span> All Rights Reserved.
           </p>
 
-          {/* Highlighted Developer Credit */}
-          <div className="inline-flex items-center flex-wrap justify-center gap-2 px-4 py-1.5 rounded-full bg-gradient-to-r from-brand-blue/20 via-brand-red/15 to-brand-blue/20 border border-brand-red/50 shadow-[0_0_15px_rgba(206,17,38,0.25)] hover:border-brand-red transition-all">
-            <span className="text-gray-300 text-xs sm:text-sm font-medium">Developed by</span>
-            <span className="text-white font-extrabold text-xs sm:text-sm tracking-wide drop-shadow-sm">
-              S. Balaji Projects
-            </span>
-            <span className="text-brand-red/70 font-bold">•</span>
-            <a 
-              href="tel:9030545655" 
-              className="inline-flex items-center gap-1.5 bg-brand-red hover:bg-red-700 text-white text-xs font-bold px-3 py-1 rounded-full transition-all shadow-md hover:shadow-red-500/30 hover:scale-105 active:scale-95"
-            >
-              <Phone size={12} className="fill-white" />
-              <span>9030545655</span>
-            </a>
-          </div>
+          {/* Highlighted Developer Credit — auto-expires 3 months from 2026-11-11 */}
+          {showDeveloperCredit && (
+            <div className="inline-flex items-center flex-wrap justify-center gap-2 px-4 py-1.5 rounded-full bg-gradient-to-r from-brand-blue/20 via-brand-red/15 to-brand-blue/20 border border-brand-red/50 shadow-[0_0_15px_rgba(206,17,38,0.25)] hover:border-brand-red transition-all">
+              <span className="text-gray-300 text-xs sm:text-sm font-medium">Developed by</span>
+              <span className="text-white font-extrabold text-xs sm:text-sm tracking-wide drop-shadow-sm">
+                S. Balaji Projects
+              </span>
+              <span className="text-brand-red/70 font-bold">•</span>
+              <a 
+                href="tel:9030545655" 
+                className="inline-flex items-center gap-1.5 bg-brand-red hover:bg-red-700 text-white text-xs font-bold px-3 py-1 rounded-full transition-all shadow-md hover:shadow-red-500/30 hover:scale-105 active:scale-95"
+              >
+                <Phone size={12} className="fill-white" />
+                <span>9030545655</span>
+              </a>
+            </div>
+          )}
 
           <div className="flex items-center gap-5 text-xs sm:text-sm text-gray-400 font-medium">
             <Link to="#" className="hover:text-white transition-colors">Privacy Policy</Link>

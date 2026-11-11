@@ -9,9 +9,8 @@ const MAX_TIMEOUT_MS = 2_147_483_647;
 const quickLinks = [
   { name: 'Home', path: '/' },
   { name: 'About Us', path: '/about' },
-  { name: 'Services', path: '/services' },
-  { name: 'Specialized Audits', path: '/projects' },
-  { name: 'Why VERICON', path: '/why-vericon' },
+  { name: 'Projects', path: '/services' },
+  { name: 'Services', path: '/projects' },
   { name: 'Contact Us', path: '/contact' },
 ];
 

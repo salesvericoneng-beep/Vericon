@@ -9,16 +9,22 @@ import {
   CheckCircle2,
   ArrowUpRight,
   Sparkles,
+  Play,
+  Pause,
+  ChevronLeft,
+  ChevronRight,
 } from 'lucide-react';
 import { directors } from '../../data/directors';
 
-function BoardDockCard({ director, isActive, onSelect }) {
+const SLIDE_DURATION_MS = 10000;
+
+function BoardDockCard({ director, isActive, progressPct, isAutoPlay, onSelect }) {
   return (
     <button
       type="button"
       onClick={() => onSelect(director)}
       aria-pressed={isActive}
-      className={`group relative text-left rounded-2xl p-3 sm:p-4 transition-all duration-300 flex items-center gap-3.5 border cursor-pointer focus:outline-none focus-visible:ring-2 focus-visible:ring-[#123EB7] ${
+      className={`group relative text-left rounded-2xl p-3 sm:p-4 overflow-hidden transition-all duration-300 flex items-center gap-3.5 border cursor-pointer focus:outline-none focus-visible:ring-2 focus-visible:ring-[#123EB7] ${
         isActive
           ? 'bg-[#081224] text-white border-[#081224] shadow-[0_18px_38px_-12px_rgba(8,18,36,0.45)] -translate-y-0.5'
           : 'bg-white/95 hover:bg-white text-[#081530] border-[#E5DEC9] hover:border-[#123EB7]/40 hover:shadow-md'
@@ -95,6 +101,19 @@ function BoardDockCard({ director, isActive, onSelect }) {
             : 'text-slate-400 group-hover:text-[#123EB7] group-hover:translate-x-0.5 group-hover:-translate-y-0.5'
         }`}
       />
+
+      {/* 10-Second Auto-Slide Progress Bar on Active Card */}
+      {isActive && isAutoPlay && (
+        <span
+          aria-hidden="true"
+          className="absolute bottom-0 left-0 right-0 h-[3px] bg-white/10"
+        >
+          <span
+            className="block h-full bg-gradient-to-r from-[#D80C20] to-[#E5B973] transition-[width] duration-100 ease-linear"
+            style={{ width: `${progressPct}%` }}
+          />
+        </span>
+      )}
     </button>
   );
 }
@@ -266,14 +285,58 @@ export default function BottomSection() {
   const [selectedId, setSelectedId] = useState(directors[0].id);
   const [activeChapter, setActiveChapter] = useState('vision');
   const [isModalOpen, setIsModalOpen] = useState(false);
+  const [isAutoPlay, setIsAutoPlay] = useState(true);
+  const [isHovered, setIsHovered] = useState(false);
+  const [elapsedMs, setElapsedMs] = useState(0);
 
+  const selectedIndex = directors.findIndex((d) => d.id === selectedId);
   const selectedDirector =
-    directors.find((d) => d.id === selectedId) || directors[0];
+    selectedIndex >= 0 ? directors[selectedIndex] : directors[0];
 
   const handleSelectDirector = (director) => {
     setSelectedId(director.id);
     setActiveChapter('vision');
+    setElapsedMs(0);
   };
+
+  const handleStep = (delta) => {
+    const currentIdx = selectedIndex >= 0 ? selectedIndex : 0;
+    const nextIdx = (currentIdx + delta + directors.length) % directors.length;
+    handleSelectDirector(directors[nextIdx]);
+  };
+
+  const handleSelectChapter = (chapterId) => {
+    setActiveChapter(chapterId);
+    setElapsedMs(0);
+  };
+
+  useEffect(() => {
+    if (!isAutoPlay || isHovered || isModalOpen) return undefined;
+
+    const tick = 100;
+    const timer = setInterval(() => {
+      setElapsedMs((prev) => prev + tick);
+    }, tick);
+
+    return () => clearInterval(timer);
+  }, [isAutoPlay, isHovered, isModalOpen]);
+
+  useEffect(() => {
+    if (elapsedMs < SLIDE_DURATION_MS) return;
+    setSelectedId((currId) => {
+      const idx = directors.findIndex((d) => d.id === currId);
+      const next = directors[(idx + 1) % directors.length];
+      return next.id;
+    });
+    setActiveChapter('vision');
+    setElapsedMs(0);
+  }, [elapsedMs]);
+
+  const progressPct = Math.min(100, (elapsedMs / SLIDE_DURATION_MS) * 100);
+  const remainingSec = Math.max(
+    1,
+    Math.ceil((SLIDE_DURATION_MS - elapsedMs) / 1000)
+  );
 
   const allParagraphs = selectedDirector.chapters
     ? selectedDirector.chapters.flatMap((c) => c.paragraphs)
@@ -317,6 +380,8 @@ export default function BottomSection() {
         {/* MONUMENTAL TWO-PAGE MAGAZINE SPREAD */}
         <div
           id="director-dossier"
+          onMouseEnter={() => setIsHovered(true)}
+          onMouseLeave={() => setIsHovered(false)}
           className="rounded-[2rem] overflow-hidden bg-[#FFFDF9] border border-[#E4DEC9] shadow-[0_32px_80px_-22px_rgba(8,21,48,0.22)]"
         >
           <AnimatePresence mode="wait">
@@ -493,7 +558,7 @@ export default function BottomSection() {
                             <button
                               key={chapter.id}
                               type="button"
-                              onClick={() => setActiveChapter(chapter.id)}
+                              onClick={() => handleSelectChapter(chapter.id)}
                               className={`pb-3 -mb-px font-display text-xs sm:text-[13px] tracking-wide transition-all cursor-pointer border-b-2 ${
                                 selected
                                   ? 'border-[#D80C20] text-[#081530] font-bold'
@@ -506,7 +571,7 @@ export default function BottomSection() {
                         })}
                         <button
                           type="button"
-                          onClick={() => setActiveChapter('all')}
+                          onClick={() => handleSelectChapter('all')}
                           className={`pb-3 -mb-px font-tech text-[11px] uppercase tracking-wider transition-all cursor-pointer border-b-2 ${
                             activeChapter === 'all'
                               ? 'border-[#123EB7] text-[#123EB7] font-semibold'
@@ -605,13 +670,58 @@ export default function BottomSection() {
 
         {/* BOARD OF DIRECTORS INTERACTIVE SELECTOR DOCK */}
         <div className="mt-6">
-          <div className="flex items-center justify-between mb-3 px-1">
+          <div className="flex flex-wrap items-center justify-between gap-3 mb-3 px-1">
             <span className="font-tech text-[10.5px] uppercase tracking-[0.22em] text-slate-500">
               Board of Directors · Select Member
             </span>
-            <span className="font-tech text-[10.5px] uppercase tracking-[0.18em] text-[#123EB7]">
-              01 — 04
-            </span>
+
+            {/* Auto-Slide 10s + Step Controls */}
+            <div className="flex items-center gap-2">
+              <button
+                type="button"
+                onClick={() => handleStep(-1)}
+                aria-label="Previous director"
+                className="w-8 h-8 rounded-full bg-white hover:bg-[#081224] text-[#081530] hover:text-white border border-[#E5DEC9] flex items-center justify-center transition-colors shadow-xs cursor-pointer"
+              >
+                <ChevronLeft size={15} />
+              </button>
+
+              <button
+                type="button"
+                onClick={() => setIsAutoPlay((prev) => !prev)}
+                aria-pressed={isAutoPlay}
+                className={`inline-flex items-center gap-2 px-3 py-1.5 rounded-full border font-tech text-[10.5px] uppercase tracking-[0.14em] transition-all cursor-pointer ${
+                  isAutoPlay
+                    ? 'bg-[#081224] text-white border-[#081224] shadow-xs'
+                    : 'bg-white text-slate-600 border-[#E5DEC9] hover:text-[#081530]'
+                }`}
+              >
+                {isAutoPlay ? (
+                  <>
+                    <Pause size={11} className="text-[#E5B973]" />
+                    <span>
+                      {isHovered || isModalOpen
+                        ? 'Paused · 10s'
+                        : `Auto · ${String(remainingSec).padStart(2, '0')}s`}
+                    </span>
+                  </>
+                ) : (
+                  <>
+                    <Play size={11} className="text-[#D80C20]" />
+                    <span>Auto Slide Off</span>
+                  </>
+                )}
+              </button>
+
+              <button
+                type="button"
+                onClick={() => handleStep(1)}
+                aria-label="Next director"
+                className="w-8 h-8 rounded-full bg-white hover:bg-[#081224] text-[#081530] hover:text-white border border-[#E5DEC9] flex items-center justify-center transition-colors shadow-xs cursor-pointer"
+              >
+                <ChevronRight size={15} />
+              </button>
+            </div>
           </div>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-4">
             {directors.map((director) => (
@@ -619,6 +729,8 @@ export default function BottomSection() {
                 key={director.id}
                 director={director}
                 isActive={director.id === selectedId}
+                progressPct={progressPct}
+                isAutoPlay={isAutoPlay}
                 onSelect={handleSelectDirector}
               />
             ))}

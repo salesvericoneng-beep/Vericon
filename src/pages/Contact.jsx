@@ -99,6 +99,11 @@ export default function Contact() {
       
       const data = await response.json();
       if (response.ok) {
+        if (typeof window.gtag === 'function') {
+          window.gtag('event', 'generate_lead', {
+            inquiry_type: selectedInquiries.join(', '),
+          });
+        }
         setSubmitStatus({ type: 'success', message: 'Thank you! Your message has been sent successfully.' });
         setFormData({ name: '', email: '', phone: '', company: '', message: '' });
         setSelectedInquiries([]);

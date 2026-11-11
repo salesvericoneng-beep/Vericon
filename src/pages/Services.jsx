@@ -134,13 +134,13 @@ export default function Services() {
           >
             <h1 className="text-5xl md:text-6xl font-extrabold mb-4 tracking-tight">
               <span className="text-brand-blue">OUR </span>
-              <span className="text-brand-red">SERVICES</span>
+              <span className="text-brand-red">PROJECTS</span>
             </h1>
             <h2 className="text-2xl md:text-3xl font-bold text-brand-blue mb-4">
-              Turnkey MEP Engineering<br /><span className="text-brand-red">Solutions for Telangana &amp; Andhra Pradesh</span>
+              Turnkey MEP Engineering <span className="text-brand-red">Solutions</span>
             </h2>
             <p className="text-gray-700 text-sm md:text-base font-medium max-w-xl">
-              From centralized HVAC and industrial power distribution to fire safety and PHE systems, VERICON delivers end-to-end engineering excellence compliant with TG-bPASS, APCRDA, and NBC standards.
+              From centralized HVAC and industrial power distribution to fire safety and PHE systems, VERICON delivers end-to-end engineering excellence.
             </p>
           </motion.div>
         </div>

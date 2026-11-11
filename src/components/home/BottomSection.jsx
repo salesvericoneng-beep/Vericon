@@ -8,35 +8,6 @@ import {
 } from 'lucide-react';
 import { directors } from '../../data/directors';
 
-function TwoToneDirectorName({ name, credential = null, darkSurface = false }) {
-  const words = name.trim().split(/\s+/);
-  const surname = words.length > 1 ? words.pop() : '';
-  const lead = words.join(' ');
-
-  const leadColor = darkSurface ? 'text-[#7DD3FC]' : 'text-[#123EB7]';
-  const surnameColor = darkSurface ? 'text-[#FF6B79]' : 'text-[#D80C20]';
-  const credColor = darkSurface ? 'text-[#E5B973]' : 'text-[#9A6B16]';
-
-  return (
-    <>
-      <span className={leadColor}>{lead}</span>
-      {surname && (
-        <>
-          {' '}
-          <span className={surnameColor}>{surname}</span>
-        </>
-      )}
-      {credential && (
-        <span
-          className={`whitespace-nowrap ${credColor} text-[0.62em] font-tech tracking-wider ml-1.5 align-middle`}
-        >
-          , {credential}
-        </span>
-      )}
-    </>
-  );
-}
-
 function DirectorCard({ director, index, onOpen }) {
   return (
     <motion.button
@@ -75,7 +46,7 @@ function DirectorCard({ director, index, onOpen }) {
   );
 }
 
-function DirectorProfileModal({ director, activeIndex, totalCount, isOpen, onClose, onStep }) {
+function DirectorProfileModal({ director, isOpen, onClose, onStep }) {
   useEffect(() => {
     if (!isOpen) return undefined;
 
@@ -118,7 +89,7 @@ function DirectorProfileModal({ director, activeIndex, totalCount, isOpen, onClo
             exit={{ opacity: 0, scale: 0.96, y: 16 }}
             transition={{ duration: 0.25 }}
             onClick={(e) => e.stopPropagation()}
-            className="relative w-full max-w-5xl max-h-[90vh] bg-[#FFFDF9] text-[#081530] rounded-3xl shadow-2xl overflow-hidden flex flex-col lg:flex-row border border-[#E5DEC9]"
+            className="relative w-full max-w-6xl lg:min-h-[600px] max-h-[92vh] bg-[#FFFDF9] text-[#081530] rounded-3xl shadow-2xl overflow-hidden flex flex-col lg:flex-row border border-[#E5DEC9]"
           >
             {/* Close Button */}
             <button
@@ -131,8 +102,8 @@ function DirectorProfileModal({ director, activeIndex, totalCount, isOpen, onClo
             </button>
 
             {/* Left Obsidian Portrait Column — Photo & Name Only */}
-            <div className="lg:w-[35%] bg-[#081224] text-white p-6 sm:p-8 flex flex-col items-center justify-center text-center shrink-0">
-              <div className="rounded-t-[90px] rounded-b-2xl overflow-hidden border border-[#C9A86A]/40 max-w-[235px] w-full aspect-[4/4.35] mb-5 shadow-xl">
+            <div className="lg:w-[40%] bg-[#081224] text-white px-5 py-6 sm:px-6 sm:py-8 lg:py-12 flex flex-col items-center justify-center text-center shrink-0">
+              <div className="rounded-t-[110px] rounded-b-2xl overflow-hidden border border-[#C9A86A]/40 max-w-[220px] sm:max-w-[260px] lg:max-w-[295px] w-full aspect-[4/4.35] mb-5 lg:mb-6 shadow-xl">
                 <img
                   src={director.image}
                   alt={director.name}
@@ -142,13 +113,10 @@ function DirectorProfileModal({ director, activeIndex, totalCount, isOpen, onClo
 
               <h4
                 id="modal-director-name"
-                className="font-cinzel font-bold text-xl sm:text-2xl leading-snug tracking-wide"
+                className="font-editorial font-bold text-white whitespace-nowrap text-[15.5px] sm:text-[20px] lg:text-[17px] xl:text-[20px] leading-snug tracking-[0.01em]"
               >
-                <TwoToneDirectorName
-                  name={director.name}
-                  credential={director.credential}
-                  darkSurface
-                />
+                {director.name.replace(/^MR\./i, 'Mr.')}
+                {director.credential ? `, ${director.credential}` : ''}
               </h4>
             </div>
 
@@ -185,11 +153,7 @@ function DirectorProfileModal({ director, activeIndex, totalCount, isOpen, onClo
               </div>
 
               {/* Modal Prev / Next Director Navigation */}
-              <div className="mt-7 pt-4 border-t border-[#EAE4D7] flex items-center justify-between gap-3">
-                <span className="font-tech text-[11px] uppercase tracking-[0.18em] text-slate-500">
-                  Director {String(activeIndex + 1).padStart(2, '0')} of{' '}
-                  {String(totalCount).padStart(2, '0')}
-                </span>
+              <div className="mt-8 pt-5 border-t border-[#EAE4D7] flex items-center justify-end gap-3">
                 <div className="flex items-center gap-2">
                   <button
                     type="button"
@@ -283,8 +247,6 @@ export default function BottomSection() {
       {/* Click-Triggered Executive Profile Modal */}
       <DirectorProfileModal
         director={selectedDirector}
-        activeIndex={modalIndex ?? 0}
-        totalCount={directors.length}
         isOpen={modalIndex !== null}
         onClose={handleClose}
         onStep={handleStep}

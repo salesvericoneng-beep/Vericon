@@ -38,7 +38,7 @@ function DirectorCard({ director, index, onOpen }) {
 
       {/* Card Footer — Name Only in Black */}
       <div className="px-4 py-5 flex-1 flex items-center justify-center text-center bg-[#FFFDF9]">
-        <h3 className="font-cinzel font-bold text-[15px] sm:text-base text-black tracking-wide leading-snug">
+        <h3 className="font-editorial font-bold text-[16px] sm:text-[17px] lg:text-[14.5px] xl:text-[17px] text-black tracking-wide leading-snug">
           {director.name}
         </h3>
       </div>
@@ -115,7 +115,7 @@ function DirectorProfileModal({ director, isOpen, onClose, onStep }) {
                 id="modal-director-name"
                 className="font-editorial font-bold text-white whitespace-nowrap text-[15.5px] sm:text-[20px] lg:text-[17px] xl:text-[20px] leading-snug tracking-[0.01em]"
               >
-                {director.name.replace(/^MR\./i, 'Mr.')}
+                {director.name}
                 {director.credential ? `, ${director.credential}` : ''}
               </h4>
             </div>

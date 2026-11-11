@@ -1,14 +1,10 @@
 import React, { useState, useEffect, useCallback } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import {
-  GraduationCap,
-  Award,
-  MapPin,
   X,
   ArrowUpRight,
   ChevronLeft,
   ChevronRight,
-  UserCheck,
 } from 'lucide-react';
 import { directors } from '../../data/directors';
 
@@ -134,95 +130,43 @@ function DirectorProfileModal({ director, activeIndex, totalCount, isOpen, onClo
               <X size={17} />
             </button>
 
-            {/* Left Obsidian Portrait Column */}
-            <div className="lg:w-[37%] bg-[#081224] text-white p-6 sm:p-7 flex flex-col justify-between shrink-0 overflow-y-auto">
+            {/* Left Obsidian Portrait Column — Photo & Name Only */}
+            <div className="lg:w-[35%] bg-[#081224] text-white p-6 sm:p-8 flex flex-col items-center justify-center text-center shrink-0">
+              <div className="rounded-t-[90px] rounded-b-2xl overflow-hidden border border-[#C9A86A]/40 max-w-[235px] w-full aspect-[4/4.35] mb-5 shadow-xl">
+                <img
+                  src={director.image}
+                  alt={director.name}
+                  className="w-full h-full object-cover object-top"
+                />
+              </div>
+
+              <h4
+                id="modal-director-name"
+                className="font-cinzel font-bold text-xl sm:text-2xl leading-snug tracking-wide"
+              >
+                <TwoToneDirectorName
+                  name={director.name}
+                  credential={director.credential}
+                  darkSurface
+                />
+              </h4>
+            </div>
+
+            {/* Right Ivory Editorial Reader — Simple Role, Education & Bio */}
+            <div className="flex-1 p-6 sm:p-9 lg:p-10 overflow-y-auto flex flex-col justify-between">
               <div>
-                <div className="rounded-t-[90px] rounded-b-2xl overflow-hidden border border-[#C9A86A]/40 max-w-[230px] mx-auto lg:max-w-none aspect-[4/4.35] mb-5 shadow-xl">
-                  <img
-                    src={director.image}
-                    alt={director.name}
-                    className="w-full h-full object-cover object-top"
-                  />
-                </div>
-
-                <span className="font-tech text-[10px] uppercase tracking-[0.22em] text-[#E5B973] block mb-1">
-                  {director.code} · {director.experience} Experience
-                </span>
-
-                <h4
-                  id="modal-director-name"
-                  className="font-cinzel font-bold text-xl sm:text-2xl leading-snug tracking-wide"
-                >
-                  <TwoToneDirectorName
-                    name={director.name}
-                    credential={director.credential}
-                    darkSurface
-                  />
-                </h4>
-
-                <p className="font-display text-xs sm:text-[13px] text-blue-200/90 mt-1">
-                  {director.role} | {director.company}
-                </p>
-
-                <div className="mt-5 pt-4 border-t border-white/10 space-y-2">
-                  <div className="font-tech text-[10px] uppercase tracking-[0.18em] text-[#E5B973] flex items-center gap-1.5">
-                    <GraduationCap size={13} />
-                    <span>{director.pedigreeLabel}</span>
-                  </div>
-                  {director.education.map((deg) => (
-                    <p
-                      key={deg}
-                      className="font-jakarta text-xs font-medium text-white"
-                    >
-                      {deg}
-                    </p>
-                  ))}
-                  {director.pedigreeNote && (
-                    <p className="font-jakarta text-[11.5px] text-slate-300 leading-relaxed pt-1">
-                      {director.pedigreeNote}
+                <div className="pb-4 mb-6 border-b border-[#EAE4D7] pr-8">
+                  <p className="font-display text-sm sm:text-base font-semibold text-[#D80C20]">
+                    {director.role}{' '}
+                    <span className="text-slate-300 mx-1.5">|</span>{' '}
+                    <span className="text-[#123EB7]">{director.company}</span>
+                  </p>
+                  {director.educationLine && (
+                    <p className="font-jakarta text-xs sm:text-[13.5px] font-medium text-slate-600 mt-1.5 leading-relaxed">
+                      {director.educationLine}
                     </p>
                   )}
                 </div>
-              </div>
-
-              <div className="mt-5 pt-4 border-t border-white/10 flex flex-col gap-3">
-                <div className="flex items-center gap-1.5 text-xs font-jakarta text-slate-200">
-                  <MapPin size={13} className="text-[#D80C20] shrink-0" />
-                  <span>{director.regionSubtitle}</span>
-                </div>
-                <div className="flex flex-wrap gap-1.5">
-                  {director.badges.map((badge) => (
-                    <span
-                      key={badge}
-                      className="inline-flex items-center gap-1 px-2.5 py-1 rounded-full bg-white/[0.06] border border-[#C9A86A]/40 font-tech text-[10px] font-medium text-[#F3D8A4]"
-                    >
-                      <Award size={10} />
-                      {badge}
-                    </span>
-                  ))}
-                </div>
-              </div>
-            </div>
-
-            {/* Right Ivory Editorial Reader */}
-            <div className="flex-1 p-6 sm:p-9 lg:p-10 overflow-y-auto flex flex-col justify-between">
-              <div>
-                <div className="flex items-center gap-2 font-tech text-[10.5px] uppercase tracking-[0.22em] text-[#D80C20] mb-2.5 pr-8">
-                  <UserCheck size={13} />
-                  <span>EXECUTIVE PROFILE</span>
-                  <span className="text-slate-300">/</span>
-                  <span className="text-slate-500">{director.segments.join(' · ')}</span>
-                </div>
-
-                <h3 className="font-editorial font-bold text-2xl sm:text-3xl text-[#123EB7] leading-tight mb-4">
-                  Leadership, Technical Vision &amp; Engineering Excellence
-                </h3>
-
-                <blockquote className="mb-6 pl-4 border-l-2 border-[#D80C20]">
-                  <p className="font-editorial italic text-lg sm:text-xl text-[#10254D] leading-snug">
-                    “{director.quote}”
-                  </p>
-                </blockquote>
 
                 <div className="space-y-4 font-jakarta text-[14.5px] sm:text-[15px] leading-[1.82] text-slate-700">
                   {allParagraphs.map((para, idx) => (
@@ -237,22 +181,6 @@ function DirectorProfileModal({ director, activeIndex, totalCount, isOpen, onClo
                       {para}
                     </p>
                   ))}
-                </div>
-
-                <div className="mt-7 pt-5 border-t border-[#EAE4D7]">
-                  <p className="font-tech text-[10px] uppercase tracking-[0.2em] text-slate-500 mb-2.5">
-                    Areas of Expertise
-                  </p>
-                  <div className="flex flex-wrap gap-1.5">
-                    {director.expertise.map((item) => (
-                      <span
-                        key={item}
-                        className="px-3 py-1 rounded-full bg-[#F4F1EA] border border-[#E4DEC9] font-jakarta text-xs font-medium text-[#081530]"
-                      >
-                        {item}
-                      </span>
-                    ))}
-                  </div>
                 </div>
               </div>
 

@@ -138,16 +138,7 @@ function DirectorProfileModal({ director, isOpen, onClose, onStep }) {
 
                 <div className="space-y-4 font-jakarta text-[14.5px] sm:text-[15px] leading-[1.82] text-slate-700">
                   {allParagraphs.map((para, idx) => (
-                    <p
-                      key={idx}
-                      className={
-                        idx === 0
-                          ? 'first-letter:font-cinzel first-letter:font-bold first-letter:text-4xl first-letter:text-[#D80C20] first-letter:float-left first-letter:mr-2.5 first-letter:leading-[0.84]'
-                          : ''
-                      }
-                    >
-                      {para}
-                    </p>
+                    <p key={idx}>{para}</p>
                   ))}
                 </div>
               </div>

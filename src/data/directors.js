@@ -97,7 +97,7 @@ export const directors = [
         shortLabel: '01 · Leadership & Experience',
         paragraphs: [
           'Mr. Ehtesham Ahmad is an accomplished business and engineering professional with nearly two decades of experience in the HVAC and MEP industry. He brings a distinctive blend of technical knowledge, commercial acumen and strategic leadership, with extensive experience spanning business operations, business development, sales management, project execution and client relationship management.',
-          'Throughout his professional career, he has been associated with reputed organisations including ETA, VKBS, ABS Fujitsu and SpaceAir Limited, gaining valuable experience in regional business operations, market development, commercial management and the delivery of customer-focused engineering solutions.',
+          'Throughout his professional career, he has developed a comprehensive understanding of the HVAC and MEP industry, including evolving market dynamics, customer requirements and the commercial considerations involved in delivering integrated engineering projects. This experience has strengthened his ability to align technical solutions with business objectives and build lasting professional relationships across the industry.',
         ],
       },
       {

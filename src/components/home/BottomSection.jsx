@@ -67,16 +67,6 @@ function DirectorCard({ director, index, onOpen }) {
           className="w-full h-full object-cover object-top transition-transform duration-500 ease-out group-hover:scale-105"
         />
 
-        {/* Subtle Top Tags */}
-        <div className="absolute top-3 inset-x-3 flex items-center justify-between gap-2 pointer-events-none">
-          <span className="px-2.5 py-1 rounded-md bg-white/90 backdrop-blur-sm border border-[#E5DEC9] font-tech text-[10px] font-semibold tracking-[0.16em] text-[#123EB7] shadow-xs">
-            {director.code}
-          </span>
-          <span className="px-2.5 py-1 rounded-full bg-[#081224]/80 backdrop-blur-sm font-tech text-[10px] font-medium tracking-wider text-[#E5B973] shadow-xs">
-            {director.experience}
-          </span>
-        </div>
-
         {/* Simple Hover Gradient & View Profile Pill */}
         <div className="absolute inset-0 bg-gradient-to-t from-[#081224]/80 via-[#081224]/15 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end justify-center pb-5 pointer-events-none">
           <span className="inline-flex items-center gap-1.5 px-4 py-2 rounded-full bg-white text-[#123EB7] font-display text-xs font-bold tracking-wide shadow-lg translate-y-3 group-hover:translate-y-0 transition-transform duration-300">

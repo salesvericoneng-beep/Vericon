@@ -33,14 +33,6 @@ const contactInfo = [
     title: 'WEBSITE', 
     details: ['www.vericon.in']
   },
-  { 
-    icon: <MapPin size={24} className="text-brand-red" strokeWidth={1.5} />, 
-    title: 'REGIONAL EXECUTION', 
-    details: [
-      'Telangana: Hyderabad, Medchal, Patancheru, Warangal',
-      'Andhra Pradesh: Visakhapatnam, Vijayawada, Guntur, Sri City, Tirupati'
-    ]
-  },
 ];
 
 const features = [

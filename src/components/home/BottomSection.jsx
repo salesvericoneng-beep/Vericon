@@ -221,7 +221,7 @@ export default function BottomSection() {
         <div className="text-center max-w-2xl mx-auto mb-12">
           <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-white border border-[#E5DEC9] shadow-2xs mb-4">
             <span className="w-2 h-2 rounded-full bg-[#D80C20]" />
-            <span className="font-tech text-[#123EB7] font-semibold uppercase tracking-[0.22em] text-[10.5px]">
+            <span className="font-inter text-brand-blue font-bold uppercase tracking-widest text-[11px] sm:text-xs">
               OUR LEADERSHIP
             </span>
           </div>

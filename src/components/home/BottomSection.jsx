@@ -116,7 +116,12 @@ function DirectorProfileModal({ director, isOpen, onClose, onStep }) {
                 className="font-editorial font-bold text-white whitespace-nowrap text-[15.5px] sm:text-[20px] lg:text-[17px] xl:text-[20px] leading-snug tracking-[0.01em]"
               >
                 {director.name}
-                {director.credential ? `, ${director.credential}` : ''}
+                {director.credential && (
+                  <>
+                    ,{' '}
+                    <span className="text-[#E5B973]">{director.credential}</span>
+                  </>
+                )}
               </h4>
             </div>
 

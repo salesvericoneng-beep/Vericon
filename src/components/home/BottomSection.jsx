@@ -18,13 +18,14 @@ import { directors } from '../../data/directors';
 
 const SLIDE_DURATION_MS = 10000;
 
-function TwoToneDirectorName({ name, darkSurface = false }) {
+function TwoToneDirectorName({ name, credential = null, darkSurface = false, compact = false }) {
   const words = name.trim().split(/\s+/);
   const surname = words.length > 1 ? words.pop() : '';
   const lead = words.join(' ');
 
   const leadColor = darkSurface ? 'text-[#7DD3FC]' : 'text-[#123EB7]';
   const surnameColor = darkSurface ? 'text-[#FF6B79]' : 'text-[#D80C20]';
+  const credColor = darkSurface ? 'text-[#E5B973]' : 'text-[#9A6B16]';
 
   return (
     <>
@@ -34,6 +35,17 @@ function TwoToneDirectorName({ name, darkSurface = false }) {
           {' '}
           <span className={surnameColor}>{surname}</span>
         </>
+      )}
+      {credential && (
+        <span
+          className={`whitespace-nowrap ${credColor} ${
+            compact
+              ? 'text-[0.82em] font-semibold'
+              : 'text-[0.62em] font-tech tracking-wider ml-2 align-middle'
+          }`}
+        >
+          , {credential}
+        </span>
       )}
     </>
   );
@@ -97,8 +109,13 @@ function BoardDockCard({ director, isActive, progressPct, isAutoPlay, onSelect }
           )}
         </div>
 
-        <h4 className="font-cinzel font-bold text-xs sm:text-[13.5px] leading-snug truncate">
-          <TwoToneDirectorName name={director.name} darkSurface={isActive} />
+        <h4 className="font-cinzel font-bold text-xs sm:text-[13px] leading-snug line-clamp-2">
+          <TwoToneDirectorName
+            name={director.name}
+            credential={director.credential}
+            darkSurface={isActive}
+            compact
+          />
         </h4>
 
         <p
@@ -206,7 +223,11 @@ function DirectorProfileModal({ director, isOpen, onClose }) {
                   id="modal-director-name"
                   className="font-cinzel font-bold text-2xl sm:text-[26px] leading-snug tracking-wide"
                 >
-                  <TwoToneDirectorName name={director.name} darkSurface />
+                  <TwoToneDirectorName
+                    name={director.name}
+                    credential={director.credential}
+                    darkSurface
+                  />
                 </h4>
                 <p className="font-display text-xs sm:text-sm text-blue-200/90 mt-1.5">
                   {director.role} | {director.company}
@@ -214,7 +235,7 @@ function DirectorProfileModal({ director, isOpen, onClose }) {
 
                 <div className="mt-6 pt-5 border-t border-white/10 space-y-2.5">
                   <div className="font-tech text-[10px] uppercase tracking-[0.18em] text-[#E5B973]">
-                    Education &amp; Alma Mater
+                    {director.pedigreeLabel}
                   </div>
                   {director.education.map((deg) => (
                     <p
@@ -224,19 +245,21 @@ function DirectorProfileModal({ director, isOpen, onClose }) {
                       {deg}
                     </p>
                   ))}
-                  <p className="font-jakarta text-xs text-slate-300 leading-relaxed pt-1">
-                    {director.almaMater}
-                  </p>
+                  {director.pedigreeNote && (
+                    <p className="font-jakarta text-xs text-slate-300 leading-relaxed pt-1">
+                      {director.pedigreeNote}
+                    </p>
+                  )}
                 </div>
               </div>
 
               <div className="mt-6 pt-5 border-t border-white/10 flex flex-wrap gap-2">
-                {director.memberships.map((org) => (
+                {director.badges.map((badge) => (
                   <span
-                    key={org}
+                    key={badge}
                     className="px-3 py-1 rounded-full bg-white/[0.06] border border-[#C9A86A]/40 font-tech text-[11px] font-medium text-[#F3D8A4]"
                   >
-                    {org} Member
+                    {badge}
                   </span>
                 ))}
               </div>
@@ -461,7 +484,7 @@ export default function BottomSection() {
                     <div>
                       <div className="flex items-center gap-2 font-tech text-[10px] uppercase tracking-[0.2em] text-[#E5B973] mb-2.5">
                         <GraduationCap size={14} />
-                        <span>Academic Pedigree</span>
+                        <span>{selectedDirector.pedigreeLabel}</span>
                       </div>
                       <ul className="space-y-1.5">
                         {selectedDirector.education.map((deg) => (
@@ -474,9 +497,11 @@ export default function BottomSection() {
                           </li>
                         ))}
                       </ul>
-                      <p className="font-jakarta text-xs text-blue-200/80 mt-2 pl-3.5 leading-relaxed">
-                        {selectedDirector.almaMater}
-                      </p>
+                      {selectedDirector.pedigreeNote && (
+                        <p className="font-jakarta text-xs text-blue-200/80 mt-2 pl-3.5 leading-relaxed">
+                          {selectedDirector.pedigreeNote}
+                        </p>
+                      )}
                     </div>
 
                     <div className="pt-4 border-t border-white/10 flex flex-wrap items-center justify-between gap-3">
@@ -485,14 +510,14 @@ export default function BottomSection() {
                         <span>{selectedDirector.regionSubtitle}</span>
                       </div>
 
-                      <div className="flex items-center gap-2">
-                        {selectedDirector.memberships.map((org) => (
+                      <div className="flex items-center gap-2 flex-wrap">
+                        {selectedDirector.badges.map((badge) => (
                           <span
-                            key={org}
+                            key={badge}
                             className="inline-flex items-center gap-1 px-2.5 py-1 rounded-md border border-[#C9A86A]/45 bg-[#C9A86A]/10 font-tech text-[10px] font-semibold tracking-wider text-[#F5DDB0]"
                           >
                             <Award size={11} />
-                            {org}
+                            {badge}
                           </span>
                         ))}
                       </div>
@@ -541,7 +566,10 @@ export default function BottomSection() {
 
                       {/* Chiselled Monumental Display Name */}
                       <h3 className="font-cinzel font-bold text-3xl sm:text-4xl lg:text-[42px] tracking-[0.04em] leading-[1.12]">
-                        <TwoToneDirectorName name={selectedDirector.name} />
+                        <TwoToneDirectorName
+                          name={selectedDirector.name}
+                          credential={selectedDirector.credential}
+                        />
                       </h3>
 
                       <p className="font-display text-sm sm:text-[15px] font-medium text-slate-600 mt-2">

@@ -5,20 +5,20 @@ export const directors = [
     number: '01',
     monogram: 'VK',
     name: 'MR. VIVEK REDDY KURYA',
+    credential: null,
     role: 'Founder & Director',
     company: 'VERICON Engineering Private Limited',
     image: '/1.jpeg',
     experience: '10+ Years',
     experienceSubtitle: 'HVAC & Fire Protection Industry',
-    region: 'TS & AP',
     regionSubtitle: 'Telangana & Andhra Pradesh',
+    pedigreeLabel: 'Academic Pedigree',
     education: [
       'B.Tech — Mechanical Engineering',
       'M.Tech — Advanced Manufacturing Systems',
     ],
-    educationSummary: 'B.Tech (Mechanical) · M.Tech (Adv. Mfg. Systems)',
-    almaMater: 'Jawaharlal Nehru Technological University (JNTU), Hyderabad',
-    memberships: ['ISHRAE', 'ASHRAE'],
+    pedigreeNote: 'Jawaharlal Nehru Technological University (JNTU), Hyderabad',
+    badges: ['ISHRAE', 'ASHRAE'],
     segments: ['Commercial', 'Industrial', 'Institutional'],
     expertise: [
       'Strategic Business Development',
@@ -34,7 +34,6 @@ export const directors = [
       {
         id: 'vision',
         shortLabel: '01 · Overview & Solutions',
-        title: 'Engineering Foundation & Commercial Vision',
         paragraphs: [
           'Mr. Vivek Reddy is an accomplished engineering and business professional with over a decade of experience in the HVAC and Fire Protection industry. Combining a strong engineering foundation with commercial acumen and strategic business vision, he brings a market-oriented approach to business development, customer engagement and sustainable organisational growth.',
           'With a comprehensive understanding of HVAC and Fire Protection systems, he specialises in translating complex engineering requirements into commercially viable solutions and long-term business opportunities. His professional expertise encompasses strategic business development, technical-commercial solutions, business acquisition, market expansion and the development of enduring customer relationships.',
@@ -43,7 +42,6 @@ export const directors = [
       {
         id: 'footprint',
         shortLabel: '02 · Strategy & Regional Reach',
-        title: 'Strategic Leadership & Market Intelligence',
         paragraphs: [
           "As Founder and Director of VERICON Engineering Private Limited, he contributes to shaping the company's business strategy, strengthening its market presence and driving growth across the engineering and infrastructure sectors. With established industry networks and strong market relationships across Telangana and Andhra Pradesh, he brings valuable regional market intelligence and a deep understanding of customer expectations. His engagement spans corporate organisations, consultants, developers, contractors and key industry stakeholders across commercial, industrial and institutional segments.",
         ],
@@ -51,7 +49,6 @@ export const directors = [
       {
         id: 'credentials',
         shortLabel: '03 · Pedigree & Philosophy',
-        title: 'Academic Specialisation & Professional Ethos',
         paragraphs: [
           'An engineering graduate with a postgraduate specialisation in Advanced Manufacturing Systems from Jawaharlal Nehru Technological University (JNTU), Hyderabad, he combines technical insight with strategic business thinking to identify emerging opportunities, develop competitive engineering solutions and create lasting commercial value.',
           'An active member of ISHRAE and ASHRAE, he remains committed to industry engagement, continuous professional development and the advancement of innovative HVAC, Fire Protection and integrated MEP solutions. His professional philosophy centres on building trusted relationships, recognising evolving market opportunities and delivering sustainable value through engineering excellence and customer-focused business partnerships.',
@@ -66,10 +63,59 @@ export const directors = [
     number: '02',
     monogram: 'EA',
     name: 'MR. EHTESHAM AHMAD',
-    role: 'Director',
+    credential: 'IGBC AP®',
+    role: 'Founder & Director',
     company: 'VERICON Engineering Private Limited',
     image: '/2.jpeg',
-    hasFullProfile: false,
+    experience: '~20 Years',
+    experienceSubtitle: 'HVAC & MEP Industry Leadership',
+    regionSubtitle: 'Regional Business Operations & Growth',
+    pedigreeLabel: 'Qualifications & Credential',
+    education: [
+      'Master of Business Administration (MBA)',
+      'B.E. — Mechanical Engineering',
+      'IGBC Accredited Professional (IGBC AP®)',
+    ],
+    pedigreeNote: 'Prior Associations: ETA · VKBS · ABS Fujitsu · SpaceAir Limited',
+    badges: ['ISHRAE', 'ASHRAE', 'IGBC AP®'],
+    segments: ['HVAC & MEP', 'AMC & Retrofits', 'Energy Optimisation'],
+    expertise: [
+      'Strategic Leadership & Operations',
+      'Business & Market Development',
+      'Sales & Commercial Management',
+      'Project Engineering & Execution',
+      'Annual Maintenance Contracts',
+      'Revamp, Retrofit & Energy Audits',
+    ],
+    quote:
+      'Driven by integrity, innovation and continuous improvement to establish VERICON through technical excellence, dependable project delivery, strong customer relationships and sustainable business practices.',
+    chapters: [
+      {
+        id: 'vision',
+        shortLabel: '01 · Leadership & Experience',
+        paragraphs: [
+          'Mr. Ehtesham Ahmad is an accomplished business and engineering professional with nearly two decades of experience in the HVAC and MEP industry. He brings a distinctive blend of technical knowledge, commercial acumen and strategic leadership, with extensive experience spanning business operations, business development, sales management, project execution and client relationship management.',
+          'Throughout his professional career, he has been associated with reputed organisations including ETA, VKBS, ABS Fujitsu and SpaceAir Limited, gaining valuable experience in regional business operations, market development, commercial management and the delivery of customer-focused engineering solutions.',
+        ],
+      },
+      {
+        id: 'footprint',
+        shortLabel: '02 · Strategic Growth & Services',
+        paragraphs: [
+          "As the Founder and Director of VERICON Engineering Private Limited, established in 2026, Mr. Ahmad provides strategic direction for the company's business development, organisational growth and regional operations. He is focused on building an integrated engineering organisation with comprehensive capabilities across HVAC, Electrical, Fire Protection, Public Health Engineering and MEP services, complemented by project engineering, Annual Maintenance Contracts, revamp and retrofit solutions, and energy optimisation.",
+        ],
+      },
+      {
+        id: 'credentials',
+        shortLabel: '03 · Credentials & Vision',
+        paragraphs: [
+          "With an MBA, a Bachelor's degree in Mechanical Engineering and the IGBC Accredited Professional (IGBC AP®) credential, he combines engineering expertise with business leadership to promote operational excellence, sustainable engineering practices and long-term value creation.",
+          'Driven by a commitment to integrity, innovation and continuous improvement, his vision is to establish VERICON as a respected engineering solutions company, distinguished by technical excellence, dependable project delivery, strong customer relationships and sustainable business practices.',
+          'An active member of ISHRAE and ASHRAE, Mr. Ahmad remains committed to professional development, industry best practices and the advancement of sustainable engineering solutions.',
+        ],
+      },
+    ],
+    hasFullProfile: true,
   },
   {
     id: 'shaik-abdul-mujeeb',
@@ -77,10 +123,57 @@ export const directors = [
     number: '03',
     monogram: 'SM',
     name: 'MR. SHAIK ABDUL MUJEEB',
-    role: 'Director',
+    credential: 'PMP®',
+    role: 'Founder & Director',
     company: 'VERICON Engineering Private Limited',
     image: '/3.jpeg',
-    hasFullProfile: false,
+    experience: '10+ Years',
+    experienceSubtitle: 'Large-Scale MEP Project Delivery',
+    regionSubtitle: 'Aviation · Tier III Data Centres · Commercial',
+    pedigreeLabel: 'Engineering & Certification',
+    education: [
+      'B.Tech — Mechanical Engineering',
+      'Project Management Professional (PMP®)',
+    ],
+    pedigreeNote: 'Sectors: Aviation & Airport Infrastructure · Tier III Data Centres · Corporate Campuses',
+    badges: ['PMP®', 'Turnkey MEP'],
+    segments: ['Aviation & Airports', 'Tier III Data Centres', 'Corporate Campuses'],
+    expertise: [
+      'Engineering Execution & Planning',
+      'Design Coordination & Commissioning',
+      'Value Engineering',
+      'Contract Administration & Cost Control',
+      'Risk Mitigation & Safety',
+      'Stakeholder Management',
+    ],
+    quote:
+      'Centred on engineering excellence, disciplined execution, accountability and continuous improvement — developing capable teams to deliver reliable, sustainable and cost-effective solutions.',
+    chapters: [
+      {
+        id: 'vision',
+        shortLabel: '01 · Execution & Sectors',
+        paragraphs: [
+          'Mr. Shaik Abdul Mujeeb is an accomplished engineering and project management professional with over a decade of experience in delivering complex, large-scale HVAC, Electrical and Fire Protection projects. He brings a strong combination of technical expertise, project leadership and operational management, with extensive experience across engineering execution, project planning, design coordination and commissioning.',
+          'His professional experience spans diverse sectors, including aviation and airport infrastructure, Tier III data centres, commercial buildings and corporate campuses. He has been associated with multidisciplinary engineering environments, developing expertise in project delivery, stakeholder management, value engineering, contract administration, cost control and risk mitigation.',
+        ],
+      },
+      {
+        id: 'footprint',
+        shortLabel: '02 · Technical Operations',
+        paragraphs: [
+          "As the Founder and Director of VERICON Engineering Private Limited, Mr. Mujeeb contributes to the company's technical direction, engineering operations and project delivery capabilities. He plays a key role in strengthening the organisation's execution standards, technical capabilities and integrated engineering solutions across HVAC, Electrical, Fire Protection, Public Health Engineering and MEP services.",
+        ],
+      },
+      {
+        id: 'credentials',
+        shortLabel: '03 · PMP® Rigour & Philosophy',
+        paragraphs: [
+          'A B.Tech graduate in Mechanical Engineering and a Project Management Professional (PMP®), he combines strong engineering fundamentals with structured project management practices to drive quality, safety, resource optimisation, cost efficiency and timely project completion.',
+          'His professional philosophy is centred on engineering excellence, disciplined execution, accountability and continuous improvement. He is committed to developing capable engineering teams and delivering reliable, sustainable and cost-effective solutions that create lasting value for customers and business partners.',
+        ],
+      },
+    ],
+    hasFullProfile: true,
   },
   {
     id: 'mohd-moizuddin',
@@ -88,9 +181,56 @@ export const directors = [
     number: '04',
     monogram: 'MM',
     name: 'MR. MOHD MOIZUDDIN',
-    role: 'Director',
+    credential: null,
+    role: 'Founder & Director',
     company: 'VERICON Engineering Private Limited',
     image: '/4.jpeg',
-    hasFullProfile: false,
+    experience: '20+ Years',
+    experienceSubtitle: 'HVAC, Commissioning & MEP Systems',
+    regionSubtitle: 'Critical Infrastructure & Automation',
+    pedigreeLabel: 'Engineering & Specialisation',
+    education: [
+      'Electrical & Electronics Engineering Background',
+      'Specialisation — Refrigeration, Air Conditioning & MEP Services',
+    ],
+    pedigreeNote: 'Prior Associations: ETA · VKBS · ABS Fujitsu',
+    badges: ['Energy Audits', 'PLC & Automation'],
+    segments: ['Government & Defence', 'Pharma & Healthcare', 'Industrial & High-Rise'],
+    expertise: [
+      'Project Commissioning & Service Ops',
+      'Energy Conservation & Audits',
+      'System Optimisation',
+      'Industrial Automation & PLC Applications',
+      'Lifecycle Infrastructure Performance',
+      'Future-Ready MEP Technologies',
+    ],
+    quote:
+      'Engineering excellence extends beyond successful project delivery to encompass operational reliability, lifecycle performance, energy efficiency and sustained customer confidence.',
+    chapters: [
+      {
+        id: 'vision',
+        shortLabel: '01 · Engineering Standing',
+        paragraphs: [
+          'Mr. Mohd Moizuddin is a seasoned engineering professional with over two decades of experience in the HVAC and MEP industry, bringing extensive technical expertise, operational insight and a deep understanding of complex building engineering systems. With a strong foundation in Electrical & Electronics Engineering, his professional experience encompasses project commissioning, service operations and the lifecycle performance of critical engineering infrastructure.',
+          'His professional journey includes significant technical and leadership experience with established engineering organisations such as ETA, VKBS and ABS Fujitsu. Over the years, he has developed a strong understanding of integrated building engineering systems and cultivated valuable professional relationships with consultants, PMCs, OEMs, contractors and clients. With an established presence in the regional engineering market, he is recognised for his technical insight, practical problem-solving capabilities and commitment to engineering and service excellence.',
+        ],
+      },
+      {
+        id: 'footprint',
+        shortLabel: '02 · Sectors & Automation',
+        paragraphs: [
+          'His industry experience spans government, defence, commercial, industrial, pharmaceutical, healthcare, hospitality, research and development, institutional and high-rise residential sectors. His areas of professional focus include energy conservation, system optimisation, energy audits, industrial automation, PLC applications and the adoption of emerging technologies across modern MEP infrastructure. He is particularly focused on improving equipment performance, enhancing operational reliability and developing efficient, sustainable and future-ready engineering solutions.',
+        ],
+      },
+      {
+        id: 'credentials',
+        shortLabel: '03 · Technical Vision & Lifecycle',
+        paragraphs: [
+          "As Founder and Director of VERICON Engineering Private Limited, he brings technical leadership and extensive industry experience to strengthen the company's engineering capabilities, enhance project commissioning standards and drive service delivery excellence. His vision centres on integrating technical innovation, operational discipline and emerging engineering technologies to deliver dependable solutions and long-term value for customers.",
+          "He believes that engineering excellence extends beyond successful project delivery to encompass operational reliability, lifecycle performance, energy efficiency and sustained customer confidence. His vision is to strengthen VERICON's engineering capabilities through technical innovation, disciplined execution, dependable service delivery and a commitment to maintaining the highest standards of engineering quality and operational excellence.",
+        ],
+      },
+    ],
+    hasFullProfile: true,
   },
 ];

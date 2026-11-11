@@ -19,9 +19,9 @@ const services = [
   { name: 'Electrical Solutions', path: '/services/electrical' },
   { name: 'Fire Fighting Solutions', path: '/services/fire' },
   { name: 'Public Health Engineering', path: '/services/phe' },
-  { name: 'Annual Maintenance Contract', path: '/services/amc' },
-  { name: 'Revamp & Retrofit', path: '/services/retrofit' },
-  { name: 'Energy Optimization', path: '/services/energy-optimization' },
+  { name: 'Annual Maintenance Contract', path: '/projects#annual-maintenance' },
+  { name: 'Revamp & Retrofit', path: '/projects#revamp-retrofits' },
+  { name: 'Energy Optimization', path: '/projects#energy-optimization' },
 ];
 
 const segments = [

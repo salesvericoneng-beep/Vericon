@@ -21,6 +21,7 @@ import EnergyOptimizationSolutions from './pages/EnergyOptimizationSolutions';
 import WhyVericon from './pages/WhyVericon';
 import Projects from './pages/Projects';
 import Contact from './pages/Contact';
+import NotFound from './pages/NotFound';
 
 function App() {
   return (
@@ -45,6 +46,7 @@ function App() {
             <Route path="/why-vericon" element={<WhyVericon />} />
             <Route path="/projects" element={<Projects />} />
             <Route path="/contact" element={<Contact />} />
+            <Route path="*" element={<NotFound />} />
           </Routes>
         </main>
         <Footer />

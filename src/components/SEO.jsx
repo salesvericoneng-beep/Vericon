@@ -1,45 +1,74 @@
 import { useEffect } from 'react';
 import { useLocation } from 'react-router-dom';
+import { SITE_URL, getSeoByPath, normalizePathname } from '../data/seoRoutes';
 
-export default function SEO({ title, description, keywords, canonical }) {
+function upsertMetaTag(attrName, attrValue, content) {
+  if (!content) return;
+  const selector = `meta[${attrName}="${attrValue}"]`;
+  let metaEl = document.querySelector(selector);
+  if (!metaEl) {
+    metaEl = document.createElement('meta');
+    metaEl.setAttribute(attrName, attrValue);
+    document.head.appendChild(metaEl);
+  }
+  metaEl.setAttribute('content', content);
+}
+
+export default function SEO({
+  title,
+  description,
+  keywords,
+  canonical,
+  noindex = false,
+}) {
   const location = useLocation();
 
   useEffect(() => {
-    if (title) {
-      document.title = title;
+    const normalizedPath = normalizePathname(location.pathname);
+    const routeMeta = getSeoByPath(normalizedPath);
+
+    const resolvedTitle = title || routeMeta?.title;
+    const resolvedDescription = description || routeMeta?.description;
+    const resolvedKeywords = keywords || routeMeta?.keywords;
+    const resolvedCanonical =
+      canonical ||
+      routeMeta?.canonical ||
+      `${SITE_URL}${normalizedPath === '/' ? '/' : normalizedPath}`;
+
+    if (resolvedTitle) {
+      document.title = resolvedTitle;
     }
 
-    if (description) {
-      let descMeta = document.querySelector('meta[name="description"]');
-      if (!descMeta) {
-        descMeta = document.createElement('meta');
-        descMeta.setAttribute('name', 'description');
-        document.head.appendChild(descMeta);
-      }
-      descMeta.setAttribute('content', description);
-    }
-
-    if (keywords) {
-      let kwMeta = document.querySelector('meta[name="keywords"]');
-      if (!kwMeta) {
-        kwMeta = document.createElement('meta');
-        kwMeta.setAttribute('name', 'keywords');
-        document.head.appendChild(kwMeta);
-      }
-      kwMeta.setAttribute('content', keywords);
-    }
+    upsertMetaTag('name', 'description', resolvedDescription);
+    upsertMetaTag('name', 'keywords', resolvedKeywords);
+    upsertMetaTag(
+      'name',
+      'robots',
+      noindex
+        ? 'noindex, follow'
+        : 'index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1'
+    );
 
     let canonicalLink = document.querySelector('link[rel="canonical"]');
-    if (!canonicalLink) {
-      canonicalLink = document.createElement('link');
-      canonicalLink.setAttribute('rel', 'canonical');
-      document.head.appendChild(canonicalLink);
+    if (noindex) {
+      if (canonicalLink) canonicalLink.remove();
+    } else {
+      if (!canonicalLink) {
+        canonicalLink = document.createElement('link');
+        canonicalLink.setAttribute('rel', 'canonical');
+        document.head.appendChild(canonicalLink);
+      }
+      canonicalLink.setAttribute('href', resolvedCanonical);
     }
-    const currentCanonical = canonical || `https://www.vericon.in${location.pathname === '/' ? '' : location.pathname}`;
-    canonicalLink.setAttribute('href', currentCanonical);
 
-  }, [title, description, keywords, canonical, location]);
+    upsertMetaTag('property', 'og:url', resolvedCanonical);
+    upsertMetaTag('property', 'og:title', resolvedTitle);
+    upsertMetaTag('property', 'og:description', resolvedDescription);
+
+    upsertMetaTag('name', 'twitter:url', resolvedCanonical);
+    upsertMetaTag('name', 'twitter:title', resolvedTitle);
+    upsertMetaTag('name', 'twitter:description', resolvedDescription);
+  }, [title, description, keywords, canonical, noindex, location.pathname]);
 
   return null;
 }
-

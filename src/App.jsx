@@ -6,6 +6,7 @@ import Navbar from './components/Navbar';
 import Footer from './components/Footer';
 import CustomCursor from './components/CustomCursor';
 import ScrollToTopButton from './components/ScrollToTopButton';
+import WhatsAppFloatingButton from './components/WhatsAppFloatingButton';
 
 import Home from './pages/Home';
 import About from './pages/About';
@@ -50,6 +51,7 @@ function App() {
           </Routes>
         </main>
         <Footer />
+        <WhatsAppFloatingButton />
         <ScrollToTopButton />
       </div>
       <Analytics />
